@@ -7,6 +7,7 @@ import pyRAPL
 
 pyRAPL.setup()
 
+
 class MinimalSubscriber(Node):
 
     def __init__(self):

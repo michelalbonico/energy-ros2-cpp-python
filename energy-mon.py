@@ -13,7 +13,7 @@ parser.add_argument("-l", "--language", help="Algorithm language", nargs='?', ch
 parser.add_argument("-i", "--identifier", help="Measurement identifier", nargs='+')
 args = parser.parse_args()
 
-csv_output = pyRAPL.outputs.CSVOutput('result.csv')
+csv_output = pyRAPL.outputs.CSVOutput('../data/result.csv')
 meter = pyRAPL.Measurement(args.identifier[0])
 
 def execute_python_file():
