@@ -3,10 +3,8 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import time
 
-import pyRAPL
-
-pyRAPL.setup()
-
+#import pyRAPL
+#pyRAPL.setup()
 
 class MinimalSubscriber(Node):
 
@@ -25,7 +23,7 @@ class MinimalSubscriber(Node):
         self.get_logger().info('I heard: "%s"' % msg.data)
         self.last_message_time = time.time()
 
-@pyRAPL.measureit()
+#@pyRAPL.measureit()
 def main(args=None):
     rclpy.init(args=args)
     minimal_subscriber = MinimalSubscriber()

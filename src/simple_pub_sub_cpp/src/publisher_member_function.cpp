@@ -26,6 +26,7 @@ private:
       message.data = "Hello, world! " + std::to_string(count_++);
       RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
       publisher_->publish(message);
+      sleep(0.1);
     } else {
       timer_->cancel();
       rclcpp::shutdown();
@@ -41,11 +42,12 @@ int main(int argc, char * argv[])
   rclcpp::init(argc, argv);
 
   rclcpp::Node::SharedPtr node = std::make_shared<MinimalPublisher>();
-
-  // rclcpp::executors::StaticSingleThreadedExecutor executor;
-  // executor.add_node(node);
-  // executor.spin();
-
-  rclcpp::spin(std::make_shared<MinimalPublisher>());
+  
+  //rclcpp::spin(std::make_shared<MinimalPublisher>());
+  
+  rclcpp::executors::StaticSingleThreadedExecutor executor;
+  executor.add_node(node);
+  executor.spin();
+  
   return 0;
 }

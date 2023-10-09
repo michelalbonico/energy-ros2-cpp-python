@@ -1,0 +1,57 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 93  of event 'cycles'
+# Event count (approx.): 52511575
+#
+# Overhead  Command  Shared Object                                    Symbol                                                                       
+# ........  .......  ...............................................  .............................................................................
+#
+    23.70%  talker   python3.10                                       [.] _PyEval_EvalFrameDefault
+     7.05%  talker   libfastrtps.so.2.6.6                             [.] eprosima::fastdds::dds::StatusCondition::get_trigger_value
+     6.24%  talker   python3.10                                       [.] _PyObject_GenericGetAttrWithDict
+     6.22%  talker   [kernel.kallsyms]                                [k] __mod_memcg_lruvec_state
+     6.22%  talker   libspdlog.so.1.9.2                               [.] spdlog::details::v_formatter<spdlog::details::null_scoped_padder>::format
+     6.07%  talker   [kernel.kallsyms]                                [k] ip_make_skb
+     5.84%  talker   libfastrtps.so.2.6.6                             [.] eprosima::fastrtps::rtps::ReceiverResource::OnDataReceived
+     3.95%  talker   python3.10                                       [.] _PyObject_GetMethod
+     3.51%  talker   [kernel.kallsyms]                                [k] futex_wait
+     2.02%  talker   [kernel.kallsyms]                                [k] put_prev_entity
+     1.87%  talker   python3.10                                       [.] _PyFunction_Vectorcall
+     1.87%  talker   python3.10                                       [.] 0x00000000001a6994
+     1.85%  talker   _rclpy_pybind11.cpython-310-x86_64-linux-gnu.so  [.] 0x0000000000019f14
+     1.69%  talker   libfastrtps.so.2.6.6                             [.] eprosima::fastrtps::rtps::TimedEvent::update_interval_millisec
+     1.67%  talker   [kernel.kallsyms]                                [k] mnt_user_ns
+     1.67%  talker   python3.10                                       [.] 0x0000000000155ba0
+     1.62%  talker   python3.10                                       [.] 0x00000000001bbb5a
+     1.55%  talker   librcl.so                                        [.] rcl_timer_get_time_until_next_call
+     1.55%  talker   python3.10                                       [.] 0x000000000013b1ed
+     1.52%  talker   [kernel.kallsyms]                                [k] send_to_group
+     1.47%  talker   python3.10                                       [.] 0x0000000000124eb0
+     1.44%  talker   _rclpy_pybind11.cpython-310-x86_64-linux-gnu.so  [.] 0x00000000000994ba
+     1.44%  talker   libc.so.6                                        [.] _int_free
+     1.44%  talker   python3.10                                       [.] 0x0000000000147ee9
+     1.40%  talker   [kernel.kallsyms]                                [k] __schedule
+     1.32%  talker   libfastrtps.so.2.6.6                             [.] 0x000000000013fb84
+     0.55%  talker   libfastrtps.so.2.6.6                             [.] 0x0000000000144a60
+     0.55%  talker   libc.so.6                                        [.] pthread_cond_clockwait@@GLIBC_2.34
+     0.54%  talker   [kernel.kallsyms]                                [k] obj_cgroup_uncharge_pages
+     0.48%  talker   libc.so.6                                        [.] __GI___futex_abstimed_wait_cancelable64
+     0.46%  talker   [kernel.kallsyms]                                [k] _raw_spin_unlock_irqrestore
+     0.42%  talker   [kernel.kallsyms]                                [k] switch_fpu_return
+     0.27%  talker   [kernel.kallsyms]                                [k] core_sys_select
+     0.19%  talker   [kernel.kallsyms]                                [k] free_pcp_prepare
+     0.16%  talker   [kernel.kallsyms]                                [k] finish_task_switch.isra.0
+     0.07%  talker   [kernel.kallsyms]                                [k] native_sched_clock
+     0.05%  talker   [kernel.kallsyms]                                [k] perf_ctx_enable
+     0.04%  talker   [kernel.kallsyms]                                [k] nmi_handle
+     0.02%  talker   [kernel.kallsyms]                                [k] native_write_msr
+     0.02%  talker   [kernel.kallsyms]                                [k] nmi_cpu_backtrace
+     0.00%  talker   [unknown]                                        [.] 0000000000000000
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
