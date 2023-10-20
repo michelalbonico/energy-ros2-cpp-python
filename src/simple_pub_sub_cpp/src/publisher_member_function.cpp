@@ -43,11 +43,11 @@ int main(int argc, char * argv[])
 
   rclcpp::Node::SharedPtr node = std::make_shared<MinimalPublisher>();
   
-  //rclcpp::spin(std::make_shared<MinimalPublisher>());
+  rclcpp::spin(std::make_shared<MinimalPublisher>());
   
-  rclcpp::executors::StaticSingleThreadedExecutor executor;
-  executor.add_node(node);
-  executor.spin();
+  // rclcpp::executors::StaticSingleThreadedExecutor executor;
+  // executor.add_node(node);
+  // executor.spin();
   
   return 0;
 }

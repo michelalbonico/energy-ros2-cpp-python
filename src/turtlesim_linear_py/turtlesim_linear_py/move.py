@@ -13,22 +13,22 @@ class RobotCleaner(Node):
         self.velocity_publisher = self.create_publisher(Twist, '/turtle1/cmd_vel', 10)
         self.vel_msg = Twist()
 
-        timer_period = 1  # seconds
+        timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
         self.fwd = True
 
     def timer_callback(self):
-        if self.i < 2:
+        if self.i < 100:
             # Set fixed values for speed, distance, and direction
             speed = 1.0    # Adjust as needed
             distance = 2.0 # Adjust as needed
 
             self.move(speed, distance, self.fwd)
             self.fwd = not self.fwd
-            time.sleep(1)
+            time.sleep(0.1)
         else:
-            time.sleep(1)
+            time.sleep(0.1)
             self.timer.cancel()
             raise ScriptTerminationException("Script has completed its task.")
         

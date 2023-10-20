@@ -14,11 +14,15 @@ find_package(std_msgs REQUIRED)
 add_executable(talker src/publisher_member_function.cpp)
 ament_target_dependencies(talker rclcpp std_msgs)
 
+add_executable(talker-static src/publisher_member_function-static.cpp)
+ament_target_dependencies(talker-static rclcpp std_msgs)
+
 add_executable(listener src/subscriber_member_function.cpp)
 ament_target_dependencies(listener rclcpp std_msgs)
 
 install(TARGETS
   talker
+  talker-static
   listener
   DESTINATION lib/${PROJECT_NAME})
 # uncomment the following section in order to fill in

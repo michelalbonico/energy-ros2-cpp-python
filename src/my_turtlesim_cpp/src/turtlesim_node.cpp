@@ -1,34 +1,53 @@
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 
+using std::placeholders::_1;
+
 class MyTurtlesimNode : public rclcpp::Node {
 public:
     MyTurtlesimNode() : Node("my_turtlesim_node") {
-        // Create a publisher for the turtle's velocity command
-        publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
+        // Create a subscriber for the turtle's velocity command
+        subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
+            "/turtle1/cmd_vel",
+            10,std::bind(&MyTurtlesimNode::topic_callback, this, _1));
 
-        // Create a timer to publish commands periodically
         timer_ = this->create_wall_timer(
-            std::chrono::milliseconds(1000),
-            [this]() {
-                auto msg = std::make_unique<geometry_msgs::msg::Twist>();
-                // Set the linear and angular velocity commands here
-                msg->linear.x = 1.0;
-                msg->angular.z = 0.5;
-                publisher_->publish(std::move(msg));
-            }
+            std::chrono::seconds(2), std::bind(&MyTurtlesimNode::check_activity, this)
         );
+        
+        last_activity_time_ = std::make_shared<rclcpp::Time>(this->now());
     }
 
 private:
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
+
+    void topic_callback(const geometry_msgs::msg::Twist::SharedPtr msg) const
+    {
+        double linear_x = msg->linear.x;
+        double angular_z = msg->angular.z;
+        RCLCPP_INFO(this->get_logger(), "Received Velocity Command - Linear X: %f, Angular Z: %f", linear_x, angular_z);
+        *last_activity_time_ = this->now(); 
+        // Implement your turtle control logic here based on the received velocity commands
+    }
+
+    void check_activity()
+    {
+        auto elapsed_time = this->now() - *last_activity_time_;
+        if (elapsed_time >= std::chrono::seconds(1))
+        {
+        RCLCPP_INFO(this->get_logger(), "Stopping node due to inactivity.");
+        rclcpp::shutdown();
+        }
+    }
+
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr subscriber_;
     rclcpp::TimerBase::SharedPtr timer_;
+    std::shared_ptr<rclcpp::Time> last_activity_time_;
 };
 
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<MyTurtlesimNode>();
     rclcpp::spin(node);
-    rclcpp::shutdown();
+    //rclcpp::shutdown();
     return 0;
 }

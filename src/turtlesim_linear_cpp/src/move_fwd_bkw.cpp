@@ -11,13 +11,13 @@ class RobotCleaner : public rclcpp::Node
 {
 public:
   RobotCleaner()
-  : Node("robot_cleaner"),count_(0),fwd_(true)
+  : Node("robot_driver"),count_(0),fwd_(true)
   {
     velocity_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
     vel_msg_ = std::make_shared<geometry_msgs::msg::Twist>();
 
     timer_ = this->create_wall_timer(
-      1000ms, std::bind(&RobotCleaner::timer_callback, this));
+      500ms, std::bind(&RobotCleaner::timer_callback, this));
   }
 
   void timer_callback()
@@ -26,12 +26,12 @@ public:
     double speed = 1.0;    // Adjust as needed
     double distance = 2.0; // Adjust as needed
 
-    if (count_ < 2) {
+    if (count_ < 100) {
       move(speed, distance, fwd_);
       fwd_ = !fwd_;
-      sleep(1); 
+      sleep(0.1); 
     } else {
-      sleep(1);
+      sleep(0.1);
       timer_->cancel();
       rclcpp::shutdown();
     }
@@ -92,9 +92,9 @@ int main(int argc, char *argv[])
 
   rclcpp::Node::SharedPtr node = std::make_shared<RobotCleaner>();
 
-  rclcpp::executors::StaticSingleThreadedExecutor executor;
-  executor.add_node(node);
-  executor.spin();
+  // rclcpp::executors::StaticSingleThreadedExecutor executor;
+  // executor.add_node(node);
+  // executor.spin();
 
   // ros::MultiThreadedSpinner spinner(4);
   // spinner.spin(std::make_shared<RobotCleaner>());
@@ -106,6 +106,6 @@ int main(int argc, char *argv[])
   // printf('I am here');
   // spinner.spin();
 
-  //rclcpp::spin(std::make_shared<RobotCleaner>());
-  // return 0;
+  rclcpp::spin(node);
+  return 0;
 }

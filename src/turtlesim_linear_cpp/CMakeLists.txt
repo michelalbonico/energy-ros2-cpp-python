@@ -17,8 +17,12 @@ find_package(geometry_msgs REQUIRED)
 add_executable(movefb src/move_fwd_bkw.cpp)
 ament_target_dependencies(movefb rclcpp geometry_msgs)
 
+add_executable(movefb-static src/move_fwd_bkw.cpp)
+ament_target_dependencies(movefb-static rclcpp geometry_msgs)
+
 install(TARGETS
   movefb
+  movefb-static
   DESTINATION lib/${PROJECT_NAME})
 # uncomment the following section in order to fill in
 # further dependencies manually.
