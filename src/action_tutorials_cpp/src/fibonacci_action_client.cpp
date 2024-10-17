@@ -54,6 +54,7 @@ public:
     send_goal_options.result_callback =
       std::bind(&FibonacciActionClient::result_callback, this, _1);
     this->client_ptr_->async_send_goal(goal_msg, send_goal_options);
+  
   }
 
 private:
