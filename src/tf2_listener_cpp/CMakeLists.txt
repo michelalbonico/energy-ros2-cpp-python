@@ -14,7 +14,7 @@ ament_target_dependencies(
     rclcpp
     tf2
     tf2_ros
-    
+    turtlesim
 )
 
 install(TARGETS
