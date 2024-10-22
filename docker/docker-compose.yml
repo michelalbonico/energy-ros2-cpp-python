@@ -1,0 +1,17 @@
+
+services:
+
+  ros:
+    build: .
+    volumes:
+      - projeto:/projeto
+    command: /bin/bash
+    tty: true
+
+volumes:
+  projeto:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: C:\Users\manub\OneDrive\Documentos\GitHub\energy-ros2-cpp-python

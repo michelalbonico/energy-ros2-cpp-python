@@ -1,0 +1,8 @@
+# Use a imagem base do ROS
+FROM osrf/ros:humble-desktop
+
+# Crie um diretório de trabalho
+WORKDIR /ros_ws
+
+# Fonte do ambiente ROS
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
