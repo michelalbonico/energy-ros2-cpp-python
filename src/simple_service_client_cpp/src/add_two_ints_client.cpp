@@ -25,9 +25,9 @@ int main(int argc, char **argv)
   request->a = atoll(argv[1]);
   request->b = atoll(argv[2]);
 
-  // Obtendo os parâmetros de tempo limite e intervalo de sleep.
-  int time_limit = std::stoi(argv[3]);
-  int sleep_seconds = std::stoi(argv[4]);
+  // Obtendo parâmetros de tempo limite e intervalo de sleep (em segundos, podendo ter casas decimais).
+  int time_limit = std::stoi(argv[3]);  // Tempo limite total em segundos.
+  double sleep_seconds = std::stod(argv[4]);  // Intervalo entre requisições (frações permitidas).
 
   // Início do cronômetro.
   auto start_time = std::chrono::steady_clock::now();
@@ -60,8 +60,8 @@ int main(int argc, char **argv)
       RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Falha ao chamar o serviço.");
     }
 
-    // Pausa entre os envios.
-    std::this_thread::sleep_for(std::chrono::seconds(sleep_seconds));
+    // Pausa entre os envios (permitindo valores fracionários).
+    std::this_thread::sleep_for(std::chrono::duration<double>(sleep_seconds));
   }
 
   rclcpp::shutdown();
