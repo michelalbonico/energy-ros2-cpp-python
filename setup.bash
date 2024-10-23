@@ -1,0 +1,1 @@
+export EXPERIMENT_PATH="/home/michel/Documents/GitHub/energy-ros2-cpp-python"

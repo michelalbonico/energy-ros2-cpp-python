@@ -11,10 +11,12 @@ parser.add_argument("-a", "--algo", help="ROS algorithm inside a package", nargs
 parser.add_argument("-c", "--command", help="Command to run the algorithm in standalone mode", nargs='?')
 parser.add_argument("-l", "--language", help="Algorithm language", nargs='?', choices=['cpp','python'])
 parser.add_argument("-i", "--identifier", help="Measurement identifier", nargs='+')
+parser.add_argument("-d", "--destination", help="Destination folder", nargs='?')
 args = parser.parse_args()
 
-csv_output = pyRAPL.outputs.CSVOutput('../data/result.csv')
-meter = pyRAPL.Measurement(args.identifier[0])
+destination_folder = args.destination
+csv_output = pyRAPL.outputs.CSVOutput(f'{destination_folder}/result.csv')
+meter = pyRAPL.Measurement(args.identifier)
 
 def execute_python_file():
    try:
