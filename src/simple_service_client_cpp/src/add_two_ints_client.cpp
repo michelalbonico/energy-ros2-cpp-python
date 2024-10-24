@@ -25,22 +25,18 @@ int main(int argc, char **argv)
   request->a = atoll(argv[1]);
   request->b = atoll(argv[2]);
 
-  // Obtendo parâmetros de tempo limite e intervalo de sleep (em segundos, podendo ter casas decimais).
-  int time_limit = std::stoi(argv[3]);  // Tempo limite total em segundos.
-  double sleep_seconds = std::stod(argv[4]);  // Intervalo entre requisições (frações permitidas).
+  int time_limit = std::stoi(argv[3]);  
+  double sleep_seconds = std::stod(argv[4]);  
 
-  // Início do cronômetro.
   auto start_time = std::chrono::steady_clock::now();
 
   while (true) {
-    // Verificando se o tempo limite foi atingido.
     auto elapsed_time = std::chrono::steady_clock::now() - start_time;
     if (std::chrono::duration_cast<std::chrono::seconds>(elapsed_time).count() >= time_limit) {
       RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Tempo limite atingido. Encerrando.");
       break;
     }
 
-    // Espera pelo serviço.
     while (!client->wait_for_service(1s)) {
       if (!rclcpp::ok()) {
         RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), 
@@ -50,7 +46,6 @@ int main(int argc, char **argv)
       RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Serviço não disponível, tentando novamente...");
     }
 
-    // Envia a solicitação.
     auto result = client->async_send_request(request);
     if (rclcpp::spin_until_future_complete(node, result) ==
         rclcpp::FutureReturnCode::SUCCESS) 
@@ -60,7 +55,6 @@ int main(int argc, char **argv)
       RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Falha ao chamar o serviço.");
     }
 
-    // Pausa entre os envios (permitindo valores fracionários).
     std::this_thread::sleep_for(std::chrono::duration<double>(sleep_seconds));
   }
 

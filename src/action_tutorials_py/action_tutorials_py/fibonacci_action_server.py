@@ -10,14 +10,12 @@ class FibonacciActionServer(Node):
     def __init__(self):
         super().__init__('fibonacci_action_server')
 
-        # Declara e lê os parâmetros: sleep_duration e timeout
         self.declare_parameter('sleep_duration', 0.25)
         self.declare_parameter('timeout', 300.0)
 
         self.sleep_duration = self.get_parameter('sleep_duration').value
         self.timeout = self.get_parameter('timeout').value
 
-        # Cria o servidor de ação
         self._action_server = ActionServer(
             self,
             Fibonacci,
@@ -25,7 +23,6 @@ class FibonacciActionServer(Node):
             self.execute_callback
         )
 
-        # Inicia o timer para encerrar o nó após o timeout
         self.start_time = self.get_clock().now()
         self.create_timer(self.timeout, self.shutdown_node)
 

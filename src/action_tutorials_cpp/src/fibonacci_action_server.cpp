@@ -26,14 +26,12 @@ public:
   {
     using namespace std::placeholders;
 
-    // Obtém parâmetros passados por linha de comando
     this->declare_parameter<double>("sleep_duration", 0.25);
     this->declare_parameter<double>("timeout", 10.0);
 
     this->get_parameter("sleep_duration", sleep_duration_);
     this->get_parameter("timeout", timeout_);
 
-    // Cria o servidor de ação
     this->action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
       "fibonacci",
@@ -41,7 +39,6 @@ public:
       std::bind(&FibonacciActionServer::handle_cancel, this, _1),
       std::bind(&FibonacciActionServer::handle_accepted, this, _1));
 
-    // Cria o timer para encerrar o nó após `timeout_` segundos
     timer_ = this->create_wall_timer(
       std::chrono::milliseconds(static_cast<int>(timeout_ * 1000)),
       std::bind(&FibonacciActionServer::shutdown_node, this));
@@ -99,7 +96,6 @@ private:
          return;
        }
 
-       // Verifica se há uma solicitação de cancelamento
         if (goal_handle->is_canceling()) {
           result->sequence = sequence;
           goal_handle->canceled(result);
@@ -107,12 +103,10 @@ private:
           return;
         }
 
-        // Atualiza a sequência e publica o feedback
         sequence.push_back(sequence[i - 1] + sequence[i - 2]);
         goal_handle->publish_feedback(feedback);
         RCLCPP_INFO(this->get_logger(), "Published feedback: %d", sequence.back());
 
-        // Aguarda o tempo de sleep configurado
         std::this_thread::sleep_for(std::chrono::duration<double>(sleep_duration_));
       }
       sequence = std::vector<int>();
@@ -121,20 +115,18 @@ private:
 
     }
 
-    // Objetivo concluído
     result->sequence = sequence;
     goal_handle->succeed(result);
     RCLCPP_INFO(this->get_logger(), "Goal succeeded");
   }
 
-  // Função chamada pelo timer para encerrar o nó
   void shutdown_node()
   {
     RCLCPP_INFO(this->get_logger(), "Shutting down node after timeout.");
     rclcpp::shutdown();
   }
-};  // class FibonacciActionServer
+};  
 
-}  // namespace action_tutorials_cpp
+}  
 
 RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)

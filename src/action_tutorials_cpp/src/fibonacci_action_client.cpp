@@ -105,8 +105,8 @@ private:
     RCLCPP_INFO(this->get_logger(), ss.str().c_str());
     rclcpp::shutdown();
   }
-};  // class FibonacciActionClient
+};  
 
-}  // namespace action_tutorials_cpp
+} 
 
 RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionClient)
