@@ -1,17 +1,24 @@
 
 services:
 
-  ros:
+  server:
     build: .
     volumes:
-      - projeto:/projeto
+      - source:/projeto
+    command: /bin/bash
+    tty: true
+  
+  client:
+    build: .
+    volumes:
+      - source:/projeto
     command: /bin/bash
     tty: true
 
 volumes:
-  projeto:
+  source:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: C:\Users\manub\OneDrive\Documentos\GitHub\energy-ros2-cpp-python
+      device: /home/michel/Documents/GitHub/energy-ros2-cpp-python/
