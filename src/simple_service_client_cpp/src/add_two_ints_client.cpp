@@ -27,7 +27,6 @@ int main(int argc, char **argv)
 
   int time_limit = std::stoi(argv[3]);  
   double sleep_seconds = std::stod(argv[4]);  
-
   auto start_time = std::chrono::steady_clock::now();
 
   while (true) {
