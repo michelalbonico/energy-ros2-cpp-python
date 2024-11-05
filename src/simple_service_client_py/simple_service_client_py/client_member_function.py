@@ -6,18 +6,40 @@ from rclpy.node import Node
 
 
 class MinimalClientAsync(Node):
-
-    def __init__(self):
+    def __init__(self, a, b, timeout_seconds, sleep_seconds):
         super().__init__('minimal_client_async')
         self.cli = self.create_client(AddTwoInts, 'add_two_ints')
+        
         while not self.cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
+        
         self.req = AddTwoInts.Request()
-
-    def send_request(self, a, b):
         self.req.a = a
         self.req.b = b
-        return self.cli.call_async(self.req)
+
+        self.start_time = time.time()
+        self.timeout_seconds = timeout_seconds
+        self.timer = self.create_timer(sleep_seconds, self.timer_callback)
+
+    def timer_callback(self):
+        elapsed_time = time.time() - self.start_time
+        if elapsed_time >= self.timeout_seconds:
+            self.get_logger().info('Timeout reached. Stopping client.')
+            sys.exit(0)
+
+        future = self.cli.call_async(self.req)
+        future.add_done_callback(self.response_callback)
+
+    def response_callback(self, future):
+        if future.result() is not None:
+            response = future.result()
+            self.get_logger().info(
+                'Result of add_two_ints: for %d + %d = %d' % 
+                (self.req.a, self.req.b, response.sum)
+            )
+        else:
+            self.get_logger().error('Service call failed.')
+
 
 def main():
     rclpy.init()
@@ -35,24 +57,8 @@ def main():
         print("Please provide valid integers for a, b and timeout, and a float for sleep.")
         return
 
-    minimal_client = MinimalClientAsync()
-    start_time = time.time()
-
-    while time.time() - start_time < timeout_seconds:
-        future = minimal_client.send_request(a, b)
-        rclpy.spin_until_future_complete(minimal_client, future)
-        
-        if future.result() is not None:
-            response = future.result()
-            minimal_client.get_logger().info(
-                'Result of add_two_ints: for %d + %d = %d' %
-                (a, b, response.sum)
-            )
-        else:
-            minimal_client.get_logger().error('Service call failed.')
-
-        time.sleep(sleep_seconds)
-
+    minimal_client = MinimalClientAsync(a, b, timeout_seconds, sleep_seconds)
+    rclpy.spin(minimal_client)
     minimal_client.destroy_node()
     rclpy.shutdown()
 
