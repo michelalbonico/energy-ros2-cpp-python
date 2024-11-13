@@ -16,21 +16,34 @@ namespace action_tutorials_cpp
 class FibonacciActionServer : public rclcpp::Node
 {
 public:
+
+  // public:
+  // MinimalPublisher(double execution_duration, double sleep_duration)
+  // : Node("minimal_publisher"), count_(0), execution_duration_(execution_duration), sleep_duration_(sleep_duration)
+  // {
+  //   start_time_ = this->now();
+    
+  //   publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+    
+  //   timer_ = this->create_wall_timer(
+  //     std::chrono::milliseconds(static_cast<int>(sleep_duration_ * 1000)),
+  //     std::bind(&MinimalPublisher::timer_callback, this));
+  // }
+
   using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
   using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
   ACTION_TUTORIALS_CPP_PUBLIC
-  explicit FibonacciActionServer(
-    const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
-  : Node("fibonacci_action_server", options)
+  explicit FibonacciActionServer(double execution_duration, double sleep_duration)
+  : Node("fibonacci_action_server", options, execution_duration_(execution_duration), sleep_duration_(sleep_duration))
   {
     using namespace std::placeholders;
 
-    this->declare_parameter<double>("sleep_duration", 0.25);
-    this->declare_parameter<double>("timeout", 10.0);
+    // this->declare_parameter<double>("sleep_duration", 0.25);
+    // this->declare_parameter<double>("timeout", 300.0);
 
-    this->get_parameter("sleep_duration", sleep_duration_);
-    this->get_parameter("timeout", timeout_);
+    // this->get_parameter("sleep_duration", sleep_duration);
+    // this->get_parameter("timeout", execution_duration);
 
     this->action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
@@ -125,8 +138,33 @@ private:
     RCLCPP_INFO(this->get_logger(), "Shutting down node after timeout.");
     rclcpp::shutdown();
   }
-};  
+};
+
+int main(int argc, char ** argv)
+{
+  rclcpp::init(argc, argv);
+
+  double execution_duration = 300.0;
+  double sleep_duration = 0.25;
+
+  if (argc >= 3) {
+    execution_duration = std::atof(argv[1]);
+    sleep_duration = std::atof(argv[2]);
+  } else {
+    RCLCPP_WARN(rclcpp::get_logger("rclcpp"), "Usando valores padrão: execution_duration = 300.0, sleep_duration = 0.25");
+  }
+
+  auto node = std::make_shared<action_tutorials_cpp::FibonacciActionServer>(execution_duration, sleep_duration);
+
+  rclcpp::spin(node);
+
+  rclcpp::shutdown();
+  return 0;
+}
+
 
 }  
 
-RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)
+// RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)
+
+

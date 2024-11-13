@@ -137,9 +137,10 @@ class RunnerConfig:
                 sub='listener' # third parameter optional
             case 'simple_service_client':
                 pub='server'
-                sub='client' # block the two parameters
+                sub='client'
             case 'action_tutorials':
-                pass # make it compatible with the others
+                pub='fibonacci_action_server'
+                sub='fibonacci_action_client'
         interval=variation['msg_interval']
         language=variation['language']
         exec_time=variation['exec_time']
