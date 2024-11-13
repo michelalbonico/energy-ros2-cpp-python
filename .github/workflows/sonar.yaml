@@ -3,7 +3,7 @@ name: C++ SonarQube Analysis
 on:
   push:
     branches:
-      - main
+      - frontiers_experiments
 
 jobs:
   build:
