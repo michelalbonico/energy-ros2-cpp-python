@@ -1,52 +1,80 @@
 #include "rclcpp/rclcpp.hpp"
 #include "example_interfaces/srv/add_two_ints.hpp"
-
 #include <chrono>
-#include <memory>
 #include <thread>
 
 using namespace std::chrono_literals;
 
-void add(const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,
-          std::shared_ptr<example_interfaces::srv::AddTwoInts::Response> response)
+class MinimalService : public rclcpp::Node
 {
-  response->sum = request->a + request->b;
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Incoming request\na: %ld, b: %ld", request->a, request->b);
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "sending back response: [%ld]", (long int)response->sum);
-}
+public:
+  MinimalService(int timeout_seconds, double sleep_seconds)
+  : Node("minimal_service"),
+    timeout_seconds_(timeout_seconds),
+    sleep_seconds_(sleep_seconds)
+  {
+    srv_ = this->create_service<example_interfaces::srv::AddTwoInts>(
+      "add_two_ints", std::bind(&MinimalService::add_two_ints_callback, this, std::placeholders::_1, std::placeholders::_2));
+
+    start_time_ = this->now();
+
+    timer_ = this->create_wall_timer(1s, std::bind(&MinimalService::timer_callback, this));
+  }
+
+private:
+  void add_two_ints_callback(
+    const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,
+    std::shared_ptr<example_interfaces::srv::AddTwoInts::Response> response)
+  {
+    std::this_thread::sleep_for(std::chrono::duration<double>(sleep_seconds_));
+
+    response->sum = request->a + request->b;
+    RCLCPP_INFO(this->get_logger(), "Incoming request\na: %ld b: %ld", request->a, request->b);
+  }
+
+  void timer_callback()
+  {
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(this->now() - start_time_).count();
+    if (elapsed_time >= timeout_seconds_)
+    {
+      RCLCPP_INFO(this->get_logger(), "Timeout reached. Shutting down the server.");
+      rclcpp::shutdown();
+    }
+  }
+
+  rclcpp::Service<example_interfaces::srv::AddTwoInts>::SharedPtr srv_;
+  rclcpp::TimerBase::SharedPtr timer_;
+  rclcpp::Time start_time_;
+  int timeout_seconds_;
+  double sleep_seconds_;
+};
 
 int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
 
-  if (argc != 3) {
-      RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), 
-                   "usage: add_two_ints_server TIME_LIMIT_SECONDS SLEEP_SECONDS");
-      return 1;
+  if (argc != 3)
+  {
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: ros2 run your_package your_server_node <timeout_seconds> <sleep_seconds>");
+    return 1;
   }
 
-  int time_limit = std::stoi(argv[1]);  // Tempo limite em segundos
-  double sleep_seconds = std::stod(argv[2]);  // Intervalo entre requisições (em segundos)
+  int timeout_seconds;
+  double sleep_seconds;
 
-  auto node = rclcpp::Node::make_shared("add_two_ints_server");
-  rclcpp::Service<example_interfaces::srv::AddTwoInts>::SharedPtr service =
-    node->create_service<example_interfaces::srv::AddTwoInts>("add_two_ints", &add);
-
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Ready to add two ints.");
-
-  auto start_time = std::chrono::steady_clock::now();
-
-  while (rclcpp::ok()) {
-    auto elapsed_time = std::chrono::steady_clock::now() - start_time;
-    if (std::chrono::duration_cast<std::chrono::seconds>(elapsed_time).count() >= time_limit) {
-      RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Time limit reached. Shutting down.");
-      break;
-    }
-
-    std::this_thread::sleep_for(std::chrono::duration<double>(sleep_seconds));
-
-    rclcpp::spin_some(node);
+  try
+  {
+    timeout_seconds = std::stoi(argv[1]);
+    sleep_seconds = std::stod(argv[2]);
   }
+  catch (const std::invalid_argument &e)
+  {
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Please provide valid integer for timeout and float for sleep.");
+    return 1;
+  }
+
+  auto minimal_service = std::make_shared<MinimalService>(timeout_seconds, sleep_seconds);
+  rclcpp::spin(minimal_service);
 
   rclcpp::shutdown();
   return 0;

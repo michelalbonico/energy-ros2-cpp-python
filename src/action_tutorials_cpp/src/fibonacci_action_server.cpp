@@ -1,170 +1,142 @@
-#include <functional>
-#include <memory>
-#include <thread>
-#include <chrono>
-#include <vector>
-
-#include "action_tutorials_interfaces/action/fibonacci.hpp"
 #include "rclcpp/rclcpp.hpp"
-#include "rclcpp_action/rclcpp_action.hpp"
-#include "rclcpp_components/register_node_macro.hpp"
+#include "action_tutorials_interfaces/action/fibonacci.hpp"
+#include "rclcpp/action/server.hpp"
+#include <chrono>
+#include <thread>
 
-#include "action_tutorials_cpp/visibility_control.h"
+using namespace std::chrono_literals;
+using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
 
-namespace action_tutorials_cpp
-{
 class FibonacciActionServer : public rclcpp::Node
 {
 public:
-
-  // public:
-  // MinimalPublisher(double execution_duration, double sleep_duration)
-  // : Node("minimal_publisher"), count_(0), execution_duration_(execution_duration), sleep_duration_(sleep_duration)
-  // {
-  //   start_time_ = this->now();
-    
-  //   publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
-    
-  //   timer_ = this->create_wall_timer(
-  //     std::chrono::milliseconds(static_cast<int>(sleep_duration_ * 1000)),
-  //     std::bind(&MinimalPublisher::timer_callback, this));
-  // }
-
-  using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
-  using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
-
-  ACTION_TUTORIALS_CPP_PUBLIC
-  explicit FibonacciActionServer(double execution_duration, double sleep_duration)
-  : Node("fibonacci_action_server", options, execution_duration_(execution_duration), sleep_duration_(sleep_duration))
+  FibonacciActionServer()
+  : Node("fibonacci_action_server")
   {
-    using namespace std::placeholders;
+    // Declare parameters
+    this->declare_parameter<double>("sleep_duration", 0.25);
+    this->declare_parameter<double>("timeout", 300.0);
 
-    // this->declare_parameter<double>("sleep_duration", 0.25);
-    // this->declare_parameter<double>("timeout", 300.0);
+    // Get parameters
+    sleep_duration_ = this->get_parameter("sleep_duration").as_double();
+    timeout_ = this->get_parameter("timeout").as_double();
 
-    // this->get_parameter("sleep_duration", sleep_duration);
-    // this->get_parameter("timeout", execution_duration);
-
-    this->action_server_ = rclcpp_action::create_server<Fibonacci>(
+    // Create action server
+    action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
       "fibonacci",
-      std::bind(&FibonacciActionServer::handle_goal, this, _1, _2),
-      std::bind(&FibonacciActionServer::handle_cancel, this, _1),
-      std::bind(&FibonacciActionServer::handle_accepted, this, _1));
+      std::bind(&FibonacciActionServer::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
+      std::bind(&FibonacciActionServer::handle_cancel, this, std::placeholders::_1),
+      std::bind(&FibonacciActionServer::handle_accepted, this, std::placeholders::_1));
 
-    timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(static_cast<int>(timeout_ * 1000)),
+    // Set the start time
+    start_time_ = this->now();
+
+    // Create a timer for shutdown after timeout
+    shutdown_timer_ = this->create_wall_timer(
+      std::chrono::duration<double>(timeout_),
       std::bind(&FibonacciActionServer::shutdown_node, this));
   }
 
 private:
-  rclcpp_action::Server<Fibonacci>::SharedPtr action_server_;
-  rclcpp::TimerBase::SharedPtr timer_;
-
-  double sleep_duration_;
-  double timeout_;
-
+  // Action server callback when goal is accepted
   rclcpp_action::GoalResponse handle_goal(
-    const rclcpp_action::GoalUUID & uuid,
+    const rclcpp_action::GoalUUID &uuid,
     std::shared_ptr<const Fibonacci::Goal> goal)
   {
-    RCLCPP_INFO(this->get_logger(), "Received goal request with order %d", goal->order);
-    (void)uuid;
+    RCLCPP_INFO(this->get_logger(), "Received goal request with order: %ld", goal->order);
+    (void)uuid;  // unused variable
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
   }
 
+  // Action server callback when goal is canceled
   rclcpp_action::CancelResponse handle_cancel(
     const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
-    RCLCPP_INFO(this->get_logger(), "Received request to cancel goal");
-    (void)goal_handle;
+    RCLCPP_INFO(this->get_logger(), "Received cancel request");
     return rclcpp_action::CancelResponse::ACCEPT;
   }
 
+  // Action server callback for executing the goal
   void handle_accepted(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
-    using namespace std::placeholders;
-    std::thread{std::bind(&FibonacciActionServer::execute, this, _1), goal_handle}.detach();
+    std::thread([this, goal_handle]() {
+      this->execute(goal_handle);
+    }).detach();
   }
 
+  // Function to execute the Fibonacci sequence
   void execute(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
-    RCLCPP_INFO(this->get_logger(), "Executing goal");
-    auto goal = goal_handle->get_goal();
-    auto feedback = std::make_shared<Fibonacci::Feedback>();
-    auto & sequence = feedback->partial_sequence;
+    RCLCPP_INFO(this->get_logger(), "Executing goal...");
 
-    sequence.push_back(0);
-    sequence.push_back(1);
-    auto result = std::make_shared<Fibonacci::Result>();
+    auto feedback_msg = std::make_shared<Fibonacci::Feedback>();
+    feedback_msg->partial_sequence = {0, 1};
 
-    rclcpp::Time start_time = this->now();
-    while (rclcpp::ok()){
-     for (int i = 2; (i < goal->order) && rclcpp::ok(); ++i) {
-        // Verifica se o tempo limite foi atingido
-        if ((this->now() - start_time).seconds() >= timeout_) {
-         RCLCPP_INFO(this->get_logger(), "Timeout reached. Shutting down...");
-         result->sequence = sequence;
-         goal_handle->succeed(result);
-         return;
-       }
+    auto start_time = this->now();
 
-        if (goal_handle->is_canceling()) {
-          result->sequence = sequence;
-          goal_handle->canceled(result);
-          RCLCPP_INFO(this->get_logger(), "Goal canceled");
+    for (int i = 1; rclcpp::ok(); ++i)
+    {
+      // Check timeout
+      if ((this->now() - start_time).seconds() >= timeout_)
+      {
+        RCLCPP_INFO(this->get_logger(), "Timeout reached. Shutting down...");
+        break;
+      }
+
+      // Generate Fibonacci sequence
+      for (int j = 1; j < goal_handle->get_goal()->order; ++j)
+      {
+        if (goal_handle->is_canceling())
+        {
+          RCLCPP_INFO(this->get_logger(), "Goal canceled.");
+          goal_handle->canceled();
           return;
         }
 
-        sequence.push_back(sequence[i - 1] + sequence[i - 2]);
-        goal_handle->publish_feedback(feedback);
-        RCLCPP_INFO(this->get_logger(), "Published feedback: %d", sequence.back());
+        feedback_msg->partial_sequence.push_back(
+          feedback_msg->partial_sequence[j] + feedback_msg->partial_sequence[j - 1]);
 
+        RCLCPP_INFO(this->get_logger(), "Feedback: %d", feedback_msg->partial_sequence.back());
+
+        goal_handle->publish_feedback(feedback_msg);
+
+        // Sleep to simulate processing
         std::this_thread::sleep_for(std::chrono::duration<double>(sleep_duration_));
       }
-      sequence = std::vector<int>();
-      sequence.push_back(0);
-      sequence.push_back(1);
 
+      feedback_msg->partial_sequence = {0, 1};
     }
 
-    result->sequence = sequence;
-    goal_handle->succeed(result);
-    RCLCPP_INFO(this->get_logger(), "Goal succeeded");
+    // Send the result back
+    goal_handle->succeed();
+    auto result = std::make_shared<Fibonacci::Result>();
+    result->sequence = feedback_msg->partial_sequence;
+    goal_handle->set_result(result);
   }
 
+  // Shutdown the node after timeout
   void shutdown_node()
   {
-    RCLCPP_INFO(this->get_logger(), "Shutting down node after timeout.");
+    RCLCPP_INFO(this->get_logger(), "Shutting down node...");
     rclcpp::shutdown();
   }
+
+  rclcpp_action::Server<Fibonacci>::SharedPtr action_server_;
+  rclcpp::TimerBase::SharedPtr shutdown_timer_;
+  rclcpp::Time start_time_;
+  double sleep_duration_;
+  double timeout_;
 };
 
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
 
-  double execution_duration = 300.0;
-  double sleep_duration = 0.25;
+  auto fibonacci_action_server = std::make_shared<FibonacciActionServer>();
 
-  if (argc >= 3) {
-    execution_duration = std::atof(argv[1]);
-    sleep_duration = std::atof(argv[2]);
-  } else {
-    RCLCPP_WARN(rclcpp::get_logger("rclcpp"), "Usando valores padrão: execution_duration = 300.0, sleep_duration = 0.25");
-  }
-
-  auto node = std::make_shared<action_tutorials_cpp::FibonacciActionServer>(execution_duration, sleep_duration);
-
-  rclcpp::spin(node);
+  rclcpp::spin(fibonacci_action_server);
 
   rclcpp::shutdown();
   return 0;
 }
-
-
-}  
-
-// RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)
-
-

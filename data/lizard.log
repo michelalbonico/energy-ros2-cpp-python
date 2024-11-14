@@ -1,0 +1,117 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       8      1     72      0      13 SyncAsyncPublisher::SyncAsyncPublisher@14-26@./sync_async_node_cpp/src/sync_async_writer.cpp
+      12      1    108      0      25 SyncAsyncPublisher::timer_callback@32-56@./sync_async_node_cpp/src/sync_async_writer.cpp
+       7      1     45      1       7 main@71-77@./sync_async_node_cpp/src/sync_async_writer.cpp
+       8      1     74      0      13 SyncAsyncSubscriber::SyncAsyncSubscriber@13-25@./sync_async_node_cpp/src/sync_async_reader.cpp
+       4      1     33      1       4 SyncAsyncSubscriber::topic_callback@32-35@./sync_async_node_cpp/src/sync_async_reader.cpp
+       7      1     45      1       7 main@44-50@./sync_async_node_cpp/src/sync_async_reader.cpp
+       9      1     78      3      10 __init__@10-19@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/publisher_member_function.py
+      12      2     91      1      15 timer_callback@21-35@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/publisher_member_function.py
+      16      4     98      1      20 main@38-57@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/publisher_member_function.py
+      14      1     85      3      16 __init__@9-24@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/subscriber_member_function.py
+       5      1     44      2       6 listener_callback@26-31@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/subscriber_member_function.py
+       9      3     73      1      13 check_message_timeout@33-45@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/subscriber_member_function.py
+      16      4     93      1      21 main@47-67@./simple_publisher_subscriber_py/simple_publisher_subscriber_py/subscriber_member_function.py
+       5      1     35      0       5 test_flake8@21-25@./simple_publisher_subscriber_py/test/test_flake8.py
+       3      1     22      0       3 test_copyright@23-25@./simple_publisher_subscriber_py/test/test_copyright.py
+       3      1     22      0       3 test_pep257@21-23@./simple_publisher_subscriber_py/test/test_pep257.py
+      10      1     64      1      11 action_tutorials_cpp::FibonacciActionClient::FibonacciActionClient@21-31@./action_tutorials_cpp/src/fibonacci_action_client.cpp
+      20      2    156      0      26 action_tutorials_cpp::FibonacciActionClient::send_goal@33-58@./action_tutorials_cpp/src/fibonacci_action_client.cpp
+       8      2     43      1       8 action_tutorials_cpp::FibonacciActionClient::goal_response_callback@64-71@./action_tutorials_cpp/src/fibonacci_action_client.cpp
+      11      2     68      2      11 action_tutorials_cpp::FibonacciActionClient::feedback_callback@73-83@./action_tutorials_cpp/src/fibonacci_action_client.cpp
+      23      5    139      1      23 action_tutorials_cpp::FibonacciActionClient::result_callback@85-107@./action_tutorials_cpp/src/fibonacci_action_client.cpp
+      14      1    129      2      22 action_tutorials_cpp::FibonacciActionServer::FibonacciActionServer@37-58@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+       8      1     49      2       8 action_tutorials_cpp::FibonacciActionServer::handle_goal@67-74@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+       7      1     36      1       7 action_tutorials_cpp::FibonacciActionServer::handle_cancel@76-82@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+       5      1     44      1       5 action_tutorials_cpp::FibonacciActionServer::handle_accepted@84-88@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+      37      6    323      1      45 action_tutorials_cpp::FibonacciActionServer::execute@90-134@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+       5      1     22      0       5 action_tutorials_cpp::FibonacciActionServer::shutdown_node@136-140@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+      16      2    114      2      21 action_tutorials_cpp::main@143-163@./action_tutorials_cpp/src/fibonacci_action_server.cpp
+       1      1      5      0       1 polygon_base::RegularPolygon::~RegularPolygon@11-11@./polygon_base/include/polygon_base/regular_polygon.hpp
+       1      1      5      0       1 polygon_base::RegularPolygon::RegularPolygon@14-14@./polygon_base/include/polygon_base/regular_polygon.hpp
+      20      2    137      2      26 main@4-29@./polygon_base/src/area_node.cpp
+       7      1     85      2       7 add@10-16@./simple_service_client_cpp/src/add_two_ints_server.cpp
+      27      4    237      2      36 main@18-53@./simple_service_client_cpp/src/add_two_ints_server.cpp
+      43      7    356      2      52 main@11-62@./simple_service_client_cpp/src/add_two_ints_client.cpp
+      12      1     94      0      20 MinimalSubscriberWithTopicStatistics::MinimalSubscriberWithTopicStatistics@26-45@./topic_statistics_cpp/src/member_function_with_topic_statistics.cpp
+       4      1     33      1       4 MinimalSubscriberWithTopicStatistics::topic_callback@48-51@./topic_statistics_cpp/src/member_function_with_topic_statistics.cpp
+       7      1     45      1       7 main@55-61@./topic_statistics_cpp/src/member_function_with_topic_statistics.cpp
+       6      1     42      0       6 MinimalSubscriber::MinimalSubscriber@26-31@./topic_statistics_cpp/src/subscriber_member_function1.cpp
+       4      1     33      1       4 MinimalSubscriber::topic_callback@34-37@./topic_statistics_cpp/src/subscriber_member_function1.cpp
+       7      1     45      1       7 main@41-47@./topic_statistics_cpp/src/subscriber_member_function1.cpp
+       7      1     54      0       7 MinimalPublisher::MinimalPublisher@31-37@./topic_statistics_cpp/src/publisher_member_function1.cpp
+       7      1     56      0       7 MinimalPublisher::timer_callback@40-46@./topic_statistics_cpp/src/publisher_member_function1.cpp
+       7      1     45      1       7 main@52-58@./topic_statistics_cpp/src/publisher_member_function1.cpp
+      14      1     98      1      18 __init__@10-27@./action_tutorials_py/action_tutorials_py/fibonacci_action_server.py
+      24      5    193      2      32 execute_callback@29-60@./action_tutorials_py/action_tutorials_py/fibonacci_action_server.py
+       3      1     21      1       4 shutdown_node@62-65@./action_tutorials_py/action_tutorials_py/fibonacci_action_server.py
+       4      1     26      1       6 main@68-73@./action_tutorials_py/action_tutorials_py/fibonacci_action_server.py
+       3      1     25      1       3 __init__@10-12@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       6      1     54      2       9 send_goal@14-22@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       8      2     60      2      10 goal_response_callback@24-33@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       4      1     38      2       4 get_result_callback@35-38@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       3      1     29      2       3 feedback_callback@40-42@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       5      1     32      1       8 main@45-52@./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+       7      1     79      3       9 __init__@9-17@./simple_service_client_py/simple_service_client_py/service_member_function.py
+       5      1     41      3       6 add_two_ints_callback@19-24@./simple_service_client_py/simple_service_client_py/service_member_function.py
+       5      2     50      1       5 timer_callback@26-30@./simple_service_client_py/simple_service_client_py/service_member_function.py
+      15      3     80      0      19 main@33-51@./simple_service_client_py/simple_service_client_py/service_member_function.py
+      11      2    109      5      14 __init__@9-22@./simple_service_client_py/simple_service_client_py/client_member_function.py
+       7      2     59      1       8 timer_callback@24-31@./simple_service_client_py/simple_service_client_py/client_member_function.py
+       9      2     64      2       9 response_callback@33-41@./simple_service_client_py/simple_service_client_py/client_member_function.py
+      17      3    106      0      20 main@44-63@./simple_service_client_py/simple_service_client_py/client_member_function.py
+       9      1     92      2      11 MinimalPublisher::MinimalPublisher@15-25@./simple_publisher_subscriber_cpp/src/publisher_member_function.cpp
+      14      2    105      0      16 MinimalPublisher::timer_callback@28-43@./simple_publisher_subscriber_cpp/src/publisher_member_function.cpp
+      16      2    114      1      21 main@53-73@./simple_publisher_subscriber_cpp/src/publisher_member_function.cpp
+      12      1    113      3      15 MinimalSubscriber::MinimalSubscriber@15-29@./simple_publisher_subscriber_cpp/src/subscriber_member_function.cpp
+      14      2    116      1      18 MinimalSubscriber::topic_callback@32-49@./simple_publisher_subscriber_cpp/src/subscriber_member_function.cpp
+       8      2     49      0       9 MinimalSubscriber::check_message_timeout@51-59@./simple_publisher_subscriber_cpp/src/subscriber_member_function.cpp
+      17      2    123      1      21 main@70-90@./simple_publisher_subscriber_cpp/src/subscriber_member_function.cpp
+       4      1     12      1       4 polygon_plugins::Square::initialize@9-12@./polygon_plugins/src/polygon_plugins.cpp
+       4      1     11      0       4 polygon_plugins::Square::area@14-17@./polygon_plugins/src/polygon_plugins.cpp
+       4      1     12      1       4 polygon_plugins::Triangle::initialize@26-29@./polygon_plugins/src/polygon_plugins.cpp
+       4      1     17      0       4 polygon_plugins::Triangle::area@31-34@./polygon_plugins/src/polygon_plugins.cpp
+       4      1     29      0       4 polygon_plugins::Triangle::getHeight@36-39@./polygon_plugins/src/polygon_plugins.cpp
+30 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     43       9.0     1.0       75.0         3     ./sync_async_node_cpp/src/sync_async_writer.cpp
+     31       6.3     1.0       50.7         3     ./sync_async_node_cpp/src/sync_async_reader.cpp
+     45      12.3     2.3       89.0         3     ./simple_publisher_subscriber_py/simple_publisher_subscriber_py/publisher_member_function.py
+     52      11.0     2.2       73.8         4     ./simple_publisher_subscriber_py/simple_publisher_subscriber_py/subscriber_member_function.py
+      0       0.0     0.0        0.0         0     ./simple_publisher_subscriber_py/simple_publisher_subscriber_py/__init__.py
+      9       5.0     1.0       35.0         1     ./simple_publisher_subscriber_py/test/test_flake8.py
+      8       3.0     1.0       22.0         1     ./simple_publisher_subscriber_py/test/test_copyright.py
+      7       3.0     1.0       22.0         1     ./simple_publisher_subscriber_py/test/test_pep257.py
+     25       0.0     0.0        0.0         0     ./simple_publisher_subscriber_py/setup.py
+      3       0.0     0.0        0.0         0     ./action_tutorials_cpp/include/action_tutorials_cpp/visibility_control.h
+     94      14.4     2.4       94.0         5     ./action_tutorials_cpp/src/fibonacci_action_client.cpp
+    117      13.1     1.9      102.4         7     ./action_tutorials_cpp/src/fibonacci_action_server.cpp
+     12       1.0     1.0        5.0         2     ./polygon_base/include/polygon_base/regular_polygon.hpp
+     22      20.0     2.0      137.0         1     ./polygon_base/src/area_node.cpp
+     40      17.0     2.5      161.0         2     ./simple_service_client_cpp/src/add_two_ints_server.cpp
+     50      43.0     7.0      356.0         1     ./simple_service_client_cpp/src/add_two_ints_client.cpp
+     34       7.7     1.0       57.3         3     ./topic_statistics_cpp/src/member_function_with_topic_statistics.cpp
+     28       5.7     1.0       40.0         3     ./topic_statistics_cpp/src/subscriber_member_function1.cpp
+     36       7.0     1.0       51.7         3     ./topic_statistics_cpp/src/publisher_member_function1.cpp
+     53      11.2     2.0       84.5         4     ./action_tutorials_py/action_tutorials_py/fibonacci_action_server.py
+     36       4.8     1.2       39.7         6     ./action_tutorials_py/action_tutorials_py/fibonacci_action_client.py
+     25       0.0     0.0        0.0         0     ./action_tutorials_py/setup.py
+     40       8.0     1.8       62.5         4     ./simple_service_client_py/simple_service_client_py/service_member_function.py
+     52      11.0     2.2       84.5         4     ./simple_service_client_py/simple_service_client_py/client_member_function.py
+     25       0.0     0.0        0.0         0     ./simple_service_client_py/setup.py
+     58      13.0     1.7      103.7         3     ./simple_publisher_subscriber_cpp/src/publisher_member_function.cpp
+     72      12.8     1.8      100.2         4     ./simple_publisher_subscriber_cpp/src/subscriber_member_function.cpp
+     10       0.0     0.0        0.0         0     ./polygon_plugins/include/polygon_plugins/polygon_plugins.hpp
+      0       0.0     0.0        0.0         0     ./polygon_plugins/include/polygon_plugins/visibility_control.h
+     40       4.0     1.0       16.2         5     ./polygon_plugins/src/polygon_plugins.cpp
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+      1067       9.9     1.7       74.4       73            0      0.00    0.00

@@ -1,6 +1,19 @@
 # energy-ros2-cpp-python
 Replication package of our paper that compares de energy efficiency of Python and C++ for ROS 2 projetcs.
 
+## Algoritm Measurement
+
+We have a local SonarQube deployment to check the algorithm measurements.
+
+To run it in you machine, follow the steps:
+
+```bash
+bash sonarqube.sh
+bash sonarqube-scanner.sh
+```
+
+In your browser, navigate to `http://localhost:9000` and use the default username `admin`, which is also the password (you are requested to change it after loggin in).
+
 ## Monitoring the Energy Consumption
 
 For monitoring the energy consumption, we are going to use the `energy-mon.py` script as superuser (root).

@@ -1,90 +1,80 @@
 #include <chrono>
-#include <functional>
 #include <memory>
-#include <thread>
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
 #include <cstdlib>
-#include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
-
-using std::placeholders::_1;
-using namespace std::chrono_literals;
+#include <ctime>
 
 class MinimalSubscriber : public rclcpp::Node
 {
 public:
-  MinimalSubscriber(double execution_duration, double sleep_duration, double message_timeout)
-  : Node("minimal_subscriber"), execution_duration_(execution_duration), 
-    sleep_duration_(sleep_duration), message_timeout_(message_timeout)
-  {
-    start_time_ = this->now();
+    MinimalSubscriber(double execution_time, double sleep_time)
+    : Node("minimal_subscriber"), execution_time_(execution_time), sleep_time_(sleep_time), message_timeout_(2.0), last_message_time_(std::chrono::steady_clock::now())
+    {
+        subscription_ = this->create_subscription<std_msgs::msg::String>(
+            "topic", 10, std::bind(&MinimalSubscriber::listener_callback, this, std::placeholders::_1));
 
-    subscription_ = this->create_subscription<std_msgs::msg::String>(
-      "topic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
-
-    last_message_time_ = start_time_;
-    
-    timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(static_cast<int>(sleep_duration_ * 1000)),
-      std::bind(&MinimalSubscriber::check_message_timeout, this));
-  }
+        start_time_ = std::chrono::steady_clock::now();
+        timer_ = this->create_wall_timer(
+            std::chrono::milliseconds(static_cast<int>(sleep_time_ * 1000)),
+            std::bind(&MinimalSubscriber::check_message_timeout, this)
+        );
+    }
 
 private:
-  void topic_callback(const std_msgs::msg::String & msg)
-  {
-    last_message_time_ = this->now();
-
-    auto current_time = this->now();
-    auto duration = current_time - start_time_;
-    double elapsed_seconds = duration.seconds();
-
-    if (elapsed_seconds >= execution_duration_) {
-      RCLCPP_INFO(this->get_logger(), "Execution time limit reached, shutting down the node.");
-      rclcpp::shutdown();
-      return;
+    void listener_callback(const std_msgs::msg::String::SharedPtr msg)
+    {
+        last_message_time_ = std::chrono::steady_clock::now();
+        auto current_time = std::chrono::steady_clock::now();
+        auto elapsed_time = std::chrono::duration<double>(current_time - start_time_).count();
+        RCLCPP_INFO(this->get_logger(), "I heard: \"%s\"", msg->data.c_str());
     }
 
-    RCLCPP_INFO(this->get_logger(), "I heard: '%s'", msg.data.c_str());
+    void check_message_timeout()
+    {
+        auto current_time = std::chrono::steady_clock::now();
+        auto elapsed_time = std::chrono::duration<double>(current_time - start_time_).count();
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(sleep_duration_ * 1000)));
-  }
+        if (elapsed_time >= execution_time_)
+        {
+            RCLCPP_INFO(this->get_logger(), "Timeout reached, shutting down subscriber.");
+            rclcpp::shutdown();
+            return;
+        }
 
-  void check_message_timeout()
-  {
-    auto current_time = this->now();
-
-    if ((current_time - last_message_time_).seconds() >= message_timeout_) {
-      RCLCPP_WARN(this->get_logger(), "No messages received for %.2f seconds. Shutting down the node.", message_timeout_);
-      rclcpp::shutdown();
+        auto time_since_last_message = std::chrono::duration<double>(current_time - last_message_time_).count();
+        if (time_since_last_message >= message_timeout_)
+        {
+            RCLCPP_WARN(this->get_logger(), "No messages received for %.2f seconds.", message_timeout_);
+            rclcpp::shutdown();
+        }
     }
-  }
 
-  rclcpp::Time start_time_;
-  rclcpp::Time last_message_time_;
-  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
-  rclcpp::TimerBase::SharedPtr timer_;
-  double execution_duration_;
-  double sleep_duration_;
-  double message_timeout_;
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
+    rclcpp::TimerBase::SharedPtr timer_;
+    double execution_time_;
+    double sleep_time_;
+    double message_timeout_;
+    std::chrono::steady_clock::time_point start_time_;
+    std::chrono::steady_clock::time_point last_message_time_;
 };
 
-int main(int argc, char * argv[])
+int main(int argc, char **argv)
 {
-  rclcpp::init(argc, argv);
+    rclcpp::init(argc, argv);
 
-  double execution_duration = 300.0;
-  double sleep_duration = 0.25;
-  double message_timeout = 1.0;
+    if (argc < 3)
+    {
+        RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Usage: minimal_subscriber <execution_time> <sleep_time>");
+        return 1;
+    }
 
-  if (argc >= 2) {
-    execution_duration = std::atof(argv[1]);
-    sleep_duration = std::atof(argv[2]);
-  } else {
-    RCLCPP_WARN(rclcpp::get_logger("rclcpp"), "Using default values: execution_duration = 300.0, sleep_duration = 0.25, message_timeout = 1.0");
-  }
+    double execution_time = std::stod(argv[1]);
+    double sleep_time = std::stod(argv[2]);
 
-  auto node = std::make_shared<MinimalSubscriber>(execution_duration, sleep_duration, message_timeout);
-  rclcpp::spin(node);
+    auto minimal_subscriber = std::make_shared<MinimalSubscriber>(execution_time, sleep_time);
 
-  rclcpp::shutdown();
-  return 0;
+    rclcpp::spin(minimal_subscriber);
+
+    return 0;
 }

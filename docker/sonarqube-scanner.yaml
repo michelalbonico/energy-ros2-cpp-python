@@ -1,0 +1,34 @@
+version: '3'
+
+networks:
+  sonar-network:
+    driver: bridge
+
+services:
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    ports:
+      - "9000:9000"
+    networks:
+      - sonar-network
+
+  sonar-scanner:
+    image: sonarsource/sonar-scanner-cli:latest
+    volumes:
+      - ../:/workspace
+    working_dir: /workspace
+    environment:
+      - SONAR_HOST_URL=http://sonarqube:9000  # Replace with your SonarQube host URL
+      - SONAR_LOGIN=sqp_b988f4068a1f43df4aa0c0883e5e6efb48927e72        # Replace with your SonarQube token
+    entrypoint:
+      - sonar-scanner
+      - "-Dsonar.projectKey=frontiers_robotics"
+      - "-Dsonar.sources=src"
+      - "-Dsonar.token=sqp_b988f4068a1f43df4aa0c0883e5e6efb48927e72"
+      - "-Dsonar.exclusions=**/*.test.js,**/*.spec.js"
+      - "-Dsonar.language=cpp,py"
+    networks:
+      - sonar-network
