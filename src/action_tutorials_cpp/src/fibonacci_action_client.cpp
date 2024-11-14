@@ -1,7 +1,8 @@
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <action_tutorials_interfaces/action/fibonacci.hpp>
-#include <rclcpp/action/client.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <rclcpp_components/register_node_macro.hpp>
 
 using namespace std::chrono_literals;
 
@@ -34,12 +35,15 @@ public:
         auto send_goal_options = rclcpp_action::Client<Fibonacci>::SendGoalOptions();
         send_goal_options.goal_response_callback = std::bind(&FibonacciActionClient::goal_response_callback, this, std::placeholders::_1);
         send_goal_options.result_callback = std::bind(&FibonacciActionClient::get_result_callback, this, std::placeholders::_1);
-        send_goal_options.feedback_callback = std::bind(&FibonacciActionClient::feedback_callback, this, std::placeholders::_1);
+        send_goal_options.feedback_callback = std::bind(&FibonacciActionClient::feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
+        // std::bind(&FibonacciActionClient::feedback_callback, this, std::placeholders::_1);
 
-        action_client_->async_send_goal(goal_msg, send_goal_options);
+        this->action_client_->async_send_goal(goal_msg, send_goal_options);
     }
 
 private:
+    rclcpp_action::Client<Fibonacci>::SharedPtr client_ptr_;
+
     void goal_response_callback(std::shared_ptr<GoalHandleFibonacci> goal_handle)
     {
         if (!goal_handle) {
@@ -52,17 +56,31 @@ private:
 
     void get_result_callback(const rclcpp_action::ClientGoalHandle<Fibonacci>::WrappedResult & result)
     {
-        if (result.code == rclcpp_action::ResultCode::SUCCEEDED) {
-            RCLCPP_INFO(this->get_logger(), "Result: {0}", result.result->sequence);
-        } else {
+        if (result.code != rclcpp_action::ResultCode::SUCCEEDED) {
             RCLCPP_ERROR(this->get_logger(), "Action failed");
+            return;
         }
+        std::stringstream ss;
+        ss << "Result received: ";
+        for (auto number : result.result->sequence) {
+        ss << number << " ";
+        }
+        RCLCPP_INFO(this->get_logger(), ss.str().c_str());
         rclcpp::shutdown();
     }
 
-    void feedback_callback(const std::shared_ptr<const Fibonacci::Feedback> feedback)
+    void feedback_callback(
+        GoalHandleFibonacci::SharedPtr,
+        const std::shared_ptr<const Fibonacci::Feedback> feedback
+    )
     {
-        RCLCPP_INFO(this->get_logger(), "Received feedback: {0}", feedback->partial_sequence);
+        std::stringstream ss;
+        ss << "Next number in sequence received: ";
+        for (auto number : feedback->partial_sequence) 
+        {
+            ss << number << " ";
+        }
+        RCLCPP_INFO(this->get_logger(), ss.str().c_str());
     }
 
     rclcpp_action::Client<Fibonacci>::SharedPtr action_client_;

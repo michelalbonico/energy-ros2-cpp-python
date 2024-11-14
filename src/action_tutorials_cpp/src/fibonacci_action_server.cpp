@@ -1,6 +1,8 @@
 #include "rclcpp/rclcpp.hpp"
 #include "action_tutorials_interfaces/action/fibonacci.hpp"
-#include "rclcpp/action/server.hpp"
+#include <rclcpp_action/rclcpp_action.hpp>
+#include <rclcpp_components/register_node_macro.hpp>
+#include "action_tutorials_cpp/visibility_control.h"
 #include <chrono>
 #include <thread>
 
@@ -10,6 +12,8 @@ using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
 class FibonacciActionServer : public rclcpp::Node
 {
 public:
+  using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
+
   FibonacciActionServer()
   : Node("fibonacci_action_server")
   {
@@ -22,7 +26,7 @@ public:
     timeout_ = this->get_parameter("timeout").as_double();
 
     // Create action server
-    action_server_ = rclcpp_action::create_server<Fibonacci>(
+    this->action_server_ = rclcpp_action::create_server<Fibonacci>(
       this,
       "fibonacci",
       std::bind(&FibonacciActionServer::handle_goal, this, std::placeholders::_1, std::placeholders::_2),
@@ -44,16 +48,18 @@ private:
     const rclcpp_action::GoalUUID &uuid,
     std::shared_ptr<const Fibonacci::Goal> goal)
   {
-    RCLCPP_INFO(this->get_logger(), "Received goal request with order: %ld", goal->order);
+    RCLCPP_INFO(this->get_logger(), "Received goal request with order: %d", goal->order);
     (void)uuid;  // unused variable
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
   }
 
   // Action server callback when goal is canceled
   rclcpp_action::CancelResponse handle_cancel(
-    const std::shared_ptr<GoalHandleFibonacci> goal_handle)
+    const std::shared_ptr<GoalHandleFibonacci> goal_handle
+    )
   {
     RCLCPP_INFO(this->get_logger(), "Received cancel request");
+    (void)goal_handle;
     return rclcpp_action::CancelResponse::ACCEPT;
   }
 
@@ -75,6 +81,8 @@ private:
 
     auto start_time = this->now();
 
+    auto result = std::make_shared<Fibonacci::Result>();
+
     for (int i = 1; rclcpp::ok(); ++i)
     {
       // Check timeout
@@ -90,7 +98,7 @@ private:
         if (goal_handle->is_canceling())
         {
           RCLCPP_INFO(this->get_logger(), "Goal canceled.");
-          goal_handle->canceled();
+          goal_handle->canceled(result);
           return;
         }
 
@@ -109,10 +117,10 @@ private:
     }
 
     // Send the result back
-    goal_handle->succeed();
-    auto result = std::make_shared<Fibonacci::Result>();
+    goal_handle->succeed(result);
+    //auto result = std::make_shared<Fibonacci::Result>();
     result->sequence = feedback_msg->partial_sequence;
-    goal_handle->set_result(result);
+    //goal_handle->set_result(result);
   }
 
   // Shutdown the node after timeout

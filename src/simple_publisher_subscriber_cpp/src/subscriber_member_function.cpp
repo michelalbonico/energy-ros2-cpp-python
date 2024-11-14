@@ -25,8 +25,7 @@ private:
     void listener_callback(const std_msgs::msg::String::SharedPtr msg)
     {
         last_message_time_ = std::chrono::steady_clock::now();
-        auto current_time = std::chrono::steady_clock::now();
-        auto elapsed_time = std::chrono::duration<double>(current_time - start_time_).count();
+        //auto current_time = std::chrono::steady_clock::now();
         RCLCPP_INFO(this->get_logger(), "I heard: \"%s\"", msg->data.c_str());
     }
 

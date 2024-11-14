@@ -34,7 +34,8 @@ private:
 
   void timer_callback()
   {
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(this->now() - start_time_).count();
+    //auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(this->now() - start_time_).count();
+    auto elapsed_time = (this->now() - start_time_).seconds();
     if (elapsed_time >= timeout_seconds_)
     {
       RCLCPP_INFO(this->get_logger(), "Timeout reached. Shutting down the server.");

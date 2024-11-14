@@ -11,7 +11,8 @@ public:
   MinimalClientAsync(int a, int b, int timeout_seconds, double sleep_seconds)
   : Node("minimal_client_async"),
     timeout_seconds_(timeout_seconds),
-    sleep_seconds_(sleep_seconds)
+    sleep_seconds_(sleep_seconds),
+    req_()  // Initialize request values here
   {
     // Create the client
     cli_ = this->create_client<example_interfaces::srv::AddTwoInts>("add_two_ints");
@@ -35,7 +36,7 @@ private:
   // Timer callback to periodically send service requests
   void timer_callback()
   {
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(this->now() - start_time_).count();
+    auto elapsed_time = (this->now() - start_time_).seconds();
     if (elapsed_time >= timeout_seconds_)
     {
       RCLCPP_INFO(this->get_logger(), "Timeout reached. Stopping client.");
@@ -44,8 +45,16 @@ private:
     }
 
     // Call the service asynchronously
+    // auto future_and_request_id = cli_->async_send_request(std::make_shared<example_interfaces::srv::AddTwoInts::Request>(req_));
+
+    // // Use add_done_callback to set the callback for the future
+    // future_and_request_id.future.add_done_callback([this](rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedFuture future) {
+    //     this->response_callback(future);
+    // });
+
     auto future = cli_->async_send_request(std::make_shared<example_interfaces::srv::AddTwoInts::Request>(req_));
-    future.then(std::bind(&MinimalClientAsync::response_callback, this, std::placeholders::_1));
+    future.wait();  // Blocks until the future is done.
+
   }
 
   // Callback to handle the response
@@ -54,7 +63,7 @@ private:
     if (future.get() != nullptr)
     {
       auto response = future.get();
-      RCLCPP_INFO(this->get_logger(), "Result of add_two_ints: %d + %d = %d", req_.a, req_.b, response->sum);
+      RCLCPP_INFO(this->get_logger(), "Result of add_two_ints: %ld + %ld = %ld", req_.a, req_.b, response->sum);
     }
     else
     {
@@ -62,8 +71,8 @@ private:
     }
   }
 
-  rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr cli_;
-  example_interfaces::srv::AddTwoInts::Request req_;
+  rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr cli_;  // Correct service type
+  example_interfaces::srv::AddTwoInts::Request req_;  // Correct request type
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Time start_time_;
   int timeout_seconds_;
