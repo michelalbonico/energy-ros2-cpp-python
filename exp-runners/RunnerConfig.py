@@ -72,30 +72,14 @@ class RunnerConfig:
     def create_run_table_model(self) -> RunTableModel:
         """Create and return the run_table model here. A run_table is a List (rows) of tuples (columns),
         representing each run performed"""
-        #package = FactorModel("ros_package", ['simple_publisher_subscriber', 'simple_service_client', 'action_tutorials'])
-        package = FactorModel("ros_package", ['simple_publisher_subscriber'])
-        #msg = FactorModel("msg_type", ['default', 'geometry_msg_twist', 'sensor_msg_pointcloud2', 'sensor_msg_image', 'sensor_msg_odometry']) # plain text, geometric data, different sensor data
-        msg = FactorModel("msg_type", ['default'])
-        #interval = FactorModel("msg_interval", [0.5, 1.0, 1.5])
-        interval = FactorModel("msg_interval", [0.25, 0.5, 1.0])
-        #num_client = FactorModel("num_clients", [1, 2, 3, 4, 5])
-        num_clients = FactorModel("num_clients", [1, 2])
+        package = FactorModel("ros_package", ['simple_publisher_subscriber', 'simple_service_client', 'action_tutorials'])
+        interval = FactorModel("msg_interval", [0.5, 1.0, 1.5])
+        num_clients = FactorModel("num_clients", [1, 2, 3])
         language = FactorModel("language", ['py', 'cpp'])
-        exec_time = FactorModel("exec_time", [10])
+        exec_time = FactorModel("exec_time", [30])
         self.run_table_model = RunTableModel(
-            factors=[package, msg, interval, language, exec_time, num_clients],
-            # exclude_variations=[
-            #     {package: ['simple_service_client'], msg: ['geometry_msg_twist']},
-            #     {package: ['simple_service_client'], msg: ['sensor_msg_pointcloud2']},
-            #     {package: ['simple_service_client'], msg: ['sensor_msg_image']},
-            #     {package: ['simple_service_client'], msg: ['sensor_msg_odometry']},
-            #     #
-            #     {package: ['action_tutorials'], msg: ['geometry_msg_twist']},
-            #     {package: ['action_tutorials'], msg: ['sensor_msg_pointcloud2']},
-            #     {package: ['action_tutorials'], msg: ['sensor_msg_image']},
-            #     {package: ['action_tutorials'], msg: ['sensor_msg_odometry']}
-            # ],
-            repetitions = 2
+            factors=[package, interval, language, exec_time, num_clients],
+            repetitions = 1
         )
         return self.run_table_model
 
@@ -155,7 +139,11 @@ class RunnerConfig:
         commands.append(server_command)
 
         output.console_log("Running Client(s)/Sub(s) command...")
-        client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {sub} {exec_time} {interval}"
+        if variation['ros_package'] == 'simple_service_client':
+            client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {sub} 10 10 {exec_time} {interval}"
+        else:
+            client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {sub} {exec_time} {interval}"
+        
         for c in range(clients):
             containers.append(f'docker_client_{c+1}')
             commands.append(client_command)

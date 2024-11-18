@@ -42,9 +42,5 @@ python3 <ER folder> ./exp-runner/RunnerConfig.py
 ```
 
 ## TODO
-- Remove unnecessary comments from the sorce code.
-- Adapt the service and action packages to exit when the time is up (topic pub_sub are already set that way).
-- Make all the packages to receive exactly the same pa1rameters or use additional parameters from the third position.
-- The `action` package must send coordinates (sleep time * x) to the turtlesim, and from time to time (sleep time), get the feedback. 
 - For topic `pub_sub`, implement different message types.
 - Measure the energy consumption.

@@ -18,6 +18,7 @@ services:
       - ${XAUTHORITY}:/root/.Xauthority
       - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
       - /dev:/dev
+      - source:/projeto
   
   client:
     build: .
