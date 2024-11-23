@@ -1,7 +1,11 @@
 # energy-ros2-cpp-python
-Replication package of our paper that compares de energy efficiency of Python and C++ for ROS 2 projetcs.
+Replication package of our paper that compares de energy efficiency of Python and C++ for ROS 2 projetcs. Document under supervision at `Frontiers Robotics and AI`.
 
-## Algoritm Measurement
+## How to cite us
+
+TBA
+
+## Algoritm Complexity Measurement
 
 We have a local SonarQube deployment to check the algorithm measurements.
 
@@ -14,13 +18,7 @@ bash sonarqube-scanner.sh
 
 In your browser, navigate to `http://localhost:9000` and use the default username `admin`, which is also the password (you are requested to change it after loggin in).
 
-## Monitoring the Energy Consumption
-
-For monitoring the energy consumption, we are going to use the `energy-mon.py` script as superuser (root).
-
-```
-# python3 energy-mon.py <script> <language>
-```
+Since we need special wrappers for `Cpp` algorithms, which are not trivial to set up, you can also use the [`lizard`](https://ascl.net/1906.011) tool for both, `Python` and `Cpp`.
 
 ## Running Experiments
 
@@ -34,13 +32,23 @@ Install the project dependencies:
 pip3 install -r requirements.txt
 ```
 
-Configure the project path in the `setup.bash` file, and then run:
+Install `PowerJoular` for energy consumption measurements: [Documentation WebSite](https://joular.github.io/powerjoular/guide/installation.html).
+
+Configure the right paths in the `setup.bash` file, and then run:
 
 ```bash
 source setup.bash
-python3 <ER folder> ./exp-runner/RunnerConfig.py
+python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig.py
+```
+## Extra Energy Consumption Measurements
+
+For monitoring the energy consumption, we can also rely on `exp_runners/profilers/energy-mon.py` script as superuser (root).
+
+```
+# python3 energy-mon.py <script> <language>
 ```
 
-## TODO
+## TODO/IMPROVEMENTS
+- service do not show second client messages
+- action client hangs
 - For topic `pub_sub`, implement different message types.
-- Measure the energy consumption.

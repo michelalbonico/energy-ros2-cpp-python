@@ -2,3 +2,11 @@ build/
 install/
 log/
 /.venv
+*.csv
+energy-client
+energy-server
+.scannerwork/report-task.txt
+exp_runners/__pycache__/RunnerConfig.cpython-310.pyc
+exp_runners/drivers/__pycache__/DockerRunner.cpython-310.pyc
+exp_runners/experiments/cpp_py_ros2/metadata.json
+exp_runners/experiments/cpp_py_ros2_pub_service/metadata.json
