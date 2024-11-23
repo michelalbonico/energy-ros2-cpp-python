@@ -24,7 +24,7 @@ import subprocess
 class RunnerConfig:
     ROOT_DIR = Path(dirname(realpath(__file__)))
 
-    name:                       str             = "cpp_py_ros2_pub_service"
+    name:                       str             = "cpp_py_ros2_action"
     results_output_path:        Path             = ROOT_DIR / 'experiments'
     operation_type:             OperationType   = OperationType.AUTO
     time_between_runs_in_ms:    int             = 1000
@@ -69,12 +69,11 @@ class RunnerConfig:
             output.console_log("Custom config loaded")
 
     def create_run_table_model(self) -> RunTableModel:
-        #package = FactorModel("ros_package", ['simple_publisher_subscriber', 'simple_service_client', 'action_tutorials'])
-        package = FactorModel("ros_package", ['simple_publisher_subscriber', 'simple_service_client'])
-        interval = FactorModel("msg_interval", [0.5, 1.0, 1.5])
-        num_clients = FactorModel("num_clients", [1, 2])
+        package = FactorModel("ros_package", ['action_tutorials'])
+        interval = FactorModel("msg_interval", [0.05, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
+        num_clients = FactorModel("num_clients", [1, 2, 3])
         language = FactorModel("language", ['py', 'cpp'])
-        exec_time = FactorModel("exec_time", [40])
+        exec_time = FactorModel("exec_time", [180])
         self.run_table_model = RunTableModel(
             factors=[package, interval, language, exec_time, num_clients],
             repetitions = 20

@@ -38,8 +38,14 @@ Configure the right paths in the `setup.bash` file, and then run:
 
 ```bash
 source setup.bash
-python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig.py
+python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig-pubsub.py &&
+python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig-service.py &&
+python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig-action.py
 ```
+
+We were running the experiment incrementally as we finished programming the algorithms, soon we will provida a single execution file.
+
+
 ## Extra Energy Consumption Measurements
 
 For monitoring the energy consumption, we can also rely on `exp_runners/profilers/energy-mon.py` script as superuser (root).
