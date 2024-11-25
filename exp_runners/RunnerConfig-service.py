@@ -69,8 +69,8 @@ class RunnerConfig:
             output.console_log("Custom config loaded")
 
     def create_run_table_model(self) -> RunTableModel:
-        package = FactorModel("ros_package", 'simple_service_client')
-        interval = FactorModel("msg_interval", [0.05, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
+        package = FactorModel("ros_package", ['simple_service_client'])
+        interval = FactorModel("msg_interval", [0.05, 0.1, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
         num_clients = FactorModel("num_clients", [1, 2, 3])
         language = FactorModel("language", ['py', 'cpp'])
         exec_time = FactorModel("exec_time", [180])
@@ -214,7 +214,7 @@ class RunnerConfig:
         subprocess.run(rm_files_command, shell=True)
 
         rm_energy_files_command = f"yes | rm energy-*"
-        subprocess.run(rm_files_command, shell=True)
+        subprocess.run(rm_energy_files_command, shell=True)
 
         output.console_log("Measurement data copied!")
 

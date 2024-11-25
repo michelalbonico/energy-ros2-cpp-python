@@ -214,7 +214,7 @@ class RunnerConfig:
         subprocess.run(rm_files_command, shell=True)
 
         rm_energy_files_command = f"yes | rm energy-*"
-        subprocess.run(rm_files_command, shell=True)
+        subprocess.run(rm_energy_files_command, shell=True)
 
         output.console_log("Measurement data copied!")
 
