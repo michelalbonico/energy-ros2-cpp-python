@@ -64,7 +64,28 @@ def load_avg_cpu(component):
 
     return df.groupby(['msg_interval', 'language', 'num_clients'])['avg_cpu_pct'].mean().reset_index()
 
-# Avg CPU
+def load_avg_memory(component):
+    df = load_run_table()
+    # Avg CPU per Interval
+    runs_data = {}
+    energy_files = {}
+    avg_cpu_df = {}
+    for run_id in df['__run_id']:
+        folder_path = f"{s_folder}/{run_id}"
+        energy_files = glob.glob(os.path.join(folder_path, f'cpu-mem-{component}.csv'))
+        if energy_files:
+            try:
+                energy_df = pd.read_csv(energy_files[0])
+                avg_mem = energy_df['memory_usage'].mean() / 1024
+                runs_data[run_id] = avg_mem
+            except Exception as e:
+                print(f"Error processing file for run_id {run_id}: {e}")
+
+    avg_cpu_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_mem'])
+    df = df.merge(avg_cpu_df, on='__run_id')
+
+    return df.groupby(['msg_interval', 'language', 'num_clients'])['avg_mem'].mean().reset_index()
+
 def load_avg_energy(component, msg_interval):
     df = load_run_table()
     # Avg CPU per Interval
@@ -90,6 +111,43 @@ def load_avg_energy(component, msg_interval):
     df = df[df["msg_interval"] == msg_interval]
 
     return df.groupby(['language', 'num_clients'])
+
+def load_total_energy(component, msg_interval):
+    df = load_run_table()
+    # Avg CPU per Interval
+    runs_data = {}
+    energy_files = {}
+    avg_cpu_df = {}
+    for run_id in df['__run_id']:
+        folder_path = f"{s_folder}/{run_id}"
+        energy_files = glob.glob(os.path.join(folder_path, f'energy-{component}-*.csv'))
+        if energy_files:
+            try:
+                energy_df = pd.read_csv(energy_files[0])
+                energy_df['CPU Power'] = pd.to_numeric(energy_df['CPU Power'], errors='coerce')
+                sum_energy_pct = energy_df['CPU Power'].sum()
+                runs_data[run_id] = sum_energy_pct
+            except Exception as e:
+                print(f"Error processing file for run_id {run_id}: {e}")
+
+    avg_cpu_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'sum_energy_pct'])
+    df = df.merge(avg_cpu_df, on='__run_id')
+
+    df = df.fillna(0)
+    df = df[df["msg_interval"] == msg_interval]
+
+    return df.groupby(['language', 'num_clients'])
+
+def print_stats(grouped_data):
+    for (language, num_clients), group in grouped_data:
+        print(f"Language: {language}, Number of Clients: {num_clients}")
+        print(group)
+        print("-" * 50)  # Separator for readability
+
+        group_mean = group.mean(numeric_only=True)
+        print("Mean values for this group:")
+        print(group_mean)
+        print("=" * 50)  # Another separator for clarity 
 
 ##############
 # Graphs Gen #
@@ -145,7 +203,15 @@ def gen_energy_boxplot(component, msg_interval):
 components = {'client', 'server'}
 intervals = {0.05, 0.25, 0.5, 1.0}
 
-for component in components:
-    gen_cpu_barplot(component)
-    for interval in intervals:
-        gen_energy_boxplot(component, interval)
+#for component in components:
+#    gen_cpu_barplot(component)
+#    for interval in intervals:
+#        gen_energy_boxplot(component, interval)
+
+#grouped_data = load_avg_energy('server',1.0)
+#grouped_data = load_total_energy('server',0.05)
+#grouped_data = load_avg_cpu('server')
+grouped_data = load_avg_memory('server')
+print(grouped_data)
+# grouped_data = grouped_data[grouped_data["msg_interval"] == 0.05]
+# print_stats(grouped_data)
