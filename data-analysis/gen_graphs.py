@@ -4,12 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import glob
-# statistics
-from scipy.stats import shapiro, kstest
-from scipy.stats import levene
-from scipy.stats import f_oneway
-import statsmodels.api as sm
-import statsmodels.formula.api as smf
 
 # Arguments
 n = len(sys.argv)
