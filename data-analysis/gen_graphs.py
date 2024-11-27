@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import glob
+# statistics
+from scipy.stats import shapiro, kstest
+from scipy.stats import levene
+from scipy.stats import f_oneway
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
 
 # Arguments
 n = len(sys.argv)
@@ -208,10 +214,10 @@ intervals = {0.05, 0.25, 0.5, 1.0}
 #    for interval in intervals:
 #        gen_energy_boxplot(component, interval)
 
-#grouped_data = load_avg_energy('server',1.0)
+
 #grouped_data = load_total_energy('server',0.05)
 #grouped_data = load_avg_cpu('server')
-grouped_data = load_avg_memory('server')
-print(grouped_data)
+# grouped_data = load_avg_memory('server')
+# print(grouped_data)
 # grouped_data = grouped_data[grouped_data["msg_interval"] == 0.05]
 # print_stats(grouped_data)
