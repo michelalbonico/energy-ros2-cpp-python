@@ -94,15 +94,9 @@ for component in components:
             stat, p_value = shapiro(group['avg_energy_pct'])
             print(f"Shapiro-Wilk test for {language}, {num_clients} clients: p = {p_value}")
         
-        # Boxplots
-        plt.figure(figsize=(3, 3))  # Create a new figure with a square size (6x6 inches)
-        sns.boxplot(data=df, x='language', y='avg_energy_pct', hue='num_clients')
-        plt.xlabel("Language")
-        plt.ylabel("Power (W)")
-        plt.tight_layout()  # Adjust layout to avoid overlap
-        output_path = os.path.join(d_folder, f'{algo}_{component}_energy_boxplot_{interval}.pdf')
-        plt.savefig(output_path, format="pdf", dpi=300)
-        plt.close()
+        # sns.boxplot(data=df, x='language', y='avg_energy_pct', hue='num_clients')
+        # plt.title('Energy Consumption by Language and Client Count')
+        # plt.show()
 
         # # Plot histogram for each group
         # for (language, num_clients), group in df.groupby(['language', 'num_clients']):
@@ -163,15 +157,15 @@ for component in components:
         print("-----------------------------------------------")
 
 # # Regression
-# print("# Regression num_clients and msg_interval")
-# df['num_clients'] = pd.to_numeric(df['num_clients'])
-# df['msg_interval'] = pd.to_numeric(df['msg_interval'])
+print("# Regression num_clients and msg_interval")
+df['num_clients'] = pd.to_numeric(df['num_clients'])
+df['msg_interval'] = pd.to_numeric(df['msg_interval'])
 
-# X = df[['num_clients', 'msg_interval']]
-# y = df['avg_energy_pct']
-# X = sm.add_constant(X)  # Add intercept
-# model = sm.OLS(y, X).fit()
-# print(model.summary())
+X = df[['num_clients', 'msg_interval']]
+y = df['avg_energy_pct']
+X = sm.add_constant(X)  # Add intercept
+model = sm.OLS(y, X).fit()
+print(model.summary())
 
 # # # Two-Way ANOVA
 # model = smf.ols('avg_energy_pct ~ language * num_clients', data=df).fit()
