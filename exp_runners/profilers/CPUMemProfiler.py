@@ -11,7 +11,7 @@ from ConfigValidator.Config.Models.RunnerContext import RunnerContext
 class CPUMemProfiler:
 
     stop_event = Event()
-    __pid = 0
+    __pid = None
     factors = []
 
     def __init__(self, name, file):
@@ -28,6 +28,7 @@ class CPUMemProfiler:
         for proc in psutil.process_iter(['pid', 'name']):
             try:
                 if proc.info['name'] == name:
+                    print(f"Process found with PID {proc.info['pid']}")
                     return proc.info['pid']
             except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
                 pass

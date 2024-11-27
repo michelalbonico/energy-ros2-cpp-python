@@ -154,9 +154,11 @@ class RunnerConfig:
         factors_keys = ['package', 'interval', 'language', 'exec_time', 'num_clients']
         self.cpu_mem_profiler_server.start_profiler(context, factors_keys)
         self.cpu_mem_profiler_client.start_profiler(context, factors_keys)
-
-        server_pid = str(self.cpu_mem_profiler_server.get_pid())
-        client_pid = str(self.cpu_mem_profiler_client.get_pid())
+        server_pid = None
+        client_pid = None
+        while server_pid == None or client_pid == None:
+            server_pid = str(self.cpu_mem_profiler_server.get_pid())
+            client_pid = str(self.cpu_mem_profiler_client.get_pid())
 
         # Energy
         self.energy_profiler_server = ProcessResProfiler(server_pid, 'energy-server')
@@ -188,42 +190,37 @@ class RunnerConfig:
     def stop_run(self, context: RunnerContext) -> None:
         output.console_log("Config.stop_run() called!")
 
-    def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, Any]]:
-        output.console_log("Config.populate_run_data() called!")
-
         variation = context.run_variation
         run_id = variation['__run_id']
 
         # All CSV
         dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/*.csv {dest_files}"
+        files_cp = f"cp -f {experiment_path}/*.csv {dest_files}"
         subprocess.run(files_cp, shell=True)
 
         # Energy Server
         dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/energy-server {dest_files}"
-        subprocess.run(files_cp, shell=True)
-
-        # Energy client
-        dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/energy-client {dest_files}"
+        files_cp = f"cp -f {experiment_path}/energy-* {dest_files}"
         subprocess.run(files_cp, shell=True)
 
         # Clean Up
-        rm_files_command = f"yes | rm *.csv"
+        rm_files_command = f"rm -f {experiment_path}/*.csv"
         subprocess.run(rm_files_command, shell=True)
 
-        rm_energy_files_command = f"yes | rm energy-*"
+        rm_energy_files_command = f"rm -f {experiment_path}/energy-*"
         subprocess.run(rm_energy_files_command, shell=True)
 
         output.console_log("Measurement data copied!")
 
         return None
 
+    def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, Any]]:
+        output.console_log("Config.populate_run_data() called!")
+        
     def after_experiment(self) -> None:
         output.console_log("Config.after_experiment() called!")
-        output.console_log("Cooling down for 30 seconds...")
-        time.sleep(30)
+        output.console_log("Cooling down for 10 seconds...")
+        time.sleep(10)
 
     # ================================ DO NOT ALTER BELOW THIS LINE ================================
     experiment_path:            Path             = None

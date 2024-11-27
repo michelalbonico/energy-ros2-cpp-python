@@ -50,9 +50,26 @@ We were running the experiment incrementally as we finished programming the algo
 
 For monitoring the energy consumption, we can also rely on `exp_runners/profilers/energy-mon.py` script as superuser (root).
 
+```bash
+python3 energy-mon.py <script> <language>
 ```
-# python3 energy-mon.py <script> <language>
+
+## Generate Graphs
+
+Change directory to `data-analys` folder:
+
+```bash
+cd data-analisys/
 ```
+
+Generate the graphs:
+```bash
+python3 gen_graphs.py subpub
+python3 gen_graphs.py service
+python3 gen_graphs.py action
+```
+
+All the graphs are saved in the `graphs` folder.
 
 ## TODO/IMPROVEMENTS
 - service do not show second client messages
