@@ -18,7 +18,7 @@ num_rows=0
 
 match algo:
     case 'pubsub':
-        algo_folder='cpp_py_ros2_pub_sub'
+        algo_folder='cpp_py_ros2_pub_sub_0_1'
         dest_folder='pubsub'
         num_rows=480
     case 'service':
@@ -64,6 +64,31 @@ def load_avg_cpu(component):
 
     return df.groupby(['msg_interval', 'language', 'num_clients'])['avg_cpu_pct'].mean().reset_index()
 
+def load_avg_cpu_new(component, msg_interval):
+    df = load_run_table()
+    # Avg CPU per Interval
+    runs_data = {}
+    energy_files = {}
+    avg_cpu_df = {}
+    for run_id in df['__run_id']:
+        folder_path = f"{s_folder}/{run_id}"
+        energy_files = glob.glob(os.path.join(folder_path, f'energy-{component}-*.csv'))
+        if energy_files:
+            try:
+                energy_df = pd.read_csv(energy_files[0])
+                avg_cpu_pct = energy_df['CPU Utilization'].mean() * 100 * 8
+                runs_data[run_id] = avg_cpu_pct
+            except Exception as e:
+                print(f"Error processing file for run_id {run_id}: {e}")
+
+    avg_cpu_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_cpu_pct'])
+    df = df.merge(avg_cpu_df, on='__run_id')
+
+    df = df.fillna(0)
+    df = df[df["msg_interval"] == msg_interval]
+
+    return df.groupby(['language', 'num_clients'])
+
 def load_avg_memory(component):
     df = load_run_table()
     # Avg CPU per Interval
@@ -85,6 +110,31 @@ def load_avg_memory(component):
     df = df.merge(avg_cpu_df, on='__run_id')
 
     return df.groupby(['msg_interval', 'language', 'num_clients'])['avg_mem'].mean().reset_index()
+
+def load_avg_memory_new(component, msg_interval):
+    df = load_run_table()
+    # Avg CPU per Interval
+    runs_data = {}
+    files = {}
+    avg_mem_df = {}
+    for run_id in df['__run_id']:
+        folder_path = f"{s_folder}/{run_id}"
+        files = glob.glob(os.path.join(folder_path, f'cpu-mem-{component}.csv'))
+        if files:
+            try:
+                memory_df = pd.read_csv(files[0])
+                avg_mem = memory_df['memory_usage'].mean() / 1024
+                runs_data[run_id] = avg_mem
+            except Exception as e:
+                print(f"Error processing file for run_id {run_id}: {e}")
+
+    avg_mem_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_mem'])
+    df = df.merge(avg_mem_df, on='__run_id')
+
+    df = df.fillna(0)
+    df = df[df["msg_interval"] == msg_interval]
+
+    return df.groupby(['language', 'num_clients'])
 
 def load_avg_energy(component, msg_interval):
     df = load_run_table()
@@ -208,10 +258,11 @@ intervals = {0.05, 0.25, 0.5, 1.0}
 #    for interval in intervals:
 #        gen_energy_boxplot(component, interval)
 
-
-#grouped_data = load_total_energy('server',0.05)
-#grouped_data = load_avg_cpu('server')
+# grouped_data = load_total_energy('server', 0.1)
+# grouped_data = load_avg_cpu_new('client', 0.1)
 # grouped_data = load_avg_memory('server')
+# grouped_data = load_avg_memory_new('client',0.1)
+grouped_data = load_avg_energy('server',0.1)
 # print(grouped_data)
 # grouped_data = grouped_data[grouped_data["msg_interval"] == 0.05]
-# print_stats(grouped_data)
+print_stats(grouped_data)

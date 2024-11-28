@@ -70,7 +70,7 @@ class RunnerConfig:
 
     def create_run_table_model(self) -> RunTableModel:
         package = FactorModel("ros_package", ['simple_publisher_subscriber'])
-        interval = FactorModel("msg_interval", [0.05, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
+        interval = FactorModel("msg_interval", [0.05, 0.1, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
         num_clients = FactorModel("num_clients", [1, 2, 3])
         language = FactorModel("language", ['py', 'cpp'])
         exec_time = FactorModel("exec_time", [180])
@@ -154,11 +154,15 @@ class RunnerConfig:
         factors_keys = ['package', 'interval', 'language', 'exec_time', 'num_clients']
         self.cpu_mem_profiler_server.start_profiler(context, factors_keys)
         self.cpu_mem_profiler_client.start_profiler(context, factors_keys)
+        
         server_pid = None
         client_pid = None
         while server_pid == None or client_pid == None:
-            server_pid = str(self.cpu_mem_profiler_server.get_pid())
-            client_pid = str(self.cpu_mem_profiler_client.get_pid())
+            got_pid_server = self.cpu_mem_profiler_server.get_pid_by_name('talker')
+            got_pid_client = self.cpu_mem_profiler_client.get_pid_by_name('listener')
+            if got_pid_server != None and got_pid_client != None:
+                server_pid = str(got_pid_server)
+                client_pid = str(got_pid_client)
 
         # Energy
         self.energy_profiler_server = ProcessResProfiler(server_pid, 'energy-server')
