@@ -28,10 +28,13 @@ class LoadData:
     def filter_df(self, df, label, value):
         return df[df[label] == value]
     
-    def group_df_by(self, df, keys: list):
-        return df.groupby(keys)
+    def group_df_by(self, df, key, outliers):
+        if not outliers:
+            return df.groupby(key)
+        else:
+            return df.groupby(key).apply(self.remove_outliers, column_name=key)
 
-    def load_power(self, component, transform: bool):
+    def load_power(self, component, transform: bool, outliers: bool):
         df = self.load_run_table()
         runs_data = {}
         energy_files = {}
@@ -59,6 +62,17 @@ class LoadData:
         clean_df = merged_df.fillna(0)
 
         return clean_df
+    
+    def remove_outliers(group, column_name):
+        Q1 = group[column_name].quantile(0.25)
+        Q3 = group[column_name].quantile(0.75)
+        
+        IQR = Q3 - Q1
+        
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        
+        return group[(group[column_name] >= lower_bound) & (group[column_name] <= upper_bound)]
 
     def load_all_energy():
         pass
