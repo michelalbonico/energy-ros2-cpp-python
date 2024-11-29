@@ -1,0 +1,474 @@
+Component: client --->
+Levene's test for different languages.
+Levene's test statistic: 33.19072903559455, p-value: 8.121004090917515e-08
+Component: client, Language: py --->
+Group: py
+[0.87332121 0.79831685 0.73965477 0.48866713 0.41613849 0.40813422
+ 0.03069235 0.01237312 0.20887829 0.19298961 0.16143231 0.16663705
+ 0.01116538 0.00836693 0.01079274 1.08397698 0.8926676  0.86137025
+ 0.61833555 0.40013807 0.4151143  0.25064932 0.22107794 0.15733916
+ 0.10854833 0.09461831 0.07665814 0.0623697  0.05302511 0.05061047
+ 0.00666372 0.66979315 0.82855259 0.65050227 0.48692056 0.3888142
+ 0.01831241 0.12448265 0.09810775 0.08921204 0.07845934 0.05673828
+ 0.0585958  0.05842681 0.07115253 0.00826993 0.75914328 0.44706203
+ 0.25763399 0.29084985 0.2394462  0.13703173 0.14540234 0.16090269
+ 0.05675266]
+Group: py
+Shapiro-Wilk statistic: 0.8434963156650142
+P-value: 4.4460206283915115e-06
+The data is likely not normally distributed (reject H0).
+
+Levene's test for language py and different msg_intervals.
+Levene's test statistic: 4.850847999120156, p-value: 0.0021990965681148943
+Component: client, Language: py, Interval: 0.05,  --->
+Group: 0.05
+[0.87332121 0.79831685 0.73965477 1.08397698 0.8926676  0.86137025
+ 0.00666372 0.66979315 0.82855259 0.07115253 0.00826993]
+Group: 0.05
+Shapiro-Wilk statistic: 0.7940367665250556
+P-value: 0.007852297534975232
+The data is likely not normally distributed (reject H0).
+
+Levene's test for language py, msg_interval 0.05 and different num_clients.
+Levene's test statistic: 3.7785406059964144, p-value: 0.0699274147689298
+Component: client, Language: py, Interval: 0.05, Clients: 1 --->
+Group: 1
+[0.87332121 1.08397698 0.00666372 0.07115253]
+Group: 1
+Shapiro-Wilk statistic: 0.8415177756898746
+P-value: 0.19986404724819815
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.05, Clients: 2 --->
+Group: 2
+[0.79831685 0.8926676  0.66979315 0.00826993]
+Group: 2
+Shapiro-Wilk statistic: 0.8251709425928117
+P-value: 0.15555582225586714
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.73965477 0.86137025 0.82855259]
+Group: 3
+Shapiro-Wilk statistic: 0.9339135729918884
+P-value: 0.5034518878221447
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.25,  --->
+Group: 0.25
+[0.03069235 0.01237312 0.20887829 0.25064932 0.22107794 0.15733916
+ 0.01831241 0.12448265 0.25763399 0.29084985 0.2394462 ]
+Group: 0.25
+Shapiro-Wilk statistic: 0.8753286529856501
+P-value: 0.09072293697063413
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language py, msg_interval 0.25 and different num_clients.
+Levene's test statistic: 1.8875015013056777, p-value: 0.21306682866394944
+Component: client, Language: py, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.03069235 0.25064932 0.01831241 0.25763399]
+Group: 1
+Shapiro-Wilk statistic: 0.7651476024382503
+P-value: 0.05299422022171628
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.01237312 0.22107794 0.29084985]
+Group: 2
+Shapiro-Wilk statistic: 0.9233882203271464
+P-value: 0.46437948830415404
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.25, Clients: 3 --->
+Group: 3
+[0.20887829 0.15733916 0.12448265 0.2394462 ]
+Group: 3
+Shapiro-Wilk statistic: 0.9663700261690447
+P-value: 0.8188921670327567
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.5,  --->
+Group: 0.5
+[0.19298961 0.16143231 0.16663705 0.10854833 0.09461831 0.07665814
+ 0.09810775 0.08921204 0.07845934 0.13703173 0.14540234 0.16090269]
+Group: 0.5
+Shapiro-Wilk statistic: 0.9174544441187423
+P-value: 0.2655269982271813
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language py, msg_interval 0.5 and different num_clients.
+Levene's test statistic: 0.7799457453573552, p-value: 0.48710629528256577
+Component: client, Language: py, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.19298961 0.10854833 0.09810775 0.13703173]
+Group: 1
+Shapiro-Wilk statistic: 0.9018698314002711
+P-value: 0.44040618616264837
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.5, Clients: 2 --->
+Group: 2
+[0.16143231 0.09461831 0.08921204 0.14540234]
+Group: 2
+Shapiro-Wilk statistic: 0.8593515303176933
+P-value: 0.25790519247643523
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.16663705 0.07665814 0.07845934 0.16090269]
+Group: 3
+Shapiro-Wilk statistic: 0.7661577422551122
+P-value: 0.054085873157431935
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 1.0,  --->
+Group: 1.0
+[0.01116538 0.00836693 0.01079274 0.0623697  0.05302511 0.05061047
+ 0.05673828 0.0585958  0.05842681 0.05675266]
+Group: 1.0
+Shapiro-Wilk statistic: 0.7182563397453703
+P-value: 0.0014669033462670151
+The data is likely not normally distributed (reject H0).
+
+Levene's test for language py, msg_interval 1.0 and different num_clients.
+Levene's test statistic: 0.03037731535981995, p-value: 0.9702065933806849
+Component: client, Language: py, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.01116538 0.0623697  0.05673828 0.05675266]
+Group: 1
+Shapiro-Wilk statistic: 0.7242837114158736
+P-value: 0.02150794202476427
+The data is likely not normally distributed (reject H0).
+
+Component: client, Language: py, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.00836693 0.05302511 0.0585958 ]
+Group: 2
+Shapiro-Wilk statistic: 0.8320445120100686
+P-value: 0.1935412616988974
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.01079274 0.05061047 0.05842681]
+Group: 3
+Shapiro-Wilk statistic: 0.8692279793131003
+P-value: 0.29333420852988973
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language py and different num_clients.
+Levene's test statistic: 0.10677873883213644, p-value: 0.8989210448727294
+Component: client, Clients: 1, Language: py --->
+Group: 1
+[0.87332121 0.48866713 0.03069235 0.19298961 0.01116538 1.08397698
+ 0.61833555 0.25064932 0.10854833 0.0623697  0.00666372 0.65050227
+ 0.01831241 0.09810775 0.05673828 0.07115253 0.25763399 0.13703173
+ 0.05675266]
+Group: 1
+Shapiro-Wilk statistic: 0.780794491133973
+P-value: 0.0006092022893033465
+The data is likely not normally distributed (reject H0).
+
+Component: client, Clients: 2, Language: py --->
+Group: 2
+[0.79831685 0.41613849 0.01237312 0.16143231 0.00836693 0.8926676
+ 0.40013807 0.22107794 0.09461831 0.05302511 0.66979315 0.48692056
+ 0.08921204 0.0585958  0.00826993 0.75914328 0.29084985 0.14540234]
+Group: 2
+Shapiro-Wilk statistic: 0.8676798710850481
+P-value: 0.016297357607216543
+The data is likely not normally distributed (reject H0).
+
+Component: client, Clients: 3, Language: py --->
+Group: 3
+[0.73965477 0.40813422 0.20887829 0.16663705 0.01079274 0.86137025
+ 0.4151143  0.15733916 0.07665814 0.05061047 0.82855259 0.3888142
+ 0.12448265 0.07845934 0.05842681 0.44706203 0.2394462  0.16090269]
+Group: 3
+Shapiro-Wilk statistic: 0.8498541739764098
+P-value: 0.008423986816971837
+The data is likely not normally distributed (reject H0).
+
+Component: client, Language: cpp --->
+Group: cpp
+[0.16902    0.15326843 0.14874967 0.06625079 0.07997797 0.08276493
+ 0.057392   0.06637618 0.06140147 0.03889401 0.04392184 0.03281393
+ 0.00849081 0.01497758 0.01647249 0.14842951 0.16673504 0.12625273
+ 0.08256205 0.10967551 0.08326008 0.04217529 0.05071707 0.04340591
+ 0.02936017 0.02553156 0.02876644 0.01636886 0.02081194 0.01132989
+ 0.14661648 0.16119606 0.16237749 0.09723037 0.11867629 0.10396797
+ 0.02409293 0.02067977 0.02410186 0.01722586 0.01528555 0.01417196
+ 0.01076674 0.01509707 0.06025908 0.10248361 0.12316867 0.07628518
+ 0.04954346 0.06174937 0.04977614 0.02955126 0.0359537  0.03272903]
+Group: cpp
+Shapiro-Wilk statistic: 0.88515425247418
+P-value: 9.073319571480248e-05
+The data is likely not normally distributed (reject H0).
+
+Levene's test for language cpp and different msg_intervals.
+Levene's test statistic: 2.3732069995945126, p-value: 0.06496513043710041
+Component: client, Language: cpp, Interval: 0.05,  --->
+Group: 0.05
+[0.16902    0.15326843 0.14874967 0.14842951 0.16673504 0.12625273
+ 0.14661648 0.16119606 0.16237749 0.06025908]
+Group: 0.05
+Shapiro-Wilk statistic: 0.7074630873375358
+P-value: 0.001084941605822292
+The data is likely not normally distributed (reject H0).
+
+Levene's test for language cpp, msg_interval 0.05 and different num_clients.
+Levene's test statistic: 1.6529798439359702, p-value: 0.2582459993130592
+Component: client, Language: cpp, Interval: 0.05, Clients: 1 --->
+Group: 1
+[0.16902    0.14842951 0.14661648]
+Group: 1
+Shapiro-Wilk statistic: 0.8102651515548799
+P-value: 0.13924783942177496
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.05, Clients: 2 --->
+Group: 2
+[0.15326843 0.16673504 0.16119606]
+Group: 2
+Shapiro-Wilk statistic: 0.9896214832733556
+P-value: 0.8050949374650452
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.14874967 0.12625273 0.16237749 0.06025908]
+Group: 3
+Shapiro-Wilk statistic: 0.8882001052683076
+P-value: 0.37484131055923925
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.25,  --->
+Group: 0.25
+[0.057392   0.06637618 0.06140147 0.04217529 0.05071707 0.04340591
+ 0.02409293 0.02067977 0.04954346 0.06174937 0.04977614]
+Group: 0.25
+Shapiro-Wilk statistic: 0.9084331180993122
+P-value: 0.2336636709005395
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 0.25 and different num_clients.
+Levene's test statistic: 0.5757630186163527, p-value: 0.5839637237748443
+Component: client, Language: cpp, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.057392   0.04217529 0.04954346]
+Group: 1
+Shapiro-Wilk statistic: 0.9996679154033861
+P-value: 0.9651943472017617
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.06637618 0.05071707 0.02409293 0.06174937]
+Group: 2
+Shapiro-Wilk statistic: 0.8872689944214244
+P-value: 0.3706113593394062
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.25, Clients: 3 --->
+Group: 3
+[0.06140147 0.04340591 0.02067977 0.04977614]
+Group: 3
+Shapiro-Wilk statistic: 0.9584818684125498
+P-value: 0.7693549593555975
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.5,  --->
+Group: 0.5
+[0.03889401 0.04392184 0.03281393 0.02936017 0.02553156 0.02876644
+ 0.02410186 0.01722586 0.01528555 0.02955126 0.0359537  0.03272903]
+Group: 0.5
+Shapiro-Wilk statistic: 0.9761385490412112
+P-value: 0.9634166592145041
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 0.5 and different num_clients.
+Levene's test statistic: 1.104507611392695, p-value: 0.3724240572711915
+Component: client, Language: cpp, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.03889401 0.02936017 0.02410186 0.02955126]
+Group: 1
+Shapiro-Wilk statistic: 0.9155265607581073
+P-value: 0.5121668959046022
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.5, Clients: 2 --->
+Group: 2
+[0.04392184 0.02553156 0.01722586 0.0359537 ]
+Group: 2
+Shapiro-Wilk statistic: 0.9818857113852378
+P-value: 0.9129905056380141
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.03281393 0.02876644 0.01528555 0.03272903]
+Group: 3
+Shapiro-Wilk statistic: 0.7823937776626677
+P-value: 0.07421303527250146
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0,  --->
+Group: 1.0
+[0.00849081 0.01497758 0.01647249 0.01636886 0.02081194 0.01132989
+ 0.01417196 0.01076674 0.01509707]
+Group: 1.0
+Shapiro-Wilk statistic: 0.9653106949671016
+P-value: 0.8519213967528478
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 1.0 and different num_clients.
+Levene's test statistic: 0.28867258984835675, p-value: 0.7591049935819377
+Component: client, Language: cpp, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.00849081 0.01636886 0.01417196]
+Group: 1
+Shapiro-Wilk statistic: 0.9387890472306335
+P-value: 0.5225262724829304
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.01497758 0.02081194 0.01076674]
+Group: 2
+Shapiro-Wilk statistic: 0.9913680663585025
+P-value: 0.8223021343909733
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.01647249 0.01132989 0.01509707]
+Group: 3
+Shapiro-Wilk statistic: 0.9327474175405964
+P-value: 0.49898761772669964
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp and different num_clients.
+Levene's test statistic: 0.28408631568520337, p-value: 0.7538849417971185
+Component: client, Clients: 1, Language: cpp --->
+Group: 1
+[0.16902    0.06625079 0.057392   0.03889401 0.00849081 0.14842951
+ 0.08256205 0.04217529 0.02936017 0.01636886 0.14661648 0.09723037
+ 0.02410186 0.01417196 0.10248361 0.04954346 0.02955126]
+Group: 1
+Shapiro-Wilk statistic: 0.8901774394017783
+P-value: 0.0466460137564656
+The data is likely not normally distributed (reject H0).
+
+Component: client, Clients: 2, Language: cpp --->
+Group: 2
+[0.15326843 0.07997797 0.06637618 0.04392184 0.01497758 0.16673504
+ 0.10967551 0.05071707 0.02553156 0.02081194 0.16119606 0.11867629
+ 0.02409293 0.01722586 0.01076674 0.12316867 0.06174937 0.0359537 ]
+Group: 2
+Shapiro-Wilk statistic: 0.8838263929577954
+P-value: 0.03028959759823908
+The data is likely not normally distributed (reject H0).
+
+Component: client, Clients: 3, Language: cpp --->
+Group: 3
+[0.14874967 0.08276493 0.06140147 0.03281393 0.01647249 0.12625273
+ 0.08326008 0.04340591 0.02876644 0.01132989 0.16237749 0.10396797
+ 0.02067977 0.01528555 0.01509707 0.06025908 0.07628518 0.04977614
+ 0.03272903]
+Group: 3
+Shapiro-Wilk statistic: 0.8929555945122196
+P-value: 0.036342507260276685
+The data is likely not normally distributed (reject H0).
+
+Levene's test different num_clients.
+Levene's test statistic: 0.06249504644172631, p-value: 0.939452303098308
+Component: client, Num clients: 1 --->
+Group: 1
+[0.87332121 0.16902    0.48866713 0.06625079 0.03069235 0.057392
+ 0.19298961 0.03889401 0.01116538 0.00849081 1.08397698 0.14842951
+ 0.61833555 0.08256205 0.25064932 0.04217529 0.10854833 0.02936017
+ 0.0623697  0.01636886 0.00666372 0.14661648 0.65050227 0.09723037
+ 0.01831241 0.09810775 0.02410186 0.05673828 0.01417196 0.07115253
+ 0.10248361 0.25763399 0.04954346 0.13703173 0.02955126 0.05675266]
+Group: 1
+Shapiro-Wilk statistic: 0.6410010101800699
+P-value: 3.7668773145552304e-08
+The data is likely not normally distributed (reject H0).
+
+Component: client, Num clients: 2 --->
+Group: 2
+[0.79831685 0.15326843 0.41613849 0.07997797 0.01237312 0.06637618
+ 0.16143231 0.04392184 0.00836693 0.01497758 0.8926676  0.16673504
+ 0.40013807 0.10967551 0.22107794 0.05071707 0.09461831 0.02553156
+ 0.05302511 0.02081194 0.66979315 0.16119606 0.48692056 0.11867629
+ 0.02409293 0.08921204 0.01722586 0.0585958  0.01076674 0.00826993
+ 0.75914328 0.12316867 0.29084985 0.06174937 0.14540234 0.0359537 ]
+Group: 2
+Shapiro-Wilk statistic: 0.722877105733887
+P-value: 6.601582474068741e-07
+The data is likely not normally distributed (reject H0).
+
+Component: client, Num clients: 3 --->
+Group: 3
+[0.73965477 0.14874967 0.40813422 0.08276493 0.20887829 0.06140147
+ 0.16663705 0.03281393 0.01079274 0.01647249 0.86137025 0.12625273
+ 0.4151143  0.08326008 0.15733916 0.04340591 0.07665814 0.02876644
+ 0.05061047 0.01132989 0.82855259 0.16237749 0.3888142  0.10396797
+ 0.12448265 0.02067977 0.07845934 0.01528555 0.05842681 0.01509707
+ 0.06025908 0.44706203 0.07628518 0.2394462  0.04977614 0.16090269
+ 0.03272903]
+Group: 3
+Shapiro-Wilk statistic: 0.7051281078091023
+P-value: 2.6035644729061215e-07
+The data is likely not normally distributed (reject H0).
+
+Levene's different msg_intervals.
+Levene's test statistic: 0.06249504644172631, p-value: 0.939452303098308
+Component: client, Interval: 0.05 --->
+Group: 0.05
+[0.87332121 0.79831685 0.73965477 0.16902    0.15326843 0.14874967
+ 1.08397698 0.8926676  0.86137025 0.14842951 0.16673504 0.12625273
+ 0.00666372 0.66979315 0.82855259 0.14661648 0.16119606 0.16237749
+ 0.07115253 0.00826993 0.06025908]
+Group: 0.05
+Shapiro-Wilk statistic: 0.7921543600623324
+P-value: 0.0004989707232427455
+The data is likely not normally distributed (reject H0).
+
+Component: client, Interval: 0.25 --->
+Group: 0.25
+[0.03069235 0.01237312 0.20887829 0.057392   0.06637618 0.06140147
+ 0.25064932 0.22107794 0.15733916 0.04217529 0.05071707 0.04340591
+ 0.01831241 0.12448265 0.02409293 0.02067977 0.25763399 0.29084985
+ 0.2394462  0.04954346 0.06174937 0.04977614]
+Group: 0.25
+Shapiro-Wilk statistic: 0.8132309129937563
+P-value: 0.0008120263997176639
+The data is likely not normally distributed (reject H0).
+
+Component: client, Interval: 0.5 --->
+Group: 0.5
+[0.19298961 0.16143231 0.16663705 0.03889401 0.04392184 0.03281393
+ 0.10854833 0.09461831 0.07665814 0.02936017 0.02553156 0.02876644
+ 0.09810775 0.08921204 0.07845934 0.02410186 0.01722586 0.01528555
+ 0.13703173 0.14540234 0.16090269 0.02955126 0.0359537  0.03272903]
+Group: 0.5
+Shapiro-Wilk statistic: 0.8706687724836812
+P-value: 0.005421921843226463
+The data is likely not normally distributed (reject H0).
+
+Component: client, Interval: 1.0 --->
+Group: 1.0
+[0.01116538 0.00836693 0.01079274 0.00849081 0.01497758 0.01647249
+ 0.0623697  0.05302511 0.05061047 0.01636886 0.02081194 0.01132989
+ 0.05673828 0.0585958  0.05842681 0.01417196 0.01076674 0.01509707
+ 0.05675266]
+Group: 1.0
+Shapiro-Wilk statistic: 0.7540344605521806
+P-value: 0.0002642336209764329
+The data is likely not normally distributed (reject H0).
+
