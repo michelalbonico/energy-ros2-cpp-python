@@ -14,6 +14,11 @@ import statsmodels.formula.api as smf
 from statsmodels.stats.anova import anova_lm
 from scipy.stats import boxcox
 from scipy.stats import yeojohnson
+from pingouin import welch_anova as pg_welch_anova
+from scipy import stats
+import scikit_posthocs as sp
+from statsmodels.formula.api import ols
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
 
 from load_data import LoadData
 
@@ -85,17 +90,81 @@ def levene_test(grouped_df, value):
     stat, p = levene(*group_values)
     print(f"Levene's test statistic: {stat}, p-value: {p}")
     if p < 0.05:
-        #non-parametric
-        welch_anova()
+        print("Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...")
+        welch_stat, welch_p = welch_anova(grouped_df, value)
+        kruskal_wallis_test(grouped_df, value)
+        print(f"Welch's ANOVA statistic: {welch_stat}, p-value: {welch_p}")
     else:
         # parametric
-        one_way_anova()
+        print("Levene's test indicates equal variances. Running ANOVA...")
+        one_way_anova(grouped_df)
 
-def one_way_anova():
-    pass
+def one_way_anova(grouped_df):
+    groups = [group['avg_energy_pct'] for _, group in grouped_df]
+    stat, p_value = f_oneway(*groups)
+    print(f"ANOVA test: p = {p_value}")
+    if p_value < 0.05:
+         print(f"ANOVA test rejects the null hypothesis. There is statistical difference among groups.)")
+         print("Since ANOVA is significant we perform Tukey's HSD test...")
+         tukey_hsd(grouped_df)
+    else:
+        print(f"ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)")
 
-def welch_anova():
-    pass
+def welch_anova(grouped_df, value):
+    group_values = [group[value].values for _, group in grouped_df]
+    k = len(group_values)
+    means = [group.mean() for group in group_values]
+    variances = [group.var(ddof=1) for group in group_values]
+    ns = [len(group) for group in group_values]
+    print(f"Group means: {means}")
+    print(f"Group variances: {variances}")
+    print(f"Group sizes: {ns}")
+    numerator = sum((mean - sum(means)/k) ** 2 / var for mean, var in zip(means, variances))
+    denominator = sum(var / n for var, n in zip(variances, ns))
+    print(f"Numerator: {numerator}")
+    print(f"Denominator: {denominator}")
+    welch_stat = numerator / denominator
+    df = sum(1 / (n - 1) for n in ns)
+    print(f"Degrees of freedom: {df}")
+    welch_p = 1 - stats.chi2.cdf(welch_stat, df)
+    return welch_stat, welch_p
+
+def kruskal_wallis_test(grouped_df, value):
+    group_values = [group[value].values for _, group in grouped_df]
+    stat, p = stats.kruskal(*group_values)
+    print(f"Kruskal-Wallis H statistic: {stat}, p-value: {p}")
+    
+    if p < 0.05:
+        print("The test indicates a significant difference between the groups. Running post-hoc Dunn's test")
+        dunn_test(grouped_df, value)
+    else:
+        print("The test indicates no significant difference between the groups.")
+
+def dunn_test(grouped_df, value):
+    group_values = [group[value].values for _, group in grouped_df]
+    all_values = []
+    group_labels = []
+    for label, group in grouped_df:
+        all_values.extend(group[value].values)
+        group_labels.extend([label] * len(group))
+    data = pd.DataFrame({
+        'values': all_values,
+        'group': group_labels
+    })
+    dunn_result = sp.posthoc_dunn(data, val_col='values', group_col='group', p_adjust='bonferroni')
+    print("Dunn's test results (adjusted p-values):")
+    print(dunn_result)
+    return dunn_result
+
+def tukey_hsd(grouped_df):
+    values = []
+    labels = []
+    for group_name, group in grouped_df:
+        values.extend(group['avg_energy_pct'])
+        labels.extend([group_name] * len(group))
+    tukey_result = pairwise_tukeyhsd(values, labels, alpha=0.05)
+    print("\nTukey's HSD Test Results:")
+    print(tukey_result)
 
 def gen_single_density_graph(df, filter: list):
     for (keys), group in df:

@@ -1,6 +1,20 @@
 Component: client --->
 Levene's test for different languages.
 Levene's test statistic: 82.95455837794098, p-value: 2.298941027560329e-18
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.10195724126392293), np.float64(0.3843777075252785)]
+Group variances: [np.float64(0.011138094930997452), np.float64(0.1483015070624648)]
+Group sizes: [240, 240]
+Numerator: 1.9247399564554721
+Denominator: 0.0006643316749727594
+Degrees of freedom: 0.008368200836820083
+Kruskal-Wallis H statistic: 164.3751563582814, p-value: 1.252585045002918e-37
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              cpp            py
+cpp  1.000000e+00  1.252585e-37
+py   1.252585e-37  1.000000e+00
+Welch's ANOVA statistic: 2897.2575431306886, p-value: 0.0
 Component: client, Language: py --->
 Group: py
 [0.92324313 0.80595419 0.75138761 0.25860618 0.25312141 0.26980671
@@ -44,12 +58,28 @@ Group: py
  1.1190057  1.02868953 0.96412754 0.2697393  0.27132221 0.28115716
  0.14715538 0.14271053 0.14776386 0.09258451 0.0768199  0.0836406 ]
 Group: py
-Shapiro-Wilk statistic: 0.7236593038900165
-P-value: 1.0724844068704875e-19
+Shapiro-Wilk statistic: 0.7236593038900171
+P-value: 1.0724844068705338e-19
 The data is likely not normally distributed (reject H0).
 
 Levene's test for language py and different msg_intervals.
 Levene's test statistic: 64.93737245659253, p-value: 1.19473986328964e-30
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.0324306761947577), np.float64(0.2767273614642674), np.float64(0.14677952954192072), np.float64(0.0815732629001683)]
+Group variances: [np.float64(0.010618485659427572), np.float64(0.0003999948920154978), np.float64(0.00013603792109669703), np.float64(6.208836614322942e-05)]
+Group sizes: [60, 60, 60, 60]
+Numerator: 1960.2768051267315
+Denominator: 0.00018694344731138326
+Degrees of freedom: 0.06779661016949153
+Kruskal-Wallis H statistic: 224.06639004149372, p-value: 2.6525004199920717e-48
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.25          0.50          1.00
+0.05  1.000000e+00  1.323661e-05  1.725823e-20  5.442465e-45
+0.25  1.323661e-05  1.000000e+00  1.323661e-05  1.725823e-20
+0.50  1.725823e-20  1.323661e-05  1.000000e+00  1.323661e-05
+1.00  5.442465e-45  1.725823e-20  1.323661e-05  1.000000e+00
+Welch's ANOVA statistic: 10485934.828523766, p-value: 0.0
 Component: client, Language: py, Interval: 0.05,  --->
 Group: 0.05
 [0.92324313 0.80595419 0.75138761 1.02645395 1.04899516 0.96215109
@@ -68,7 +98,21 @@ P-value: 0.576242656110356
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language py, msg_interval 0.05 and different num_clients.
-Levene's test statistic: 1.1872779026261475, p-value: 0.31248036944624435
+Levene's test statistic: 1.1872779026261475, p-value: 0.31248036944624347
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 3.116728149173363e-08
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj  lower   upper  reject
+---------------------------------------------------
+     1      2  -0.1247   0.0 -0.1836 -0.0658   True
+     1      3  -0.1609   0.0 -0.2198  -0.102   True
+     2      3  -0.0362 0.309 -0.0951  0.0227  False
+---------------------------------------------------
 Component: client, Language: py, Interval: 0.05, Clients: 1 --->
 Group: 1
 [0.92324313 1.02645395 0.99656896 1.06979505 1.12027157 1.10596286
@@ -88,7 +132,7 @@ Group: 2
  0.88616625 1.02868953]
 Group: 2
 Shapiro-Wilk statistic: 0.9353940518873869
-P-value: 0.1959806401885007
+P-value: 0.19598064018850048
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: py, Interval: 0.05, Clients: 3 --->
@@ -115,12 +159,15 @@ Group: 0.25
  0.26167228 0.2661552  0.28688135 0.24737307 0.25795699 0.30076317
  0.27952747 0.25843135 0.28156522 0.2697393  0.27132221 0.28115716]
 Group: 0.25
-Shapiro-Wilk statistic: 0.9705218838430743
-P-value: 0.1547569421860901
+Shapiro-Wilk statistic: 0.970521883843074
+P-value: 0.1547569421860851
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language py, msg_interval 0.25 and different num_clients.
 Levene's test statistic: 1.8192862580599791, p-value: 0.17143037212576717
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.3248634475690182
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Language: py, Interval: 0.25, Clients: 1 --->
 Group: 1
 [0.25860618 0.29031216 0.27433665 0.26007915 0.2506363  0.24420632
@@ -150,8 +197,8 @@ Group: 3
  0.29432717 0.31257528 0.28877685 0.28234273 0.28688135 0.30076317
  0.28156522 0.28115716]
 Group: 3
-Shapiro-Wilk statistic: 0.9617819183262734
-P-value: 0.5800320714886205
+Shapiro-Wilk statistic: 0.9617819183262737
+P-value: 0.5800320714886285
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: py, Interval: 0.5,  --->
@@ -173,6 +220,20 @@ The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language py, msg_interval 0.5 and different num_clients.
 Levene's test statistic: 0.49235747811520575, p-value: 0.613759007890323
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.02166194408810417
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      2   0.0048 0.3624 -0.0036 0.0133  False
+     1      3     0.01 0.0159  0.0016 0.0185   True
+     2      3   0.0052 0.3025 -0.0032 0.0137  False
+---------------------------------------------------
 Component: client, Language: py, Interval: 0.5, Clients: 1 --->
 Group: 1
 [0.12192328 0.13690736 0.13533311 0.13522702 0.11810416 0.14012481
@@ -180,8 +241,8 @@ Group: 1
  0.14603274 0.14699984 0.15192637 0.14068761 0.14729691 0.14640471
  0.14617494 0.14715538]
 Group: 1
-Shapiro-Wilk statistic: 0.9033713715473498
-P-value: 0.04772014469413632
+Shapiro-Wilk statistic: 0.9033713715473496
+P-value: 0.04772014469413586
 The data is likely not normally distributed (reject H0).
 
 Component: client, Language: py, Interval: 0.5, Clients: 2 --->
@@ -192,7 +253,7 @@ Group: 2
  0.14449097 0.14271053]
 Group: 2
 Shapiro-Wilk statistic: 0.9480015698615377
-P-value: 0.3377714428626217
+P-value: 0.337771442862622
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: py, Interval: 0.5, Clients: 3 --->
@@ -202,8 +263,8 @@ Group: 3
  0.14391694 0.15264487 0.15450822 0.17770723 0.16938518 0.14781572
  0.15511644 0.14776386]
 Group: 3
-Shapiro-Wilk statistic: 0.9668531104297337
-P-value: 0.6875356237001695
+Shapiro-Wilk statistic: 0.966853110429734
+P-value: 0.6875356237001787
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: py, Interval: 1.0,  --->
@@ -219,12 +280,15 @@ Group: 1.0
  0.08438139 0.07745729 0.08642566 0.07342075 0.0840114  0.08571722
  0.07891884 0.08003911 0.08544296 0.09258451 0.0768199  0.0836406 ]
 Group: 1.0
-Shapiro-Wilk statistic: 0.9752104247928108
-P-value: 0.2601567793196537
+Shapiro-Wilk statistic: 0.9752104247928112
+P-value: 0.2601567793196627
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language py, msg_interval 1.0 and different num_clients.
 Levene's test statistic: 0.3391995636731681, p-value: 0.7137682809956938
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.7943021169568277
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Language: py, Interval: 1.0, Clients: 1 --->
 Group: 1
 [0.07355677 0.07481914 0.07716518 0.07296559 0.08788374 0.07488983
@@ -244,7 +308,7 @@ Group: 2
  0.08003911 0.0768199 ]
 Group: 2
 Shapiro-Wilk statistic: 0.8696028396272124
-P-value: 0.011561816996087527
+P-value: 0.011561816996087526
 The data is likely not normally distributed (reject H0).
 
 Component: client, Language: py, Interval: 1.0, Clients: 3 --->
@@ -254,12 +318,15 @@ Group: 3
  0.08680244 0.0896421  0.07569769 0.09024058 0.08642566 0.08571722
  0.08544296 0.0836406 ]
 Group: 3
-Shapiro-Wilk statistic: 0.8885525457676868
-P-value: 0.02529650279354331
+Shapiro-Wilk statistic: 0.8885525457676873
+P-value: 0.025296502793543674
 The data is likely not normally distributed (reject H0).
 
 Levene's test for language py and different num_clients.
 Levene's test statistic: 0.38907487791603423, p-value: 0.6781155746147081
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.8025476448586035
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Clients: 1, Language: py --->
 Group: 1
 [0.92324313 0.25860618 0.12192328 0.07355677 1.02645395 0.29031216
@@ -277,8 +344,8 @@ Group: 1
  1.14957752 0.27952747 0.14617494 0.07891884 1.1190057  0.2697393
  0.14715538 0.09258451]
 Group: 1
-Shapiro-Wilk statistic: 0.7026276561262025
-P-value: 1.940208051252126e-11
+Shapiro-Wilk statistic: 0.7026276561262024
+P-value: 1.940208051252098e-11
 The data is likely not normally distributed (reject H0).
 
 Component: client, Clients: 2, Language: py --->
@@ -299,7 +366,7 @@ Group: 2
  0.14271053 0.0768199 ]
 Group: 2
 Shapiro-Wilk statistic: 0.7122249093149136
-P-value: 3.1447074651715e-11
+P-value: 3.144707465171454e-11
 The data is likely not normally distributed (reject H0).
 
 Component: client, Clients: 3, Language: py --->
@@ -319,8 +386,8 @@ Group: 3
  1.01455806 0.28156522 0.15511644 0.08544296 0.96412754 0.28115716
  0.14776386 0.0836406 ]
 Group: 3
-Shapiro-Wilk statistic: 0.7198305782677241
-P-value: 4.647175954814827e-11
+Shapiro-Wilk statistic: 0.7198305782677243
+P-value: 4.647175954814945e-11
 The data is likely not normally distributed (reject H0).
 
 Component: client, Language: cpp --->
@@ -372,6 +439,22 @@ The data is likely not normally distributed (reject H0).
 
 Levene's test for language cpp and different msg_intervals.
 Levene's test statistic: 59.85950005848293, p-value: 8.175334866819004e-29
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.27994942443847165), np.float64(0.06638448253534061), np.float64(0.03725051612469143), np.float64(0.02424454195718799)]
+Group variances: [np.float64(0.0011084162897820127), np.float64(5.3977826978878546e-05), np.float64(3.255990109618601e-05), np.float64(1.9163739993179003e-05)]
+Group sizes: [60, 60, 60, 60]
+Numerator: 495.7584420150719
+Denominator: 2.0235295964170938e-05
+Degrees of freedom: 0.06779661016949153
+Kruskal-Wallis H statistic: 222.20967496542175, p-value: 6.684133610075187e-48
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.25          0.50          1.00
+0.05  1.000000e+00  1.298162e-05  7.122164e-21  2.131502e-44
+0.25  1.298162e-05  1.000000e+00  8.542020e-06  4.468952e-20
+0.50  7.122164e-21  8.542020e-06  1.000000e+00  3.287716e-05
+1.00  2.131502e-44  4.468952e-20  3.287716e-05  1.000000e+00
+Welch's ANOVA statistic: 24499688.21275818, p-value: 0.0
 Component: client, Language: cpp, Interval: 0.05,  --->
 Group: 0.05
 [0.22751832 0.243511   0.32697576 0.26024976 0.26392195 0.2821189
@@ -385,12 +468,26 @@ Group: 0.05
  0.2567409  0.27436182 0.31975181 0.28130706 0.3198026  0.28784437
  0.27024402 0.25911094 0.28648571 0.2686234  0.273196   0.25290699]
 Group: 0.05
-Shapiro-Wilk statistic: 0.9656574804149667
-P-value: 0.0892383780713789
+Shapiro-Wilk statistic: 0.9656574804149664
+P-value: 0.08923837807137565
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language cpp, msg_interval 0.05 and different num_clients.
 Levene's test statistic: 2.100909761576005, p-value: 0.13171943875876832
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.0052481645938242324
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      2   0.0126 0.4077 -0.0109 0.0361  False
+     1      3   0.0329 0.0039  0.0094 0.0564   True
+     2      3   0.0203 0.1038 -0.0032 0.0438  False
+---------------------------------------------------
 Component: client, Language: cpp, Interval: 0.05, Clients: 1 --->
 Group: 1
 [0.22751832 0.26024976 0.25481068 0.23864876 0.23290022 0.260875
@@ -398,8 +495,8 @@ Group: 1
  0.28884804 0.25204054 0.31045485 0.26979988 0.2567409  0.28130706
  0.27024402 0.2686234 ]
 Group: 1
-Shapiro-Wilk statistic: 0.9527964878335019
-P-value: 0.41154214790015137
+Shapiro-Wilk statistic: 0.9527964878335016
+P-value: 0.4115421479001451
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.05, Clients: 2 --->
@@ -409,8 +506,8 @@ Group: 2
  0.28551542 0.27591498 0.30402873 0.29194222 0.27436182 0.3198026
  0.25911094 0.273196  ]
 Group: 2
-Shapiro-Wilk statistic: 0.9585870673596483
-P-value: 0.516023658212379
+Shapiro-Wilk statistic: 0.9585870673596479
+P-value: 0.5160236582123716
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.05, Clients: 3 --->
@@ -420,8 +517,8 @@ Group: 3
  0.34753747 0.2467992  0.24308654 0.3977519  0.31975181 0.28784437
  0.28648571 0.25290699]
 Group: 3
-Shapiro-Wilk statistic: 0.9517644890457089
-P-value: 0.3946708220923836
+Shapiro-Wilk statistic: 0.9517644890457084
+P-value: 0.394670822092377
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.25,  --->
@@ -437,12 +534,26 @@ Group: 0.25
  0.07119668 0.0675039  0.0626388  0.06248918 0.07012136 0.07166382
  0.06418719 0.07167961 0.07282236 0.05288754 0.07427567 0.06079256]
 Group: 0.25
-Shapiro-Wilk statistic: 0.9853875764815456
-P-value: 0.6901979995779602
+Shapiro-Wilk statistic: 0.9853875764815462
+P-value: 0.6901979995779899
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language cpp, msg_interval 0.25 and different num_clients.
 Levene's test statistic: 0.4761633442643814, p-value: 0.6236104679077435
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 8.887498707618282e-06
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+     1      2   0.0051 0.0293 0.0004 0.0097   True
+     1      3   0.0103    0.0 0.0057  0.015   True
+     2      3   0.0053 0.0224 0.0006 0.0099   True
+--------------------------------------------------
 Component: client, Language: cpp, Interval: 0.25, Clients: 1 --->
 Group: 1
 [0.05568493 0.05782734 0.06308682 0.06383578 0.0652759  0.0538591
@@ -462,7 +573,7 @@ Group: 2
  0.07167961 0.07427567]
 Group: 2
 Shapiro-Wilk statistic: 0.9380386566555535
-P-value: 0.2201064175585355
+P-value: 0.22010641755853547
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.25, Clients: 3 --->
@@ -489,12 +600,27 @@ Group: 0.5
  0.04067755 0.0369616  0.03989837 0.03681533 0.03821658 0.04834135
  0.03527099 0.04655776 0.03599549 0.03444519 0.04159945 0.04227662]
 Group: 0.5
-Shapiro-Wilk statistic: 0.9446742601858417
-P-value: 0.008814911067642957
+Shapiro-Wilk statistic: 0.9446742601858411
+P-value: 0.008814911067642503
 The data is likely not normally distributed (reject H0).
 
 Levene's test for language cpp, msg_interval 0.5 and different num_clients.
 Levene's test statistic: 5.390226603399332, p-value: 0.007177216352929255
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.03439348789124435), np.float64(0.036842188729977736), np.float64(0.040515871752852206)]
+Group variances: [np.float64(1.1418564484137425e-05), np.float64(1.926968629008793e-05), np.float64(5.0427348454616835e-05)]
+Group sizes: [20, 20, 20]
+Numerator: 0.9349505955247253
+Denominator: 4.0557799614421095e-06
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 9.538360655737705, p-value: 0.008487334140834735
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.237064  0.006247
+2  0.237064  1.000000  0.558682
+3  0.006247  0.558682  1.000000
+Welch's ANOVA statistic: 230523.00776008712, p-value: 0.0
 Component: client, Language: cpp, Interval: 0.5, Clients: 1 --->
 Group: 1
 [0.03024761 0.03384742 0.03507762 0.03286698 0.02784723 0.03848462
@@ -502,8 +628,8 @@ Group: 1
  0.03601775 0.03716107 0.03542926 0.03707647 0.04067755 0.03681533
  0.03527099 0.03444519]
 Group: 1
-Shapiro-Wilk statistic: 0.9549751894793459
-P-value: 0.4489374506076618
+Shapiro-Wilk statistic: 0.9549751894793456
+P-value: 0.4489374506076551
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.5, Clients: 2 --->
@@ -513,8 +639,8 @@ Group: 2
  0.03052578 0.03341159 0.03791156 0.04259321 0.0369616  0.03821658
  0.04655776 0.04159945]
 Group: 2
-Shapiro-Wilk statistic: 0.9714459442311545
-P-value: 0.7850791849558916
+Shapiro-Wilk statistic: 0.9714459442311549
+P-value: 0.7850791849558996
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 0.5, Clients: 3 --->
@@ -541,12 +667,26 @@ Group: 1.0
  0.02433316 0.0295441  0.02936647 0.01892816 0.02195065 0.02386224
  0.02502909 0.02734464 0.0231195  0.02018847 0.0263941  0.02554056]
 Group: 1.0
-Shapiro-Wilk statistic: 0.992249098096135
-P-value: 0.968776776074951
+Shapiro-Wilk statistic: 0.9922490980961344
+P-value: 0.9687767760749396
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language cpp, msg_interval 1.0 and different num_clients.
 Levene's test statistic: 0.5358728205413353, p-value: 0.5880771076637314
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.002614658180949768
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      2   0.0031 0.0491     0.0 0.0061   True
+     1      3   0.0045 0.0021  0.0015 0.0076   True
+     2      3   0.0015 0.4886 -0.0016 0.0045  False
+---------------------------------------------------
 Component: client, Language: cpp, Interval: 1.0, Clients: 1 --->
 Group: 1
 [0.02658419 0.02022621 0.01811247 0.01982508 0.01840128 0.02275656
@@ -554,8 +694,8 @@ Group: 1
  0.02637227 0.02167016 0.02681421 0.0237844  0.02433316 0.01892816
  0.02502909 0.02018847]
 Group: 1
-Shapiro-Wilk statistic: 0.9476291962005573
-P-value: 0.33253144594473105
+Shapiro-Wilk statistic: 0.9476291962005576
+P-value: 0.3325314459447356
 The data is likely normally distributed (fail to reject H0).
 
 Component: client, Language: cpp, Interval: 1.0, Clients: 2 --->
@@ -576,12 +716,15 @@ Group: 3
  0.03429968 0.03150604 0.02664441 0.03451352 0.02936647 0.02386224
  0.0231195  0.02554056]
 Group: 3
-Shapiro-Wilk statistic: 0.962310137592826
-P-value: 0.5909634412875262
+Shapiro-Wilk statistic: 0.9623101375928265
+P-value: 0.5909634412875349
 The data is likely normally distributed (fail to reject H0).
 
 Levene's test for language cpp and different num_clients.
 Levene's test statistic: 0.15558496647425582, p-value: 0.8560016991192431
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.7224057354432796
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Clients: 1, Language: cpp --->
 Group: 1
 [0.22751832 0.05568493 0.03024761 0.02658419 0.26024976 0.05782734
@@ -599,8 +742,8 @@ Group: 1
  0.27024402 0.06418719 0.03527099 0.02502909 0.2686234  0.05288754
  0.03444519 0.02018847]
 Group: 1
-Shapiro-Wilk statistic: 0.6935481481733
-P-value: 1.240620979308781e-11
+Shapiro-Wilk statistic: 0.6935481481732998
+P-value: 1.2406209793087766e-11
 The data is likely not normally distributed (reject H0).
 
 Component: client, Clients: 2, Language: cpp --->
@@ -620,8 +763,8 @@ Group: 2
  0.25911094 0.07167961 0.04655776 0.02734464 0.273196   0.07427567
  0.04159945 0.0263941 ]
 Group: 2
-Shapiro-Wilk statistic: 0.697479297924238
-P-value: 1.5039595532456085e-11
+Shapiro-Wilk statistic: 0.6974792979242384
+P-value: 1.5039595532456302e-11
 The data is likely not normally distributed (reject H0).
 
 Component: client, Clients: 3, Language: cpp --->
@@ -641,12 +784,15 @@ Group: 3
  0.28648571 0.07282236 0.03599549 0.0231195  0.25290699 0.06079256
  0.04227662 0.02554056]
 Group: 3
-Shapiro-Wilk statistic: 0.7127680143322225
-P-value: 3.232884638538269e-11
+Shapiro-Wilk statistic: 0.7127680143322224
+P-value: 3.232884638538234e-11
 The data is likely not normally distributed (reject H0).
 
 Levene's test different num_clients.
 Levene's test statistic: 0.18631234475821865, p-value: 0.8300746765108558
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.918452748541293
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Num clients: 1 --->
 Group: 1
 [0.92324313 0.22751832 0.25860618 0.05568493 0.12192328 0.03024761
@@ -677,8 +823,8 @@ Group: 1
  0.07891884 0.02502909 1.1190057  0.2686234  0.2697393  0.05288754
  0.14715538 0.03444519 0.09258451 0.02018847]
 Group: 1
-Shapiro-Wilk statistic: 0.6307827128063643
-P-value: 1.987036383941613e-18
+Shapiro-Wilk statistic: 0.6307827128063646
+P-value: 1.9870363839416414e-18
 The data is likely not normally distributed (reject H0).
 
 Component: client, Num clients: 2 --->
@@ -711,8 +857,8 @@ Group: 2
  0.08003911 0.02734464 1.02868953 0.273196   0.27132221 0.07427567
  0.14271053 0.04159945 0.0768199  0.0263941 ]
 Group: 2
-Shapiro-Wilk statistic: 0.6577652239789857
-P-value: 8.931702028542007e-18
+Shapiro-Wilk statistic: 0.6577652239789862
+P-value: 8.931702028542264e-18
 The data is likely not normally distributed (reject H0).
 
 Component: client, Num clients: 3 --->
@@ -745,12 +891,15 @@ Group: 3
  0.08544296 0.0231195  0.96412754 0.25290699 0.28115716 0.06079256
  0.14776386 0.04227662 0.0836406  0.02554056]
 Group: 3
-Shapiro-Wilk statistic: 0.6777917466725085
+Shapiro-Wilk statistic: 0.6777917466725086
 P-value: 2.88712899342938e-17
 The data is likely not normally distributed (reject H0).
 
 Levene's different msg_intervals.
 Levene's test statistic: 0.18631234475821865, p-value: 0.8300746765108558
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.918452748541293
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
 Component: client, Interval: 0.05 --->
 Group: 0.05
 [0.92324313 0.80595419 0.75138761 0.22751832 0.243511   0.32697576
@@ -774,8 +923,8 @@ Group: 0.05
  1.14957752 0.88616625 1.01455806 0.27024402 0.25911094 0.28648571
  1.1190057  1.02868953 0.96412754 0.2686234  0.273196   0.25290699]
 Group: 0.05
-Shapiro-Wilk statistic: 0.7790406001994804
-P-value: 3.723846243674126e-12
+Shapiro-Wilk statistic: 0.7790406001994802
+P-value: 3.7238462436740846e-12
 The data is likely not normally distributed (reject H0).
 
 Component: client, Interval: 0.25 --->
@@ -801,8 +950,8 @@ Group: 0.25
  0.27952747 0.25843135 0.28156522 0.06418719 0.07167961 0.07282236
  0.2697393  0.27132221 0.28115716 0.05288754 0.07427567 0.06079256]
 Group: 0.25
-Shapiro-Wilk statistic: 0.7473637186650339
-P-value: 4.3724542276520836e-13
+Shapiro-Wilk statistic: 0.7473637186650335
+P-value: 4.3724542276519413e-13
 The data is likely not normally distributed (reject H0).
 
 Component: client, Interval: 0.5 --->
@@ -855,7 +1004,7 @@ Group: 1.0
  0.07891884 0.08003911 0.08544296 0.02502909 0.02734464 0.0231195
  0.09258451 0.0768199  0.0836406  0.02018847 0.0263941  0.02554056]
 Group: 1.0
-Shapiro-Wilk statistic: 0.8081871536063497
-P-value: 3.24778470707409e-11
+Shapiro-Wilk statistic: 0.8081871536063493
+P-value: 3.247784707073972e-11
 The data is likely not normally distributed (reject H0).
 
