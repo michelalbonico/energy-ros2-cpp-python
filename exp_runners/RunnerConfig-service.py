@@ -30,6 +30,11 @@ class RunnerConfig:
     time_between_runs_in_ms:    int             = 1000
     docker_runner: DockerRunner
 
+    kill_command = "pkill python3"
+    kill_commands = []
+
+    containers_kill = []
+
     # CPU and Memory
     cpu_mem_profiler_server: CPUMemProfiler
     cpu_mem_profiler_client: CPUMemProfiler
@@ -39,6 +44,7 @@ class RunnerConfig:
     energy_profiler_client: ProcessResProfiler
 
     global commands_to_run
+    global commands_to_kill
 
     def __init__(self):
         if not experiment_path:
@@ -124,7 +130,9 @@ class RunnerConfig:
         server_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {self.__pub} {exec_time} {interval}"
         #threads.append = self.docker_runner.run_in_thread('docker_server_1',server_command)
         containers.append('docker_server_1')
+        self.containers_kill.append('docker_server_1')
         commands.append(server_command)
+        self.kill_commands.append(self.kill_command)
 
         output.console_log("Running Client(s)/Sub(s) command...")
         if variation['ros_package'] == 'simple_service_client':
@@ -134,9 +142,12 @@ class RunnerConfig:
         
         for c in range(clients):
             containers.append(f'docker_client_{c+1}')
+            self.containers_kill.append(f'docker_client_{c+1}')
             commands.append(client_command)
+            self.kill_commands.append(self.kill_command)
 
         self.commands_to_run = list(zip(containers, commands))
+        self.commands_to_kill = list(zip(containers, commands))
 
         # Execute the commands only after starting measurement.
         self.docker_runner.execute_commands_in_parallel(self.commands_to_run)
@@ -198,6 +209,12 @@ class RunnerConfig:
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, Any]]:
         output.console_log("Config.populate_run_data() called!")
 
+        self.docker_runner.execute_commands_in_parallel(self.commands_to_kill)
+
+        output.console_log("Cleaning Docker...")
+        command_cleaning = "./clean-containers.sh"
+        subprocess.run(command_cleaning, shell=True)
+
         try:
             variation = context.run_variation
             run_id = variation['__run_id']
@@ -224,6 +241,7 @@ class RunnerConfig:
             pass
     
     def after_experiment(self) -> None:
+
         output.console_log("Config.after_experiment() called!")
         output.console_log("Cooling down for 10 seconds...")
         time.sleep(10)

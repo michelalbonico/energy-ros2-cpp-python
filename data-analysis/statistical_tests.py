@@ -41,7 +41,7 @@ match algo:
     case 'service':
         algo_folder='cpp_py_ros2_service'
         dest_folder='service'
-        num_rows=115
+        num_rows=320
     case 'action':
         pass
 
@@ -214,7 +214,7 @@ def gen_boxplot_graph(df, filter):
 
 # Factors
 #components = {'server', 'client'}
-components = {'client'}
+components = {'server'}
 intervals = {0.05,0.25,0.5,1.0}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
