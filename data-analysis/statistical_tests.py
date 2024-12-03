@@ -230,7 +230,7 @@ def gen_boxplot_graph(df, filter):
 
 # Factors
 #components = {'server', 'client'}
-components = {'server'}
+components = {'client'}
 intervals = {0.05,0.1,0.25,0.5,1.0}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
