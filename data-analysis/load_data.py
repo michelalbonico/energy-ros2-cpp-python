@@ -66,6 +66,8 @@ class LoadData:
         for index, row in df.iterrows():
             run_id = row['__run_id']
             source = row['source']
+            new_id = run_id+'_'+source
+            df.loc[(df['__run_id'] == run_id) & (df['source'] == source), '__run_id'] = new_id
             if source == '1':
                 folder_path = f"{self.__s_folder}/{run_id}"
             else:
@@ -81,7 +83,7 @@ class LoadData:
                         # Apply Box-Cox transformation (ensure the values are positive)
                         energy_df['CPU Power'], _ = self.boxcox_transform(energy_df, 'CPU Power')
                     avg_energy_pct = energy_df['CPU Power'].mean()
-                    runs_data[run_id] = avg_energy_pct
+                    runs_data[new_id] = avg_energy_pct
                 except Exception as e:
                     print(f"Error processing file for run_id {run_id}: {e}")
 
@@ -92,6 +94,113 @@ class LoadData:
 
         return clean_df
     
+    def load_energy(self, component, transform: bool, outliers: bool):
+        df = self.load_run_table()
+        runs_data = {}
+        energy_files = {}
+        sum_energy_df = {}
+        #for run_id in df['__run_id']:
+        for index, row in df.iterrows():
+            run_id = row['__run_id']
+            source = row['source']
+            new_id = run_id+'_'+source
+            df.loc[(df['__run_id'] == run_id) & (df['source'] == source), '__run_id'] = new_id
+            if source == '1':
+                folder_path = f"{self.__s_folder}/{run_id}"
+            else:
+                folder_path = f"{self.__folder_01}/{run_id}"
+            energy_files = glob.glob(os.path.join(folder_path, f'energy-{component}-*.csv'))
+            if energy_files:
+                try:
+                    energy_df = pd.read_csv(energy_files[0])
+                    energy_df['CPU Power'] = pd.to_numeric(energy_df['CPU Power'], errors='coerce')
+                    if transform:
+                        # Apply log transformation (log + 1 to avoid log(0) issues)
+                        # energy_df['CPU Power'] = self.log_transform(energy_df,'CPU Power')
+                        # Apply Box-Cox transformation (ensure the values are positive)
+                        energy_df['CPU Power'], _ = self.boxcox_transform(energy_df, 'CPU Power')
+                    sum_energy_pct = energy_df['CPU Power'].sum()
+                    runs_data[new_id] = sum_energy_pct
+                except Exception as e:
+                    print(f"Error processing file for run_id {run_id}: {e}")
+
+        sum_energy_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'sum_energy_pct'])
+        merged_df = df.merge(sum_energy_df, on='__run_id')
+        
+        clean_df = merged_df.fillna(0)
+
+        return clean_df
+
+    def load_cpu(self, component, transform: bool, outliers: bool):
+        df = self.load_run_table()
+        runs_data = {}
+        energy_files = {}
+        avg_cpu_df = {}
+        #for run_id in df['__run_id']:
+        for index, row in df.iterrows():
+            run_id = row['__run_id']
+            source = row['source']
+            new_id = run_id+'_'+source
+            df.loc[(df['__run_id'] == run_id) & (df['source'] == source), '__run_id'] = new_id
+            if source == '1':
+                folder_path = f"{self.__s_folder}/{run_id}"
+            else:
+                folder_path = f"{self.__folder_01}/{run_id}"
+            energy_files = glob.glob(os.path.join(folder_path, f'energy-{component}-*.csv'))
+            if energy_files:
+                try:
+                    cpu_df = pd.read_csv(energy_files[0])
+                    cpu_df['CPU Power'] = pd.to_numeric(cpu_df['CPU Utilization'], errors='coerce')
+                    if transform:
+                        # Apply log transformation (log + 1 to avoid log(0) issues)
+                        # energy_df['CPU Power'] = self.log_transform(energy_df,'CPU Power')
+                        # Apply Box-Cox transformation (ensure the values are positive)
+                        cpu_df['CPU Utilization'], _ = self.boxcox_transform(cpu_df, 'CPU Utilization')
+                    avg_cpu_pct = cpu_df['CPU Utilization'].mean() * 100 * 8
+                    runs_data[new_id] = avg_cpu_pct
+                except Exception as e:
+                    print(f"Error processing file for run_id {run_id}: {e}")
+
+        avg_cpu_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_cpu_pct'])
+        merged_df = df.merge(avg_cpu_df, on='__run_id')
+
+        clean_df = merged_df.fillna(0)
+
+        return clean_df
+    
+    def load_mem(self, component, transform: bool, outliers: bool):
+        df = self.load_run_table()
+        runs_data = {}
+        energy_files = {}
+        avg_mem_df = {}
+        for index, row in df.iterrows():
+            run_id = row['__run_id']
+            source = row['source']
+            new_id = run_id+'_'+source
+            df.loc[(df['__run_id'] == run_id) & (df['source'] == source), '__run_id'] = new_id
+            if source == '1':
+                folder_path = f"{self.__s_folder}/{run_id}"
+            else:
+                folder_path = f"{self.__folder_01}/{run_id}"
+            energy_files = glob.glob(os.path.join(folder_path, f'cpu-mem-{component}.csv'))
+            if energy_files:
+                try:
+                    mem_df = pd.read_csv(energy_files[0])
+                    mem_df['memory_usage'] = pd.to_numeric(mem_df['memory_usage'], errors='coerce')
+                    if transform:
+                        mem_df['memory_usage'], _ = self.boxcox_transform(mem_df, 'memory_usage')
+                    avg_mem_pct = mem_df['memory_usage'].mean() / 1024
+                    runs_data[new_id] = avg_mem_pct
+                except Exception as e:
+                    print(f"Error processing file for run_id {run_id}: {e}")
+
+        avg_mem_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_mem_pct'])
+        merged_df = df.merge(avg_mem_df, on='__run_id')
+
+        clean_df = merged_df.fillna(0)
+
+        return clean_df
+
     def remove_outliers(self, group, column_name):
         Q1 = group[column_name].quantile(0.25)
         Q3 = group[column_name].quantile(0.75)
