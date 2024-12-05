@@ -27,33 +27,29 @@ class FibonacciActionClient(Node):
         goal_msg = Fibonacci.Goal()
         goal_msg.order = order
 
-        # Wait for the action server to be available
-        self._action_client.wait_for_server()
+        if not self._action_client.wait_for_server(timeout_sec=5.0):
+            self._node.get_logger().error('Action server not available!')
+            return
 
-        # Create a future to send the goal asynchronously
         self._send_goal_future = self._action_client.send_goal_async(
             goal_msg, feedback_callback=self.feedback_callback
         )
 
-        # Create a timer that will trigger after the timeout period
         self._timeout_timer = self.create_timer(self.timeout, self.on_timeout)
 
-        # Wait until the goal is accepted or timeout occurs
-        rclpy.spin_until_future_complete(self, self._send_goal_future)
+        rclpy.spin_until_future_complete(self, self._send_goal_future, timeout_sec=5.0)
 
         self._goal_handle = self._send_goal_future.result()
 
-        # If the goal was not accepted, return immediately
         if not self._goal_handle.accepted:
             self.get_logger().info('Goal was not accepted.')
             if self._timeout_timer:
                 self._timeout_timer.cancel()
             return False
 
-        # If goal is accepted, we wait for the result asynchronously
         self.get_logger().info("Goal accepted, waiting for result.")
         self._get_result_future = self._goal_handle.get_result_async()
-        rclpy.spin_until_future_complete(self, self._get_result_future)
+        rclpy.spin_until_future_complete(self, self._get_result_future, timeout_sec=5.0)
 
         # If the result is obtained or timeout occurs, stop waiting
         result = self._get_result_future.result()
@@ -61,6 +57,8 @@ class FibonacciActionClient(Node):
             self.get_logger().info(f"Result: {result.result.sequence}")
         else:
             self.get_logger().info("Result not received due to timeout.")
+
+            sys.exit(0)
 
         # Cancel the timeout timer if we received the result or feedback
         if self._timeout_timer:
@@ -89,6 +87,8 @@ class FibonacciActionClient(Node):
         # Optionally, cancel any other action processes, like result waiting
         if self._get_result_future and not self._get_result_future.done():
             self._get_result_future.cancel()
+
+        sys.exit(0)
 
 def main(args=None):
     rclpy.init()

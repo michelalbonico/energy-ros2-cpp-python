@@ -26,7 +26,7 @@ public:
             auto goal_msg = Fibonacci::Goal();
             goal_msg.order = order;
 
-            if (!action_client_->wait_for_action_server(5s)) {
+            if (!action_client_->wait_for_action_server(std::chrono::seconds(5))) {
                 RCLCPP_ERROR(this->get_logger(), "Action server not available!");
                 return;
             }
@@ -40,7 +40,7 @@ public:
             auto goal_handle_future = action_client_->async_send_goal(goal_msg, options);
 
             // Wait for the goal to be accepted synchronously
-            rclcpp::spin_until_future_complete(shared_from_this(), goal_handle_future);
+            rclcpp::spin_until_future_complete(shared_from_this(), goal_handle_future, std::chrono::seconds(5));
             auto goal_handle = goal_handle_future.get();
             if (!goal_handle) {
                 RCLCPP_ERROR(this->get_logger(), "Goal was rejected by the server.");
