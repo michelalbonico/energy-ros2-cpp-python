@@ -7,6 +7,7 @@ from datetime import datetime
 from threading import Thread, Event
 # Experiment Runner Plugins/Drivers
 from ConfigValidator.Config.Models.RunnerContext import RunnerContext
+import subprocess
 
 class CPUMemProfiler:
 
@@ -17,6 +18,25 @@ class CPUMemProfiler:
     def __init__(self, name, file):
         self.file_name = file
         self.__pid = self.get_pid_by_name(name)
+
+    def get_pid_ps(self, process_name:str):
+        try:
+            result = subprocess.run(
+                ["ps", "ax"],
+                stdout=subprocess.PIPE,
+                text=True
+            )
+            match_count = 0
+            for line in result.stdout.splitlines():
+                if process_name in line:
+                    match_count += 1
+                    if match_count == 3:
+                        pid = int(line.split(None, 1)[0])
+                        return pid
+            return None
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
 
     def get_pid(self):
         return self.__pid
