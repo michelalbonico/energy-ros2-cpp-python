@@ -232,13 +232,16 @@ def gen_boxplot_graph(df, filter):
     plt.close()
 
 # Factors
-algos = {'pubsub','service','action'}
+#algos = {'pubsub','service','action'}
 components = {'server', 'client'}
+algos = {'action'}
 intervals = {0.05,0.1,0.25,0.5,1.0}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
-transformations = {True, False}
-list_outliers = {True, False}
+# transformations = {True, False}
+# list_outliers = {True, False}
+transformations = [False]
+list_outliers = [False]
 
 ### TODO: for other factors
 for algo in algos:
@@ -282,7 +285,7 @@ for algo in algos:
             for component in components:
                 print(f"\n######################## Algorithm: {algo}, Component: {component}, Transformation: {transformation}, Outliers: {outliers} ########################\n")
                 # Each component in a folder
-                d_folder = f"{root_d_folder}/{algo}/{component}/{transf_label}-{out_label}"
+                d_folder = f"{root_d_folder}/{component}/{transf_label}-{out_label}"
                 os.makedirs(d_folder, exist_ok=True)
                 # Loading data
                 df_load = l_data.load_power(component, transformation, outliers)
