@@ -1,4 +1,5 @@
 import sys
+import time
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,39 +24,41 @@ from statsmodels.stats.multicomp import pairwise_tukeyhsd
 from load_data import LoadData
 
 # Arguments
-n = len(sys.argv)
-if n <=1:
-    print("Please, pass the algorithm name as an argument.")
-    sys.exit(0)
+# n = len(sys.argv)
+# if n <=1:
+#     print("Please, pass the algorithm name as an argument.")
+#     sys.exit(0)
 
-algo=sys.argv[1]
-algo_folder=''
-dest_folder=''
-num_rows=0
+# algo=sys.argv[1]
+# algo_folder=''
+# dest_folder=''
+# num_rows=0
 
-match algo:
-    case 'pubsub':
-        algo_folder='cpp_py_ros2_pub_sub'
-        dest_folder='pubsub'
-        num_rows=480
-    case 'service':
-        algo_folder='cpp_py_ros2_service'
-        dest_folder='service'
-        num_rows=320
-    case 'action':
-        pass
+# match algo:
+#     case 'pubsub':
+#         algo_folder='cpp_py_ros2_pub_sub'
+#         dest_folder='pubsub'
+#         num_rows=480
+#     case 'service':
+#         algo_folder='cpp_py_ros2_service'
+#         dest_folder='service'
+#         num_rows=600
+#     case 'action':
+#         algo_folder='cpp_py_ros2_action'
+#         dest_folder='action'
+#         num_rows=117
 
-# Paths
-prefix = f"../exp_runners/experiments/{algo_folder}"
-s_folder = f"../exp_runners/experiments/{algo_folder}"
-d_folder = f"./graphs/{dest_folder}"
+# # Paths
+# prefix = f"../exp_runners/experiments/{algo_folder}"
+# s_folder = f"../exp_runners/experiments/{algo_folder}"
+# d_folder = f"./graphs/{dest_folder}"
 
-# Ensure the output folder exists
-os.makedirs(d_folder, exist_ok=True)
+# # Ensure the output folder exists
+# os.makedirs(d_folder, exist_ok=True)
 
-# Load Data Class
-l_data = LoadData(num_rows, s_folder, algo)
-l_run_table = l_data.load_run_table()
+# # Load Data Class
+# l_data = LoadData(num_rows, s_folder, algo)
+# l_run_table = l_data.load_run_table()
 
 #####################
 # Statistical Tests #
@@ -199,9 +202,9 @@ def gen_single_density_graph(df, filter: list):
     variables = [algo, component, "density_energy", "_".join(filter)]
 
     # PNG
-    output_file_name = "_".join(str(var) for var in variables) + ".png"
-    output_path = os.path.join(d_folder, output_file_name)
-    plt.savefig(output_path, format="png", dpi=300)
+    # output_file_name = "_".join(str(var) for var in variables) + ".png"
+    # output_path = os.path.join(d_folder, output_file_name)
+    # plt.savefig(output_path, format="png", dpi=300)
     # PDF
     output_file_name = "_".join(str(var) for var in variables) + ".pdf"
     output_path = os.path.join(d_folder, output_file_name)
@@ -219,9 +222,9 @@ def gen_boxplot_graph(df, filter):
     variables = [algo, component, "energy_boxplot", "_".join(filter)]
 
     # PNG
-    output_file_name = "_".join(str(var) for var in variables) + ".png"
-    output_path = os.path.join(d_folder, output_file_name)
-    plt.savefig(output_path, format="png", dpi=300)
+    # output_file_name = "_".join(str(var) for var in variables) + ".png"
+    # output_path = os.path.join(d_folder, output_file_name)
+    # plt.savefig(output_path, format="png", dpi=300)
     # PDF
     output_file_name = "_".join(str(var) for var in variables) + ".pdf"
     output_path = os.path.join(d_folder, output_file_name)
@@ -229,131 +232,175 @@ def gen_boxplot_graph(df, filter):
     plt.close()
 
 # Factors
-#components = {'server', 'client'}
-components = {'server'}
+algos = {'pubsub','service','action'}
+components = {'server', 'client'}
 intervals = {0.05,0.1,0.25,0.5,1.0}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
+transformations = {True, False}
+list_outliers = {True, False}
 
-# Data Cleaning
-transformation = True
-outliers = True
+### TODO: for other factors
+for algo in algos:
+    algo_folder=''
+    dest_folder=''
+    num_rows=0
 
-### FOR energy / CPU / ETC
-for component in components:
-    df_load = l_data.load_power(component, transformation, outliers)
-    print(f"Component: {component} --->")
-    grouped_df = l_data.group_df_by(df_load,'language',outliers)
-    # if outliers:
-    #     grouped_df = grouped_df.group_by('language')
-    if shapiro_wilk(grouped_df, 'avg_energy_pct', 'language'):
-        print("Levene's test for different languages.")
-        levene_test(grouped_df,'avg_energy_pct')
-        gen_single_density_graph(grouped_df,{'py_and_cpp'})
-    for language in languages:
-        df = df_load
-        df_language = l_data.filter_df(df,'language',language)
-        print(f"Component: {component}, Language: {language} --->")
-        cleaned_df = l_data.group_df_by(df_language,'language',outliers)
-        for group_name, group_data in cleaned_df:
-            print(f"Group: {group_name}")
-            print(group_data['avg_energy_pct'].to_numpy())
-            gen_single_density_graph(cleaned_df, {str(language)})
-        shapiro_wilk(cleaned_df, 'avg_energy_pct', 'language')
-        grouped_df = l_data.group_df_by(df_language,'msg_interval',outliers)
-        if shapiro_wilk(grouped_df, 'avg_energy_pct', 'msg_interval'):
-            print(f"Levene's test for language {language} and different msg_intervals.")
-            levene_test(grouped_df,'avg_energy_pct')
-            gen_single_density_graph(grouped_df,{language,'intervals'})
-        for interval in intervals:
-            df = df_language
-            df = l_data.filter_df(df,'msg_interval',interval)
-            df_interval = df
-            print(f"Component: {component}, Language: {language}, Interval: {interval},  --->")
-            cleaned_df = l_data.group_df_by(df,'msg_interval', outliers)
-            for group_name, group_data in cleaned_df:
-                print(f"Group: {group_name}")
-                print(group_data['avg_energy_pct'].to_numpy())
-                gen_single_density_graph(cleaned_df, {str(language),str(interval)})
-            shapiro_wilk(cleaned_df, 'avg_energy_pct', 'msg_interval')
-            # Levene's
-            # levene_test(cleaned_df,'avg_energy_pct')
-            # ANOVA (one way)
-            # groups = [group['avg_energy_pct'] for _, group in grouped_df]
-            # stat, p_value = f_oneway(*groups)
-            # print(f"ANOVA test: p = {p_value}")
-            grouped_df = l_data.group_df_by(df_interval,'num_clients',outliers)
-            if shapiro_wilk(grouped_df,'avg_energy_pct','num_clients'):
-                print(f"Levene's test for language {language}, msg_interval {interval} and different num_clients.")
-                levene_test(grouped_df,'avg_energy_pct')
-                gen_single_density_graph(grouped_df,{str(language),str(interval),'clients'})
-            for clients in num_clients: # Only for graph and normal distribution assertion
-                df = df_interval
-                df = l_data.filter_df(df,'num_clients',clients)
-                print(f"Component: {component}, Language: {language}, Interval: {interval}, Clients: {clients} --->")
-                cleaned_df = l_data.group_df_by(df,'num_clients', outliers)
-                for group_name, group_data in cleaned_df:
-                    print(f"Group: {group_name}")
-                    print(group_data['avg_energy_pct'].to_numpy())
-                    gen_single_density_graph(cleaned_df, {str(language),str(interval), str(clients)})
-                shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
-                # grouped_df = l_data.group_df_by(df_language,'num_clients',outliers)
-                # if shapiro_wilk(grouped_df, 'avg_energy_pct','num_clients'):
-                #     print(f"Levene's test for language {language} and different num_clients.")
-                #     levene_test(grouped_df,'avg_energy_pct')
-                #     gen_single_density_graph(grouped_df,{language,'clients'})
-        grouped_df = l_data.group_df_by(df_language,'num_clients',outliers)
-        if shapiro_wilk(grouped_df, 'avg_energy_pct', 'num_clients'):
-            print(f"Levene's test for language {language} and different num_clients.")
-            levene_test(grouped_df,'avg_energy_pct')
-            gen_single_density_graph(grouped_df,{language,'clients'})
-        for clients in num_clients:
-                df = df_language
-                df = l_data.filter_df(df,'num_clients',clients)
-                print(f"Component: {component}, Clients: {clients}, Language: {language} --->")
-                cleaned_df = l_data.group_df_by(df,'num_clients', outliers)
-                for group_name, group_data in cleaned_df:
-                    print(f"Group: {group_name}")
-                    print(group_data['avg_energy_pct'].to_numpy())
-                    gen_single_density_graph(cleaned_df, {str(language), str(clients)})
-                shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
-                # 1 client and different msg intervals
-                if clients == 1:
-                    grouped_df = l_data.group_df_by(df,'msg_interval',outliers)
-                    if shapiro_wilk(grouped_df,'avg_energy_pct','msg_interval'):
-                        print(f"Levene's test for language {language}, num_clients {clients} and different msg_intervals.")
+    match algo:
+        case 'pubsub':
+            algo_folder='cpp_py_ros2_pub_sub'
+            dest_folder='pubsub'
+            num_rows=480
+        case 'service':
+            algo_folder='cpp_py_ros2_service'
+            dest_folder='service'
+            num_rows=600
+        case 'action':
+            algo_folder='cpp_py_ros2_action'
+            dest_folder='action'
+            num_rows=117
+
+    # Paths
+    prefix = f"../exp_runners/experiments/{algo_folder}"
+    s_folder = f"../exp_runners/experiments/{algo_folder}"
+    root_d_folder = f"./graphs/{dest_folder}"
+    os.makedirs(root_d_folder, exist_ok=True)
+
+    # Load Data Class
+    l_data = LoadData(num_rows, s_folder, algo)
+    l_run_table = l_data.load_run_table()
+
+    transf_label = 'no_transf'
+    out_label = 'no_out'
+
+    for transformation in transformations:
+        if transformation:
+                transf_label = 'transf'
+        for outliers in list_outliers:
+            if outliers:
+                out_label = 'out'
+            for component in components:
+                print(f"\n######################## Algorithm: {algo}, Component: {component}, Transformation: {transformation}, Outliers: {outliers} ########################\n")
+                # Each component in a folder
+                d_folder = f"{root_d_folder}/{algo}/{component}/{transf_label}-{out_label}"
+                os.makedirs(d_folder, exist_ok=True)
+                # Loading data
+                df_load = l_data.load_power(component, transformation, outliers)
+                print(f"Component: {component} --->")
+                grouped_df = l_data.group_df_by(df_load,'language',outliers)
+                # if outliers:
+                #     grouped_df = grouped_df.group_by('language')
+                if shapiro_wilk(grouped_df, 'avg_energy_pct', 'language'):
+                    print("Levene's test for different languages.")
+                    levene_test(grouped_df,'avg_energy_pct')
+                    gen_single_density_graph(grouped_df,{'py_and_cpp'})
+                for language in languages:
+                    df = df_load
+                    df_language = l_data.filter_df(df,'language',language)
+                    print(f"Component: {component}, Language: {language} --->")
+                    cleaned_df = l_data.group_df_by(df_language,'language',outliers)
+                    for group_name, group_data in cleaned_df:
+                        print(f"Group: {group_name}")
+                        print(group_data['avg_energy_pct'].to_numpy())
+                        gen_single_density_graph(cleaned_df, {str(language)})
+                    shapiro_wilk(cleaned_df, 'avg_energy_pct', 'language')
+                    grouped_df = l_data.group_df_by(df_language,'msg_interval',outliers)
+                    if shapiro_wilk(grouped_df, 'avg_energy_pct', 'msg_interval'):
+                        print(f"Levene's test for language {language} and different msg_intervals.")
                         levene_test(grouped_df,'avg_energy_pct')
-                        gen_single_density_graph(grouped_df,{str(language),str(clients),'interval'})
-                    #shapiro_wilk(grouped_df, 'avg_energy_pct', 'msg_interval')
-    if shapiro_wilk(grouped_df, 'avg_energy_pct', 'num_clients'):
-        print(f"Levene's test different num_clients.")
-        grouped_df = l_data.group_df_by(df_load,'num_clients',outliers)
-        levene_test(grouped_df,'avg_energy_pct')
-        gen_single_density_graph(grouped_df,{'clients'})
-    for clients in num_clients:
-        df = df_load
-        df_clients = l_data.filter_df(df,'num_clients',clients)
-        print(f"Component: {component}, Num clients: {clients} --->")
-        cleaned_df = l_data.group_df_by(df_clients,'num_clients',outliers)
-        for group_name, group_data in cleaned_df:
-            print(f"Group: {group_name}")
-            print(group_data['avg_energy_pct'].to_numpy())
-            gen_single_density_graph(cleaned_df, {str(num_clients)})
-        shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
+                        gen_single_density_graph(grouped_df,{language,'intervals'})
+                    for interval in intervals:
+                        df = df_language
+                        df = l_data.filter_df(df,'msg_interval',interval)
+                        df_interval = df
+                        print(f"Component: {component}, Language: {language}, Interval: {interval},  --->")
+                        cleaned_df = l_data.group_df_by(df,'msg_interval', outliers)
+                        for group_name, group_data in cleaned_df:
+                            print(f"Group: {group_name}")
+                            print(group_data['avg_energy_pct'].to_numpy())
+                            gen_single_density_graph(cleaned_df, {str(language),str(interval)})
+                        shapiro_wilk(cleaned_df, 'avg_energy_pct', 'msg_interval')
+                        # Levene's
+                        # levene_test(cleaned_df,'avg_energy_pct')
+                        # ANOVA (one way)
+                        # groups = [group['avg_energy_pct'] for _, group in grouped_df]
+                        # stat, p_value = f_oneway(*groups)
+                        # print(f"ANOVA test: p = {p_value}")
+                        grouped_df = l_data.group_df_by(df_interval,'num_clients',outliers)
+                        if shapiro_wilk(grouped_df,'avg_energy_pct','num_clients'):
+                            print(f"Levene's test for language {language}, msg_interval {interval} and different num_clients.")
+                            levene_test(grouped_df,'avg_energy_pct')
+                            gen_single_density_graph(grouped_df,{str(language),str(interval),'clients'})
+                        for clients in num_clients: # Only for graph and normal distribution assertion
+                            df = df_interval
+                            df = l_data.filter_df(df,'num_clients',clients)
+                            print(f"Component: {component}, Language: {language}, Interval: {interval}, Clients: {clients} --->")
+                            cleaned_df = l_data.group_df_by(df,'num_clients', outliers)
+                            for group_name, group_data in cleaned_df:
+                                print(f"Group: {group_name}")
+                                print(group_data['avg_energy_pct'].to_numpy())
+                                gen_single_density_graph(cleaned_df, {str(language),str(interval), str(clients)})
+                            shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
+                            # grouped_df = l_data.group_df_by(df_language,'num_clients',outliers)
+                            # if shapiro_wilk(grouped_df, 'avg_energy_pct','num_clients'):
+                            #     print(f"Levene's test for language {language} and different num_clients.")
+                            #     levene_test(grouped_df,'avg_energy_pct')
+                            #     gen_single_density_graph(grouped_df,{language,'clients'})
+                    grouped_df = l_data.group_df_by(df_language,'num_clients',outliers)
+                    if shapiro_wilk(grouped_df, 'avg_energy_pct', 'num_clients'):
+                        print(f"Levene's test for language {language} and different num_clients.")
+                        levene_test(grouped_df,'avg_energy_pct')
+                        gen_single_density_graph(grouped_df,{language,'clients'})
+                    for clients in num_clients:
+                            df = df_language
+                            df = l_data.filter_df(df,'num_clients',clients)
+                            print(f"Component: {component}, Clients: {clients}, Language: {language} --->")
+                            cleaned_df = l_data.group_df_by(df,'num_clients', outliers)
+                            for group_name, group_data in cleaned_df:
+                                print(f"Group: {group_name}")
+                                print(group_data['avg_energy_pct'].to_numpy())
+                                gen_single_density_graph(cleaned_df, {str(language), str(clients)})
+                            shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
+                            # 1 client and different msg intervals
+                            if clients == 1:
+                                grouped_df = l_data.group_df_by(df,'msg_interval',outliers)
+                                if shapiro_wilk(grouped_df,'avg_energy_pct','msg_interval'):
+                                    print(f"Levene's test for language {language}, num_clients {clients} and different msg_intervals.")
+                                    levene_test(grouped_df,'avg_energy_pct')
+                                    gen_single_density_graph(grouped_df,{str(language),str(clients),'interval'})
+                                #shapiro_wilk(grouped_df, 'avg_energy_pct', 'msg_interval')
+                if shapiro_wilk(grouped_df, 'avg_energy_pct', 'num_clients'):
+                    print(f"Levene's test different num_clients.")
+                    grouped_df = l_data.group_df_by(df_load,'num_clients',outliers)
+                    levene_test(grouped_df,'avg_energy_pct')
+                    gen_single_density_graph(grouped_df,{'clients'})
+                for clients in num_clients:
+                    df = df_load
+                    df_clients = l_data.filter_df(df,'num_clients',clients)
+                    print(f"Component: {component}, Num clients: {clients} --->")
+                    cleaned_df = l_data.group_df_by(df_clients,'num_clients',outliers)
+                    for group_name, group_data in cleaned_df:
+                        print(f"Group: {group_name}")
+                        print(group_data['avg_energy_pct'].to_numpy())
+                        gen_single_density_graph(cleaned_df, {str(num_clients)})
+                    shapiro_wilk(cleaned_df, 'avg_energy_pct', 'num_clients')
 
-    grouped_df = l_data.group_df_by(df_load,'num_clients',outliers)
-    if shapiro_wilk(grouped_df,'avg_energy_pct','msg_interval'):
-        print(f"Levene's different msg_intervals.")
-        levene_test(grouped_df,'avg_energy_pct')
-        gen_single_density_graph(grouped_df,{'intervals'})
-    for interval in intervals:
-        df = df_load
-        df_intervals = l_data.filter_df(df,'msg_interval',interval)
-        print(f"Component: {component}, Interval: {interval} --->")
-        cleaned_df = l_data.group_df_by(df_intervals,'msg_interval',outliers)
-        for group_name, group_data in cleaned_df:
-            print(f"Group: {group_name}")
-            print(group_data['avg_energy_pct'].to_numpy())
-            gen_single_density_graph(cleaned_df, {str(interval)})
-        shapiro_wilk(cleaned_df, 'avg_energy_pct', 'msg_interval')
-        gen_boxplot_graph(df_intervals,{str(interval)})
+                grouped_df = l_data.group_df_by(df_load,'num_clients',outliers)
+                if shapiro_wilk(grouped_df,'avg_energy_pct','msg_interval'):
+                    print(f"Levene's different msg_intervals.")
+                    levene_test(grouped_df,'avg_energy_pct')
+                    gen_single_density_graph(grouped_df,{'intervals'})
+                for interval in intervals:
+                    df = df_load
+                    df_intervals = l_data.filter_df(df,'msg_interval',interval)
+                    print(f"Component: {component}, Interval: {interval} --->")
+                    cleaned_df = l_data.group_df_by(df_intervals,'msg_interval',outliers)
+                    for group_name, group_data in cleaned_df:
+                        print(f"Group: {group_name}")
+                        print(group_data['avg_energy_pct'].to_numpy())
+                        gen_single_density_graph(cleaned_df, {str(interval)})
+                    shapiro_wilk(cleaned_df, 'avg_energy_pct', 'msg_interval')
+                    gen_boxplot_graph(df_intervals,{str(interval)})
+                    
+                time.sleep(5)
+            
