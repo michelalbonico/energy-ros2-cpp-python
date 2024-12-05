@@ -30,6 +30,11 @@ class RunnerConfig:
     time_between_runs_in_ms:    int             = 1000
     docker_runner: DockerRunner
 
+    kill_command = "pkill python3"
+    kill_commands = []
+
+    containers_kill = []
+
     # CPU and Memory
     cpu_mem_profiler_server: CPUMemProfiler
     cpu_mem_profiler_client: CPUMemProfiler
@@ -39,6 +44,7 @@ class RunnerConfig:
     energy_profiler_client: ProcessResProfiler
 
     global commands_to_run
+    global commands_to_kill
 
     def __init__(self):
         if not experiment_path:
@@ -63,14 +69,14 @@ class RunnerConfig:
             self.duration = 30
 
             # default publisher and subscribers
-            self.__pub = 'talker'
-            self.__sub = 'listener'
+            self.__pub='fibonacci_action_server'
+            self.__sub='fibonacci_action_client'
 
             output.console_log("Custom config loaded")
 
     def create_run_table_model(self) -> RunTableModel:
         package = FactorModel("ros_package", ['action_tutorials'])
-        interval = FactorModel("msg_interval", [0.05, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
+        interval = FactorModel("msg_interval", [0.05, 0.1, 0.25, 0.5, 1.0]) # JoyStick, then doubling until a good rate for logging that do not stress the system
         num_clients = FactorModel("num_clients", [1, 2, 3])
         language = FactorModel("language", ['py', 'cpp'])
         exec_time = FactorModel("exec_time", [180])
@@ -103,16 +109,6 @@ class RunnerConfig:
         self.docker_runner.start_container('client', clients)
 
         package=variation['ros_package']
-        match package:
-            case 'simple_publisher_subscriber':
-                self.__pub='talker'
-                self.__sub='listener'
-            case 'simple_service_client':
-                self.__pub='server'
-                self.__sub='client'
-            case 'action_tutorials':
-                self.__pub='fibonacci_action_server'
-                self.__sub='fibonacci_action_client'
         interval=variation['msg_interval']
         language=variation['language']
         exec_time=variation['exec_time']
@@ -124,19 +120,21 @@ class RunnerConfig:
         server_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {self.__pub} {exec_time} {interval}"
         #threads.append = self.docker_runner.run_in_thread('docker_server_1',server_command)
         containers.append('docker_server_1')
+        self.containers_kill.append('docker_server_1')
         commands.append(server_command)
+        self.kill_commands.append(self.kill_command)
 
         output.console_log("Running Client(s)/Sub(s) command...")
-        if variation['ros_package'] == 'simple_service_client':
-            client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {self.__sub} 10 10 {exec_time} {interval}"
-        else:
-            client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {self.__sub} {exec_time} {interval}"
+        client_command = f"source /opt/ros/humble/setup.bash && source /projeto/install/setup.bash && ros2 run {package}_{language} {self.__sub} {exec_time-5} {interval}"
         
         for c in range(clients):
             containers.append(f'docker_client_{c+1}')
+            self.containers_kill.append(f'docker_client_{c+1}')
             commands.append(client_command)
+            self.kill_commands.append(self.kill_command)
 
         self.commands_to_run = list(zip(containers, commands))
+        self.commands_to_kill = list(zip(containers, commands))
 
         # Execute the commands only after starting measurement.
         self.docker_runner.execute_commands_in_parallel(self.commands_to_run)
@@ -145,6 +143,7 @@ class RunnerConfig:
 
     def start_measurement(self, context: RunnerContext) -> None:
         output.console_log("Config.start_measurement() called!")
+
         output.console_log("Starting measuaring, then starting the ROS 2 commands...")
 
         # CPU and Memory
@@ -152,11 +151,18 @@ class RunnerConfig:
         self.cpu_mem_profiler_client = CPUMemProfiler(self.__sub, 'cpu-mem-client.csv')
         
         factors_keys = ['package', 'interval', 'language', 'exec_time', 'num_clients']
+
+        server_pid = None
+        client_pid = None
+        while server_pid == None or client_pid == None:
+            got_pid_server = self.cpu_mem_profiler_server.get_pid_ps('fibonacci_action_server')
+            got_pid_client = self.cpu_mem_profiler_client.get_pid_ps('fibonacci_action_client')
+            if got_pid_server != None and got_pid_client != None:
+                server_pid = str(got_pid_server)
+                client_pid = str(got_pid_client)
+
         self.cpu_mem_profiler_server.start_profiler(context, factors_keys)
         self.cpu_mem_profiler_client.start_profiler(context, factors_keys)
-
-        server_pid = str(self.cpu_mem_profiler_server.get_pid())
-        client_pid = str(self.cpu_mem_profiler_client.get_pid())
 
         # Energy
         self.energy_profiler_server = ProcessResProfiler(server_pid, 'energy-server')
@@ -187,43 +193,48 @@ class RunnerConfig:
 
     def stop_run(self, context: RunnerContext) -> None:
         output.console_log("Config.stop_run() called!")
+        
+        self.docker_runner.execute_commands_in_parallel(self.commands_to_kill)
+
+        time.sleep(5)
+
+        output.console_log("Cleaning Docker...")
+        command_cleaning = "./clean-containers.sh"
+        subprocess.run(command_cleaning, shell=True)
 
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, Any]]:
         output.console_log("Config.populate_run_data() called!")
 
-        variation = context.run_variation
-        run_id = variation['__run_id']
+        try:
+            variation = context.run_variation
+            run_id = variation['__run_id']
 
-        # All CSV
-        dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/*.csv {dest_files}"
-        subprocess.run(files_cp, shell=True)
+            # All CSV
+            dest_files = f"{self.experiment_path}/{run_id}/"
+            files_cp = f"cp -f {experiment_path}/*.csv {dest_files}"
+            subprocess.run(files_cp, shell=True)
 
-        # Energy Server
-        dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/energy-server {dest_files}"
-        subprocess.run(files_cp, shell=True)
+            # Energy
+            dest_files = f"{self.experiment_path}/{run_id}/"
+            files_cp = f"cp -f {experiment_path}/energy-* {dest_files}"
+            subprocess.run(files_cp, shell=True)
 
-        # Energy client
-        dest_files = f"{self.experiment_path}/{run_id}/"
-        files_cp = f"cp {experiment_path}/energy-client {dest_files}"
-        subprocess.run(files_cp, shell=True)
+            # Clean Up
+            rm_files_command = f"rm -f {experiment_path}/*.csv"
+            subprocess.run(rm_files_command, shell=True)
 
-        # Clean Up
-        rm_files_command = f"yes | rm *.csv"
-        subprocess.run(rm_files_command, shell=True)
+            rm_energy_files_command = f"rm -f {experiment_path}/energy-*"
+            subprocess.run(rm_energy_files_command, shell=True)
 
-        rm_energy_files_command = f"yes | rm energy-*"
-        subprocess.run(rm_files_command, shell=True)
-
-        output.console_log("Measurement data copied!")
-
-        return None
-
+            output.console_log("Measurement data copied!")
+        except:
+            pass
+    
     def after_experiment(self) -> None:
+
         output.console_log("Config.after_experiment() called!")
-        output.console_log("Cooling down for 30 seconds...")
-        time.sleep(30)
+        output.console_log("Cooling down for 10 seconds...")
+        time.sleep(10)
 
     # ================================ DO NOT ALTER BELOW THIS LINE ================================
     experiment_path:            Path             = None
