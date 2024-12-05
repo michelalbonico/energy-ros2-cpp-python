@@ -45,6 +45,7 @@ class DockerRunner:
             container_name = container+'_container'
             if self.container_exists(container_name):
                 try:
+                    subprocess.run(["docker", "kill", container_name], check=True)
                     subprocess.run(["docker", "rm", "-f", container_name], check=True)
                     print(f"Container '{container_name}' removed successfully.")
                 except subprocess.CalledProcessError as e:
