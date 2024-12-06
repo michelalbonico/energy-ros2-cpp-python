@@ -74,7 +74,7 @@ for algo in algos:
         case 'action':
             algo_folder='cpp_py_ros2_action'
             dest_folder='action'
-            num_rows=117
+            num_rows=218
 
     # Paths
     prefix = f"../exp_runners/experiments/{algo_folder}"
