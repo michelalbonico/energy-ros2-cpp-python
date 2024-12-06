@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/mon-rapl.py", line 18, in <module>
+    csv_output = pyRAPL.outputs.CSVOutput('../data/result.csv')
+  File "/usr/local/lib/python3.10/dist-packages/pyRAPL/outputs/csvoutput.py", line 51, in __init__
+    with open(self._filename, 'w+') as csv_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../data/result.csv'

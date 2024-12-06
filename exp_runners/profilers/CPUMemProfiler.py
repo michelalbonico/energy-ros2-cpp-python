@@ -17,9 +17,12 @@ class CPUMemProfiler:
 
     def __init__(self, name, file):
         self.file_name = file
-        self.__pid = self.get_pid_by_name(name)
+        #self.__pid = self.get_pid_by_name(name)
 
-    def get_pid_ps(self, process_name:str):
+    def __init__(self):
+        pass
+
+    def get_pid_ps(self, process_name:str, clients: int):
         try:
             result = subprocess.run(
                 ["ps", "ax"],
@@ -30,9 +33,15 @@ class CPUMemProfiler:
             for line in result.stdout.splitlines():
                 if process_name in line:
                     match_count += 1
-                    if match_count == 3:
+                    line_number = 3
+                    if clients > 1:
+                        line_number = 2 + clients
+                    if match_count == line_number:
+                        print("Match!!!")
                         pid = int(line.split(None, 1)[0])
                         return pid
+                    else:
+                        print(f"match: {match_count}, line number: {line_number}")
             return None
         except Exception as e:
             print(f"Error: {e}")

@@ -144,26 +144,38 @@ class RunnerConfig:
     def start_measurement(self, context: RunnerContext) -> None:
         output.console_log("Config.start_measurement() called!")
 
-        output.console_log("Starting measuaring, then starting the ROS 2 commands...")
+        output.console_log("Starting measuring, then starting the ROS 2 commands...")
 
         # CPU and Memory
-        self.cpu_mem_profiler_server = CPUMemProfiler(self.__pub, 'cpu-mem-server.csv')
-        self.cpu_mem_profiler_client = CPUMemProfiler(self.__sub, 'cpu-mem-client.csv')
+        # self.cpu_mem_profiler_server = CPUMemProfiler(self.__pub, 'cpu-mem-server.csv')
+        # self.cpu_mem_profiler_client = CPUMemProfiler(self.__sub, 'cpu-mem-client.csv')
+
+        self.cpu_mem_profiler_server = CPUMemProfiler()
+        self.cpu_mem_profiler_client = CPUMemProfiler()
         
         factors_keys = ['package', 'interval', 'language', 'exec_time', 'num_clients']
+
+        variation = context.run_variation
+        clients = int(variation['num_clients'])
+
+        print(f"Number clients: {clients}")
 
         server_pid = None
         client_pid = None
         while server_pid == None or client_pid == None:
-            got_pid_server = self.cpu_mem_profiler_server.get_pid_ps('fibonacci_action_server')
-            got_pid_client = self.cpu_mem_profiler_client.get_pid_ps('fibonacci_action_client')
+            print("Trying to get PID\r")
+            got_pid_server = self.cpu_mem_profiler_server.get_pid_ps('fibonacci_action_server',1)
+            got_pid_client = self.cpu_mem_profiler_client.get_pid_ps('fibonacci_action_client',clients)
             if got_pid_server != None and got_pid_client != None:
                 server_pid = str(got_pid_server)
                 client_pid = str(got_pid_client)
+            time.sleep(0.5)
 
-        self.cpu_mem_profiler_server.start_profiler(context, factors_keys)
-        self.cpu_mem_profiler_client.start_profiler(context, factors_keys)
-
+        # self.cpu_mem_profiler_server.set_pid(str(server_pid))
+        # self.cpu_mem_profiler_server.start_profiler(context, factors_keys)
+        # self.cpu_mem_profiler_client.set_pid(str(client_pid))
+        # self.cpu_mem_profiler_client.start_profiler(context, factors_keys)
+           
         # Energy
         self.energy_profiler_server = ProcessResProfiler(server_pid, 'energy-server')
         time.sleep(0.1)
