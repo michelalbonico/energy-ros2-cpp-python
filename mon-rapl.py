@@ -15,7 +15,7 @@ parser.add_argument("-f", "--frequency", help="Msg Interval", nargs='+')
 parser.add_argument("-t", "--timeout", help="Timeout", nargs='+')
 args = parser.parse_args()
 
-csv_output = pyRAPL.outputs.CSVOutput('../data/result.csv')
+csv_output = pyRAPL.outputs.CSVOutput(f'energy-{args.identifier[0]}.csv')
 meter = pyRAPL.Measurement(args.identifier[0])
 
 def execute_python_file():
@@ -26,6 +26,8 @@ def execute_python_file():
          else:
             command='python3 '+args.command
       else:
+         print(args.timeout[0])
+         print(args.frequency[0])
          command='ros2 run '+args.package+' '+args.algo+' '+args.timeout[0]+' '+args.frequency[0]
       meter.begin()
       os.system(f'{command}')

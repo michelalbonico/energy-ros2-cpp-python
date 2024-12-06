@@ -90,8 +90,10 @@ do
                     echo "$COUNT,fibonacci_action_server,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
                     echo "$COUNT,fibonacci_action_client,$TIME,$CURRENT_CPU_PS" >> $d_folder/client-cpu.csv
 
+                    cp -f *.log $d_folder
                     cp -f energy-* $d_folder
                     rm -Rf energy-*
+                    rm -Rf *.log
                     #
                     sleep 0.1
                     let COUNTER++
