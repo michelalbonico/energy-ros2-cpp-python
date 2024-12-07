@@ -21,7 +21,7 @@ import scikit_posthocs as sp
 from statsmodels.formula.api import ols
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 
-from load_data import LoadData
+from load_data_standalone import LoadData
 
 # Arguments
 # n = len(sys.argv)
@@ -235,7 +235,7 @@ def gen_boxplot_graph(df, filter):
 #algos = {'pubsub','service','action'}
 #components = {'server', 'client'}
 components = {'server'}
-algos = {'action'}
+algos = {'pubsub'}
 intervals = {0.05,0.1,0.25,0.5,1.0}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
@@ -252,9 +252,9 @@ for algo in algos:
 
     match algo:
         case 'pubsub':
-            algo_folder='cpp_py_ros2_pub_sub'
-            dest_folder='pubsub'
-            num_rows=480
+            algo_folder='cpp_py_ros2_pub_sub_standalone'
+            dest_folder='pubsub_standalone'
+            num_rows=155
         case 'service':
             algo_folder='cpp_py_ros2_service'
             dest_folder='service'
@@ -331,6 +331,7 @@ for algo in algos:
                         # stat, p_value = f_oneway(*groups)
                         # print(f"ANOVA test: p = {p_value}")
                         grouped_df = l_data.group_df_by(df_interval,'num_clients',outliers)
+                        print(grouped_df.groups)
                         if shapiro_wilk(grouped_df,'avg_energy_pct','num_clients'):
                             print(f"Levene's test for language {language}, msg_interval {interval} and different num_clients.")
                             levene_test(grouped_df,'avg_energy_pct')
