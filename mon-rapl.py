@@ -35,14 +35,16 @@ def execute_python_file():
       os.system(f'{command}')
       if 'meter' in locals():
          meter.end()
-         energy_microjoules = meter.result.pkg[0]
+         #print(meter.result)
+         duration = int(meter.result.duration) / 1000000
+         energy_microjoules = float(meter.result.pkg[0])
          energy_joules = energy_microjoules / 1e6
-         average_power = float(energy_joules) / int(args.timeout)
+         average_power = float(energy_joules) / duration
          csv_filename = f'energy-{args.identifier[0]}.csv'
          with open(csv_filename, mode='w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(['Execution Time','Energy (microjoules)','Energy (joules)', 'Average Power (Watts)'])
-            writer.writerow([args.timeout, energy_microjoules, energy_joules, average_power])
+            writer.writerow([duration, energy_microjoules, energy_joules, average_power])
 
    except FileNotFoundError:
       print(f"Error: The command '{command}' is not valid.")
