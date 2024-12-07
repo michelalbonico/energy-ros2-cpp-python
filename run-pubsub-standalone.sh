@@ -1,0 +1,181 @@
+#!/bin/bash
+
+_start=1
+_end=20
+
+source /opt/ros/humble/setup.bash
+source install/setup.bash 
+
+server_name='talker'
+client_name='listener'
+
+pkill python3
+COUNT=0
+exp_result="./exp_runners/experiments/cpp_py_ros2_pub_sub_standalone"
+mkdir -p $exp_result
+
+python3 exp_runners/standalone/read_runtable.py exp_runners/standalone/pupsub_runtable.csv > pubsub_remain_runs.txt
+
+run_name=''
+package_name=''
+msg_interval=''
+lang=''
+timeout=''
+clients=''
+
+file="pubsub_remain_runs.txt"
+
+if [[ -f "$file" ]]; then
+  while IFS= read -r line; do
+    read run_name todo package_name interval lang timeout cli <<< "$line"
+    # Killing remaining processes
+    pkill -9 -f python3
+    pkill -9 -f $server_name
+    pkill -9 -f $client_name
+    sleep 1
+    echo "Running: language ($lang), interval ($interval), cli ($cli)"
+    d_folder="${exp_result}/${run_name}"
+    echo $d_folder
+    rm -Rf $d_folder
+    mkdir -p $d_folder
+
+    echo "exec,label,timestamp,cpu,mem" > $d_folder/server-cpu-mem.csv
+    echo "exec,label,timestamp,cpu,mem" > $d_folder/client-cpu-mem.csv
+
+    echo "exec,label,timestamp,cpu" > $d_folder/server-cpu.csv
+    echo "exec,label,timestamp,cpu" > $d_folder/client-cpu.csv
+
+    python3 mon-rapl.py -p ${package_name}_${lang} -a $server_name -i server -f $interval -t $timeout -r 1 &> $d_folder/server-$lang-$interval-$cli.log &
+    SERVER_PID=$!
+    echo "Started mon-rapl.py with PID $SERVER_PID"
+
+    for i in $(seq 1 ${cli}); do
+        echo "Adding client..."
+        rapl="-r 0"
+        if [ $i -eq $cli ]; then
+            rapl="-r 1"
+        fi
+        python3 mon-rapl.py -p ${package_name}_${lang} -a $client_name -i client -f $interval -t $timeout $rapl &> $d_folder/client-$lang-$interval-$cli.log &
+    done
+
+    sleep 1
+
+    TALKER_PID=`ps -C $server_name | tail -1 | grep [0-9] | awk '{ print $1}'`
+    echo "Talker PID: $TALKER_PID"
+    LISTENER_PID=`ps -C $client_name | tail -1 | grep [0-9] | awk '{ print $1}'`
+    echo "Talker PID: $LISTENER_PID"
+
+    CPU=0.0
+    MEM=0
+    CPU_L=0.0
+    MEM_L=0
+
+    while kill -0 $TALKER_PID 2> /dev/null; do
+        TIME=$(date +%s)
+        CURRENT_CPU_PS=`ps -C $server_name -o %cpu | tail -1 | grep [0-9]`
+        CURRENT_CPU=`top -bn1 | grep $server_name | tail -1 | awk '{print $9}'`
+        CURRENT_CPU=`echo $CURRENT_CPU | sed 's/,/./g'`
+        CURRENT_CPU_L_PS=`ps -C $client_name -o %cpu | tail -1 | grep [0-9]`
+        CURRENT_CPU_L=`top -bn1 | grep $client_name | tail -1 | awk '{print $9}'` 
+        CURRENT_CPU_L=`echo $CURRENT_CPU_L | sed 's/,/./g'`
+        CURRENT_MEM=`pmap $TALKER_PID | head -3 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
+        CURRENT_MEM_L=`pmap $LISTENER_PID | head -4 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
+        CPU=`python3 -c "print (float($CURRENT_CPU))"`
+        CPU_L=`python3 -c "print (float($CURRENT_CPU_L))"`
+        MEM=`python3 -c "print (float($CURRENT_MEM))"`
+        MEM_L=`python3 -c "print (float($CURRENT_MEM_L))"`
+        
+        echo "$COUNT,publisher,$TIME,$CPU,$MEM" >> $d_folder/server-cpu-mem.csv
+        echo "$COUNT,listener,$TIME,$CPU_L,$MEM_L" >> $d_folder/client-cpu-mem.csv
+
+        echo "$COUNT,publisher,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
+        echo "$COUNT,listener,$TIME,$CURRENT_CPU_L_PS" >> $d_folder/client-cpu.csv
+        sleep 0.1
+    done 
+    cp -f energy-* $d_folder
+    rm -Rf energy-*
+    let COUNT++
+
+    # Update the run to DONE
+    python3 exp_runners/standalone/update_runtable.py exp_runners/standalone/pupsub_runtable.csv $run_name
+  done < "$file"
+else
+  echo "File $file not found!"
+fi
+
+# for i in $(seq ${_start} ${_end})
+# do
+#     run=0
+#     for interval in "0.05" "0.1" "0.25" "0.5" "1.0"; do
+#         for lang in "py" "cpp"; do
+#             for cli in $(seq 1 3); do
+#                 pkill -9 -f python3
+#                 pkill -9 -f $server_name
+#                 pkill -9 -f $client_name
+#                 sleep 1
+#                 echo "Running: language ($lang), interval ($interval), cli ($cli)"
+#                 d_folder="${exp_result}/run_${run}_repetition_${i}"
+#                 echo $d_folder
+#                 rm -Rf $d_folder
+#                 mkdir -p $d_folder
+
+#                 echo "exec,label,timestamp,cpu,mem" > $d_folder/server-cpu-mem.csv
+#                 echo "exec,label,timestamp,cpu,mem" > $d_folder/client-cpu-mem.csv
+
+#                 echo "exec,label,timestamp,cpu" > $d_folder/server-cpu.csv
+#                 echo "exec,label,timestamp,cpu" > $d_folder/client-cpu.csv
+
+#                 python3 mon-rapl.py -p simple_publisher_subscriber_$lang -a $server_name -i server -f $interval -t 35 -r 1 &> $d_folder/server-$lang-$interval-$cli.log &
+#                 SERVER_PID=$!
+#                 echo "Started mon-rapl.py with PID $SERVER_PID"
+
+#                 for i in $(seq 1 ${cli}); do
+#                     echo "Adding client..."
+#                     rapl = '-r 0'
+#                     if i == $cli:
+#                         rapl = '-r 1'
+#                     python3 mon-rapl.py -p simple_publisher_subscriber_$lang -a $client_name -i client -f $interval -t 30 $rapl &> $d_folder/client-$lang-$interval-$cli.log &
+#                 done
+
+#                 sleep 1
+
+#                 TALKER_PID=`ps -C $server_name | tail -1 | grep [0-9] | awk '{ print $1}'`
+#                 echo "Talker PID: $TALKER_PID"
+#                 LISTENER_PID=`ps -C $client_name | tail -1 | grep [0-9] | awk '{ print $1}'`
+#                 echo "Talker PID: $LISTENER_PID"
+
+#                 CPU=0.0
+#                 MEM=0
+#                 CPU_L=0.0
+#                 MEM_L=0
+
+#                 while kill -0 $TALKER_PID 2> /dev/null; do
+#                     TIME=$(date +%s)
+#                     CURRENT_CPU_PS=`ps -C $server_name -o %cpu | tail -1 | grep [0-9]`
+#                     CURRENT_CPU=`top -bn1 | grep $server_name | tail -1 | awk '{print $9}'`
+#                     CURRENT_CPU=`echo $CURRENT_CPU | sed 's/,/./g'`
+#                     CURRENT_CPU_L_PS=`ps -C $client_name -o %cpu | tail -1 | grep [0-9]`
+#                     CURRENT_CPU_L=`top -bn1 | grep $client_name | tail -1 | awk '{print $9}'` 
+#                     CURRENT_CPU_L=`echo $CURRENT_CPU_L | sed 's/,/./g'`
+#                     CURRENT_MEM=`pmap $TALKER_PID | head -3 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
+#                     CURRENT_MEM_L=`pmap $LISTENER_PID | head -4 | tail -1 | awk '{ print $2 }' | sed 's/K//'`
+#                     CPU=`python3 -c "print (float($CURRENT_CPU))"`
+#                     CPU_L=`python3 -c "print (float($CURRENT_CPU_L))"`
+#                     MEM=`python3 -c "print (float($CURRENT_MEM))"`
+#                     MEM_L=`python3 -c "print (float($CURRENT_MEM_L))"`
+                    
+#                     echo "$COUNT,publisher,$TIME,$CPU,$MEM" >> $d_folder/server-cpu-mem.csv
+#                     echo "$COUNT,listener,$TIME,$CPU_L,$MEM_L" >> $d_folder/client-cpu-mem.csv
+
+#                     echo "$COUNT,publisher,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
+#                     echo "$COUNT,listener,$TIME,$CURRENT_CPU_L_PS" >> $d_folder/client-cpu.csv
+#                     sleep 0.1
+#                     let run++
+#                 done 
+#                 cp -f energy-* $d_folder
+#                 rm -Rf energy-*
+#                 let COUNT++
+#             done
+#         done
+#     done
+# done
