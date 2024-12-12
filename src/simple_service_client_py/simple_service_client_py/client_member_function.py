@@ -3,12 +3,20 @@ import time
 from example_interfaces.srv import AddTwoInts
 import rclpy
 from rclpy.node import Node
-
+from rclpy.qos import QoSProfile
 
 class MinimalClientAsync(Node):
     def __init__(self, a, b, timeout_seconds, sleep_seconds):
         super().__init__('minimal_client_async')
-        self.cli = self.create_client(AddTwoInts, 'add_two_ints')
+        # Modified for the new run of experiments
+        # qos_service = QoSProfile(
+        #     history=QoSProfile.HistoryPolicy.KEEP_ALL
+        # )
+        qos_service = QoSProfile(
+            history=rclpy.qos.HistoryPolicy.KEEP_ALL,  # Set history policy to KEEP_ALL
+            # ... other QoS settings (optional)
+        )
+        self.cli = self.create_client(AddTwoInts, 'add_two_ints', qos_profile = qos_service)
         
         while not self.cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')

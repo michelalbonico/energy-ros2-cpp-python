@@ -5,7 +5,6 @@ from rclpy.action import ActionServer
 from rclpy.node import Node
 from action_tutorials_interfaces.action import Fibonacci
 
-
 class FibonacciActionServer(Node):
 
     def __init__(self, timeout_seconds, sleep_seconds):

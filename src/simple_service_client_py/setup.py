@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'server = simple_service_client_py.service_member_function:main',
-            'client = simple_service_client_py.client_member_function:main',
+            'service_server = simple_service_client_py.service_member_function:main',
+            'service_client = simple_service_client_py.client_member_function:main',
         ],
     },
 )
