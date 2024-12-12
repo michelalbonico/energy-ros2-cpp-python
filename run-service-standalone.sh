@@ -6,15 +6,15 @@ _end=20
 source /opt/ros/humble/setup.bash
 source install/setup.bash 
 
-server_name='action_server'
-client_name='action_client'
+server_name='service_server'
+client_name='service_client'
 
 pkill python3
 COUNT=0
-exp_result="./exp_runners/experiments/cpp_py_ros2_action_standalone_low_frequency_cpp"
+exp_result="./exp_runners/experiments/cpp_py_ros2_service_standalone_py"
 mkdir -p $exp_result
 
-python3 exp_runners/standalone/read_runtable.py exp_runners/standalone/action_runtable.csv > action_remain_runs.txt
+python3 exp_runners/standalone/read_runtable.py exp_runners/standalone/service_runtable.csv > service_remain_runs.txt
 
 run_name=''
 package_name=''
@@ -23,7 +23,7 @@ lang=''
 timeout=''
 clients=''
 
-file="action_remain_runs.txt"
+file="service_remain_runs.txt"
 
 if [[ -f "$file" ]]; then
   while IFS= read -r line; do
@@ -96,17 +96,17 @@ if [[ -f "$file" ]]; then
         MEM=`python3 -c "print (float($CURRENT_MEM))"`
         MEM_L=`python3 -c "print (float($CURRENT_MEM_L))"`
         
-        echo "$COUNT,action_server,$TIME,$CPU,$MEM" >> $d_folder/server-cpu-mem.csv
-        echo "$COUNT,action_client,$TIME,$CPU_L,$MEM_L" >> $d_folder/client-cpu-mem.csv
+        echo "$COUNT,service_server,$TIME,$CPU,$MEM" >> $d_folder/server-cpu-mem.csv
+        echo "$COUNT,service_client,$TIME,$CPU_L,$MEM_L" >> $d_folder/client-cpu-mem.csv
 
-        echo "$COUNT,action_server,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
-        echo "$COUNT,action_client,$TIME,$CURRENT_CPU_L_PS" >> $d_folder/client-cpu.csv
+        echo "$COUNT,service_server,$TIME,$CURRENT_CPU_PS" >> $d_folder/server-cpu.csv
+        echo "$COUNT,service_client,$TIME,$CURRENT_CPU_L_PS" >> $d_folder/client-cpu.csv
         sleep 0.1
         spent_time=$(echo "$spent_time + 0.5" | bc)
         if [ "$(echo "$spent_time > $timeout" | bc)" -eq 1 ]; then
           echo "Timeout!"
-          pkill -9 -f action_server
-          pkill -9 -f action_client
+          pkill -9 -f $server_name
+          pkill -9 -f $client_name
           pkill -9 -f powerjoular
         fi
     done 
@@ -120,10 +120,10 @@ if [[ -f "$file" ]]; then
     let COUNT++
 
     # Update the run to DONE
-    python3 exp_runners/standalone/update_runtable.py exp_runners/standalone/action_runtable.csv $run_name
+    python3 exp_runners/standalone/update_runtable.py exp_runners/standalone/service_runtable.csv $run_name
 
     echo "Sleeping..."
-    sleep 10
+    sleep 15
   done < "$file"
 else
   echo "File $file not found!"
