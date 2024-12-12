@@ -82,7 +82,10 @@ class LoadData:
                         # energy_df['CPU Power'] = self.log_transform(energy_df,'CPU Power')
                         # Apply Box-Cox transformation (ensure the values are positive)
                         energy_df['CPU Power'], _ = self.boxcox_transform(energy_df, 'CPU Power')
-                    avg_energy_pct = energy_df['CPU Power'].mean()
+                    filtered_df = energy_df[energy_df['CPU Power'] < 3.0]
+                    #avg_energy_pct = energy_df['CPU Power'].mean()
+                    avg_energy_pct = filtered_df['CPU Power'].mean()
+                    
                     runs_data[new_id] = avg_energy_pct
                 except Exception as e:
                     print(f"Error processing file for run_id {run_id}: {e}")
@@ -90,7 +93,7 @@ class LoadData:
         avg_energy_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_energy_pct'])
         merged_df = df.merge(avg_energy_df, on='__run_id')
 
-        clean_df = merged_df.fillna(0)
+        clean_df = merged_df.dropna()
 
         return clean_df
     
@@ -127,7 +130,7 @@ class LoadData:
         sum_energy_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'sum_energy_pct'])
         merged_df = df.merge(sum_energy_df, on='__run_id')
         
-        clean_df = merged_df.fillna(0)
+        clean_df = merged_df.dropna()
 
         return clean_df
 
@@ -164,7 +167,7 @@ class LoadData:
         avg_cpu_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_cpu_pct'])
         merged_df = df.merge(avg_cpu_df, on='__run_id')
 
-        clean_df = merged_df.fillna(0)
+        clean_df = merged_df.dropna()
 
         return clean_df
     
@@ -186,10 +189,10 @@ class LoadData:
             if energy_files:
                 try:
                     mem_df = pd.read_csv(energy_files[0])
-                    mem_df['memory_usage'] = pd.to_numeric(mem_df['memory_usage'], errors='coerce')
+                    mem_df['mem'] = pd.to_numeric(mem_df['mem'], errors='coerce')
                     if transform:
-                        mem_df['memory_usage'], _ = self.boxcox_transform(mem_df, 'memory_usage')
-                    avg_mem_pct = mem_df['memory_usage'].mean() / 1024
+                        mem_df['mem'], _ = self.boxcox_transform(mem_df, 'mem')
+                    avg_mem_pct = mem_df['mem'].mean() #/ 1024
                     runs_data[new_id] = avg_mem_pct
                 except Exception as e:
                     print(f"Error processing file for run_id {run_id}: {e}")
@@ -197,7 +200,7 @@ class LoadData:
         avg_mem_df = pd.DataFrame(list(runs_data.items()), columns=['__run_id', 'avg_mem_pct'])
         merged_df = df.merge(avg_mem_df, on='__run_id')
 
-        clean_df = merged_df.fillna(0)
+        clean_df = merged_df.dropna()
 
         return clean_df
 

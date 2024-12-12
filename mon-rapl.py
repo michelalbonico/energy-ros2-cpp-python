@@ -25,7 +25,10 @@ def execute_python_file():
          else:
             command='python3 '+args.command
       else:
-         command='ros2 run '+args.package+' '+args.algo+' '+args.timeout+' '+args.frequency
+         if args.algo == 'service_client':
+            command='ros2 run '+args.package+' '+args.algo+' 10 10 '+args.timeout+' '+args.frequency
+         else:
+            command='ros2 run '+args.package+' '+args.algo+' '+args.timeout+' '+args.frequency
       if args.rapl == '1':
          print("RAPL is set")
          meter = pyRAPL.Measurement(args.identifier[0])   
