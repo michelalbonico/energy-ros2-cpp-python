@@ -1,0 +1,2090 @@
+
+######################## Algorithm: action, Component: client, Transformation: False, Outliers: False ########################
+
+Component: client --->
+Starting Shapiro-Wilk test...
+Group: cpp
+Shapiro-Wilk statistic: 0.06586443605423031
+P-value: 1.3316311343095348e-35
+The data is likely not normally distributed (reject H0).
+
+Group: py
+Shapiro-Wilk statistic: 0.7559349491052536
+P-value: 1.433560010612953e-20
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1862335254130499), np.float64(0.40541184476324116)]
+Group variances: [np.float64(1.7969013715997653), np.float64(0.21586096881599226)]
+Group sizes: [297, 294]
+Numerator: 0.062320270470342484
+Denominator: 0.006784393950716698
+Degrees of freedom: 0.0067913476616548295
+Kruskal-Wallis H statistic: 111.28737821374737, p-value: 5.11860392833263e-26
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              cpp            py
+cpp  1.000000e+00  5.118604e-26
+py   5.118604e-26  1.000000e+00
+Welch's ANOVA statistic: 9.185827197396021, p-value: 6.352822543798098e-06
+Component: client, Language: cpp --->
+Group: cpp
+[ 0.13330714  0.09684054  0.09035388  0.11869362  0.11125307  0.09314881
+  0.07269777  0.09474291  0.05882362  0.          0.04903295  0.05992596
+  0.05222386  0.05096229  0.04093537  0.11645493  0.05961361  0.12210038
+  0.12316871  0.09766487  0.09640327  0.05791451  0.07712622  0.06332158
+  0.05174914  0.05119809  0.06123501  0.04356145  0.03885658  0.04199809
+  0.14030609  0.09857405  0.11590567  0.1084161   0.09118412  0.05602264
+  0.08193275  0.07759646  0.06499709  0.04335905  0.05577066  0.05543407
+  0.04188041  0.04364564  0.04348459  0.12268258  0.1024218   0.09668857
+  0.10834257  0.09509272  0.07253504  0.07364487  0.08049781  0.06527324
+  0.05407137  0.04975403  0.0534785   0.03919306  0.04099886  0.05078085
+  0.14271355  0.11405674  0.05759846  0.12370276  0.10131575  0.09316273
+  0.08954102  0.09802421  0.0764696   0.06758735  0.05638699  0.07842777
+  0.04834646  0.0487944   0.05061131  0.11330509  0.05846065  0.07990777
+  0.11181186  0.09666134  0.05844182  0.07208682  0.08299265  0.080761
+  0.07308595  0.06036941  0.06920995  0.04708374  0.04983582  0.05171874
+  0.667725    0.07220229  0.09550304  0.12674789  0.09400262  0.09336002
+  0.08825381  0.07889375  0.08051556  0.0640164   0.05913241  0.06924124
+  0.06435589  0.04674416  0.05170954  0.10248482  0.07769793  0.07197203
+  0.10675021  0.08720137  0.09816194  0.08727708  0.08080185 14.52212312
+  0.06258551  0.05719512  0.06775187  0.04355635  0.02930808  0.04401918
+  0.12202019  0.09819831  0.09317343  0.1207597   0.09730432  0.06462773
+  0.0654088   0.08088897  0.05693217  0.03345217  0.0336121   0.04432508
+  0.03478248  0.0286578   0.12398562  0.09447006  0.10882301  0.11210777
+  0.10791383  0.09289904  0.06151326  0.07040784  0.0623845   0.05151887
+ 18.13800369  0.05346553  0.05834552  0.04396946  0.03494692  0.13161522
+  0.10941971  0.09791209  0.12174061  0.09793214  0.09190578  0.06031406
+  0.06478806  0.06701949  0.04970886  0.05158898  0.05209482  0.03140593
+  0.0358353   0.03934656  0.10866044  0.05887854  0.09986922  0.12621632
+  0.09198585  0.05774717  0.0462126   0.05640965  0.04115962  0.03931148
+  0.04390371  0.03671523  0.04377983  0.05127954  0.12831542  0.09873628
+  0.09657074  0.11851765  0.096437    0.09832334  0.09279772  0.08131373
+  0.07824193  0.07057949  0.05927665  0.06613173  0.04527799  0.04727596
+  0.04721217  0.07501363  0.06098355  0.05678252  0.07436786  0.08012347
+  0.06547585  0.07280748  0.07993337  0.08141923  0.07816648  0.05402492
+  0.06270089  0.0619514   0.04572315  0.04446565  0.11928732  0.09319357
+  0.07686943  0.13020884  0.09872685  0.09406323  0.07833328  0.0827089
+  0.07898775  0.0582763   0.05930831  0.03627739  0.04561343  0.03728797
+  0.04338834  0.13532331  0.09904975  0.07466796  0.10903378  0.09919346
+  0.09626156  0.06511441  0.05269316  0.06055432  0.04653159  0.04800151
+  0.04639431  0.04346767  0.03256767  0.10980331  0.10837105  0.09052104
+  0.12566636  0.09291189  0.10300286  0.05732718  0.05601474  0.05903386
+  0.05914854  0.03791121  0.05453913  0.04244497  0.04652243  0.04750136
+  0.11961565  0.09742675  0.09828668  0.11017894  0.09461853  0.09281357
+  0.09547843  0.07688922  0.08139799  0.0583467   0.06202514  0.06154523
+  0.04715106  0.04480999  0.05001612  0.12756959  0.10017479  0.05873378
+  0.11854554  0.09191526  0.0964687   0.09508584  0.07777996  0.07723309
+  0.05570854  0.05959789  0.08297743  0.04245246  0.04567654  0.04421528
+  0.13123023  0.09321243  0.09454217  0.12432043  0.0911804   0.09168333
+  0.07462321  0.08115655  0.07684027  0.07706486  0.06096969  0.05882917
+  0.05455492  0.06257781  0.03609398]
+Starting Shapiro-Wilk test...
+Group: cpp
+Shapiro-Wilk statistic: 0.06586443605423031
+P-value: 1.3316311343095348e-35
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1862335254130499)]
+Group variances: [np.float64(1.7969013715997653)]
+Group sizes: [297]
+Numerator: 0.0
+Denominator: 0.006050172968349378
+Degrees of freedom: 0.0033783783783783786
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.3481574927280552
+P-value: 7.362615801543828e-15
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.9369020749742709
+P-value: 0.003946211883398837
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.11519460554415506
+P-value: 4.72717733712576e-17
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.11331199648799162
+P-value: 3.324329320663189e-17
+The data is likely not normally distributed (reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9705382094033296
+P-value: 0.16985624238895486
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1090030570745597), np.float64(0.09900708073189206), np.float64(0.3188534628654108), np.float64(0.3569412806587401), np.float64(0.04486064880525994)]
+Group variances: [np.float64(0.005891271240606032), np.float64(0.0003082168099841443), np.float64(3.538260973607101), np.float64(5.449745580931992), np.float64(5.548533459225367e-05)]
+Group sizes: [60, 60, 59, 60, 58]
+Numerator: 383.0756736960259
+Denominator: 0.1509038994364678
+Degrees of freedom: 0.08563269658658627
+Kruskal-Wallis H statistic: 205.63103476274887, p-value: 2.3123332275905924e-43
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10          0.25          0.50          1.00
+0.05  1.000000e+00  1.000000e+00  1.801618e-04  7.845802e-16  2.040820e-29
+0.10  1.000000e+00  1.000000e+00  1.953304e-04  9.138682e-16  2.509529e-29
+0.25  1.801618e-04  1.953304e-04  1.000000e+00  6.064220e-04  7.901006e-12
+0.50  7.845802e-16  9.138682e-16  6.064220e-04  1.000000e+00  1.375913e-02
+1.00  2.040820e-29  2.509529e-29  7.901006e-12  1.375913e-02  1.000000e+00
+Welch's ANOVA statistic: 2538.5405885903233, p-value: 0.0
+Component: client, Language: cpp, Interval: 0.05,  --->
+Group: 0.05
+[0.13330714 0.09684054 0.09035388 0.11645493 0.05961361 0.12210038
+ 0.14030609 0.09857405 0.11590567 0.12268258 0.1024218  0.09668857
+ 0.14271355 0.11405674 0.05759846 0.11330509 0.05846065 0.07990777
+ 0.667725   0.07220229 0.09550304 0.10248482 0.07769793 0.07197203
+ 0.12202019 0.09819831 0.09317343 0.12398562 0.09447006 0.10882301
+ 0.13161522 0.10941971 0.09791209 0.10866044 0.05887854 0.09986922
+ 0.12831542 0.09873628 0.09657074 0.07501363 0.06098355 0.05678252
+ 0.11928732 0.09319357 0.07686943 0.13532331 0.09904975 0.07466796
+ 0.10980331 0.10837105 0.09052104 0.11961565 0.09742675 0.09828668
+ 0.12756959 0.10017479 0.05873378 0.13123023 0.09321243 0.09454217]
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.3481574927280552
+P-value: 7.362615801543828e-15
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1090030570745597)]
+Group variances: [np.float64(0.005891271240606032)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 9.818785401010053e-05
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.34316950973284843
+P-value: 1.602546662668429e-08
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8463238838248768
+P-value: 0.004628312539484122
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9417767048969089
+P-value: 0.2590004970479087
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.14857095706146353), np.float64(0.08959911987718767), np.float64(0.08883909428502797)]
+Group variances: [np.float64(0.015160663536094196), np.float64(0.0003255800317599731), np.float64(0.0003353704071742405)]
+Group sizes: [20, 20, 20]
+Numerator: 2.4720526949758863
+Denominator: 0.0007910806987514204
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 30.164262295081983, p-value: 2.817822725029537e-07
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1        2         3
+1  1.000000  0.00002  0.000002
+2  0.000020  1.00000  1.000000
+3  0.000002  1.00000  1.000000
+Welch's ANOVA statistic: 3124.9058394138297, p-value: 0.0
+Component: client, Language: cpp, Interval: 0.05, Clients: 1 --->
+Group: 1
+[0.13330714 0.11645493 0.14030609 0.12268258 0.14271355 0.11330509
+ 0.667725   0.10248482 0.12202019 0.12398562 0.13161522 0.10866044
+ 0.12831542 0.07501363 0.11928732 0.13532331 0.10980331 0.11961565
+ 0.12756959 0.13123023]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.34316950973284843
+P-value: 1.602546662668429e-08
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.14857095706146353)]
+Group variances: [np.float64(0.015160663536094196)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0007580331768047098
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.05, Clients: 2 --->
+Group: 2
+[0.09684054 0.05961361 0.09857405 0.1024218  0.11405674 0.05846065
+ 0.07220229 0.07769793 0.09819831 0.09447006 0.10941971 0.05887854
+ 0.09873628 0.06098355 0.09319357 0.09904975 0.10837105 0.09742675
+ 0.10017479 0.09321243]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8463238838248768
+P-value: 0.004628312539484122
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08959911987718767)]
+Group variances: [np.float64(0.0003255800317599731)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.6279001587998655e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.09035388 0.12210038 0.11590567 0.09668857 0.05759846 0.07990777
+ 0.09550304 0.07197203 0.09317343 0.10882301 0.09791209 0.09986922
+ 0.09657074 0.05678252 0.07686943 0.07466796 0.09052104 0.09828668
+ 0.05873378 0.09454217]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9417767048969089
+P-value: 0.2590004970479087
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.25,  --->
+Group: 0.25
+[ 0.07269777  0.09474291  0.05882362  0.05791451  0.07712622  0.06332158
+  0.08193275  0.07759646  0.06499709  0.07364487  0.08049781  0.06527324
+  0.08954102  0.09802421  0.0764696   0.07208682  0.08299265  0.080761
+  0.08825381  0.07889375  0.08051556  0.08727708  0.08080185 14.52212312
+  0.0654088   0.08088897  0.05693217  0.06151326  0.07040784  0.0623845
+  0.06031406  0.06478806  0.06701949  0.0462126   0.05640965  0.09279772
+  0.08131373  0.07824193  0.07280748  0.07993337  0.08141923  0.07833328
+  0.0827089   0.07898775  0.06511441  0.05269316  0.06055432  0.05732718
+  0.05601474  0.05903386  0.09547843  0.07688922  0.08139799  0.09508584
+  0.07777996  0.07723309  0.07462321  0.08115655  0.07684027]
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.11519460554415506
+P-value: 4.72717733712576e-17
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3188534628654108)]
+Group variances: [np.float64(3.538260973607101)]
+Group sizes: [59]
+Numerator: 0.0
+Denominator: 0.05997052497639154
+Degrees of freedom: 0.017241379310344827
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9598868374755257
+P-value: 0.5415908084107348
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8847872363994331
+P-value: 0.02159439024838577
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.2461198383142278
+P-value: 5.463635223106828e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.07441824469353472), np.float64(0.07658300069571075), np.float64(0.831175231646017)]
+Group variances: [np.float64(0.00019845350569615945), np.float64(0.0001347625654859704), np.float64(10.992052000491277)]
+Group sizes: [20, 20, 19]
+Numerator: 789.2812714431137
+Denominator: 0.5785457134609948
+Degrees of freedom: 0.1608187134502924
+Kruskal-Wallis H statistic: 1.5615700267618422, p-value: 0.4580462976609391
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 1364.250487176631, p-value: 0.0
+Component: client, Language: cpp, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.07269777 0.05791451 0.08193275 0.07364487 0.08954102 0.07208682
+ 0.08825381 0.08727708 0.0654088  0.06151326 0.06031406 0.0462126
+ 0.09279772 0.07280748 0.07833328 0.06511441 0.05732718 0.09547843
+ 0.09508584 0.07462321]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9598868374755257
+P-value: 0.5415908084107348
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.09474291 0.07712622 0.07759646 0.08049781 0.09802421 0.08299265
+ 0.07889375 0.08080185 0.08088897 0.07040784 0.06478806 0.05640965
+ 0.08131373 0.07993337 0.0827089  0.05269316 0.05601474 0.07688922
+ 0.07777996 0.08115655]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8847872363994331
+P-value: 0.02159439024838577
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.07658300069571075)]
+Group variances: [np.float64(0.0001347625654859704)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 6.7381282742985204e-06
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.25, Clients: 3 --->
+Group: 3
+[ 0.05882362  0.06332158  0.06499709  0.06527324  0.0764696   0.080761
+  0.08051556 14.52212312  0.05693217  0.0623845   0.06701949  0.07824193
+  0.08141923  0.07898775  0.06055432  0.05903386  0.08139799  0.07723309
+  0.07684027]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.2461198383142278
+P-value: 5.463635223106828e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.831175231646017)]
+Group variances: [np.float64(10.992052000491277)]
+Group sizes: [19]
+Numerator: 0.0
+Denominator: 0.5785290526574357
+Degrees of freedom: 0.05555555555555555
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.1,  --->
+Group: 0.1
+[0.11869362 0.11125307 0.09314881 0.12316871 0.09766487 0.09640327
+ 0.1084161  0.09118412 0.05602264 0.10834257 0.09509272 0.07253504
+ 0.12370276 0.10131575 0.09316273 0.11181186 0.09666134 0.05844182
+ 0.12674789 0.09400262 0.09336002 0.10675021 0.08720137 0.09816194
+ 0.1207597  0.09730432 0.06462773 0.11210777 0.10791383 0.09289904
+ 0.12174061 0.09793214 0.09190578 0.12621632 0.09198585 0.05774717
+ 0.11851765 0.096437   0.09832334 0.07436786 0.08012347 0.06547585
+ 0.13020884 0.09872685 0.09406323 0.10903378 0.09919346 0.09626156
+ 0.12566636 0.09291189 0.10300286 0.11017894 0.09461853 0.09281357
+ 0.11854554 0.09191526 0.0964687  0.12432043 0.0911804  0.09168333]
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.9369020749742709
+P-value: 0.003946211883398837
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.09900708073189206)]
+Group variances: [np.float64(0.0003082168099841443)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 5.136946833069072e-06
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7948301766069769
+P-value: 0.0007241737569571216
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.94744286151417
+P-value: 0.3299354043603602
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.7706793055572039
+P-value: 0.0003258748676989617
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.11596487633113599), np.float64(0.09573094394839907), np.float64(0.0853254219161411)]
+Group variances: [np.float64(0.0001484673175436217), np.float64(4.488581878372513e-05), np.float64(0.00025270149282288334)]
+Group sizes: [20, 20, 20]
+Numerator: 2.9167693744754684
+Denominator: 2.2302731457511508e-05
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 33.86360655737704, p-value: 4.4321175196672596e-08
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.000086  6.614492e-08
+2  8.640065e-05  1.000000  4.735340e-01
+3  6.614492e-08  0.473534  1.000000e+00
+Welch's ANOVA statistic: 130780.81400173552, p-value: 0.0
+Component: client, Language: cpp, Interval: 0.1, Clients: 1 --->
+Group: 1
+[0.11869362 0.12316871 0.1084161  0.10834257 0.12370276 0.11181186
+ 0.12674789 0.10675021 0.1207597  0.11210777 0.12174061 0.12621632
+ 0.11851765 0.07436786 0.13020884 0.10903378 0.12566636 0.11017894
+ 0.11854554 0.12432043]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7948301766069769
+P-value: 0.0007241737569571216
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.11596487633113599)]
+Group variances: [np.float64(0.0001484673175436217)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 7.423365877181084e-06
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.1, Clients: 2 --->
+Group: 2
+[0.11125307 0.09766487 0.09118412 0.09509272 0.10131575 0.09666134
+ 0.09400262 0.08720137 0.09730432 0.10791383 0.09793214 0.09198585
+ 0.096437   0.08012347 0.09872685 0.09919346 0.09291189 0.09461853
+ 0.09191526 0.0911804 ]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.94744286151417
+P-value: 0.3299354043603602
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 0.1, Clients: 3 --->
+Group: 3
+[0.09314881 0.09640327 0.05602264 0.07253504 0.09316273 0.05844182
+ 0.09336002 0.09816194 0.06462773 0.09289904 0.09190578 0.05774717
+ 0.09832334 0.06547585 0.09406323 0.09626156 0.10300286 0.09281357
+ 0.0964687  0.09168333]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.7706793055572039
+P-value: 0.0003258748676989617
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.0853254219161411)]
+Group variances: [np.float64(0.00025270149282288334)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.2635074641144167e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.5,  --->
+Group: 0.5
+[ 0.          0.04903295  0.05992596  0.05174914  0.05119809  0.06123501
+  0.04335905  0.05577066  0.05543407  0.05407137  0.04975403  0.0534785
+  0.06758735  0.05638699  0.07842777  0.07308595  0.06036941  0.06920995
+  0.0640164   0.05913241  0.06924124  0.06258551  0.05719512  0.06775187
+  0.03345217  0.0336121   0.04432508  0.05151887 18.13800369  0.05346553
+  0.04970886  0.05158898  0.05209482  0.04115962  0.03931148  0.04390371
+  0.07057949  0.05927665  0.06613173  0.07816648  0.05402492  0.06270089
+  0.0582763   0.05930831  0.03627739  0.04653159  0.04800151  0.04639431
+  0.05914854  0.03791121  0.05453913  0.0583467   0.06202514  0.06154523
+  0.05570854  0.05959789  0.08297743  0.07706486  0.06096969  0.05882917]
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.11331199648799162
+P-value: 3.324329320663189e-17
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3569412806587401)]
+Group variances: [np.float64(5.449745580931992)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 0.0908290930155332
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8880649731530507
+P-value: 0.024781664743684827
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.23750379999923843
+P-value: 2.763461954245139e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9852476829503188
+P-value: 0.9830130579405773
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.05480583971484021), np.float64(0.9571235623472271), np.float64(0.05889443991415292)]
+Group variances: [np.float64(0.00030890375208920284), np.float64(16.35367448116662), np.float64(0.00013550828590509873)]
+Group sizes: [20, 20, 20]
+Numerator: 951.0834884168771
+Denominator: 0.8177059446602307
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 1.5957377049180366, p-value: 0.4502875715383
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 1163.1118675700307, p-value: 0.0
+Component: client, Language: cpp, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.         0.05174914 0.04335905 0.05407137 0.06758735 0.07308595
+ 0.0640164  0.06258551 0.03345217 0.05151887 0.04970886 0.04115962
+ 0.07057949 0.07816648 0.0582763  0.04653159 0.05914854 0.0583467
+ 0.05570854 0.07706486]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8880649731530507
+P-value: 0.024781664743684827
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.05480583971484021)]
+Group variances: [np.float64(0.00030890375208920284)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.5445187604460143e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.5, Clients: 2 --->
+Group: 2
+[ 0.04903295  0.05119809  0.05577066  0.04975403  0.05638699  0.06036941
+  0.05913241  0.05719512  0.0336121  18.13800369  0.05158898  0.03931148
+  0.05927665  0.05402492  0.05930831  0.04800151  0.03791121  0.06202514
+  0.05959789  0.06096969]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.23750379999923843
+P-value: 2.763461954245139e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.9571235623472271)]
+Group variances: [np.float64(16.35367448116662)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.817683724058331
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: cpp, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.05992596 0.06123501 0.05543407 0.0534785  0.07842777 0.06920995
+ 0.06924124 0.06775187 0.04432508 0.05346553 0.05209482 0.04390371
+ 0.06613173 0.06270089 0.03627739 0.04639431 0.05453913 0.06154523
+ 0.08297743 0.05882917]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9852476829503188
+P-value: 0.9830130579405773
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0,  --->
+Group: 1.0
+[0.05222386 0.05096229 0.04093537 0.04356145 0.03885658 0.04199809
+ 0.04188041 0.04364564 0.04348459 0.03919306 0.04099886 0.05078085
+ 0.04834646 0.0487944  0.05061131 0.04708374 0.04983582 0.05171874
+ 0.06435589 0.04674416 0.05170954 0.04355635 0.02930808 0.04401918
+ 0.03478248 0.0286578  0.05834552 0.04396946 0.03494692 0.03140593
+ 0.0358353  0.03934656 0.03671523 0.04377983 0.05127954 0.04527799
+ 0.04727596 0.04721217 0.0619514  0.04572315 0.04446565 0.04561343
+ 0.03728797 0.04338834 0.04346767 0.03256767 0.04244497 0.04652243
+ 0.04750136 0.04715106 0.04480999 0.05001612 0.04245246 0.04567654
+ 0.04421528 0.05455492 0.06257781 0.03609398]
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.9705382094033296
+P-value: 0.16985624238895486
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9456633688219992
+P-value: 0.3325628545231637
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.9552610214205798
+P-value: 0.45401980792361213
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9192662951306251
+P-value: 0.10968822388284782
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 1.0 and different num_clients.
+Levene's test statistic: 0.26676052891852314, p-value: 0.7668416167222694
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 0.3600231523662739
+ANOVA test fails to reject the null hypothesis. There is not statistical difference among groups.)
+Component: client, Language: cpp, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.05222386 0.04356145 0.04188041 0.03919306 0.04834646 0.04708374
+ 0.06435589 0.04355635 0.05834552 0.03140593 0.03671523 0.04527799
+ 0.0619514  0.04561343 0.04346767 0.04244497 0.04715106 0.04245246
+ 0.05455492]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9456633688219992
+P-value: 0.3325628545231637
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.05096229 0.03885658 0.04364564 0.04099886 0.0487944  0.04983582
+ 0.04674416 0.02930808 0.03478248 0.04396946 0.0358353  0.04377983
+ 0.04727596 0.04572315 0.03728797 0.03256767 0.04652243 0.04480999
+ 0.04567654 0.06257781]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.9552610214205798
+P-value: 0.45401980792361213
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: cpp, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.04093537 0.04199809 0.04348459 0.05078085 0.05061131 0.05171874
+ 0.05170954 0.04401918 0.0286578  0.03494692 0.03934656 0.05127954
+ 0.04721217 0.04446565 0.04338834 0.04750136 0.05001612 0.04421528
+ 0.03609398]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9192662951306251
+P-value: 0.10968822388284782
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.4898479643431183
+P-value: 6.437646399438092e-17
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.08188057469678767
+P-value: 3.9417142735645106e-22
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.0840004944240137
+P-value: 6.588703849071184e-22
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08853313277076023), np.float64(0.25250686966779), np.float64(0.21730499935297506)]
+Group variances: [np.float64(0.004578638217379633), np.float64(3.264395927629196), np.float64(2.1317534321159615)]
+Group sizes: [99, 100, 98]
+Numerator: 2.0815125382181763
+Denominator: 0.05444279418917419
+Degrees of freedom: 0.030614370084178624
+Kruskal-Wallis H statistic: 7.055607635362435, p-value: 0.029369345528866893
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1        2         3
+1  1.000000  0.13753  0.035672
+2  0.137530  1.00000  1.000000
+3  0.035672  1.00000  1.000000
+Welch's ANOVA statistic: 38.233021820766126, p-value: 4.016231791581504e-12
+Component: client, Clients: 1, Language: cpp --->
+Group: 1
+[0.13330714 0.11869362 0.07269777 0.         0.05222386 0.11645493
+ 0.12316871 0.05791451 0.05174914 0.04356145 0.14030609 0.1084161
+ 0.08193275 0.04335905 0.04188041 0.12268258 0.10834257 0.07364487
+ 0.05407137 0.03919306 0.14271355 0.12370276 0.08954102 0.06758735
+ 0.04834646 0.11330509 0.11181186 0.07208682 0.07308595 0.04708374
+ 0.667725   0.12674789 0.08825381 0.0640164  0.06435589 0.10248482
+ 0.10675021 0.08727708 0.06258551 0.04355635 0.12202019 0.1207597
+ 0.0654088  0.03345217 0.12398562 0.11210777 0.06151326 0.05151887
+ 0.05834552 0.13161522 0.12174061 0.06031406 0.04970886 0.03140593
+ 0.10866044 0.12621632 0.0462126  0.04115962 0.03671523 0.12831542
+ 0.11851765 0.09279772 0.07057949 0.04527799 0.07501363 0.07436786
+ 0.07280748 0.07816648 0.0619514  0.11928732 0.13020884 0.07833328
+ 0.0582763  0.04561343 0.13532331 0.10903378 0.06511441 0.04653159
+ 0.04346767 0.10980331 0.12566636 0.05732718 0.05914854 0.04244497
+ 0.11961565 0.11017894 0.09547843 0.0583467  0.04715106 0.12756959
+ 0.11854554 0.09508584 0.05570854 0.04245246 0.13123023 0.12432043
+ 0.07462321 0.07706486 0.05455492]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.4898479643431183
+P-value: 6.437646399438092e-17
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08853313277076023)]
+Group variances: [np.float64(0.004578638217379633)]
+Group sizes: [99]
+Numerator: 0.0
+Denominator: 4.6248870882622556e-05
+Degrees of freedom: 0.01020408163265306
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.34316950973284843
+P-value: 1.602546662668429e-08
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.7948301766069769
+P-value: 0.0007241737569571216
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9598868374755257
+P-value: 0.5415908084107348
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.8880649731530507
+P-value: 0.024781664743684827
+The data is likely not normally distributed (reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9456633688219992
+P-value: 0.3325628545231637
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.14857095706146353), np.float64(0.11596487633113599), np.float64(0.07441824469353472), np.float64(0.05480583971484021), np.float64(0.04682009412030391)]
+Group variances: [np.float64(0.015160663536094196), np.float64(0.0001484673175436217), np.float64(0.00019845350569615945), np.float64(0.00030890375208920284), np.float64(6.98706476559422e-05)]
+Group sizes: [20, 20, 20, 20, 19]
+Numerator: 34.40952361889434
+Denominator: 0.0007945018080793666
+Degrees of freedom: 0.26608187134502925
+Kruskal-Wallis H statistic: 79.21516746411481, p-value: 2.5541834829656597e-16
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  1.000000e+00  0.000559  2.255706e-08  7.801985e-12
+0.10  1.000000e+00  1.000000e+00  0.010552  1.750297e-06  1.361302e-09
+0.25  5.588911e-04  1.055247e-02  1.000000  5.133056e-01  1.437277e-02
+0.50  2.255706e-08  1.750297e-06  0.513306  1.000000e+00  1.000000e+00
+1.00  7.801985e-12  1.361302e-09  0.014373  1.000000e+00  1.000000e+00
+Welch's ANOVA statistic: 43309.55986377945, p-value: 0.0
+Component: client, Clients: 2, Language: cpp --->
+Group: 2
+[ 0.09684054  0.11125307  0.09474291  0.04903295  0.05096229  0.05961361
+  0.09766487  0.07712622  0.05119809  0.03885658  0.09857405  0.09118412
+  0.07759646  0.05577066  0.04364564  0.1024218   0.09509272  0.08049781
+  0.04975403  0.04099886  0.11405674  0.10131575  0.09802421  0.05638699
+  0.0487944   0.05846065  0.09666134  0.08299265  0.06036941  0.04983582
+  0.07220229  0.09400262  0.07889375  0.05913241  0.04674416  0.07769793
+  0.08720137  0.08080185  0.05719512  0.02930808  0.09819831  0.09730432
+  0.08088897  0.0336121   0.03478248  0.09447006  0.10791383  0.07040784
+ 18.13800369  0.04396946  0.10941971  0.09793214  0.06478806  0.05158898
+  0.0358353   0.05887854  0.09198585  0.05640965  0.03931148  0.04377983
+  0.09873628  0.096437    0.08131373  0.05927665  0.04727596  0.06098355
+  0.08012347  0.07993337  0.05402492  0.04572315  0.09319357  0.09872685
+  0.0827089   0.05930831  0.03728797  0.09904975  0.09919346  0.05269316
+  0.04800151  0.03256767  0.10837105  0.09291189  0.05601474  0.03791121
+  0.04652243  0.09742675  0.09461853  0.07688922  0.06202514  0.04480999
+  0.10017479  0.09191526  0.07777996  0.05959789  0.04567654  0.09321243
+  0.0911804   0.08115655  0.06096969  0.06257781]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.08188057469678767
+P-value: 3.9417142735645106e-22
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.25250686966779)]
+Group variances: [np.float64(3.264395927629196)]
+Group sizes: [100]
+Numerator: 0.0
+Denominator: 0.03264395927629196
+Degrees of freedom: 0.010101010101010102
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Clients: 3, Language: cpp --->
+Group: 3
+[ 0.09035388  0.09314881  0.05882362  0.05992596  0.04093537  0.12210038
+  0.09640327  0.06332158  0.06123501  0.04199809  0.11590567  0.05602264
+  0.06499709  0.05543407  0.04348459  0.09668857  0.07253504  0.06527324
+  0.0534785   0.05078085  0.05759846  0.09316273  0.0764696   0.07842777
+  0.05061131  0.07990777  0.05844182  0.080761    0.06920995  0.05171874
+  0.09550304  0.09336002  0.08051556  0.06924124  0.05170954  0.07197203
+  0.09816194 14.52212312  0.06775187  0.04401918  0.09317343  0.06462773
+  0.05693217  0.04432508  0.0286578   0.10882301  0.09289904  0.0623845
+  0.05346553  0.03494692  0.09791209  0.09190578  0.06701949  0.05209482
+  0.03934656  0.09986922  0.05774717  0.04390371  0.05127954  0.09657074
+  0.09832334  0.07824193  0.06613173  0.04721217  0.05678252  0.06547585
+  0.08141923  0.06270089  0.04446565  0.07686943  0.09406323  0.07898775
+  0.03627739  0.04338834  0.07466796  0.09626156  0.06055432  0.04639431
+  0.09052104  0.10300286  0.05903386  0.05453913  0.04750136  0.09828668
+  0.09281357  0.08139799  0.06154523  0.05001612  0.05873378  0.0964687
+  0.07723309  0.08297743  0.04421528  0.09454217  0.09168333  0.07684027
+  0.05882917  0.03609398]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.0840004944240137
+P-value: 6.588703849071184e-22
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.21730499935297506)]
+Group variances: [np.float64(2.1317534321159615)]
+Group sizes: [98]
+Numerator: 0.0
+Denominator: 0.021752586041999606
+Degrees of freedom: 0.010309278350515464
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py --->
+Group: py
+[1.70870625 1.26742328 0.74610358 0.61847914 0.48879368 0.47363769
+ 0.17429053 0.14456463 0.14458201 0.10096043 0.07536538 0.07704876
+ 0.04473324 0.04603875 0.03401898 1.48503803 1.21433462 1.12951117
+ 0.61130617 0.4979178  0.46274287 0.19358336 0.15145429 0.14272903
+ 0.09087199 0.07042121 0.08207075 0.05204502 0.03548765 0.0351568
+ 1.49797913 1.21745483 1.1179352  0.61413379 0.49500019 0.
+ 0.2033465  0.14831274 0.13609801 0.09589556 0.08319909 0.07229425
+ 0.05507158 0.03924001 0.04663685 1.48704599 1.24456117 1.12837947
+ 0.60108347 0.47588442 0.46080115 0.19259356 0.14995611 0.14027368
+ 0.0868798  0.07340739 0.06965181 0.05060076 0.03682458 0.04482647
+ 1.51905047 1.24017486 1.13464524 0.57828128 0.46749908 0.4582617
+ 0.17873615 0.15254937 0.13523878 0.08649786 0.12594092 0.03725242
+ 0.03185753 0.0724258  1.51551575 1.22375448 1.11974666 0.28666503
+ 0.47971767 0.46569439 0.16752968 0.17798275 0.16344525 0.12682801
+ 0.09327265 0.08635106 0.05767404 0.06129731 1.48960599 1.22427206
+ 0.3406465  0.61436787 0.48364608 0.45630815 0.23578366 0.19440566
+ 0.19684381 0.09217726 0.09226495 0.05989906 0.04998269 0.07156109
+ 1.31707252 1.07486949 0.61888018 0.47494372 0.43823574 0.25337248
+ 0.19142032 0.18717898 0.11750374 0.09277579 0.0914065  0.07767113
+ 0.05134495 0.04750786 1.49931335 1.23184855 1.13448088 0.56867622
+ 0.4725101  0.         0.23275169 0.19606153 0.18104268 0.11556257
+ 0.10557924 0.08918314 0.0474618  0.04078283 0.04089637 1.52711451
+ 1.24238699 1.1424219  0.5888789  0.46815542 0.464769   0.19594327
+ 0.161086   0.15841768 0.06870372 0.08021629 0.07749351 0.06754631
+ 0.04100354 0.04193975 1.52199817 1.25585783 1.10809927 0.60450432
+ 0.47991948 0.4563739  0.20129625 0.16169511 0.15795767 0.09066152
+ 0.09424468 0.07848063 0.05174081 0.03988588 0.04087967 1.50348148
+ 1.22922435 1.11136661 0.60336454 0.48793898 0.45364792 0.21305642
+ 0.18485701 0.15636598 0.08992391 0.07376715 0.07471303 0.04854496
+ 0.04263207 0.04053556 1.49242665 1.23220168 1.1198585  0.60483523
+ 0.45951309 0.44344443 0.21539909 0.16181433 0.15117957 0.07724398
+ 0.07381147 0.06804438 0.03874803 0.07074569 1.24670583 1.09939112
+ 0.45918786 0.35892382 0.33841889 0.34283664 0.2173772  0.16201098
+ 0.14939604 0.10655914 0.0773268  0.08436405 0.06939209 0.03947968
+ 0.05534194 1.50803825 1.2464256  1.14038681 0.49331101 0.
+ 0.21782616 0.1717041  0.14535689 0.10743773 0.07841249 0.07799548
+ 0.06592855 0.04135572 0.042556   1.5030935  1.26290075 1.12737717
+ 0.2357599  0.47519371 0.45626388 0.20493802 0.16825282 0.14801555
+ 0.11583159 0.07809406 0.08493639 0.04587795 0.03973861 0.03928365
+ 1.49974527 1.22728324 1.14045205 0.56370075 0.47532414 0.
+ 0.18319952 0.16031027 0.14516481 0.11366459 0.08085232 0.09772657
+ 0.0486961  0.04498235 0.03745141 1.48293306 1.19456946 1.11785111
+ 0.60190385 0.47434816 0.45725655 0.1896094  0.15540354 0.14571181
+ 0.09172222 0.07608541 0.07723688 0.06365241 0.03828994 0.03977052
+ 1.45715804 1.21721732 1.12110036 0.59647591 0.48336931 0.46061174
+ 0.20536594 0.15666508 0.14942876 0.11511296 0.07939814 0.078713
+ 0.04843393 0.03995896 0.04078392 1.490117   1.24497063 1.10181488
+ 0.58105444 0.48160599 0.4837455  0.21167037 0.15776974 0.15200596
+ 0.0945151  0.0798285  0.07730591 0.04640384 0.04555788 0.04589305]
+Starting Shapiro-Wilk test...
+Group: py
+Shapiro-Wilk statistic: 0.7559349491052536
+P-value: 1.433560010612953e-20
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.40541184476324116)]
+Group variances: [np.float64(0.21586096881599226)]
+Group sizes: [294]
+Numerator: 0.0
+Denominator: 0.0007342209823673206
+Degrees of freedom: 0.0034129692832764505
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8347355198698616
+P-value: 1.3105320292490148e-06
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.7359738243555111
+P-value: 5.73795646631812e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9315874563450841
+P-value: 0.0023205244957053956
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.8999887818274884
+P-value: 0.00019224604331900756
+The data is likely not normally distributed (reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.8903053837466987
+P-value: 6.783616767420208e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.2488919787068609), np.float64(0.4599816438778581), np.float64(0.17470630964738076), np.float64(0.08852261977542235), np.float64(0.048124927489026186)]
+Group variances: [np.float64(0.05680888743385042), np.float64(0.022172588828677585), np.float64(0.0007836898884220373), np.float64(0.0002170746384859905), np.float64(0.00012464334363347437)]
+Group sizes: [59, 59, 60, 57, 59]
+Numerator: 1554.7743894876608
+Denominator: 0.0013576515133713748
+Degrees of freedom: 0.08653043333055022
+Kruskal-Wallis H statistic: 257.6772155512083, p-value: 1.4438013281302075e-54
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10          0.25          0.50          1.00
+0.05  1.000000e+00  1.489139e-04  4.438658e-12  1.344489e-26  1.888193e-47
+0.10  1.489139e-04  1.000000e+00  3.815581e-02  4.305020e-10  7.287964e-24
+0.25  4.438658e-12  3.815581e-02  1.000000e+00  1.750222e-03  9.555371e-13
+0.50  1.344489e-26  4.305020e-10  1.750222e-03  1.000000e+00  3.010190e-03
+1.00  1.888193e-47  7.287964e-24  9.555371e-13  3.010190e-03  1.000000e+00
+Welch's ANOVA statistic: 1145194.0164135217, p-value: 0.0
+Component: client, Language: py, Interval: 0.05,  --->
+Group: 0.05
+[1.70870625 1.26742328 0.74610358 1.48503803 1.21433462 1.12951117
+ 1.49797913 1.21745483 1.1179352  1.48704599 1.24456117 1.12837947
+ 1.51905047 1.24017486 1.13464524 1.51551575 1.22375448 1.11974666
+ 1.48960599 1.22427206 0.3406465  1.31707252 1.07486949 1.49931335
+ 1.23184855 1.13448088 1.52711451 1.24238699 1.1424219  1.52199817
+ 1.25585783 1.10809927 1.50348148 1.22922435 1.11136661 1.49242665
+ 1.23220168 1.1198585  1.24670583 1.09939112 0.45918786 1.50803825
+ 1.2464256  1.14038681 1.5030935  1.26290075 1.12737717 1.49974527
+ 1.22728324 1.14045205 1.48293306 1.19456946 1.11785111 1.45715804
+ 1.21721732 1.12110036 1.490117   1.24497063 1.10181488]
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8347355198698616
+P-value: 1.3105320292490148e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.2488919787068609)]
+Group variances: [np.float64(0.05680888743385042)]
+Group sizes: [59]
+Numerator: 0.0
+Denominator: 0.0009628624988788207
+Degrees of freedom: 0.017241379310344827
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7214866719170729
+P-value: 7.212113543824289e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.7020896409560364
+P-value: 4.1345569346304976e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.5069983279817463
+P-value: 5.794043022922636e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.4876069625085884), np.float64(1.2195561143260565), np.float64(1.028492905632205)]
+Group variances: [np.float64(0.007515899623074971), np.float64(0.00236667000972727), np.float64(0.05707214681668555)]
+Group sizes: [20, 20, 19]
+Numerator: 8.918301486917283
+Denominator: 0.0034979256825182986
+Degrees of freedom: 0.1608187134502924
+Kruskal-Wallis H statistic: 47.24879571810882, p-value: 5.496096779696494e-11
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.000264  2.288698e-11
+2  2.638364e-04  1.000000  8.809602e-03
+3  2.288698e-11  0.008810  1.000000e+00
+Welch's ANOVA statistic: 2549.597188839254, p-value: 0.0
+Component: client, Language: py, Interval: 0.05, Clients: 1 --->
+Group: 1
+[1.70870625 1.48503803 1.49797913 1.48704599 1.51905047 1.51551575
+ 1.48960599 1.31707252 1.49931335 1.52711451 1.52199817 1.50348148
+ 1.49242665 1.24670583 1.50803825 1.5030935  1.49974527 1.48293306
+ 1.45715804 1.490117  ]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7214866719170729
+P-value: 7.212113543824289e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.4876069625085884)]
+Group variances: [np.float64(0.007515899623074971)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.00037579498115374857
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.05, Clients: 2 --->
+Group: 2
+[1.26742328 1.21433462 1.21745483 1.24456117 1.24017486 1.22375448
+ 1.22427206 1.07486949 1.23184855 1.24238699 1.25585783 1.22922435
+ 1.23220168 1.09939112 1.2464256  1.26290075 1.22728324 1.19456946
+ 1.21721732 1.24497063]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.7020896409560364
+P-value: 4.1345569346304976e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.2195561143260565)]
+Group variances: [np.float64(0.00236667000972727)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.00011833350048636351
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.74610358 1.12951117 1.1179352  1.12837947 1.13464524 1.11974666
+ 0.3406465  1.13448088 1.1424219  1.10809927 1.11136661 1.1198585
+ 0.45918786 1.14038681 1.12737717 1.14045205 1.11785111 1.12110036
+ 1.10181488]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.5069983279817463
+P-value: 5.794043022922636e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.028492905632205)]
+Group variances: [np.float64(0.05707214681668555)]
+Group sizes: [19]
+Numerator: 0.0
+Denominator: 0.003003797200878187
+Degrees of freedom: 0.05555555555555555
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.25,  --->
+Group: 0.25
+[0.17429053 0.14456463 0.14458201 0.19358336 0.15145429 0.14272903
+ 0.2033465  0.14831274 0.13609801 0.19259356 0.14995611 0.14027368
+ 0.17873615 0.15254937 0.13523878 0.16752968 0.17798275 0.16344525
+ 0.23578366 0.19440566 0.19684381 0.25337248 0.19142032 0.18717898
+ 0.23275169 0.19606153 0.18104268 0.19594327 0.161086   0.15841768
+ 0.20129625 0.16169511 0.15795767 0.21305642 0.18485701 0.15636598
+ 0.21539909 0.16181433 0.15117957 0.2173772  0.16201098 0.14939604
+ 0.21782616 0.1717041  0.14535689 0.20493802 0.16825282 0.14801555
+ 0.18319952 0.16031027 0.14516481 0.1896094  0.15540354 0.14571181
+ 0.20536594 0.15666508 0.14942876 0.21167037 0.15776974 0.15200596]
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.9315874563450841
+P-value: 0.0023205244957053956
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.17470630964738076)]
+Group variances: [np.float64(0.0007836898884220373)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 1.3061498140367288e-05
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9807643147031767
+P-value: 0.9435827521998343
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8958799573906573
+P-value: 0.034543066024049725
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.842322290194464
+P-value: 0.003974437144470788
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.20438346220160192), np.float64(0.16541381879950318), np.float64(0.15432164794103712)]
+Group variances: [np.float64(0.00045880116255800915), np.float64(0.0002465551801551775), np.float64(0.0002728194131589553)]
+Group sizes: [20, 20, 20]
+Numerator: 3.792979797014797
+Denominator: 4.8908787793607096e-05
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 34.78459016393444, p-value: 2.7965476155876855e-08
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.000265  2.292461e-08
+2  2.654290e-04  1.000000  1.903680e-01
+3  2.292461e-08  0.190368  1.000000e+00
+Welch's ANOVA statistic: 77552.11216890108, p-value: 0.0
+Component: client, Language: py, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.17429053 0.19358336 0.2033465  0.19259356 0.17873615 0.16752968
+ 0.23578366 0.25337248 0.23275169 0.19594327 0.20129625 0.21305642
+ 0.21539909 0.2173772  0.21782616 0.20493802 0.18319952 0.1896094
+ 0.20536594 0.21167037]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9807643147031767
+P-value: 0.9435827521998343
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.14456463 0.15145429 0.14831274 0.14995611 0.15254937 0.17798275
+ 0.19440566 0.19142032 0.19606153 0.161086   0.16169511 0.18485701
+ 0.16181433 0.16201098 0.1717041  0.16825282 0.16031027 0.15540354
+ 0.15666508 0.15776974]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8958799573906573
+P-value: 0.034543066024049725
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.16541381879950318)]
+Group variances: [np.float64(0.0002465551801551775)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.2327759007758875e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.25, Clients: 3 --->
+Group: 3
+[0.14458201 0.14272903 0.13609801 0.14027368 0.13523878 0.16344525
+ 0.19684381 0.18717898 0.18104268 0.15841768 0.15795767 0.15636598
+ 0.15117957 0.14939604 0.14535689 0.14801555 0.14516481 0.14571181
+ 0.14942876 0.15200596]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.842322290194464
+P-value: 0.003974437144470788
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.15432164794103712)]
+Group variances: [np.float64(0.0002728194131589553)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.3640970657947765e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.1,  --->
+Group: 0.1
+[0.61847914 0.48879368 0.47363769 0.61130617 0.4979178  0.46274287
+ 0.61413379 0.49500019 0.         0.60108347 0.47588442 0.46080115
+ 0.57828128 0.46749908 0.4582617  0.28666503 0.47971767 0.46569439
+ 0.61436787 0.48364608 0.45630815 0.61888018 0.47494372 0.43823574
+ 0.56867622 0.4725101  0.         0.5888789  0.46815542 0.464769
+ 0.60450432 0.47991948 0.4563739  0.60336454 0.48793898 0.45364792
+ 0.60483523 0.45951309 0.44344443 0.35892382 0.33841889 0.34283664
+ 0.49331101 0.         0.2357599  0.47519371 0.45626388 0.56370075
+ 0.47532414 0.         0.60190385 0.47434816 0.45725655 0.59647591
+ 0.48336931 0.46061174 0.58105444 0.48160599 0.4837455 ]
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.7359738243555111
+P-value: 5.73795646631812e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4599816438778581)]
+Group variances: [np.float64(0.022172588828677585)]
+Group sizes: [59]
+Numerator: 0.0
+Denominator: 0.00037580659031656924
+Degrees of freedom: 0.017241379310344827
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.5891874121382149
+P-value: 3.4585244661298125e-06
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.5135447654770517
+P-value: 4.224856305979384e-07
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.5797239773183503
+P-value: 1.8285433282436543e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.5500670954302361), np.float64(0.4726505464079775), np.float64(0.3617315623729797)]
+Group variances: [np.float64(0.013675115389058162), np.float64(0.0010919797655730425), np.float64(0.03519192022774663)]
+Group sizes: [19, 20, 20]
+Numerator: 0.9707789320390777
+Denominator: 0.002533937914879571
+Degrees of freedom: 0.1608187134502924
+Kruskal-Wallis H statistic: 29.21927906583179, p-value: 4.5197474484320806e-07
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.056532  2.184343e-07
+2  5.653177e-02  1.000000  6.311508e-03
+3  2.184343e-07  0.006312  1.000000e+00
+Welch's ANOVA statistic: 383.1107803938501, p-value: 0.0
+Component: client, Language: py, Interval: 0.1, Clients: 1 --->
+Group: 1
+[0.61847914 0.61130617 0.61413379 0.60108347 0.57828128 0.28666503
+ 0.61436787 0.61888018 0.56867622 0.5888789  0.60450432 0.60336454
+ 0.60483523 0.35892382 0.2357599  0.56370075 0.60190385 0.59647591
+ 0.58105444]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.5891874121382149
+P-value: 3.4585244661298125e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.5500670954302361)]
+Group variances: [np.float64(0.013675115389058162)]
+Group sizes: [19]
+Numerator: 0.0
+Denominator: 0.0007197429152135875
+Degrees of freedom: 0.05555555555555555
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.1, Clients: 2 --->
+Group: 2
+[0.48879368 0.4979178  0.49500019 0.47588442 0.46749908 0.47971767
+ 0.48364608 0.47494372 0.4725101  0.46815542 0.47991948 0.48793898
+ 0.45951309 0.33841889 0.49331101 0.47519371 0.47532414 0.47434816
+ 0.48336931 0.48160599]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.5135447654770517
+P-value: 4.224856305979384e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4726505464079775)]
+Group variances: [np.float64(0.0010919797655730425)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 5.4598988278652126e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.1, Clients: 3 --->
+Group: 3
+[0.47363769 0.46274287 0.         0.46080115 0.4582617  0.46569439
+ 0.45630815 0.43823574 0.         0.464769   0.4563739  0.45364792
+ 0.44344443 0.34283664 0.         0.45626388 0.         0.45725655
+ 0.46061174 0.4837455 ]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.5797239773183503
+P-value: 1.8285433282436543e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3617315623729797)]
+Group variances: [np.float64(0.03519192022774663)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0017595960113873314
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.5,  --->
+Group: 0.5
+[0.10096043 0.07536538 0.07704876 0.09087199 0.07042121 0.08207075
+ 0.09589556 0.08319909 0.07229425 0.0868798  0.07340739 0.06965181
+ 0.08649786 0.12594092 0.12682801 0.09327265 0.08635106 0.09217726
+ 0.09226495 0.11750374 0.09277579 0.0914065  0.11556257 0.10557924
+ 0.08918314 0.06870372 0.08021629 0.07749351 0.09066152 0.09424468
+ 0.07848063 0.08992391 0.07376715 0.07471303 0.07724398 0.07381147
+ 0.10655914 0.0773268  0.08436405 0.10743773 0.07841249 0.07799548
+ 0.11583159 0.07809406 0.08493639 0.11366459 0.08085232 0.09772657
+ 0.09172222 0.07608541 0.07723688 0.11511296 0.07939814 0.078713
+ 0.0945151  0.0798285  0.07730591]
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.8999887818274884
+P-value: 0.00019224604331900756
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08852261977542235)]
+Group variances: [np.float64(0.0002170746384859905)]
+Group sizes: [57]
+Numerator: 0.0
+Denominator: 3.808326990982289e-06
+Degrees of freedom: 0.017857142857142856
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9505355571668254
+P-value: 0.4650460507206616
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8936010954097597
+P-value: 0.031337542067025145
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.7826884864120512
+P-value: 0.00048220698499472765
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.10168438729254525), np.float64(0.0824082839063521), np.float64(0.08344945325493815)]
+Group variances: [np.float64(0.00022026348257101673), np.float64(7.969815720183846e-05), np.float64(0.00015317423699924175)]
+Group sizes: [17, 20, 20]
+Numerator: 1.499732228127446
+Denominator: 2.4600295155407935e-05
+Degrees of freedom: 0.16776315789473684
+Kruskal-Wallis H statistic: 17.528621757232827, p-value: 0.00015620975373590126
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.000797  0.000643
+2  0.000797  1.000000  1.000000
+3  0.000643  1.000000  1.000000
+Welch's ANOVA statistic: 60963.99326321728, p-value: 0.0
+Component: client, Language: py, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.10096043 0.09087199 0.09589556 0.0868798  0.12682801 0.11750374
+ 0.11556257 0.06870372 0.09066152 0.08992391 0.10655914 0.10743773
+ 0.11583159 0.11366459 0.09172222 0.11511296 0.0945151 ]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9505355571668254
+P-value: 0.4650460507206616
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 0.5, Clients: 2 --->
+Group: 2
+[0.07536538 0.07042121 0.08319909 0.07340739 0.08649786 0.09327265
+ 0.09217726 0.09277579 0.10557924 0.08021629 0.09424468 0.07376715
+ 0.07724398 0.0773268  0.07841249 0.07809406 0.08085232 0.07608541
+ 0.07939814 0.0798285 ]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8936010954097597
+P-value: 0.031337542067025145
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.0824082839063521)]
+Group variances: [np.float64(7.969815720183846e-05)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 3.9849078600919224e-06
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.07704876 0.08207075 0.07229425 0.06965181 0.12594092 0.08635106
+ 0.09226495 0.0914065  0.08918314 0.07749351 0.07848063 0.07471303
+ 0.07381147 0.08436405 0.07799548 0.08493639 0.09772657 0.07723688
+ 0.078713   0.07730591]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.7826884864120512
+P-value: 0.00048220698499472765
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08344945325493815)]
+Group variances: [np.float64(0.00015317423699924175)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 7.658711849962087e-06
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Language: py, Interval: 1.0,  --->
+Group: 1.0
+[0.04473324 0.04603875 0.03401898 0.05204502 0.03548765 0.0351568
+ 0.05507158 0.03924001 0.04663685 0.05060076 0.03682458 0.04482647
+ 0.03725242 0.03185753 0.0724258  0.05767404 0.06129731 0.05989906
+ 0.04998269 0.07156109 0.07767113 0.05134495 0.04750786 0.0474618
+ 0.04078283 0.04089637 0.06754631 0.04100354 0.04193975 0.05174081
+ 0.03988588 0.04087967 0.04854496 0.04263207 0.04053556 0.06804438
+ 0.03874803 0.07074569 0.06939209 0.03947968 0.05534194 0.06592855
+ 0.04135572 0.042556   0.04587795 0.03973861 0.03928365 0.0486961
+ 0.04498235 0.03745141 0.06365241 0.03828994 0.03977052 0.04843393
+ 0.03995896 0.04078392 0.04640384 0.04555788 0.04589305]
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.8903053837466987
+P-value: 6.783616767420208e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.048124927489026186)]
+Group variances: [np.float64(0.00012464334363347437)]
+Group sizes: [59]
+Numerator: 0.0
+Denominator: 2.112599044635159e-06
+Degrees of freedom: 0.017241379310344827
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9333201385896076
+P-value: 0.19932716440769693
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.92240516725782
+P-value: 0.11023820270207596
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8112611252867377
+P-value: 0.0012780833310004325
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.055210333375198456), np.float64(0.04204328466051591), np.float64(0.047475434725672824)]
+Group variances: [np.float64(0.00011464900685517824), np.float64(3.484036895957794e-05), np.float64(0.00014745493870461368)]
+Group sizes: [19, 20, 20]
+Numerator: 1.530628047683649
+Denominator: 1.5148923638745278e-05
+Degrees of freedom: 0.1608187134502924
+Kruskal-Wallis H statistic: 16.13126672613734, p-value: 0.0003141520784379297
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.000213  0.032710
+2  0.000213  1.000000  0.445119
+3  0.032710  0.445119  1.000000
+Welch's ANOVA statistic: 101038.73279609616, p-value: 0.0
+Component: client, Language: py, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.04473324 0.05204502 0.05507158 0.05060076 0.03725242 0.05989906
+ 0.07767113 0.0474618  0.06754631 0.05174081 0.04854496 0.06804438
+ 0.06939209 0.06592855 0.04587795 0.0486961  0.06365241 0.04843393
+ 0.04640384]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9333201385896076
+P-value: 0.19932716440769693
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.04603875 0.03548765 0.03924001 0.03682458 0.03185753 0.05767404
+ 0.04998269 0.05134495 0.04078283 0.04100354 0.03988588 0.04263207
+ 0.03874803 0.03947968 0.04135572 0.03973861 0.04498235 0.03828994
+ 0.03995896 0.04555788]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.92240516725782
+P-value: 0.11023820270207596
+The data is likely normally distributed (fail to reject H0).
+
+Component: client, Language: py, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.03401898 0.0351568  0.04663685 0.04482647 0.0724258  0.06129731
+ 0.07156109 0.04750786 0.04089637 0.04193975 0.04087967 0.04053556
+ 0.07074569 0.05534194 0.042556   0.03928365 0.03745141 0.03977052
+ 0.04078392 0.04589305]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8112611252867377
+P-value: 0.0012780833310004325
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.047475434725672824)]
+Group variances: [np.float64(0.00014745493870461368)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 7.372746935230684e-06
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7387222736888961
+P-value: 1.0433594713629977e-11
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.7321279699343661
+P-value: 3.2369867962410353e-12
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.7196978765155209
+P-value: 1.86562420713071e-12
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.49546014974189834), np.float64(0.39641440962008095), np.float64(0.3280901734636814)]
+Group variances: [np.float64(0.2995757611472028), np.float64(0.1948571686942319), np.float64(0.14720383213669105)]
+Group sizes: [95, 100, 99]
+Numerator: 0.06879440245120487
+Denominator: 0.006588908146969829
+Degrees of freedom: 0.03094338960600359
+Kruskal-Wallis H statistic: 10.073903998532073, p-value: 0.006493510410050485
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.202683  0.004659
+2  0.202683  1.000000  0.522814
+3  0.004659  0.522814  1.000000
+Welch's ANOVA statistic: 10.440941187325961, p-value: 1.4237004719030999e-05
+Component: client, Clients: 1, Language: py --->
+Group: 1
+[1.70870625 0.61847914 0.17429053 0.10096043 0.04473324 1.48503803
+ 0.61130617 0.19358336 0.09087199 0.05204502 1.49797913 0.61413379
+ 0.2033465  0.09589556 0.05507158 1.48704599 0.60108347 0.19259356
+ 0.0868798  0.05060076 1.51905047 0.57828128 0.17873615 0.03725242
+ 1.51551575 0.28666503 0.16752968 0.12682801 1.48960599 0.61436787
+ 0.23578366 0.05989906 1.31707252 0.61888018 0.25337248 0.11750374
+ 0.07767113 1.49931335 0.56867622 0.23275169 0.11556257 0.0474618
+ 1.52711451 0.5888789  0.19594327 0.06870372 0.06754631 1.52199817
+ 0.60450432 0.20129625 0.09066152 0.05174081 1.50348148 0.60336454
+ 0.21305642 0.08992391 0.04854496 1.49242665 0.60483523 0.21539909
+ 0.06804438 1.24670583 0.35892382 0.2173772  0.10655914 0.06939209
+ 1.50803825 0.21782616 0.10743773 0.06592855 1.5030935  0.2357599
+ 0.20493802 0.11583159 0.04587795 1.49974527 0.56370075 0.18319952
+ 0.11366459 0.0486961  1.48293306 0.60190385 0.1896094  0.09172222
+ 0.06365241 1.45715804 0.59647591 0.20536594 0.11511296 0.04843393
+ 1.490117   0.58105444 0.21167037 0.0945151  0.04640384]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7387222736888961
+P-value: 1.0433594713629977e-11
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.49546014974189834)]
+Group variances: [np.float64(0.2995757611472028)]
+Group sizes: [95]
+Numerator: 0.0
+Denominator: 0.003153429064707398
+Degrees of freedom: 0.010638297872340425
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.7214866719170729
+P-value: 7.212113543824289e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.5891874121382149
+P-value: 3.4585244661298125e-06
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9807643147031767
+P-value: 0.9435827521998343
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9505355571668254
+P-value: 0.4650460507206616
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9333201385896076
+P-value: 0.19932716440769693
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.4876069625085884), np.float64(0.5500670954302361), np.float64(0.20438346220160192), np.float64(0.10168438729254525), np.float64(0.055210333375198456)]
+Group variances: [np.float64(0.007515899623074971), np.float64(0.013675115389058162), np.float64(0.00045880116255800915), np.float64(0.00022026348257101673), np.float64(0.00011464900685517824)]
+Group sizes: [20, 19, 20, 17, 19]
+Numerator: 2522.2296409362257
+Denominator: 0.001137468788196126
+Degrees of freedom: 0.27887426900584794
+Kruskal-Wallis H statistic: 90.01691624572265, p-value: 1.305908285452553e-18
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  2.642835e-01  0.000081  2.364291e-09  1.380225e-16
+0.10  2.642835e-01  1.000000e+00  0.289109  3.624892e-04  4.447533e-09
+0.25  8.114669e-05  2.891094e-01  1.000000  3.957299e-01  3.592837e-04
+0.50  2.364291e-09  3.624892e-04  0.395730  1.000000e+00  5.341621e-01
+1.00  1.380225e-16  4.447533e-09  0.000359  5.341621e-01  1.000000e+00
+Welch's ANOVA statistic: 2217405.5825620904, p-value: 0.0
+Component: client, Clients: 2, Language: py --->
+Group: 2
+[1.26742328 0.48879368 0.14456463 0.07536538 0.04603875 1.21433462
+ 0.4979178  0.15145429 0.07042121 0.03548765 1.21745483 0.49500019
+ 0.14831274 0.08319909 0.03924001 1.24456117 0.47588442 0.14995611
+ 0.07340739 0.03682458 1.24017486 0.46749908 0.15254937 0.08649786
+ 0.03185753 1.22375448 0.47971767 0.17798275 0.09327265 0.05767404
+ 1.22427206 0.48364608 0.19440566 0.09217726 0.04998269 1.07486949
+ 0.47494372 0.19142032 0.09277579 0.05134495 1.23184855 0.4725101
+ 0.19606153 0.10557924 0.04078283 1.24238699 0.46815542 0.161086
+ 0.08021629 0.04100354 1.25585783 0.47991948 0.16169511 0.09424468
+ 0.03988588 1.22922435 0.48793898 0.18485701 0.07376715 0.04263207
+ 1.23220168 0.45951309 0.16181433 0.07724398 0.03874803 1.09939112
+ 0.33841889 0.16201098 0.0773268  0.03947968 1.2464256  0.49331101
+ 0.1717041  0.07841249 0.04135572 1.26290075 0.47519371 0.16825282
+ 0.07809406 0.03973861 1.22728324 0.47532414 0.16031027 0.08085232
+ 0.04498235 1.19456946 0.47434816 0.15540354 0.07608541 0.03828994
+ 1.21721732 0.48336931 0.15666508 0.07939814 0.03995896 1.24497063
+ 0.48160599 0.15776974 0.0798285  0.04555788]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.7321279699343661
+P-value: 3.2369867962410353e-12
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.39641440962008095)]
+Group variances: [np.float64(0.1948571686942319)]
+Group sizes: [100]
+Numerator: 0.0
+Denominator: 0.0019485716869423189
+Degrees of freedom: 0.010101010101010102
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Clients: 3, Language: py --->
+Group: 3
+[0.74610358 0.47363769 0.14458201 0.07704876 0.03401898 1.12951117
+ 0.46274287 0.14272903 0.08207075 0.0351568  1.1179352  0.
+ 0.13609801 0.07229425 0.04663685 1.12837947 0.46080115 0.14027368
+ 0.06965181 0.04482647 1.13464524 0.4582617  0.13523878 0.12594092
+ 0.0724258  1.11974666 0.46569439 0.16344525 0.08635106 0.06129731
+ 0.3406465  0.45630815 0.19684381 0.09226495 0.07156109 0.43823574
+ 0.18717898 0.0914065  0.04750786 1.13448088 0.         0.18104268
+ 0.08918314 0.04089637 1.1424219  0.464769   0.15841768 0.07749351
+ 0.04193975 1.10809927 0.4563739  0.15795767 0.07848063 0.04087967
+ 1.11136661 0.45364792 0.15636598 0.07471303 0.04053556 1.1198585
+ 0.44344443 0.15117957 0.07381147 0.07074569 0.45918786 0.34283664
+ 0.14939604 0.08436405 0.05534194 1.14038681 0.         0.14535689
+ 0.07799548 0.042556   1.12737717 0.45626388 0.14801555 0.08493639
+ 0.03928365 1.14045205 0.         0.14516481 0.09772657 0.03745141
+ 1.11785111 0.45725655 0.14571181 0.07723688 0.03977052 1.12110036
+ 0.46061174 0.14942876 0.078713   0.04078392 1.10181488 0.4837455
+ 0.15200596 0.07730591 0.04589305]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.7196978765155209
+P-value: 1.86562420713071e-12
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3280901734636814)]
+Group variances: [np.float64(0.14720383213669105)]
+Group sizes: [99]
+Numerator: 0.0
+Denominator: 0.0014869073953201117
+Degrees of freedom: 0.01020408163265306
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.7214866719170729
+P-value: 7.212113543824289e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.5891874121382149
+P-value: 3.4585244661298125e-06
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9807643147031767
+P-value: 0.9435827521998343
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9505355571668254
+P-value: 0.4650460507206616
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9333201385896076
+P-value: 0.19932716440769693
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(1.4876069625085884), np.float64(0.5500670954302361), np.float64(0.20438346220160192), np.float64(0.10168438729254525), np.float64(0.055210333375198456)]
+Group variances: [np.float64(0.007515899623074971), np.float64(0.013675115389058162), np.float64(0.00045880116255800915), np.float64(0.00022026348257101673), np.float64(0.00011464900685517824)]
+Group sizes: [20, 19, 20, 17, 19]
+Numerator: 2522.2296409362257
+Denominator: 0.001137468788196126
+Degrees of freedom: 0.27887426900584794
+Kruskal-Wallis H statistic: 90.01691624572265, p-value: 1.305908285452553e-18
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  2.642835e-01  0.000081  2.364291e-09  1.380225e-16
+0.10  2.642835e-01  1.000000e+00  0.289109  3.624892e-04  4.447533e-09
+0.25  8.114669e-05  2.891094e-01  1.000000  3.957299e-01  3.592837e-04
+0.50  2.364291e-09  3.624892e-04  0.395730  1.000000e+00  5.341621e-01
+1.00  1.380225e-16  4.447533e-09  0.000359  5.341621e-01  1.000000e+00
+Welch's ANOVA statistic: 2217405.5825620904, p-value: 0.0
+Component: client, Num clients: 1 --->
+Group: 1
+[1.70870625 0.13330714 0.61847914 0.11869362 0.17429053 0.07269777
+ 0.10096043 0.         0.04473324 0.05222386 1.48503803 0.11645493
+ 0.61130617 0.12316871 0.19358336 0.05791451 0.09087199 0.05174914
+ 0.05204502 0.04356145 1.49797913 0.14030609 0.61413379 0.1084161
+ 0.2033465  0.08193275 0.09589556 0.04335905 0.05507158 0.04188041
+ 1.48704599 0.12268258 0.60108347 0.10834257 0.19259356 0.07364487
+ 0.0868798  0.05407137 0.05060076 0.03919306 1.51905047 0.14271355
+ 0.57828128 0.12370276 0.17873615 0.08954102 0.06758735 0.03725242
+ 0.04834646 1.51551575 0.11330509 0.28666503 0.11181186 0.16752968
+ 0.07208682 0.12682801 0.07308595 0.04708374 1.48960599 0.667725
+ 0.61436787 0.12674789 0.23578366 0.08825381 0.0640164  0.05989906
+ 0.06435589 1.31707252 0.10248482 0.61888018 0.10675021 0.25337248
+ 0.08727708 0.11750374 0.06258551 0.07767113 0.04355635 1.49931335
+ 0.12202019 0.56867622 0.1207597  0.23275169 0.0654088  0.11556257
+ 0.03345217 0.0474618  1.52711451 0.12398562 0.5888789  0.11210777
+ 0.19594327 0.06151326 0.06870372 0.05151887 0.06754631 0.05834552
+ 1.52199817 0.13161522 0.60450432 0.12174061 0.20129625 0.06031406
+ 0.09066152 0.04970886 0.05174081 0.03140593 1.50348148 0.10866044
+ 0.60336454 0.12621632 0.21305642 0.0462126  0.08992391 0.04115962
+ 0.04854496 0.03671523 1.49242665 0.12831542 0.60483523 0.11851765
+ 0.21539909 0.09279772 0.07057949 0.06804438 0.04527799 1.24670583
+ 0.07501363 0.35892382 0.07436786 0.2173772  0.07280748 0.10655914
+ 0.07816648 0.06939209 0.0619514  1.50803825 0.11928732 0.13020884
+ 0.21782616 0.07833328 0.10743773 0.0582763  0.06592855 0.04561343
+ 1.5030935  0.13532331 0.2357599  0.10903378 0.20493802 0.06511441
+ 0.11583159 0.04653159 0.04587795 0.04346767 1.49974527 0.10980331
+ 0.56370075 0.12566636 0.18319952 0.05732718 0.11366459 0.05914854
+ 0.0486961  0.04244497 1.48293306 0.11961565 0.60190385 0.11017894
+ 0.1896094  0.09547843 0.09172222 0.0583467  0.06365241 0.04715106
+ 1.45715804 0.12756959 0.59647591 0.11854554 0.20536594 0.09508584
+ 0.11511296 0.05570854 0.04843393 0.04245246 1.490117   0.13123023
+ 0.58105444 0.12432043 0.21167037 0.07462321 0.0945151  0.07706486
+ 0.04640384 0.05455492]
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.5739122998967134
+P-value: 1.2994377759138079e-21
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.28780151737002885)]
+Group variances: [np.float64(0.18982647324343221)]
+Group sizes: [194]
+Numerator: 0.0
+Denominator: 0.0009784869754816093
+Degrees of freedom: 0.0051813471502590676
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Num clients: 2 --->
+Group: 2
+[ 1.26742328  0.09684054  0.48879368  0.11125307  0.14456463  0.09474291
+  0.07536538  0.04903295  0.04603875  0.05096229  1.21433462  0.05961361
+  0.4979178   0.09766487  0.15145429  0.07712622  0.07042121  0.05119809
+  0.03548765  0.03885658  1.21745483  0.09857405  0.49500019  0.09118412
+  0.14831274  0.07759646  0.08319909  0.05577066  0.03924001  0.04364564
+  1.24456117  0.1024218   0.47588442  0.09509272  0.14995611  0.08049781
+  0.07340739  0.04975403  0.03682458  0.04099886  1.24017486  0.11405674
+  0.46749908  0.10131575  0.15254937  0.09802421  0.08649786  0.05638699
+  0.03185753  0.0487944   1.22375448  0.05846065  0.47971767  0.09666134
+  0.17798275  0.08299265  0.09327265  0.06036941  0.05767404  0.04983582
+  1.22427206  0.07220229  0.48364608  0.09400262  0.19440566  0.07889375
+  0.09217726  0.05913241  0.04998269  0.04674416  1.07486949  0.07769793
+  0.47494372  0.08720137  0.19142032  0.08080185  0.09277579  0.05719512
+  0.05134495  0.02930808  1.23184855  0.09819831  0.4725101   0.09730432
+  0.19606153  0.08088897  0.10557924  0.0336121   0.04078283  0.03478248
+  1.24238699  0.09447006  0.46815542  0.10791383  0.161086    0.07040784
+  0.08021629 18.13800369  0.04100354  0.04396946  1.25585783  0.10941971
+  0.47991948  0.09793214  0.16169511  0.06478806  0.09424468  0.05158898
+  0.03988588  0.0358353   1.22922435  0.05887854  0.48793898  0.09198585
+  0.18485701  0.05640965  0.07376715  0.03931148  0.04263207  0.04377983
+  1.23220168  0.09873628  0.45951309  0.096437    0.16181433  0.08131373
+  0.07724398  0.05927665  0.03874803  0.04727596  1.09939112  0.06098355
+  0.33841889  0.08012347  0.16201098  0.07993337  0.0773268   0.05402492
+  0.03947968  0.04572315  1.2464256   0.09319357  0.49331101  0.09872685
+  0.1717041   0.0827089   0.07841249  0.05930831  0.04135572  0.03728797
+  1.26290075  0.09904975  0.47519371  0.09919346  0.16825282  0.05269316
+  0.07809406  0.04800151  0.03973861  0.03256767  1.22728324  0.10837105
+  0.47532414  0.09291189  0.16031027  0.05601474  0.08085232  0.03791121
+  0.04498235  0.04652243  1.19456946  0.09742675  0.47434816  0.09461853
+  0.15540354  0.07688922  0.07608541  0.06202514  0.03828994  0.04480999
+  1.21721732  0.10017479  0.48336931  0.09191526  0.15666508  0.07777996
+  0.07939814  0.05959789  0.03995896  0.04567654  1.24497063  0.09321243
+  0.48160599  0.0911804   0.15776974  0.08115655  0.0798285   0.06096969
+  0.04555788  0.06257781]
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.1570186076142731
+P-value: 4.8371935209870525e-29
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3244606396439355)]
+Group variances: [np.float64(1.7261383192903295)]
+Group sizes: [200]
+Numerator: 0.0
+Denominator: 0.008630691596451648
+Degrees of freedom: 0.005025125628140704
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Num clients: 3 --->
+Group: 3
+[ 0.74610358  0.09035388  0.47363769  0.09314881  0.14458201  0.05882362
+  0.07704876  0.05992596  0.03401898  0.04093537  1.12951117  0.12210038
+  0.46274287  0.09640327  0.14272903  0.06332158  0.08207075  0.06123501
+  0.0351568   0.04199809  1.1179352   0.11590567  0.          0.05602264
+  0.13609801  0.06499709  0.07229425  0.05543407  0.04663685  0.04348459
+  1.12837947  0.09668857  0.46080115  0.07253504  0.14027368  0.06527324
+  0.06965181  0.0534785   0.04482647  0.05078085  1.13464524  0.05759846
+  0.4582617   0.09316273  0.13523878  0.0764696   0.12594092  0.07842777
+  0.0724258   0.05061131  1.11974666  0.07990777  0.46569439  0.05844182
+  0.16344525  0.080761    0.08635106  0.06920995  0.06129731  0.05171874
+  0.3406465   0.09550304  0.45630815  0.09336002  0.19684381  0.08051556
+  0.09226495  0.06924124  0.07156109  0.05170954  0.07197203  0.43823574
+  0.09816194  0.18717898 14.52212312  0.0914065   0.06775187  0.04750786
+  0.04401918  1.13448088  0.09317343  0.          0.06462773  0.18104268
+  0.05693217  0.08918314  0.04432508  0.04089637  0.0286578   1.1424219
+  0.10882301  0.464769    0.09289904  0.15841768  0.0623845   0.07749351
+  0.05346553  0.04193975  0.03494692  1.10809927  0.09791209  0.4563739
+  0.09190578  0.15795767  0.06701949  0.07848063  0.05209482  0.04087967
+  0.03934656  1.11136661  0.09986922  0.45364792  0.05774717  0.15636598
+  0.07471303  0.04390371  0.04053556  0.05127954  1.1198585   0.09657074
+  0.44344443  0.09832334  0.15117957  0.07824193  0.07381147  0.06613173
+  0.07074569  0.04721217  0.45918786  0.05678252  0.34283664  0.06547585
+  0.14939604  0.08141923  0.08436405  0.06270089  0.05534194  0.04446565
+  1.14038681  0.07686943  0.          0.09406323  0.14535689  0.07898775
+  0.07799548  0.03627739  0.042556    0.04338834  1.12737717  0.07466796
+  0.45626388  0.09626156  0.14801555  0.06055432  0.08493639  0.04639431
+  0.03928365  1.14045205  0.09052104  0.          0.10300286  0.14516481
+  0.05903386  0.09772657  0.05453913  0.03745141  0.04750136  1.11785111
+  0.09828668  0.45725655  0.09281357  0.14571181  0.08139799  0.07723688
+  0.06154523  0.03977052  0.05001612  1.12110036  0.05873378  0.46061174
+  0.0964687   0.14942876  0.07723309  0.078713    0.08297743  0.04078392
+  0.04421528  1.10181488  0.09454217  0.4837455   0.09168333  0.15200596
+  0.07684027  0.07730591  0.05882917  0.04589305  0.03609398]
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.16375123152338822
+P-value: 9.16869711930244e-29
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.2729787670532792)]
+Group variances: [np.float64(1.1316862531293654)]
+Group sizes: [197]
+Numerator: 0.0
+Denominator: 0.00574460026969221
+Degrees of freedom: 0.00510204081632653
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.5739122998967134
+P-value: 1.2994377759138079e-21
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.1570186076142731
+P-value: 4.8371935209870525e-29
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.16375123152338822
+P-value: 9.16869711930244e-29
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.28780151737002885), np.float64(0.3244606396439355), np.float64(0.2729787670532792)]
+Group variances: [np.float64(0.18982647324343221), np.float64(1.7261383192903295), np.float64(1.1316862531293654)]
+Group sizes: [194, 200, 197]
+Numerator: 0.0012108166355851932
+Denominator: 0.015353778841625467
+Degrees of freedom: 0.015308513594726302
+Kruskal-Wallis H statistic: 9.701645069838895, p-value: 0.007821941082801005
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.109069  0.006899
+2  0.109069  1.000000  0.995015
+3  0.006899  0.995015  1.000000
+Welch's ANOVA statistic: 0.07886114865107742, p-value: 0.020462075670594437
+Component: client, Interval: 0.05 --->
+Group: 0.05
+[1.70870625 1.26742328 0.74610358 0.13330714 0.09684054 0.09035388
+ 1.48503803 1.21433462 1.12951117 0.11645493 0.05961361 0.12210038
+ 1.49797913 1.21745483 1.1179352  0.14030609 0.09857405 0.11590567
+ 1.48704599 1.24456117 1.12837947 0.12268258 0.1024218  0.09668857
+ 1.51905047 1.24017486 1.13464524 0.14271355 0.11405674 0.05759846
+ 1.51551575 1.22375448 1.11974666 0.11330509 0.05846065 0.07990777
+ 1.48960599 1.22427206 0.3406465  0.667725   0.07220229 0.09550304
+ 1.31707252 1.07486949 0.10248482 0.07769793 0.07197203 1.49931335
+ 1.23184855 1.13448088 0.12202019 0.09819831 0.09317343 1.52711451
+ 1.24238699 1.1424219  0.12398562 0.09447006 0.10882301 1.52199817
+ 1.25585783 1.10809927 0.13161522 0.10941971 0.09791209 1.50348148
+ 1.22922435 1.11136661 0.10866044 0.05887854 0.09986922 1.49242665
+ 1.23220168 1.1198585  0.12831542 0.09873628 0.09657074 1.24670583
+ 1.09939112 0.45918786 0.07501363 0.06098355 0.05678252 1.50803825
+ 1.2464256  1.14038681 0.11928732 0.09319357 0.07686943 1.5030935
+ 1.26290075 1.12737717 0.13532331 0.09904975 0.07466796 1.49974527
+ 1.22728324 1.14045205 0.10980331 0.10837105 0.09052104 1.48293306
+ 1.19456946 1.11785111 0.11961565 0.09742675 0.09828668 1.45715804
+ 1.21721732 1.12110036 0.12756959 0.10017479 0.05873378 1.490117
+ 1.24497063 1.10181488 0.13123023 0.09321243 0.09454217]
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.7694592352312957
+P-value: 2.1807955325778452e-12
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.6741580686401545)]
+Group variances: [np.float64(0.3584350565735159)]
+Group sizes: [119]
+Numerator: 0.0
+Denominator: 0.0030120592989371082
+Degrees of freedom: 0.00847457627118644
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Interval: 0.25 --->
+Group: 0.25
+[ 0.17429053  0.14456463  0.14458201  0.07269777  0.09474291  0.05882362
+  0.19358336  0.15145429  0.14272903  0.05791451  0.07712622  0.06332158
+  0.2033465   0.14831274  0.13609801  0.08193275  0.07759646  0.06499709
+  0.19259356  0.14995611  0.14027368  0.07364487  0.08049781  0.06527324
+  0.17873615  0.15254937  0.13523878  0.08954102  0.09802421  0.0764696
+  0.16752968  0.17798275  0.16344525  0.07208682  0.08299265  0.080761
+  0.23578366  0.19440566  0.19684381  0.08825381  0.07889375  0.08051556
+  0.25337248  0.19142032  0.18717898  0.08727708  0.08080185 14.52212312
+  0.23275169  0.19606153  0.18104268  0.0654088   0.08088897  0.05693217
+  0.19594327  0.161086    0.15841768  0.06151326  0.07040784  0.0623845
+  0.20129625  0.16169511  0.15795767  0.06031406  0.06478806  0.06701949
+  0.21305642  0.18485701  0.15636598  0.0462126   0.05640965  0.21539909
+  0.16181433  0.15117957  0.09279772  0.08131373  0.07824193  0.2173772
+  0.16201098  0.14939604  0.07280748  0.07993337  0.08141923  0.21782616
+  0.1717041   0.14535689  0.07833328  0.0827089   0.07898775  0.20493802
+  0.16825282  0.14801555  0.06511441  0.05269316  0.06055432  0.18319952
+  0.16031027  0.14516481  0.05732718  0.05601474  0.05903386  0.1896094
+  0.15540354  0.14571181  0.09547843  0.07688922  0.08139799  0.20536594
+  0.15666508  0.14942876  0.09508584  0.07777996  0.07723309  0.21167037
+  0.15776974  0.15200596  0.07462321  0.08115655  0.07684027]
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.0867216878601974
+P-value: 7.047432058187315e-24
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.24617422594875693)]
+Group variances: [np.float64(1.7447753218093633)]
+Group sizes: [119]
+Numerator: 0.0
+Denominator: 0.014661977494196331
+Degrees of freedom: 0.00847457627118644
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Interval: 0.1 --->
+Group: 0.1
+[0.61847914 0.48879368 0.47363769 0.11869362 0.11125307 0.09314881
+ 0.61130617 0.4979178  0.46274287 0.12316871 0.09766487 0.09640327
+ 0.61413379 0.49500019 0.         0.1084161  0.09118412 0.05602264
+ 0.60108347 0.47588442 0.46080115 0.10834257 0.09509272 0.07253504
+ 0.57828128 0.46749908 0.4582617  0.12370276 0.10131575 0.09316273
+ 0.28666503 0.47971767 0.46569439 0.11181186 0.09666134 0.05844182
+ 0.61436787 0.48364608 0.45630815 0.12674789 0.09400262 0.09336002
+ 0.61888018 0.47494372 0.43823574 0.10675021 0.08720137 0.09816194
+ 0.56867622 0.4725101  0.         0.1207597  0.09730432 0.06462773
+ 0.5888789  0.46815542 0.464769   0.11210777 0.10791383 0.09289904
+ 0.60450432 0.47991948 0.4563739  0.12174061 0.09793214 0.09190578
+ 0.60336454 0.48793898 0.45364792 0.12621632 0.09198585 0.05774717
+ 0.60483523 0.45951309 0.44344443 0.11851765 0.096437   0.09832334
+ 0.35892382 0.33841889 0.34283664 0.07436786 0.08012347 0.06547585
+ 0.49331101 0.         0.13020884 0.09872685 0.09406323 0.2357599
+ 0.47519371 0.45626388 0.10903378 0.09919346 0.09626156 0.56370075
+ 0.47532414 0.         0.12566636 0.09291189 0.10300286 0.60190385
+ 0.47434816 0.45725655 0.11017894 0.09461853 0.09281357 0.59647591
+ 0.48336931 0.46061174 0.11854554 0.09191526 0.0964687  0.58105444
+ 0.48160599 0.4837455  0.12432043 0.0911804  0.09168333]
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.8090968363663743
+P-value: 3.951071423153013e-11
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.277977662459724)]
+Group variances: [np.float64(0.04390190336579132)]
+Group sizes: [119]
+Numerator: 0.0
+Denominator: 0.0003689235576957254
+Degrees of freedom: 0.00847457627118644
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Interval: 0.5 --->
+Group: 0.5
+[ 0.10096043  0.07536538  0.07704876  0.          0.04903295  0.05992596
+  0.09087199  0.07042121  0.08207075  0.05174914  0.05119809  0.06123501
+  0.09589556  0.08319909  0.07229425  0.04335905  0.05577066  0.05543407
+  0.0868798   0.07340739  0.06965181  0.05407137  0.04975403  0.0534785
+  0.08649786  0.12594092  0.06758735  0.05638699  0.07842777  0.12682801
+  0.09327265  0.08635106  0.07308595  0.06036941  0.06920995  0.09217726
+  0.09226495  0.0640164   0.05913241  0.06924124  0.11750374  0.09277579
+  0.0914065   0.06258551  0.05719512  0.06775187  0.11556257  0.10557924
+  0.08918314  0.03345217  0.0336121   0.04432508  0.06870372  0.08021629
+  0.07749351  0.05151887 18.13800369  0.05346553  0.09066152  0.09424468
+  0.07848063  0.04970886  0.05158898  0.05209482  0.08992391  0.07376715
+  0.07471303  0.04115962  0.03931148  0.04390371  0.07724398  0.07381147
+  0.07057949  0.05927665  0.06613173  0.10655914  0.0773268   0.08436405
+  0.07816648  0.05402492  0.06270089  0.10743773  0.07841249  0.07799548
+  0.0582763   0.05930831  0.03627739  0.11583159  0.07809406  0.08493639
+  0.04653159  0.04800151  0.04639431  0.11366459  0.08085232  0.09772657
+  0.05914854  0.03791121  0.05453913  0.09172222  0.07608541  0.07723688
+  0.0583467   0.06202514  0.06154523  0.11511296  0.07939814  0.078713
+  0.05570854  0.05959789  0.08297743  0.0945151   0.0798285   0.07730591
+  0.07706486  0.06096969  0.05882917]
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.0732389353196502
+P-value: 7.666989131929462e-24
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.2261732151002007)]
+Group variances: [np.float64(2.7901136275634)]
+Group sizes: [117]
+Numerator: 0.0
+Denominator: 0.023847125021909405
+Degrees of freedom: 0.008620689655172414
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: client, Interval: 1.0 --->
+Group: 1.0
+[0.04473324 0.04603875 0.03401898 0.05222386 0.05096229 0.04093537
+ 0.05204502 0.03548765 0.0351568  0.04356145 0.03885658 0.04199809
+ 0.05507158 0.03924001 0.04663685 0.04188041 0.04364564 0.04348459
+ 0.05060076 0.03682458 0.04482647 0.03919306 0.04099886 0.05078085
+ 0.03725242 0.03185753 0.0724258  0.04834646 0.0487944  0.05061131
+ 0.05767404 0.06129731 0.04708374 0.04983582 0.05171874 0.05989906
+ 0.04998269 0.07156109 0.06435589 0.04674416 0.05170954 0.07767113
+ 0.05134495 0.04750786 0.04355635 0.02930808 0.04401918 0.0474618
+ 0.04078283 0.04089637 0.03478248 0.0286578  0.06754631 0.04100354
+ 0.04193975 0.05834552 0.04396946 0.03494692 0.05174081 0.03988588
+ 0.04087967 0.03140593 0.0358353  0.03934656 0.04854496 0.04263207
+ 0.04053556 0.03671523 0.04377983 0.05127954 0.06804438 0.03874803
+ 0.07074569 0.04527799 0.04727596 0.04721217 0.06939209 0.03947968
+ 0.05534194 0.0619514  0.04572315 0.04446565 0.06592855 0.04135572
+ 0.042556   0.04561343 0.03728797 0.04338834 0.04587795 0.03973861
+ 0.03928365 0.04346767 0.03256767 0.0486961  0.04498235 0.03745141
+ 0.04244497 0.04652243 0.04750136 0.06365241 0.03828994 0.03977052
+ 0.04715106 0.04480999 0.05001612 0.04843393 0.03995896 0.04078392
+ 0.04245246 0.04567654 0.04421528 0.04640384 0.04555788 0.04589305
+ 0.05455492 0.06257781 0.03609398]
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.9253978366406483
+P-value: 6.435236525293818e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.046506738056048054)]
+Group variances: [np.float64(9.227266428939301e-05)]
+Group sizes: [117]
+Numerator: 0.0
+Denominator: 7.886552503366924e-07
+Degrees of freedom: 0.008620689655172414
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
