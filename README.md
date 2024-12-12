@@ -45,16 +45,7 @@ python3 $EXPERIMENT_RUNNER_PATH ./exp_runner/RunnerConfig-action.py
 
 We were running the experiment incrementally as we finished programming the algorithms, soon we will provida a single execution file.
 
-
-## Extra Energy Consumption Measurements
-
-For monitoring the energy consumption, we can also rely on `exp_runners/profilers/energy-mon.py` script as superuser (root).
-
-```bash
-python3 energy-mon.py <script> <language>
-```
-
-## Generate Graphs
+## Statistical Analysis and Graph Generation
 
 Change directory to `data-analys` folder:
 
@@ -62,16 +53,16 @@ Change directory to `data-analys` folder:
 cd data-analisys/
 ```
 
-Generate the graphs:
+Run the statistical tests:
 ```bash
-python3 gen_graphs.py subpub
-python3 gen_graphs.py service
-python3 gen_graphs.py action
+python3 statistical_tests.py
 ```
 
-All the graphs are saved in the `graphs` folder.
+All the graphs are saved in the `graphs` folder, with the following subfolders:
 
-## TODO/IMPROVEMENTS
-- service do not show second client messages
-- action client hangs
-- For topic `pub_sub`, implement different message types.
+```
+- no_transf-no_out/  Original data.
+- no_transf-out/     Data transformed.
+- transf-no_out/     Data without outliers.
+- tranf-out/         Data transformed and without outliers.
+```
