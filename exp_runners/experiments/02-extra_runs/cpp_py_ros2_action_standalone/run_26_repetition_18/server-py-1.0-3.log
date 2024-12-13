@@ -1,0 +1,36 @@
+[INFO] [1733727924.368962969] [fibonacci_action_server]: Executing goal...
+[INFO] [1733727924.369943956] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733727925.372582634] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733727926.373810695] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733727927.375740681] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733727928.377766189] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733727929.379620274] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733727930.381380300] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733727931.383369573] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733727932.385403273] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/action/server.py:312: RuntimeWarning: failed to send response (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+  self._handle.send_goal_response(request_header, response_msg)
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/action/server.py:431: RuntimeWarning: failed to send response (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+  self._handle.send_result_response(request_header, future.result())
+[INFO] [1733727933.590015067] [fibonacci_action_server]: Executing goal...
+[INFO] [1733727933.590529808] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733727934.592344335] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733727935.593770054] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733727936.595450445] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733727937.597126091] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733727938.599119424] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733727939.601039381] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733727940.601768814] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733727941.603364958] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+[INFO] [1733727942.706742004] [fibonacci_action_server]: Executing goal...
+[INFO] [1733727942.707152453] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733727943.708990848] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733727944.710093827] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733727945.712028485] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733727946.713892933] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733727947.715780779] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733727948.717431232] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733727949.718238431] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733727950.720182669] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+[INFO] [1733728104.232694284] [fibonacci_action_server]: Shutting down node...
+RAPL is set

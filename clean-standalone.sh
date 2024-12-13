@@ -1,6 +1,6 @@
-folder="exp_runners/experiments/cpp_py_ros2_service"
+folder="exp_runners/experiments/cpp_py_ros2_pub_sub_0_1"
 
-new_run_folder="exp_runners/experiments/cpp_py_ros2_service_standalone_py"
+new_run_folder="exp_runners/experiments/cpp_py_ros2_pub_sub_standalone_cpp_1"
 
 new_repetitions=`ls $new_run_folder`
 for new_repetition in $new_repetitions; do

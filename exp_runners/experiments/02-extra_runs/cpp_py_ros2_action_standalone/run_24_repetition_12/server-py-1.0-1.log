@@ -1,0 +1,14 @@
+[INFO] [1733690190.508309094] [fibonacci_action_server]: Executing goal...
+[INFO] [1733690190.508739228] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733690191.510271225] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733690192.511982180] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733690193.513737215] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733690194.515382271] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733690195.516283464] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733690196.517931593] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733690197.519944378] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733690198.521886637] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/action/server.py:431: RuntimeWarning: failed to send response (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+  self._handle.send_result_response(request_header, future.result())
+[INFO] [1733690370.429804267] [fibonacci_action_server]: Shutting down node...
+RAPL is set

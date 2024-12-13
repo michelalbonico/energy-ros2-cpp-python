@@ -1,0 +1,2076 @@
+
+######################## Algorithm: service, Component: server, Transformation: False, Outliers: True ########################
+
+Component: server --->
+Starting Shapiro-Wilk test...
+Group: cpp
+Shapiro-Wilk statistic: 0.8189736543750834
+P-value: 7.764916672735039e-18
+The data is likely not normally distributed (reject H0).
+
+Group: py
+Shapiro-Wilk statistic: 0.838649240800363
+P-value: 5.060472745725506e-17
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.13884748345361078), np.float64(0.3387526025931793)]
+Group variances: [np.float64(0.015579920349335433), np.float64(0.09008401970167164)]
+Group sizes: [294, 300]
+Numerator: 0.7521451350300887
+Denominator: 0.0003532729920305226
+Degrees of freedom: 0.006757450888627621
+Kruskal-Wallis H statistic: 106.22118767507027, p-value: 6.594776789556469e-25
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              cpp            py
+cpp  1.000000e+00  6.594777e-25
+py   6.594777e-25  1.000000e+00
+Welch's ANOVA statistic: 2129.0762441446523, p-value: 0.0
+Component: server, Language: cpp --->
+Group: cpp
+[0.18121154 0.23561028 0.27034189 0.07815886 0.12789345 0.14907838
+ 0.05889861 0.09141746 0.09538635 0.04064913 0.05340216 0.06050464
+ 0.02096736 0.01650712 0.16502385 0.25242318 0.27716638 0.09318117
+ 0.16621576 0.1610226  0.04442758 0.07389195 0.07301422 0.02331779
+ 0.03689247 0.04371579 0.01436142 0.03352089 0.0228205  0.15888934
+ 0.27212631 0.10817595 0.18927138 0.1871738  0.04003202 0.03429322
+ 0.02565808 0.0311143  0.02759579 0.01074643 0.01658477 0.02086225
+ 0.12185488 0.11201237 0.17552752 0.25517528 0.05578819 0.08695061
+ 0.0928996  0.04351686 0.05999998 0.06091672 0.01665652 0.02019087
+ 0.02707885 0.23268918 0.35471692 0.37607036 0.11635198 0.1842906
+ 0.22362188 0.06690948 0.11519454 0.09872276 0.03793644 0.06928907
+ 0.05173707 0.02271671 0.04217791 0.03463826 0.26317805 0.36048769
+ 0.38165276 0.12312513 0.21330513 0.21075225 0.06062535 0.10010452
+ 0.10828095 0.03653453 0.04990232 0.05492627 0.02470561 0.03467557
+ 0.03734687 0.22584637 0.39965294 0.41429439 0.11646354 0.22741428
+ 0.22428505 0.05717485 0.09073855 0.10944884 0.03720081 0.05860417
+ 0.06614489 0.02280394 0.03038864 0.03455403 0.20635183 0.40612436
+ 0.40367905 0.12855883 0.20556671 0.23213302 0.05741204 0.09751753
+ 0.09897658 0.03808445 0.05957675 0.06204571 0.02536602 0.03509853
+ 0.0381823  0.23202028 0.40516795 0.42947868 0.12251369 0.20276391
+ 0.20690144 0.05959201 0.09205963 0.09433464 0.04231105 0.04931509
+ 0.06096847 0.02463638 0.03263236 0.03845583 0.21650697 0.43891563
+ 0.39308502 0.12497976 0.203435   0.2132361  0.05114964 0.09777435
+ 0.0993999  0.0359233  0.0555835  0.05325594 0.02652625 0.0364005
+ 0.0349677  0.22411207 0.41211254 0.42255453 0.11703163 0.20980474
+ 0.23305046 0.05595382 0.09198958 0.11659151 0.03906158 0.05486651
+ 0.06128426 0.02946491 0.03866184 0.04120879 0.27024393 0.42868144
+ 0.46621805 0.14788132 0.24301943 0.26118038 0.06155964 0.1073156
+ 0.12901779 0.0441844  0.0586362  0.06259892 0.02843659 0.03606941
+ 0.03989008 0.23583307 0.48722834 0.13772383 0.24494609 0.24802576
+ 0.06988874 0.10698026 0.114917   0.04363735 0.05532301 0.06723881
+ 0.02710432 0.03976401 0.03852202 0.27549477 0.44531313 0.46685711
+ 0.1477326  0.24380753 0.25324292 0.06883926 0.11502984 0.11888065
+ 0.03985223 0.05528309 0.07113094 0.02586189 0.03830626 0.04327001
+ 0.24048346 0.39742326 0.47647328 0.17053553 0.24517159 0.24117786
+ 0.06931929 0.10924059 0.13033657 0.04263678 0.05923659 0.06370247
+ 0.02874858 0.03992355 0.04644661 0.26325846 0.44222189 0.43830899
+ 0.14872993 0.23853302 0.26111976 0.07889216 0.10152734 0.13278644
+ 0.04508947 0.05616671 0.06690161 0.02680453 0.04356123 0.04593555
+ 0.25600845 0.41373844 0.48211748 0.13677034 0.22808411 0.22919703
+ 0.06814901 0.1138621  0.12224889 0.05153457 0.06535398 0.07193566
+ 0.03331892 0.04396673 0.03863378 0.26937705 0.45645685 0.4672738
+ 0.16058264 0.24130161 0.25779034 0.06316366 0.09738015 0.11185363
+ 0.04502076 0.06809767 0.07751443 0.02564238 0.04357463 0.04185282
+ 0.23615512 0.45366841 0.49307741 0.14441116 0.22444729 0.25382563
+ 0.06531671 0.12013108 0.12091278 0.049056   0.05757245 0.06681708
+ 0.02837538 0.0358398  0.04620901 0.25203017 0.45758759 0.45521556
+ 0.14487173 0.24600496 0.23831756 0.0664545  0.1099138  0.10369836
+ 0.03724199 0.06787557 0.07297258 0.02428195 0.03606457 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp.pdf
+Starting Shapiro-Wilk test...
+Group: cpp
+Shapiro-Wilk statistic: 0.8189736543750834
+P-value: 7.764916672735039e-18
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.13884748345361078)]
+Group variances: [np.float64(0.015579920349335433)]
+Group sizes: [294]
+Numerator: 0.0
+Denominator: 5.2992926358283786e-05
+Degrees of freedom: 0.0034129692832764505
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.9073178732239012
+P-value: 0.0003533744747954466
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.9221166522834008
+P-value: 0.0009341218627330471
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9551657841908064
+P-value: 0.02942938509680141
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9742770111403702
+P-value: 0.23498366042792262
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9642011995204822
+P-value: 0.08006780244157799
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.34484291426099106), np.float64(0.1896817265727782), np.float64(0.08889096161748017), np.float64(0.05240745373430831), np.float64(0.03205342162306341)]
+Group variances: [np.float64(0.011386680996241738), np.float64(0.002724677067435971), np.float64(0.000643599268312902), np.float64(0.00016706045301503699), np.float64(7.940979725035627e-05)]
+Group sizes: [57, 60, 59, 60, 59]
+Numerator: 207.436022748987
+Denominator: 0.0002602163495499992
+Degrees of freedom: 0.08623820656257827
+Kruskal-Wallis H statistic: 260.5372005988206, p-value: 3.493225157078043e-55
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10          0.25          0.50          1.00
+0.05  1.000000e+00  2.431455e-02  1.655296e-12  3.815347e-26  4.689374e-44
+0.10  2.431455e-02  1.000000e+00  1.028035e-04  3.834464e-14  3.672750e-28
+0.25  1.655296e-12  1.028035e-04  1.000000e+00  6.356289e-03  1.290689e-10
+0.50  3.815347e-26  3.834464e-14  6.356289e-03  1.000000e+00  7.192721e-03
+1.00  4.689374e-44  3.672750e-28  1.290689e-10  7.192721e-03  1.000000e+00
+Welch's ANOVA statistic: 797167.5227467952, p-value: 0.0
+Component: server, Language: cpp, Interval: 0.05,  --->
+Group: 0.05
+[0.18121154 0.23561028 0.27034189 0.16502385 0.25242318 0.27716638
+ 0.15888934 0.27212631 0.12185488 0.23268918 0.35471692 0.37607036
+ 0.26317805 0.36048769 0.38165276 0.22584637 0.39965294 0.41429439
+ 0.20635183 0.40612436 0.40367905 0.23202028 0.40516795 0.42947868
+ 0.21650697 0.43891563 0.39308502 0.22411207 0.41211254 0.42255453
+ 0.27024393 0.42868144 0.46621805 0.23583307 0.48722834 0.49595541
+ 0.27549477 0.44531313 0.46685711 0.24048346 0.39742326 0.47647328
+ 0.26325846 0.44222189 0.43830899 0.25600845 0.41373844 0.48211748
+ 0.26937705 0.45645685 0.4672738  0.23615512 0.45366841 0.49307741
+ 0.25203017 0.45758759 0.45521556]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_0.05.pdf
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.9073178732239012
+P-value: 0.0003533744747954466
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.34484291426099106)]
+Group variances: [np.float64(0.011386680996241738)]
+Group sizes: [57]
+Numerator: 0.0
+Denominator: 0.0001997663332673989
+Degrees of freedom: 0.017857142857142856
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.930417751395195
+P-value: 0.19750153926222586
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.9628792402390444
+P-value: 0.7142128712010356
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8659262337909583
+P-value: 0.015255471648117701
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.23587914560307693), np.float64(0.42246858681733346), np.float64(0.4227677843974598)]
+Group variances: [np.float64(0.0009161750691425617), np.float64(0.0012737748466930777), np.float64(0.004322373509007889)]
+Group sizes: [18, 16, 18]
+Numerator: 20.844399744861565
+Denominator: 0.00037064140448223124
+Degrees of freedom: 0.1843137254901961
+Kruskal-Wallis H statistic: 34.61151427189162, p-value: 3.049335225488337e-08
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.000006  2.714664e-07
+2  6.333000e-06  1.000000  1.000000e+00
+3  2.714664e-07  1.000000  1.000000e+00
+Welch's ANOVA statistic: 56238.72425688711, p-value: 0.0
+Component: server, Language: cpp, Interval: 0.05, Clients: 1 --->
+Group: 1
+[0.18121154 0.16502385 0.23268918 0.26317805 0.22584637 0.20635183
+ 0.23202028 0.21650697 0.22411207 0.27024393 0.23583307 0.27549477
+ 0.24048346 0.26325846 0.25600845 0.26937705 0.23615512 0.25203017]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1_0.05.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.930417751395195
+P-value: 0.19750153926222586
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.05, Clients: 2 --->
+Group: 2
+[0.35471692 0.36048769 0.39965294 0.40612436 0.40516795 0.43891563
+ 0.41211254 0.42868144 0.48722834 0.44531313 0.39742326 0.44222189
+ 0.41373844 0.45645685 0.45366841 0.45758759]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_2_cpp_0.05.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.9628792402390444
+P-value: 0.7142128712010356
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.27034189 0.27716638 0.37607036 0.38165276 0.41429439 0.40367905
+ 0.42947868 0.39308502 0.42255453 0.46621805 0.49595541 0.46685711
+ 0.47647328 0.43830899 0.48211748 0.4672738  0.49307741 0.45521556]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_0.05_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8659262337909583
+P-value: 0.015255471648117701
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4227677843974598)]
+Group variances: [np.float64(0.004322373509007889)]
+Group sizes: [18]
+Numerator: 0.0
+Denominator: 0.00024013186161154937
+Degrees of freedom: 0.058823529411764705
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: cpp, Interval: 0.25,  --->
+Group: 0.25
+[0.05889861 0.09141746 0.09538635 0.04442758 0.07389195 0.07301422
+ 0.04003202 0.03429322 0.05578819 0.08695061 0.0928996  0.06690948
+ 0.11519454 0.09872276 0.06062535 0.10010452 0.10828095 0.05717485
+ 0.09073855 0.10944884 0.05741204 0.09751753 0.09897658 0.05959201
+ 0.09205963 0.09433464 0.05114964 0.09777435 0.0993999  0.05595382
+ 0.09198958 0.11659151 0.06155964 0.1073156  0.12901779 0.06988874
+ 0.10698026 0.114917   0.06883926 0.11502984 0.11888065 0.06931929
+ 0.10924059 0.13033657 0.07889216 0.10152734 0.13278644 0.06814901
+ 0.1138621  0.12224889 0.06316366 0.09738015 0.11185363 0.06531671
+ 0.12013108 0.12091278 0.0664545  0.1099138  0.10369836]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_cpp.pdf
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.9551657841908064
+P-value: 0.02942938509680141
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08889096161748017)]
+Group variances: [np.float64(0.000643599268312902)]
+Group sizes: [59]
+Numerator: 0.0
+Denominator: 1.0908462174794949e-05
+Degrees of freedom: 0.017241379310344827
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9783202108657513
+P-value: 0.921133596548873
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.965954992630229
+P-value: 0.6936515903625706
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9651718634884778
+P-value: 0.6774380243063949
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 0.25 and different num_clients.
+Levene's test statistic: 3.785246010943485, p-value: 0.028944807360106406
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.062079712090836806), np.float64(0.10100102583118002), np.float64(0.10903723526407816)]
+Group variances: [np.float64(6.141167580168134e-05), np.float64(0.00013777522858838447), np.float64(0.0002344039642612288)]
+Group sizes: [19, 19, 19]
+Numerator: 15.546629482782794
+Denominator: 2.2820572034278664e-05
+Degrees of freedom: 0.16666666666666666
+Kruskal-Wallis H statistic: 38.52173082433853, p-value: 4.316308075772192e-09
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              1         2             3
+1  1.000000e+00  0.000011  1.135100e-08
+2  1.083253e-05  1.000000  6.221713e-01
+3  1.135100e-08  0.622171  1.000000e+00
+Welch's ANOVA statistic: 681255.0298664855, p-value: 0.0
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_cpp_clients.pdf
+Component: server, Language: cpp, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.05889861 0.04442758 0.05578819 0.06690948 0.06062535 0.05717485
+ 0.05741204 0.05959201 0.05114964 0.05595382 0.06155964 0.06988874
+ 0.06883926 0.06931929 0.07889216 0.06814901 0.06316366 0.06531671
+ 0.0664545 ]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_cpp_1.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9783202108657513
+P-value: 0.921133596548873
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.09141746 0.07389195 0.08695061 0.11519454 0.10010452 0.09073855
+ 0.09751753 0.09205963 0.09777435 0.09198958 0.1073156  0.10698026
+ 0.11502984 0.10924059 0.10152734 0.1138621  0.09738015 0.12013108
+ 0.1099138 ]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_cpp_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.965954992630229
+P-value: 0.6936515903625706
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.25, Clients: 3 --->
+Group: 3
+[0.09538635 0.07301422 0.0928996  0.09872276 0.10828095 0.10944884
+ 0.09897658 0.09433464 0.0993999  0.11659151 0.12901779 0.114917
+ 0.11888065 0.13033657 0.13278644 0.12224889 0.11185363 0.12091278
+ 0.10369836]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_cpp_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9651718634884778
+P-value: 0.6774380243063949
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.1,  --->
+Group: 0.1
+[0.07815886 0.12789345 0.14907838 0.09318117 0.16621576 0.1610226
+ 0.10817595 0.18927138 0.1871738  0.11201237 0.17552752 0.25517528
+ 0.11635198 0.1842906  0.22362188 0.12312513 0.21330513 0.21075225
+ 0.11646354 0.22741428 0.22428505 0.12855883 0.20556671 0.23213302
+ 0.12251369 0.20276391 0.20690144 0.12497976 0.203435   0.2132361
+ 0.11703163 0.20980474 0.23305046 0.14788132 0.24301943 0.26118038
+ 0.13772383 0.24494609 0.24802576 0.1477326  0.24380753 0.25324292
+ 0.17053553 0.24517159 0.24117786 0.14872993 0.23853302 0.26111976
+ 0.13677034 0.22808411 0.22919703 0.16058264 0.24130161 0.25779034
+ 0.14441116 0.22444729 0.25382563 0.14487173 0.24600496 0.23831756]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.9221166522834008
+P-value: 0.0009341218627330471
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1896817265727782)]
+Group variances: [np.float64(0.002724677067435971)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 4.541128445726618e-05
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.977854895411896
+P-value: 0.9034945042566216
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.9055480919030924
+P-value: 0.06136507596660411
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9067692258708221
+P-value: 0.0645984560118225
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 0.1 and different num_clients.
+Levene's test statistic: 0.29626880065543953, p-value: 0.7447667042174084
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 9.292731051780337e-19
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      2   0.0885    0.0  0.0693 0.1078   True
+     1      3   0.1021    0.0  0.0829 0.1214   True
+     2      3   0.0136 0.2224 -0.0059 0.0331  False
+---------------------------------------------------
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_clients_0.1.pdf
+Component: server, Language: cpp, Interval: 0.1, Clients: 1 --->
+Group: 1
+[0.07815886 0.09318117 0.10817595 0.11201237 0.11635198 0.12312513
+ 0.11646354 0.12855883 0.12251369 0.12497976 0.11703163 0.14788132
+ 0.13772383 0.1477326  0.17053553 0.14872993 0.13677034 0.16058264
+ 0.14441116 0.14487173]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.977854895411896
+P-value: 0.9034945042566216
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.1, Clients: 2 --->
+Group: 2
+[0.16621576 0.18927138 0.17552752 0.1842906  0.21330513 0.22741428
+ 0.20556671 0.20276391 0.203435   0.20980474 0.24301943 0.24494609
+ 0.24380753 0.24517159 0.23853302 0.22808411 0.24130161 0.22444729
+ 0.24600496]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_2_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.9055480919030924
+P-value: 0.06136507596660411
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.1, Clients: 3 --->
+Group: 3
+[0.1610226  0.1871738  0.25517528 0.22362188 0.21075225 0.22428505
+ 0.23213302 0.20690144 0.2132361  0.23305046 0.26118038 0.24802576
+ 0.25324292 0.24117786 0.26111976 0.22919703 0.25779034 0.25382563
+ 0.23831756]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_3_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9067692258708221
+P-value: 0.0645984560118225
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.5,  --->
+Group: 0.5
+[0.04064913 0.05340216 0.06050464 0.02331779 0.03689247 0.04371579
+ 0.02565808 0.0311143  0.02759579 0.04351686 0.05999998 0.06091672
+ 0.03793644 0.06928907 0.05173707 0.03653453 0.04990232 0.05492627
+ 0.03720081 0.05860417 0.06614489 0.03808445 0.05957675 0.06204571
+ 0.04231105 0.04931509 0.06096847 0.0359233  0.0555835  0.05325594
+ 0.03906158 0.05486651 0.06128426 0.0441844  0.0586362  0.06259892
+ 0.04363735 0.05532301 0.06723881 0.03985223 0.05528309 0.07113094
+ 0.04263678 0.05923659 0.06370247 0.04508947 0.05616671 0.06690161
+ 0.05153457 0.06535398 0.07193566 0.04502076 0.06809767 0.07751443
+ 0.049056   0.05757245 0.06681708 0.03724199 0.06787557 0.07297258]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_cpp.pdf
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.9742770111403702
+P-value: 0.23498366042792262
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9362194384093854
+P-value: 0.24941952371848058
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.955727374402508
+P-value: 0.6186496510997257
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9721376863195521
+P-value: 0.8367920140134172
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 0.5 and different num_clients.
+Levene's test statistic: 2.427461010138777, p-value: 0.09902371668780867
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 2.9264591495018085e-16
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+     1      2    0.015    0.0 0.0105 0.0194   True
+     1      3   0.0224    0.0 0.0181 0.0267   True
+     2      3   0.0074 0.0006  0.003 0.0119   True
+--------------------------------------------------
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_cpp_clients.pdf
+Component: server, Language: cpp, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.04064913 0.04351686 0.03793644 0.03653453 0.03720081 0.03808445
+ 0.04231105 0.0359233  0.03906158 0.0441844  0.04363735 0.03985223
+ 0.04263678 0.04508947 0.05153457 0.04502076 0.049056   0.03724199]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_cpp_1.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9362194384093854
+P-value: 0.24941952371848058
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.5, Clients: 2 --->
+Group: 2
+[0.05340216 0.05999998 0.04990232 0.05860417 0.05957675 0.04931509
+ 0.0555835  0.05486651 0.0586362  0.05532301 0.05528309 0.05923659
+ 0.05616671 0.06535398 0.05757245]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_cpp_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.955727374402508
+P-value: 0.6186496510997257
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.06050464 0.06091672 0.05173707 0.05492627 0.06614489 0.06204571
+ 0.06096847 0.05325594 0.06128426 0.06259892 0.06723881 0.07113094
+ 0.06370247 0.06690161 0.07193566 0.07751443 0.06681708 0.07297258]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_cpp_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9721376863195521
+P-value: 0.8367920140134172
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 1.0,  --->
+Group: 1.0
+[0.02096736 0.01650712 0.01436142 0.03352089 0.0228205  0.01074643
+ 0.01658477 0.02086225 0.01665652 0.02019087 0.02707885 0.02271671
+ 0.04217791 0.03463826 0.02470561 0.03467557 0.03734687 0.02280394
+ 0.03038864 0.03455403 0.02536602 0.03509853 0.0381823  0.02463638
+ 0.03263236 0.03845583 0.02652625 0.0364005  0.0349677  0.02946491
+ 0.03866184 0.04120879 0.02843659 0.03606941 0.03989008 0.02710432
+ 0.03976401 0.03852202 0.02586189 0.03830626 0.04327001 0.02874858
+ 0.03992355 0.04644661 0.02680453 0.04356123 0.04593555 0.03331892
+ 0.04396673 0.03863378 0.02564238 0.04357463 0.04185282 0.02837538
+ 0.0358398  0.04620901 0.02428195 0.03606457 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.9642011995204822
+P-value: 0.08006780244157799
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9460336221717056
+P-value: 0.4295663235736908
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.9547101089419457
+P-value: 0.535099496904565
+The data is likely normally distributed (fail to reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.938697663567484
+P-value: 0.30306680663566016
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, msg_interval 1.0 and different num_clients.
+Levene's test statistic: 1.431515110920382, p-value: 0.24917299744739882
+Levene's test indicates equal variances. Running ANOVA...
+ANOVA test: p = 4.2905417283725145e-12
+ANOVA test rejects the null hypothesis. There is statistical difference among groups.)
+Since ANOVA is significant we perform Tukey's HSD test...
+
+Tukey's HSD Test Results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+group1 group2 meandiff p-adj   lower  upper  reject
+---------------------------------------------------
+     1      2   0.0111    0.0  0.0077 0.0145   True
+     1      3   0.0126    0.0  0.0092  0.016   True
+     2      3   0.0015 0.5289 -0.0018 0.0048  False
+---------------------------------------------------
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_clients_1.0.pdf
+Component: server, Language: cpp, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.02271671 0.02470561 0.02280394 0.02536602 0.02463638 0.02652625
+ 0.02946491 0.02843659 0.02710432 0.02586189 0.02874858 0.02680453
+ 0.03331892 0.02564238 0.02837538 0.02428195]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9460336221717056
+P-value: 0.4295663235736908
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.03352089 0.04217791 0.03467557 0.03038864 0.03509853 0.03263236
+ 0.0364005  0.03866184 0.03606941 0.03976401 0.03830626 0.03992355
+ 0.04356123 0.04396673 0.04357463 0.0358398  0.03606457]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_2_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.9547101089419457
+P-value: 0.535099496904565
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: cpp, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.02707885 0.03463826 0.03734687 0.03455403 0.0381823  0.03845583
+ 0.0349677  0.04120879 0.03989008 0.03852202 0.04327001 0.04644661
+ 0.04593555 0.03863378 0.04185282 0.04620901 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_3_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.938697663567484
+P-value: 0.30306680663566016
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8411854028407193
+P-value: 8.33927091053595e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.825178479406567
+P-value: 1.8144081258117063e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8298697341223457
+P-value: 2.610471210662284e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.09720646149602753), np.float64(0.15717145245238892), np.float64(0.164930454389824)]
+Group variances: [np.float64(0.006116315266130649), np.float64(0.01875275785830766), np.float64(0.020395079764779712)]
+Group sizes: [97, 99, 99]
+Numerator: 0.3433819404602249
+Denominator: 0.0004584874998215567
+Degrees of freedom: 0.03082482993197279
+Kruskal-Wallis H statistic: 14.019254976864659, p-value: 0.000903144957685519
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2         3
+1  1.000000  0.011089  0.001359
+2  0.011089  1.000000  1.000000
+3  0.001359  1.000000  1.000000
+Welch's ANOVA statistic: 748.945043417474, p-value: 0.0
+Component: server, Clients: 1, Language: cpp --->
+Group: 1
+[0.18121154 0.07815886 0.05889861 0.04064913 0.16502385 0.09318117
+ 0.04442758 0.02331779 0.01436142 0.15888934 0.10817595 0.02565808
+ 0.01074643 0.11201237 0.05578819 0.04351686 0.01665652 0.23268918
+ 0.11635198 0.06690948 0.03793644 0.02271671 0.26317805 0.12312513
+ 0.06062535 0.03653453 0.02470561 0.22584637 0.11646354 0.05717485
+ 0.03720081 0.02280394 0.20635183 0.12855883 0.05741204 0.03808445
+ 0.02536602 0.23202028 0.12251369 0.05959201 0.04231105 0.02463638
+ 0.21650697 0.12497976 0.05114964 0.0359233  0.02652625 0.22411207
+ 0.11703163 0.05595382 0.03906158 0.02946491 0.27024393 0.14788132
+ 0.06155964 0.0441844  0.02843659 0.23583307 0.13772383 0.06988874
+ 0.04363735 0.02710432 0.27549477 0.1477326  0.06883926 0.03985223
+ 0.02586189 0.24048346 0.17053553 0.06931929 0.04263678 0.02874858
+ 0.26325846 0.14872993 0.07889216 0.04508947 0.02680453 0.25600845
+ 0.13677034 0.06814901 0.05153457 0.03331892 0.26937705 0.16058264
+ 0.06316366 0.04502076 0.02564238 0.23615512 0.14441116 0.06531671
+ 0.049056   0.02837538 0.25203017 0.14487173 0.0664545  0.03724199
+ 0.02428195]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8411854028407193
+P-value: 8.33927091053595e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.09720646149602753)]
+Group variances: [np.float64(0.006116315266130649)]
+Group sizes: [97]
+Numerator: 0.0
+Denominator: 6.305479655804793e-05
+Degrees of freedom: 0.010416666666666666
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.930417751395195
+P-value: 0.19750153926222586
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.977854895411896
+P-value: 0.9034945042566216
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9783202108657513
+P-value: 0.921133596548873
+The data is likely normally distributed (fail to reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9362194384093854
+P-value: 0.24941952371848058
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9460336221717056
+P-value: 0.4295663235736908
+The data is likely normally distributed (fail to reject H0).
+
+Levene's test for language cpp, num_clients 1 and different msg_intervals.
+Levene's test statistic: 12.66452397420873, p-value: 3.8020700503849175e-08
+Levene's test indicates unequal variances. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.23587914560307693), np.float64(0.1289895995660684), np.float64(0.062079712090836806), np.float64(0.041637316515328454), np.float64(0.026549646531541543)]
+Group variances: [np.float64(0.0009161750691425617), np.float64(0.0005046629783850209), np.float64(6.141167580168134e-05), np.float64(1.9213975421810916e-05), np.float64(7.3364308631980825e-06)]
+Group sizes: [18, 20, 19, 18, 16]
+Numerator: 931.8787712082485
+Denominator: 8.088992734280135e-05
+Degrees of freedom: 0.29250085999312003
+Kruskal-Wallis H statistic: 85.98129940235202, p-value: 9.392007646735757e-18
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  2.727325e-01  0.000086  1.225566e-09  3.707202e-15
+0.10  2.727325e-01  1.000000e+00  0.198408  1.103922e-04  5.361080e-09
+0.25  8.614295e-05  1.984082e-01  1.000000  3.815296e-01  8.232437e-04
+0.50  1.225566e-09  1.103922e-04  0.381530  1.000000e+00  5.693660e-01
+1.00  3.707202e-15  5.361080e-09  0.000823  5.693660e-01  1.000000e+00
+Welch's ANOVA statistic: 11520331.416037295, p-value: 0.0
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_1_interval.pdf
+Component: server, Clients: 2, Language: cpp --->
+Group: 2
+[0.23561028 0.12789345 0.09141746 0.05340216 0.02096736 0.25242318
+ 0.16621576 0.07389195 0.03689247 0.03352089 0.27212631 0.18927138
+ 0.04003202 0.0311143  0.01658477 0.17552752 0.08695061 0.05999998
+ 0.02019087 0.35471692 0.1842906  0.11519454 0.06928907 0.04217791
+ 0.36048769 0.21330513 0.10010452 0.04990232 0.03467557 0.39965294
+ 0.22741428 0.09073855 0.05860417 0.03038864 0.40612436 0.20556671
+ 0.09751753 0.05957675 0.03509853 0.40516795 0.20276391 0.09205963
+ 0.04931509 0.03263236 0.43891563 0.203435   0.09777435 0.0555835
+ 0.0364005  0.41211254 0.20980474 0.09198958 0.05486651 0.03866184
+ 0.42868144 0.24301943 0.1073156  0.0586362  0.03606941 0.48722834
+ 0.24494609 0.10698026 0.05532301 0.03976401 0.44531313 0.24380753
+ 0.11502984 0.05528309 0.03830626 0.39742326 0.24517159 0.10924059
+ 0.05923659 0.03992355 0.44222189 0.23853302 0.10152734 0.05616671
+ 0.04356123 0.41373844 0.22808411 0.1138621  0.06535398 0.04396673
+ 0.45645685 0.24130161 0.09738015 0.06809767 0.04357463 0.45366841
+ 0.22444729 0.12013108 0.05757245 0.0358398  0.45758759 0.24600496
+ 0.1099138  0.06787557 0.03606457]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.825178479406567
+P-value: 1.8144081258117063e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.15717145245238892)]
+Group variances: [np.float64(0.01875275785830766)]
+Group sizes: [99]
+Numerator: 0.0
+Denominator: 0.00018942179654856222
+Degrees of freedom: 0.01020408163265306
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Clients: 3, Language: cpp --->
+Group: 3
+[0.27034189 0.14907838 0.09538635 0.06050464 0.01650712 0.27716638
+ 0.1610226  0.07301422 0.04371579 0.0228205  0.1871738  0.03429322
+ 0.02759579 0.02086225 0.12185488 0.25517528 0.0928996  0.06091672
+ 0.02707885 0.37607036 0.22362188 0.09872276 0.05173707 0.03463826
+ 0.38165276 0.21075225 0.10828095 0.05492627 0.03734687 0.41429439
+ 0.22428505 0.10944884 0.06614489 0.03455403 0.40367905 0.23213302
+ 0.09897658 0.06204571 0.0381823  0.42947868 0.20690144 0.09433464
+ 0.06096847 0.03845583 0.39308502 0.2132361  0.0993999  0.05325594
+ 0.0349677  0.42255453 0.23305046 0.11659151 0.06128426 0.04120879
+ 0.46621805 0.26118038 0.12901779 0.06259892 0.03989008 0.49595541
+ 0.24802576 0.114917   0.06723881 0.03852202 0.46685711 0.25324292
+ 0.11888065 0.07113094 0.04327001 0.47647328 0.24117786 0.13033657
+ 0.06370247 0.04644661 0.43830899 0.26111976 0.13278644 0.06690161
+ 0.04593555 0.48211748 0.22919703 0.12224889 0.07193566 0.03863378
+ 0.4672738  0.25779034 0.11185363 0.07751443 0.04185282 0.49307741
+ 0.25382563 0.12091278 0.06681708 0.04620901 0.45521556 0.23831756
+ 0.10369836 0.07297258 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_cpp_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8298697341223457
+P-value: 2.610471210662284e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.164930454389824)]
+Group variances: [np.float64(0.020395079764779712)]
+Group sizes: [99]
+Numerator: 0.0
+Denominator: 0.00020601090671494657
+Degrees of freedom: 0.01020408163265306
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py --->
+Group: py
+[0.57701298 0.63559143 0.79044369 0.31608535 0.36333372 0.36585059
+ 0.15781749 0.15777931 0.18095003 0.07759677 0.08421315 0.10640714
+ 0.04380104 0.04844687 0.06519931 0.7534161  0.60546109 0.66311686
+ 0.30167903 0.32670432 0.45804211 0.18367644 0.13767093 0.1903276
+ 0.07691097 0.0898841  0.10649013 0.06422812 0.05042962 0.05007239
+ 0.60408003 0.61541765 0.60726481 0.31090231 0.5145463  0.33192153
+ 0.1228777  0.14538959 0.12922015 0.09582533 0.09976711 0.10814381
+ 0.06377119 0.04640059 0.05778019 0.58023092 0.57553109 0.61474296
+ 0.30442497 0.35965939 0.56197918 0.14691868 0.1239926  0.16973763
+ 0.08688961 0.09850069 0.10710726 0.04300032 0.05177721 0.06298958
+ 0.81596987 0.86438349 0.94504172 0.53392715 0.47744518 0.35049478
+ 0.14450144 0.14814104 0.17434693 0.09607509 0.09974338 0.09852704
+ 0.0833082  0.04703665 0.07030601 0.89116679 0.94331994 1.15066116
+ 0.32621286 0.33046373 0.36430529 0.13866993 0.14260915 0.14969269
+ 0.12232118 0.07949626 0.11081221 0.04527512 0.04772125 0.05438271
+ 0.87161988 0.55995648 0.61535245 0.29368324 0.3069019  0.48088159
+ 0.23448382 0.25176544 0.17525677 0.11013932 0.07432737 0.08453197
+ 0.043893   0.06725027 0.05390313 0.79960114 0.60068671 0.68238466
+ 0.26859268 0.44284712 0.28593404 0.14242571 0.15091412 0.26161202
+ 0.12192781 0.102231   0.09034367 0.0649737  0.05036064 0.08638556
+ 0.55722611 0.74446493 0.65215934 0.30917783 0.3197979  0.54889865
+ 0.1441802  0.16336359 0.17240718 0.08859629 0.07682877 0.14685875
+ 0.04092801 0.05045992 0.05015857 0.59150001 0.5889369  0.63206165
+ 0.28446716 0.28462681 0.50035164 0.13329756 0.13940479 0.16153613
+ 0.08578972 0.1339426  0.0822041  0.06958779 0.04853927 0.08517853
+ 0.55465368 0.56597652 0.61582576 0.42297309 0.31727946 0.34721543
+ 0.22131642 0.16440104 0.16391834 0.07512772 0.13828219 0.08762418
+ 0.0406716  0.09231629 0.07068972 0.58723773 0.58256183 0.66133324
+ 0.31726848 0.54117004 0.33693306 0.12290506 0.27983614 0.35055909
+ 0.07045243 0.15274034 0.09033218 0.08574877 0.04526481 0.04164224
+ 1.11018148 0.85677908 1.14839962 0.59368755 0.62393531 0.73988819
+ 0.27853162 0.29841302 0.29032709 0.13830106 0.18369011 0.16970618
+ 0.08536788 0.07988147 0.10699546 0.99319299 1.05691265 0.98782999
+ 0.5827586  0.56790438 0.6186622  0.26887779 0.26231042 0.29228472
+ 0.14403863 0.15308058 0.17230444 0.09129696 0.08251765 0.09803573
+ 0.90957924 0.884322   1.16310835 0.58486605 0.61769184 0.62373005
+ 0.2869089  0.2778187  0.28877271 0.13742515 0.16420884 0.1635411
+ 0.08971963 0.09515083 0.10807785 1.06741405 1.01656015 1.14369912
+ 0.57198399 0.60905624 0.53881562 0.25585719 0.24950021 0.33653828
+ 0.1450946  0.14949681 0.16474867 0.08594789 0.09179629 0.09364261
+ 0.9946163  0.95349603 1.11249644 0.57286479 0.60968256 0.57316968
+ 0.23864883 0.27906401 0.30513088 0.15151706 0.15169601 0.16625692
+ 0.07728753 0.0813455  0.09615464 1.04830358 1.03000026 1.06469161
+ 0.56264539 0.62968911 0.6567474  0.25724219 0.29062941 0.27487531
+ 0.13764625 0.15054558 0.16507084 0.09775035 0.0855815  0.09248252
+ 1.03735551 0.85300865 1.11160309 0.59617844 0.64043419 0.67416417
+ 0.25086932 0.28675638 0.31373806 0.16418478 0.1558268  0.14925475
+ 0.08446302 0.08710333 0.09948467 0.94561465 1.09581874 0.90829824
+ 0.48804499 0.64220588 0.65490223 0.24208699 0.25286267 0.25695571
+ 0.12734801 0.14605576 0.16784662 0.07333349 0.08681717 0.11252806]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py.pdf
+Starting Shapiro-Wilk test...
+Group: py
+Shapiro-Wilk statistic: 0.838649240800363
+P-value: 5.060472745725506e-17
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3387526025931793)]
+Group variances: [np.float64(0.09008401970167164)]
+Group sizes: [300]
+Numerator: 0.0
+Denominator: 0.0003002800656722388
+Degrees of freedom: 0.0033444816053511705
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8917941411559696
+P-value: 6.694723162749841e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.8965667975363332
+P-value: 9.884472556596325e-05
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.9024538864318061
+P-value: 0.0001617981878778939
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9219698569316837
+P-value: 0.0009213651372464031
+The data is likely not normally distributed (reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.9280671384872338
+P-value: 0.0016458274654803282
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8198278899967738), np.float64(0.46801144591797816), np.float64(0.21354838629417347), np.float64(0.12126462055140538), np.float64(0.07111067020556557)]
+Group variances: [np.float64(0.04254838683153818), np.float64(0.01886029804908751), np.float64(0.004356981301309078), np.float64(0.0010916650322262346), np.float64(0.00043225729572422746)]
+Group sizes: [60, 60, 60, 60, 60]
+Numerator: 218.96893287257132
+Denominator: 0.0011214931418314204
+Degrees of freedom: 0.0847457627118644
+Kruskal-Wallis H statistic: 267.921289036545, p-value: 8.950317407999419e-57
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10          0.25          0.50          1.00
+0.05  1.000000e+00  1.324168e-02  2.752193e-13  4.141366e-27  6.191250e-46
+0.10  1.324168e-02  1.000000e+00  1.088603e-04  7.135576e-14  5.290331e-28
+0.25  2.752193e-13  1.088603e-04  1.000000e+00  7.162727e-03  1.217475e-10
+0.50  4.141366e-27  7.135576e-14  7.162727e-03  1.000000e+00  6.866641e-03
+1.00  6.191250e-46  5.290331e-28  1.217475e-10  6.866641e-03  1.000000e+00
+Welch's ANOVA statistic: 195247.67892471526, p-value: 0.0
+Component: server, Language: py, Interval: 0.05,  --->
+Group: 0.05
+[0.57701298 0.63559143 0.79044369 0.7534161  0.60546109 0.66311686
+ 0.60408003 0.61541765 0.60726481 0.58023092 0.57553109 0.61474296
+ 0.81596987 0.86438349 0.94504172 0.89116679 0.94331994 1.15066116
+ 0.87161988 0.55995648 0.61535245 0.79960114 0.60068671 0.68238466
+ 0.55722611 0.74446493 0.65215934 0.59150001 0.5889369  0.63206165
+ 0.55465368 0.56597652 0.61582576 0.58723773 0.58256183 0.66133324
+ 1.11018148 0.85677908 1.14839962 0.99319299 1.05691265 0.98782999
+ 0.90957924 0.884322   1.16310835 1.06741405 1.01656015 1.14369912
+ 0.9946163  0.95349603 1.11249644 1.04830358 1.03000026 1.06469161
+ 1.03735551 0.85300865 1.11160309 0.94561465 1.09581874 0.90829824]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.05_py.pdf
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8917941411559696
+P-value: 6.694723162749841e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8198278899967738)]
+Group variances: [np.float64(0.04254838683153818)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 0.0007091397805256363
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8869330668850369
+P-value: 0.02362845266556172
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8692757122809238
+P-value: 0.01140998431858324
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8217906386195135
+P-value: 0.0018603351413004736
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8144986515203089), np.float64(0.7814592798112423), np.float64(0.8635257386587707)]
+Group variances: [np.float64(0.03947723852765537), np.float64(0.03706232837637837), np.float64(0.05199484166969524)]
+Group sizes: [20, 20, 20]
+Numerator: 0.07716518925394038
+Denominator: 0.0064267204286864495
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 3.4331147540983693, p-value: 0.17968366747563397
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 12.006931079420252, p-value: 3.4323098493938e-05
+Component: server, Language: py, Interval: 0.05, Clients: 1 --->
+Group: 1
+[0.57701298 0.7534161  0.60408003 0.58023092 0.81596987 0.89116679
+ 0.87161988 0.79960114 0.55722611 0.59150001 0.55465368 0.58723773
+ 1.11018148 0.99319299 0.90957924 1.06741405 0.9946163  1.04830358
+ 1.03735551 0.94561465]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_1_0.05_py.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8869330668850369
+P-value: 0.02362845266556172
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8144986515203089)]
+Group variances: [np.float64(0.03947723852765537)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0019738619263827686
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.05, Clients: 2 --->
+Group: 2
+[0.63559143 0.60546109 0.61541765 0.57553109 0.86438349 0.94331994
+ 0.55995648 0.60068671 0.74446493 0.5889369  0.56597652 0.58256183
+ 0.85677908 1.05691265 0.884322   1.01656015 0.95349603 1.03000026
+ 0.85300865 1.09581874]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.05_py_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8692757122809238
+P-value: 0.01140998431858324
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.7814592798112423)]
+Group variances: [np.float64(0.03706232837637837)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0018531164188189185
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.05, Clients: 3 --->
+Group: 3
+[0.79044369 0.66311686 0.60726481 0.61474296 0.94504172 1.15066116
+ 0.61535245 0.68238466 0.65215934 0.63206165 0.61582576 0.66133324
+ 1.14839962 0.98782999 1.16310835 1.14369912 1.11249644 1.06469161
+ 1.11160309 0.90829824]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.05_py_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8217906386195135
+P-value: 0.0018603351413004736
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8635257386587707)]
+Group variances: [np.float64(0.05199484166969524)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.002599742083484762
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.25,  --->
+Group: 0.25
+[0.15781749 0.15777931 0.18095003 0.18367644 0.13767093 0.1903276
+ 0.1228777  0.14538959 0.12922015 0.14691868 0.1239926  0.16973763
+ 0.14450144 0.14814104 0.17434693 0.13866993 0.14260915 0.14969269
+ 0.23448382 0.25176544 0.17525677 0.14242571 0.15091412 0.26161202
+ 0.1441802  0.16336359 0.17240718 0.13329756 0.13940479 0.16153613
+ 0.22131642 0.16440104 0.16391834 0.12290506 0.27983614 0.35055909
+ 0.27853162 0.29841302 0.29032709 0.26887779 0.26231042 0.29228472
+ 0.2869089  0.2778187  0.28877271 0.25585719 0.24950021 0.33653828
+ 0.23864883 0.27906401 0.30513088 0.25724219 0.29062941 0.27487531
+ 0.25086932 0.28675638 0.31373806 0.24208699 0.25286267 0.25695571]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_py.pdf
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.9024538864318061
+P-value: 0.0001617981878778939
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.21354838629417347)]
+Group variances: [np.float64(0.004356981301309078)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 7.261635502181796e-05
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8672074749840354
+P-value: 0.010497596263387142
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.820608952254716
+P-value: 0.001782773652307523
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8936893015274286
+P-value: 0.03145563565046674
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.19860466523390546), np.float64(0.21013112729272704), np.float64(0.23190936635588794)]
+Group variances: [np.float64(0.0035155154438774074), np.float64(0.004366370826539542), np.float64(0.005045457720977829)]
+Group sizes: [20, 20, 20]
+Numerator: 0.1330147299901165
+Denominator: 0.000646367199569739
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 5.058688524590167, p-value: 0.07971127283914854
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 205.78818058629693, p-value: 0.0
+Component: server, Language: py, Interval: 0.25, Clients: 1 --->
+Group: 1
+[0.15781749 0.18367644 0.1228777  0.14691868 0.14450144 0.13866993
+ 0.23448382 0.14242571 0.1441802  0.13329756 0.22131642 0.12290506
+ 0.27853162 0.26887779 0.2869089  0.25585719 0.23864883 0.25724219
+ 0.25086932 0.24208699]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_1_py.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8672074749840354
+P-value: 0.010497596263387142
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.19860466523390546)]
+Group variances: [np.float64(0.0035155154438774074)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.00017577577219387037
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.25, Clients: 2 --->
+Group: 2
+[0.15777931 0.13767093 0.14538959 0.1239926  0.14814104 0.14260915
+ 0.25176544 0.15091412 0.16336359 0.13940479 0.16440104 0.27983614
+ 0.29841302 0.26231042 0.2778187  0.24950021 0.27906401 0.29062941
+ 0.28675638 0.25286267]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_py_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.820608952254716
+P-value: 0.001782773652307523
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.21013112729272704)]
+Group variances: [np.float64(0.004366370826539542)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.00021831854132697712
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.25, Clients: 3 --->
+Group: 3
+[0.18095003 0.1903276  0.12922015 0.16973763 0.17434693 0.14969269
+ 0.17525677 0.26161202 0.17240718 0.16153613 0.16391834 0.35055909
+ 0.29032709 0.29228472 0.28877271 0.33653828 0.30513088 0.27487531
+ 0.31373806 0.25695571]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25_py_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8936893015274286
+P-value: 0.03145563565046674
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.23190936635588794)]
+Group variances: [np.float64(0.005045457720977829)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0002522728860488915
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.1,  --->
+Group: 0.1
+[0.31608535 0.36333372 0.36585059 0.30167903 0.32670432 0.45804211
+ 0.31090231 0.5145463  0.33192153 0.30442497 0.35965939 0.56197918
+ 0.53392715 0.47744518 0.35049478 0.32621286 0.33046373 0.36430529
+ 0.29368324 0.3069019  0.48088159 0.26859268 0.44284712 0.28593404
+ 0.30917783 0.3197979  0.54889865 0.28446716 0.28462681 0.50035164
+ 0.42297309 0.31727946 0.34721543 0.31726848 0.54117004 0.33693306
+ 0.59368755 0.62393531 0.73988819 0.5827586  0.56790438 0.6186622
+ 0.58486605 0.61769184 0.62373005 0.57198399 0.60905624 0.53881562
+ 0.57286479 0.60968256 0.57316968 0.56264539 0.62968911 0.6567474
+ 0.59617844 0.64043419 0.67416417 0.48804499 0.64220588 0.65490223]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.8965667975363332
+P-value: 9.884472556596325e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.46801144591797816)]
+Group variances: [np.float64(0.01886029804908751)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 0.0003143383008181252
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7943965139287643
+P-value: 0.0007135976154677915
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8529659269621133
+P-value: 0.005978936812628541
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.933530852083781
+P-value: 0.1805254200254875
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4271211981746384), np.float64(0.4762687687008982), np.float64(0.5006443708783979)]
+Group variances: [np.float64(0.01774918898684098), np.float64(0.018716152312344313), np.float64(0.019148106820059692)]
+Group sizes: [20, 20, 20]
+Numerator: 0.15345946699167207
+Denominator: 0.002780672405962249
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 4.961639344262295, p-value: 0.08367461172828325
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 55.18789867610009, p-value: 3.885780586188048e-15
+Component: server, Language: py, Interval: 0.1, Clients: 1 --->
+Group: 1
+[0.31608535 0.30167903 0.31090231 0.30442497 0.53392715 0.32621286
+ 0.29368324 0.26859268 0.30917783 0.28446716 0.42297309 0.31726848
+ 0.59368755 0.5827586  0.58486605 0.57198399 0.57286479 0.56264539
+ 0.59617844 0.48804499]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_1_py_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.7943965139287643
+P-value: 0.0007135976154677915
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4271211981746384)]
+Group variances: [np.float64(0.01774918898684098)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.000887459449342049
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.1, Clients: 2 --->
+Group: 2
+[0.36333372 0.32670432 0.5145463  0.35965939 0.47744518 0.33046373
+ 0.3069019  0.44284712 0.3197979  0.28462681 0.31727946 0.54117004
+ 0.62393531 0.56790438 0.61769184 0.60905624 0.60968256 0.62968911
+ 0.64043419 0.64220588]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_2_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8529659269621133
+P-value: 0.005978936812628541
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.4762687687008982)]
+Group variances: [np.float64(0.018716152312344313)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 0.0009358076156172157
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.1, Clients: 3 --->
+Group: 3
+[0.36585059 0.45804211 0.33192153 0.56197918 0.35049478 0.36430529
+ 0.48088159 0.28593404 0.54889865 0.50035164 0.34721543 0.33693306
+ 0.73988819 0.6186622  0.62373005 0.53881562 0.57316968 0.6567474
+ 0.67416417 0.65490223]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_3_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.933530852083781
+P-value: 0.1805254200254875
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: py, Interval: 0.5,  --->
+Group: 0.5
+[0.07759677 0.08421315 0.10640714 0.07691097 0.0898841  0.10649013
+ 0.09582533 0.09976711 0.10814381 0.08688961 0.09850069 0.10710726
+ 0.09607509 0.09974338 0.09852704 0.12232118 0.07949626 0.11081221
+ 0.11013932 0.07432737 0.08453197 0.12192781 0.102231   0.09034367
+ 0.08859629 0.07682877 0.14685875 0.08578972 0.1339426  0.0822041
+ 0.07512772 0.13828219 0.08762418 0.07045243 0.15274034 0.09033218
+ 0.13830106 0.18369011 0.16970618 0.14403863 0.15308058 0.17230444
+ 0.13742515 0.16420884 0.1635411  0.1450946  0.14949681 0.16474867
+ 0.15151706 0.15169601 0.16625692 0.13764625 0.15054558 0.16507084
+ 0.16418478 0.1558268  0.14925475 0.12734801 0.14605576 0.16784662]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_py.pdf
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.9219698569316837
+P-value: 0.0009213651372464031
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.12126462055140538)]
+Group variances: [np.float64(0.0010916650322262346)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 1.8194417203770577e-05
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9246307032783221
+P-value: 0.12168301992151453
+The data is likely normally distributed (fail to reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8972328797533766
+P-value: 0.0366067415036192
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8362777546302389
+P-value: 0.003166267399378731
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.11266038913486001), np.float64(0.12422787356430491), np.float64(0.12690559895505124)]
+Group variances: [np.float64(0.0008799439099882308), np.float64(0.0011838977557406824), np.float64(0.0012053978511437893)]
+Group sizes: [20, 20, 20]
+Numerator: 0.11794890892933296
+Denominator: 0.00016346197584363512
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 3.290491803278684, p-value: 0.19296510652318363
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 721.5678650682703, p-value: 0.0
+Component: server, Language: py, Interval: 0.5, Clients: 1 --->
+Group: 1
+[0.07759677 0.07691097 0.09582533 0.08688961 0.09607509 0.12232118
+ 0.11013932 0.12192781 0.08859629 0.08578972 0.07512772 0.07045243
+ 0.13830106 0.14403863 0.13742515 0.1450946  0.15151706 0.13764625
+ 0.16418478 0.12734801]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_1_py.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.9246307032783221
+P-value: 0.12168301992151453
+The data is likely normally distributed (fail to reject H0).
+
+Component: server, Language: py, Interval: 0.5, Clients: 2 --->
+Group: 2
+[0.08421315 0.0898841  0.09976711 0.09850069 0.09974338 0.07949626
+ 0.07432737 0.102231   0.07682877 0.1339426  0.13828219 0.15274034
+ 0.18369011 0.15308058 0.16420884 0.14949681 0.15169601 0.15054558
+ 0.1558268  0.14605576]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_py_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8972328797533766
+P-value: 0.0366067415036192
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.12422787356430491)]
+Group variances: [np.float64(0.0011838977557406824)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 5.919488778703412e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 0.5, Clients: 3 --->
+Group: 3
+[0.10640714 0.10649013 0.10814381 0.10710726 0.09852704 0.11081221
+ 0.08453197 0.09034367 0.14685875 0.0822041  0.08762418 0.09033218
+ 0.16970618 0.17230444 0.1635411  0.16474867 0.16625692 0.16507084
+ 0.14925475 0.16784662]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5_py_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8362777546302389
+P-value: 0.003166267399378731
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.12690559895505124)]
+Group variances: [np.float64(0.0012053978511437893)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 6.026989255718947e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 1.0,  --->
+Group: 1.0
+[0.04380104 0.04844687 0.06519931 0.06422812 0.05042962 0.05007239
+ 0.06377119 0.04640059 0.05778019 0.04300032 0.05177721 0.06298958
+ 0.0833082  0.04703665 0.07030601 0.04527512 0.04772125 0.05438271
+ 0.043893   0.06725027 0.05390313 0.0649737  0.05036064 0.08638556
+ 0.04092801 0.05045992 0.05015857 0.06958779 0.04853927 0.08517853
+ 0.0406716  0.09231629 0.07068972 0.08574877 0.04526481 0.04164224
+ 0.08536788 0.07988147 0.10699546 0.09129696 0.08251765 0.09803573
+ 0.08971963 0.09515083 0.10807785 0.08594789 0.09179629 0.09364261
+ 0.07728753 0.0813455  0.09615464 0.09775035 0.0855815  0.09248252
+ 0.08446302 0.08710333 0.09948467 0.07333349 0.08681717 0.11252806]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.9280671384872338
+P-value: 0.0016458274654803282
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.07111067020556557)]
+Group variances: [np.float64(0.00043225729572422746)]
+Group sizes: [60]
+Numerator: 0.0
+Denominator: 7.204288262070458e-06
+Degrees of freedom: 0.01694915254237288
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8878823440142868
+P-value: 0.024591667387197265
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.809086666584975
+P-value: 0.0011840776537501273
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.9305186683461724
+P-value: 0.15800662336439886
+The data is likely normally distributed (fail to reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.06871767947007341), np.float64(0.06680985685831493), np.float64(0.07780447428830842)]
+Group variances: [np.float64(0.00038314754101654913), np.float64(0.00037952469526258883), np.float64(0.0005069368260158999)]
+Group sizes: [20, 20, 20]
+Numerator: 0.15207072032594157
+Denominator: 6.348045311475189e-05
+Degrees of freedom: 0.15789473684210525
+Kruskal-Wallis H statistic: 3.905245901639347, p-value: 0.14190138267983501
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 2395.5519040018107, p-value: 0.0
+Component: server, Language: py, Interval: 1.0, Clients: 1 --->
+Group: 1
+[0.04380104 0.06422812 0.06377119 0.04300032 0.0833082  0.04527512
+ 0.043893   0.0649737  0.04092801 0.06958779 0.0406716  0.08574877
+ 0.08536788 0.09129696 0.08971963 0.08594789 0.07728753 0.09775035
+ 0.08446302 0.07333349]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_1_py_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8878823440142868
+P-value: 0.024591667387197265
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.06871767947007341)]
+Group variances: [np.float64(0.00038314754101654913)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.9157377050827456e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 1.0, Clients: 2 --->
+Group: 2
+[0.04844687 0.05042962 0.04640059 0.05177721 0.04703665 0.04772125
+ 0.06725027 0.05036064 0.05045992 0.04853927 0.09231629 0.04526481
+ 0.07988147 0.08251765 0.09515083 0.09179629 0.0813455  0.0855815
+ 0.08710333 0.08681717]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_2_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.809086666584975
+P-value: 0.0011840776537501273
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.06680985685831493)]
+Group variances: [np.float64(0.00037952469526258883)]
+Group sizes: [20]
+Numerator: 0.0
+Denominator: 1.897623476312944e-05
+Degrees of freedom: 0.05263157894736842
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Language: py, Interval: 1.0, Clients: 3 --->
+Group: 3
+[0.06519931 0.05007239 0.05778019 0.06298958 0.07030601 0.05438271
+ 0.05390313 0.08638556 0.05015857 0.08517853 0.07068972 0.04164224
+ 0.10699546 0.09803573 0.10807785 0.09364261 0.09615464 0.09248252
+ 0.09948467 0.11252806]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_3_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.9305186683461724
+P-value: 0.15800662336439886
+The data is likely normally distributed (fail to reject H0).
+
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8200849457184598
+P-value: 1.076358802047676e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8475523744218063
+P-value: 9.640079800012207e-09
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.836080730301382
+P-value: 3.750853614087012e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3243205167067572), np.float64(0.3317793812454974), np.float64(0.36015790982728335)]
+Group variances: [np.float64(0.08801710342771742), np.float64(0.0827872382654043), np.float64(0.10054527528790354)]
+Group sizes: [100, 100, 100]
+Numerator: 0.0075107985327844025
+Denominator: 0.002713496169810253
+Degrees of freedom: 0.030303030303030304
+Kruskal-Wallis H statistic: 1.907170764119769, p-value: 0.3853568919301005
+The test indicates no significant difference between the groups.
+Welch's ANOVA statistic: 2.7679414536669906, p-value: 0.0018390201130575878
+Component: server, Clients: 1, Language: py --->
+Group: 1
+[0.57701298 0.31608535 0.15781749 0.07759677 0.04380104 0.7534161
+ 0.30167903 0.18367644 0.07691097 0.06422812 0.60408003 0.31090231
+ 0.1228777  0.09582533 0.06377119 0.58023092 0.30442497 0.14691868
+ 0.08688961 0.04300032 0.81596987 0.53392715 0.14450144 0.09607509
+ 0.0833082  0.89116679 0.32621286 0.13866993 0.12232118 0.04527512
+ 0.87161988 0.29368324 0.23448382 0.11013932 0.043893   0.79960114
+ 0.26859268 0.14242571 0.12192781 0.0649737  0.55722611 0.30917783
+ 0.1441802  0.08859629 0.04092801 0.59150001 0.28446716 0.13329756
+ 0.08578972 0.06958779 0.55465368 0.42297309 0.22131642 0.07512772
+ 0.0406716  0.58723773 0.31726848 0.12290506 0.07045243 0.08574877
+ 1.11018148 0.59368755 0.27853162 0.13830106 0.08536788 0.99319299
+ 0.5827586  0.26887779 0.14403863 0.09129696 0.90957924 0.58486605
+ 0.2869089  0.13742515 0.08971963 1.06741405 0.57198399 0.25585719
+ 0.1450946  0.08594789 0.9946163  0.57286479 0.23864883 0.15151706
+ 0.07728753 1.04830358 0.56264539 0.25724219 0.13764625 0.09775035
+ 1.03735551 0.59617844 0.25086932 0.16418478 0.08446302 0.94561465
+ 0.48804499 0.24208699 0.12734801 0.07333349]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_1_py.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.8200849457184598
+P-value: 1.076358802047676e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3243205167067572)]
+Group variances: [np.float64(0.08801710342771742)]
+Group sizes: [100]
+Numerator: 0.0
+Denominator: 0.0008801710342771742
+Degrees of freedom: 0.010101010101010102
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8869330668850369
+P-value: 0.02362845266556172
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.7943965139287643
+P-value: 0.0007135976154677915
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.8672074749840354
+P-value: 0.010497596263387142
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9246307032783221
+P-value: 0.12168301992151453
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.8878823440142868
+P-value: 0.024591667387197265
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8144986515203089), np.float64(0.4271211981746384), np.float64(0.19860466523390546), np.float64(0.11266038913486001), np.float64(0.06871767947007341)]
+Group variances: [np.float64(0.03947723852765537), np.float64(0.01774918898684098), np.float64(0.0035155154438774074), np.float64(0.0008799439099882308), np.float64(0.00038314754101654913)]
+Group sizes: [20, 20, 20, 20, 20]
+Numerator: 232.60586058285358
+Denominator: 0.0031002517204689268
+Degrees of freedom: 0.2631578947368421
+Kruskal-Wallis H statistic: 89.72815841584156, p-value: 1.5040097204830797e-18
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  5.505839e-01  0.000101  1.179474e-09  9.039610e-16
+0.10  5.505839e-01  1.000000e+00  0.125560  6.081502e-05  1.570643e-09
+0.25  1.012274e-04  1.255602e-01  1.000000  4.261988e-01  9.531018e-04
+0.50  1.179474e-09  6.081502e-05  0.426199  1.000000e+00  6.081820e-01
+1.00  9.039610e-16  1.570643e-09  0.000953  6.081820e-01  1.000000e+00
+Welch's ANOVA statistic: 75028.05628559442, p-value: 0.0
+Component: server, Clients: 2, Language: py --->
+Group: 2
+[0.63559143 0.36333372 0.15777931 0.08421315 0.04844687 0.60546109
+ 0.32670432 0.13767093 0.0898841  0.05042962 0.61541765 0.5145463
+ 0.14538959 0.09976711 0.04640059 0.57553109 0.35965939 0.1239926
+ 0.09850069 0.05177721 0.86438349 0.47744518 0.14814104 0.09974338
+ 0.04703665 0.94331994 0.33046373 0.14260915 0.07949626 0.04772125
+ 0.55995648 0.3069019  0.25176544 0.07432737 0.06725027 0.60068671
+ 0.44284712 0.15091412 0.102231   0.05036064 0.74446493 0.3197979
+ 0.16336359 0.07682877 0.05045992 0.5889369  0.28462681 0.13940479
+ 0.1339426  0.04853927 0.56597652 0.31727946 0.16440104 0.13828219
+ 0.09231629 0.58256183 0.54117004 0.27983614 0.15274034 0.04526481
+ 0.85677908 0.62393531 0.29841302 0.18369011 0.07988147 1.05691265
+ 0.56790438 0.26231042 0.15308058 0.08251765 0.884322   0.61769184
+ 0.2778187  0.16420884 0.09515083 1.01656015 0.60905624 0.24950021
+ 0.14949681 0.09179629 0.95349603 0.60968256 0.27906401 0.15169601
+ 0.0813455  1.03000026 0.62968911 0.29062941 0.15054558 0.0855815
+ 0.85300865 0.64043419 0.28675638 0.1558268  0.08710333 1.09581874
+ 0.64220588 0.25286267 0.14605576 0.08681717]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_2.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8475523744218063
+P-value: 9.640079800012207e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.3317793812454974)]
+Group variances: [np.float64(0.0827872382654043)]
+Group sizes: [100]
+Numerator: 0.0
+Denominator: 0.0008278723826540429
+Degrees of freedom: 0.010101010101010102
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Clients: 3, Language: py --->
+Group: 3
+[0.79044369 0.36585059 0.18095003 0.10640714 0.06519931 0.66311686
+ 0.45804211 0.1903276  0.10649013 0.05007239 0.60726481 0.33192153
+ 0.12922015 0.10814381 0.05778019 0.61474296 0.56197918 0.16973763
+ 0.10710726 0.06298958 0.94504172 0.35049478 0.17434693 0.09852704
+ 0.07030601 1.15066116 0.36430529 0.14969269 0.11081221 0.05438271
+ 0.61535245 0.48088159 0.17525677 0.08453197 0.05390313 0.68238466
+ 0.28593404 0.26161202 0.09034367 0.08638556 0.65215934 0.54889865
+ 0.17240718 0.14685875 0.05015857 0.63206165 0.50035164 0.16153613
+ 0.0822041  0.08517853 0.61582576 0.34721543 0.16391834 0.08762418
+ 0.07068972 0.66133324 0.33693306 0.35055909 0.09033218 0.04164224
+ 1.14839962 0.73988819 0.29032709 0.16970618 0.10699546 0.98782999
+ 0.6186622  0.29228472 0.17230444 0.09803573 1.16310835 0.62373005
+ 0.28877271 0.1635411  0.10807785 1.14369912 0.53881562 0.33653828
+ 0.16474867 0.09364261 1.11249644 0.57316968 0.30513088 0.16625692
+ 0.09615464 1.06469161 0.6567474  0.27487531 0.16507084 0.09248252
+ 1.11160309 0.67416417 0.31373806 0.14925475 0.09948467 0.90829824
+ 0.65490223 0.25695571 0.16784662 0.11252806]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_py_3.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.836080730301382
+P-value: 3.750853614087012e-09
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.36015790982728335)]
+Group variances: [np.float64(0.10054527528790354)]
+Group sizes: [100]
+Numerator: 0.0
+Denominator: 0.0010054527528790354
+Degrees of freedom: 0.010101010101010102
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.8869330668850369
+P-value: 0.02362845266556172
+The data is likely not normally distributed (reject H0).
+
+Group: 0.1
+Shapiro-Wilk statistic: 0.7943965139287643
+P-value: 0.0007135976154677915
+The data is likely not normally distributed (reject H0).
+
+Group: 0.25
+Shapiro-Wilk statistic: 0.8672074749840354
+P-value: 0.010497596263387142
+The data is likely not normally distributed (reject H0).
+
+Group: 0.5
+Shapiro-Wilk statistic: 0.9246307032783221
+P-value: 0.12168301992151453
+The data is likely normally distributed (fail to reject H0).
+
+Group: 1.0
+Shapiro-Wilk statistic: 0.8878823440142868
+P-value: 0.024591667387197265
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.8144986515203089), np.float64(0.4271211981746384), np.float64(0.19860466523390546), np.float64(0.11266038913486001), np.float64(0.06871767947007341)]
+Group variances: [np.float64(0.03947723852765537), np.float64(0.01774918898684098), np.float64(0.0035155154438774074), np.float64(0.0008799439099882308), np.float64(0.00038314754101654913)]
+Group sizes: [20, 20, 20, 20, 20]
+Numerator: 232.60586058285358
+Denominator: 0.0031002517204689268
+Degrees of freedom: 0.2631578947368421
+Kruskal-Wallis H statistic: 89.72815841584156, p-value: 1.5040097204830797e-18
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+              0.05          0.10      0.25          0.50          1.00
+0.05  1.000000e+00  5.505839e-01  0.000101  1.179474e-09  9.039610e-16
+0.10  5.505839e-01  1.000000e+00  0.125560  6.081502e-05  1.570643e-09
+0.25  1.012274e-04  1.255602e-01  1.000000  4.261988e-01  9.531018e-04
+0.50  1.179474e-09  6.081502e-05  0.426199  1.000000e+00  6.081820e-01
+1.00  9.039610e-16  1.570643e-09  0.000953  6.081820e-01  1.000000e+00
+Welch's ANOVA statistic: 75028.05628559442, p-value: 0.0
+Component: server, Num clients: 1 --->
+Group: 1
+[0.18121154 0.31608535 0.07815886 0.15781749 0.05889861 0.07759677
+ 0.04064913 0.04380104 0.16502385 0.30167903 0.09318117 0.18367644
+ 0.04442758 0.07691097 0.02331779 0.06422812 0.01436142 0.15888934
+ 0.31090231 0.10817595 0.1228777  0.09582533 0.02565808 0.06377119
+ 0.01074643 0.30442497 0.11201237 0.14691868 0.05578819 0.08688961
+ 0.04351686 0.04300032 0.01665652 0.23268918 0.53392715 0.11635198
+ 0.14450144 0.06690948 0.09607509 0.03793644 0.0833082  0.02271671
+ 0.26317805 0.32621286 0.12312513 0.13866993 0.06062535 0.12232118
+ 0.03653453 0.04527512 0.02470561 0.22584637 0.29368324 0.11646354
+ 0.23448382 0.05717485 0.11013932 0.03720081 0.043893   0.02280394
+ 0.20635183 0.26859268 0.12855883 0.14242571 0.05741204 0.12192781
+ 0.03808445 0.0649737  0.02536602 0.23202028 0.30917783 0.12251369
+ 0.1441802  0.05959201 0.08859629 0.04231105 0.04092801 0.02463638
+ 0.21650697 0.28446716 0.12497976 0.13329756 0.05114964 0.08578972
+ 0.0359233  0.06958779 0.02652625 0.22411207 0.42297309 0.11703163
+ 0.22131642 0.05595382 0.07512772 0.03906158 0.0406716  0.02946491
+ 0.27024393 0.31726848 0.14788132 0.12290506 0.06155964 0.07045243
+ 0.0441844  0.08574877 0.02843659 0.23583307 0.13772383 0.27853162
+ 0.06988874 0.13830106 0.04363735 0.08536788 0.02710432 0.27549477
+ 0.1477326  0.26887779 0.06883926 0.14403863 0.03985223 0.09129696
+ 0.02586189 0.24048346 0.17053553 0.2869089  0.06931929 0.13742515
+ 0.04263678 0.08971963 0.02874858 0.26325846 0.14872993 0.25585719
+ 0.07889216 0.1450946  0.04508947 0.08594789 0.02680453 0.25600845
+ 0.13677034 0.23864883 0.06814901 0.15151706 0.05153457 0.07728753
+ 0.03331892 0.26937705 0.16058264 0.25724219 0.06316366 0.13764625
+ 0.04502076 0.09775035 0.02564238 0.23615512 0.14441116 0.25086932
+ 0.06531671 0.16418478 0.049056   0.08446302 0.02837538 0.25203017
+ 0.48804499 0.14487173 0.24208699 0.0664545  0.12734801 0.03724199
+ 0.07333349 0.02428195]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_{1, 2, 3}.pdf
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.872118435735201
+P-value: 7.439632240688552e-11
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.12650659170012543)]
+Group variances: [np.float64(0.009677087906828594)]
+Group sizes: [170]
+Numerator: 0.0
+Denominator: 5.6924046510756434e-05
+Degrees of freedom: 0.005917159763313609
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Num clients: 2 --->
+Group: 2
+[0.63559143 0.23561028 0.36333372 0.12789345 0.15777931 0.09141746
+ 0.08421315 0.05340216 0.04844687 0.02096736 0.60546109 0.25242318
+ 0.32670432 0.16621576 0.13767093 0.07389195 0.0898841  0.03689247
+ 0.05042962 0.03352089 0.61541765 0.27212631 0.5145463  0.18927138
+ 0.14538959 0.04003202 0.09976711 0.0311143  0.04640059 0.01658477
+ 0.57553109 0.35965939 0.17552752 0.1239926  0.08695061 0.09850069
+ 0.05999998 0.05177721 0.02019087 0.35471692 0.47744518 0.1842906
+ 0.14814104 0.11519454 0.09974338 0.06928907 0.04703665 0.04217791
+ 0.36048769 0.33046373 0.21330513 0.14260915 0.10010452 0.07949626
+ 0.04990232 0.04772125 0.03467557 0.55995648 0.39965294 0.3069019
+ 0.22741428 0.25176544 0.09073855 0.07432737 0.05860417 0.06725027
+ 0.03038864 0.60068671 0.40612436 0.44284712 0.20556671 0.15091412
+ 0.09751753 0.102231   0.05957675 0.05036064 0.03509853 0.74446493
+ 0.40516795 0.3197979  0.20276391 0.16336359 0.09205963 0.07682877
+ 0.04931509 0.05045992 0.03263236 0.5889369  0.43891563 0.28462681
+ 0.203435   0.13940479 0.09777435 0.1339426  0.0555835  0.04853927
+ 0.0364005  0.56597652 0.41211254 0.31727946 0.20980474 0.16440104
+ 0.09198958 0.13828219 0.05486651 0.09231629 0.03866184 0.58256183
+ 0.42868144 0.54117004 0.24301943 0.27983614 0.1073156  0.15274034
+ 0.0586362  0.04526481 0.03606941 0.48722834 0.62393531 0.24494609
+ 0.29841302 0.10698026 0.18369011 0.05532301 0.07988147 0.03976401
+ 0.44531313 0.56790438 0.24380753 0.26231042 0.11502984 0.15308058
+ 0.05528309 0.08251765 0.03830626 0.39742326 0.61769184 0.24517159
+ 0.2778187  0.10924059 0.16420884 0.05923659 0.09515083 0.03992355
+ 0.44222189 0.60905624 0.23853302 0.24950021 0.10152734 0.14949681
+ 0.05616671 0.09179629 0.04356123 0.41373844 0.60968256 0.22808411
+ 0.27906401 0.1138621  0.15169601 0.06535398 0.0813455  0.04396673
+ 0.45645685 0.62968911 0.24130161 0.29062941 0.09738015 0.15054558
+ 0.06809767 0.0855815  0.04357463 0.45366841 0.64043419 0.22444729
+ 0.28675638 0.12013108 0.1558268  0.05757245 0.08710333 0.0358398
+ 0.45758759 0.64220588 0.24600496 0.25286267 0.1099138  0.14605576
+ 0.06787557 0.08681717 0.03606457]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_{1, 2, 3}.pdf
+Starting Shapiro-Wilk test...
+Group: 2
+Shapiro-Wilk statistic: 0.8428045080255502
+P-value: 5.189416629974938e-13
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.20731910553043767)]
+Group variances: [np.float64(0.032774115364722356)]
+Group sizes: [189]
+Numerator: 0.0
+Denominator: 0.0001734080178027638
+Degrees of freedom: 0.005319148936170213
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Component: server, Num clients: 3 --->
+Group: 3
+[0.79044369 0.27034189 0.36585059 0.14907838 0.18095003 0.09538635
+ 0.10640714 0.06050464 0.06519931 0.01650712 0.66311686 0.27716638
+ 0.45804211 0.1610226  0.1903276  0.07301422 0.10649013 0.04371579
+ 0.05007239 0.0228205  0.60726481 0.33192153 0.1871738  0.12922015
+ 0.03429322 0.10814381 0.02759579 0.05778019 0.02086225 0.61474296
+ 0.12185488 0.56197918 0.25517528 0.16973763 0.0928996  0.10710726
+ 0.06091672 0.06298958 0.02707885 0.37607036 0.35049478 0.22362188
+ 0.17434693 0.09872276 0.09852704 0.05173707 0.07030601 0.03463826
+ 0.38165276 0.36430529 0.21075225 0.14969269 0.10828095 0.11081221
+ 0.05492627 0.05438271 0.03734687 0.61535245 0.41429439 0.48088159
+ 0.22428505 0.17525677 0.10944884 0.08453197 0.06614489 0.05390313
+ 0.03455403 0.68238466 0.40367905 0.28593404 0.23213302 0.26161202
+ 0.09897658 0.09034367 0.06204571 0.08638556 0.0381823  0.65215934
+ 0.42947868 0.54889865 0.20690144 0.17240718 0.09433464 0.14685875
+ 0.06096847 0.05015857 0.03845583 0.63206165 0.39308502 0.50035164
+ 0.2132361  0.16153613 0.0993999  0.0822041  0.05325594 0.08517853
+ 0.0349677  0.61582576 0.42255453 0.34721543 0.23305046 0.16391834
+ 0.11659151 0.08762418 0.06128426 0.07068972 0.04120879 0.66133324
+ 0.46621805 0.33693306 0.26118038 0.35055909 0.12901779 0.09033218
+ 0.06259892 0.04164224 0.03989008 0.49595541 0.73988819 0.24802576
+ 0.29032709 0.114917   0.16970618 0.06723881 0.10699546 0.03852202
+ 0.46685711 0.6186622  0.25324292 0.29228472 0.11888065 0.17230444
+ 0.07113094 0.09803573 0.04327001 0.47647328 0.62373005 0.24117786
+ 0.28877271 0.13033657 0.1635411  0.06370247 0.10807785 0.04644661
+ 0.43830899 0.53881562 0.26111976 0.33653828 0.13278644 0.16474867
+ 0.06690161 0.09364261 0.04593555 0.48211748 0.57316968 0.22919703
+ 0.30513088 0.12224889 0.16625692 0.07193566 0.09615464 0.03863378
+ 0.4672738  0.6567474  0.25779034 0.27487531 0.11185363 0.16507084
+ 0.07751443 0.09248252 0.04185282 0.49307741 0.67416417 0.25382563
+ 0.31373806 0.12091278 0.14925475 0.06681708 0.09948467 0.04620901
+ 0.45521556 0.65490223 0.23831756 0.25695571 0.10369836 0.16784662
+ 0.07297258 0.11252806 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_{1, 2, 3}.pdf
+Starting Shapiro-Wilk test...
+Group: 3
+Shapiro-Wilk statistic: 0.8471605684484149
+P-value: 8.270576109191904e-13
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.22014855350809798)]
+Group variances: [np.float64(0.03645005567062327)]
+Group sizes: [189]
+Numerator: 0.0
+Denominator: 0.00019285743741070512
+Degrees of freedom: 0.005319148936170213
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Starting Shapiro-Wilk test...
+Group: 1
+Shapiro-Wilk statistic: 0.872118435735201
+P-value: 7.439632240688552e-11
+The data is likely not normally distributed (reject H0).
+
+Group: 2
+Shapiro-Wilk statistic: 0.8428045080255502
+P-value: 5.189416629974938e-13
+The data is likely not normally distributed (reject H0).
+
+Group: 3
+Shapiro-Wilk statistic: 0.8471605684484149
+P-value: 8.270576109191904e-13
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.12650659170012543), np.float64(0.20731910553043767), np.float64(0.22014855350809798)]
+Group variances: [np.float64(0.009677087906828594), np.float64(0.032774115364722356), np.float64(0.03645005567062327)]
+Group sizes: [170, 189, 189]
+Numerator: 0.39966822309771777
+Denominator: 0.00042318950172422535
+Degrees of freedom: 0.016555457635654035
+Kruskal-Wallis H statistic: 24.64718656407672, p-value: 4.445610815901625e-06
+The test indicates a significant difference between the groups. Running post-hoc Dunn's test
+Dunn's test results (adjusted p-values):
+          1         2        3
+1  1.000000  0.000259  0.00001
+2  0.000259  1.000000  1.00000
+3  0.000010  1.000000  1.00000
+Welch's ANOVA statistic: 944.4190403337666, p-value: 0.0
+Component: server, Interval: 0.05 --->
+Group: 0.05
+[0.57701298 0.63559143 0.79044369 0.18121154 0.23561028 0.27034189
+ 0.7534161  0.60546109 0.66311686 0.16502385 0.25242318 0.27716638
+ 0.60408003 0.61541765 0.60726481 0.15888934 0.27212631 0.58023092
+ 0.57553109 0.61474296 0.12185488 0.81596987 0.86438349 0.94504172
+ 0.23268918 0.35471692 0.37607036 0.89116679 0.94331994 1.15066116
+ 0.26317805 0.36048769 0.38165276 0.87161988 0.55995648 0.61535245
+ 0.22584637 0.39965294 0.41429439 0.79960114 0.60068671 0.68238466
+ 0.20635183 0.40612436 0.40367905 0.55722611 0.74446493 0.65215934
+ 0.23202028 0.40516795 0.42947868 0.59150001 0.5889369  0.63206165
+ 0.21650697 0.43891563 0.39308502 0.55465368 0.56597652 0.61582576
+ 0.22411207 0.41211254 0.42255453 0.58723773 0.58256183 0.66133324
+ 0.27024393 0.42868144 0.46621805 1.11018148 0.85677908 1.14839962
+ 0.23583307 0.48722834 0.49595541 0.99319299 1.05691265 0.98782999
+ 0.27549477 0.44531313 0.46685711 0.90957924 0.884322   1.16310835
+ 0.24048346 0.39742326 0.47647328 1.06741405 1.01656015 1.14369912
+ 0.26325846 0.44222189 0.43830899 0.9946163  0.95349603 1.11249644
+ 0.25600845 0.41373844 0.48211748 1.04830358 1.03000026 1.06469161
+ 0.26937705 0.45645685 0.4672738  1.03735551 0.85300865 1.11160309
+ 0.23615512 0.45366841 0.49307741 0.94561465 1.09581874 0.90829824
+ 0.25203017 0.45758759 0.45521556]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.05.pdf
+Starting Shapiro-Wilk test...
+Group: 0.05
+Shapiro-Wilk statistic: 0.9341834312080975
+P-value: 2.232884474143346e-05
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.5884249530998541)]
+Group variances: [np.float64(0.08398951776621234)]
+Group sizes: [117]
+Numerator: 0.0
+Denominator: 0.0007178591262069431
+Degrees of freedom: 0.008620689655172414
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Saving image ./graphs/service/server/no_transf-out/service_server_energy_boxplot_0.05.pdf
+Component: server, Interval: 0.25 --->
+Group: 0.25
+[0.15781749 0.15777931 0.18095003 0.05889861 0.09141746 0.09538635
+ 0.18367644 0.13767093 0.1903276  0.04442758 0.07389195 0.07301422
+ 0.1228777  0.14538959 0.12922015 0.04003202 0.03429322 0.14691868
+ 0.1239926  0.16973763 0.05578819 0.08695061 0.0928996  0.14450144
+ 0.14814104 0.17434693 0.06690948 0.11519454 0.09872276 0.13866993
+ 0.14260915 0.14969269 0.06062535 0.10010452 0.10828095 0.23448382
+ 0.25176544 0.17525677 0.05717485 0.09073855 0.10944884 0.14242571
+ 0.15091412 0.26161202 0.05741204 0.09751753 0.09897658 0.1441802
+ 0.16336359 0.17240718 0.05959201 0.09205963 0.09433464 0.13329756
+ 0.13940479 0.16153613 0.05114964 0.09777435 0.0993999  0.22131642
+ 0.16440104 0.16391834 0.05595382 0.09198958 0.11659151 0.12290506
+ 0.27983614 0.35055909 0.06155964 0.1073156  0.12901779 0.27853162
+ 0.29841302 0.29032709 0.06988874 0.10698026 0.114917   0.26887779
+ 0.26231042 0.29228472 0.06883926 0.11502984 0.11888065 0.2869089
+ 0.2778187  0.28877271 0.06931929 0.10924059 0.13033657 0.25585719
+ 0.24950021 0.33653828 0.07889216 0.10152734 0.13278644 0.23864883
+ 0.27906401 0.30513088 0.06814901 0.1138621  0.12224889 0.25724219
+ 0.29062941 0.27487531 0.06316366 0.09738015 0.11185363 0.25086932
+ 0.28675638 0.31373806 0.06531671 0.12013108 0.12091278 0.24208699
+ 0.25286267 0.25695571 0.0664545  0.1099138  0.10369836]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.25.pdf
+Starting Shapiro-Wilk test...
+Group: 0.25
+Shapiro-Wilk statistic: 0.9061375513495955
+P-value: 4.4933770974601757e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.1517434446477457)]
+Group variances: [np.float64(0.006412350388267829)]
+Group sizes: [119]
+Numerator: 0.0
+Denominator: 5.388529738040192e-05
+Degrees of freedom: 0.00847457627118644
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Saving image ./graphs/service/server/no_transf-out/service_server_energy_boxplot_0.25.pdf
+Component: server, Interval: 0.1 --->
+Group: 0.1
+[0.31608535 0.36333372 0.36585059 0.07815886 0.12789345 0.14907838
+ 0.30167903 0.32670432 0.45804211 0.09318117 0.16621576 0.1610226
+ 0.31090231 0.5145463  0.33192153 0.10817595 0.18927138 0.1871738
+ 0.30442497 0.35965939 0.56197918 0.11201237 0.17552752 0.25517528
+ 0.53392715 0.47744518 0.35049478 0.11635198 0.1842906  0.22362188
+ 0.32621286 0.33046373 0.36430529 0.12312513 0.21330513 0.21075225
+ 0.29368324 0.3069019  0.48088159 0.11646354 0.22741428 0.22428505
+ 0.26859268 0.44284712 0.28593404 0.12855883 0.20556671 0.23213302
+ 0.30917783 0.3197979  0.54889865 0.12251369 0.20276391 0.20690144
+ 0.28446716 0.28462681 0.50035164 0.12497976 0.203435   0.2132361
+ 0.42297309 0.31727946 0.34721543 0.11703163 0.20980474 0.23305046
+ 0.31726848 0.54117004 0.33693306 0.14788132 0.24301943 0.26118038
+ 0.59368755 0.62393531 0.73988819 0.13772383 0.24494609 0.24802576
+ 0.5827586  0.56790438 0.6186622  0.1477326  0.24380753 0.25324292
+ 0.58486605 0.61769184 0.62373005 0.17053553 0.24517159 0.24117786
+ 0.57198399 0.60905624 0.53881562 0.14872993 0.23853302 0.26111976
+ 0.57286479 0.60968256 0.57316968 0.13677034 0.22808411 0.22919703
+ 0.56264539 0.62968911 0.6567474  0.16058264 0.24130161 0.25779034
+ 0.59617844 0.64043419 0.67416417 0.14441116 0.22444729 0.25382563
+ 0.48804499 0.64220588 0.65490223 0.14487173 0.24600496 0.23831756]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.1.pdf
+Starting Shapiro-Wilk test...
+Group: 0.1
+Shapiro-Wilk statistic: 0.901719526914847
+P-value: 2.4053174770461683e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.32884658624537816)]
+Group variances: [np.float64(0.030231399260489233)]
+Group sizes: [120]
+Numerator: 0.0
+Denominator: 0.0002519283271707436
+Degrees of freedom: 0.008403361344537815
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Saving image ./graphs/service/server/no_transf-out/service_server_energy_boxplot_0.1.pdf
+Component: server, Interval: 0.5 --->
+Group: 0.5
+[0.07759677 0.08421315 0.10640714 0.04064913 0.05340216 0.06050464
+ 0.07691097 0.0898841  0.10649013 0.02331779 0.03689247 0.04371579
+ 0.09582533 0.09976711 0.10814381 0.02565808 0.0311143  0.02759579
+ 0.08688961 0.09850069 0.10710726 0.04351686 0.05999998 0.06091672
+ 0.09607509 0.09974338 0.09852704 0.03793644 0.06928907 0.05173707
+ 0.12232118 0.07949626 0.11081221 0.03653453 0.04990232 0.05492627
+ 0.11013932 0.07432737 0.08453197 0.03720081 0.05860417 0.06614489
+ 0.12192781 0.102231   0.09034367 0.03808445 0.05957675 0.06204571
+ 0.08859629 0.07682877 0.14685875 0.04231105 0.04931509 0.06096847
+ 0.08578972 0.1339426  0.0822041  0.0359233  0.0555835  0.05325594
+ 0.07512772 0.13828219 0.08762418 0.03906158 0.05486651 0.06128426
+ 0.07045243 0.15274034 0.09033218 0.0441844  0.0586362  0.06259892
+ 0.13830106 0.18369011 0.16970618 0.04363735 0.05532301 0.06723881
+ 0.14403863 0.15308058 0.17230444 0.03985223 0.05528309 0.07113094
+ 0.13742515 0.16420884 0.1635411  0.04263678 0.05923659 0.06370247
+ 0.1450946  0.14949681 0.16474867 0.04508947 0.05616671 0.06690161
+ 0.15151706 0.15169601 0.16625692 0.05153457 0.06535398 0.07193566
+ 0.13764625 0.15054558 0.16507084 0.04502076 0.06809767 0.07751443
+ 0.16418478 0.1558268  0.14925475 0.049056   0.05757245 0.06681708
+ 0.12734801 0.14605576 0.16784662 0.03724199 0.06787557 0.07297258]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_0.5.pdf
+Starting Shapiro-Wilk test...
+Group: 0.5
+Shapiro-Wilk statistic: 0.9124755242952929
+P-value: 9.028472366431018e-07
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.08683603714285684)]
+Group variances: [np.float64(0.0018193620696769829)]
+Group sizes: [120]
+Numerator: 0.0
+Denominator: 1.5161350580641524e-05
+Degrees of freedom: 0.008403361344537815
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Saving image ./graphs/service/server/no_transf-out/service_server_energy_boxplot_0.5.pdf
+Component: server, Interval: 1.0 --->
+Group: 1.0
+[0.04380104 0.04844687 0.06519931 0.02096736 0.01650712 0.06422812
+ 0.05042962 0.05007239 0.01436142 0.03352089 0.0228205  0.06377119
+ 0.04640059 0.05778019 0.01074643 0.01658477 0.02086225 0.04300032
+ 0.05177721 0.06298958 0.01665652 0.02019087 0.02707885 0.0833082
+ 0.04703665 0.07030601 0.02271671 0.04217791 0.03463826 0.04527512
+ 0.04772125 0.05438271 0.02470561 0.03467557 0.03734687 0.043893
+ 0.06725027 0.05390313 0.02280394 0.03038864 0.03455403 0.0649737
+ 0.05036064 0.08638556 0.02536602 0.03509853 0.0381823  0.04092801
+ 0.05045992 0.05015857 0.02463638 0.03263236 0.03845583 0.06958779
+ 0.04853927 0.08517853 0.02652625 0.0364005  0.0349677  0.0406716
+ 0.09231629 0.07068972 0.02946491 0.03866184 0.04120879 0.08574877
+ 0.04526481 0.04164224 0.02843659 0.03606941 0.03989008 0.08536788
+ 0.07988147 0.10699546 0.02710432 0.03976401 0.03852202 0.09129696
+ 0.08251765 0.09803573 0.02586189 0.03830626 0.04327001 0.08971963
+ 0.09515083 0.10807785 0.02874858 0.03992355 0.04644661 0.08594789
+ 0.09179629 0.09364261 0.02680453 0.04356123 0.04593555 0.07728753
+ 0.0813455  0.09615464 0.03331892 0.04396673 0.03863378 0.09775035
+ 0.0855815  0.09248252 0.02564238 0.04357463 0.04185282 0.08446302
+ 0.08710333 0.09948467 0.02837538 0.0358398  0.04620901 0.07333349
+ 0.08681717 0.11252806 0.02428195 0.03606457 0.03884136]
+Saving image ./graphs/service/server/no_transf-out/service_server_density_energy_1.0.pdf
+Starting Shapiro-Wilk test...
+Group: 1.0
+Shapiro-Wilk statistic: 0.9197462496427974
+P-value: 2.5352851757476504e-06
+The data is likely not normally distributed (reject H0).
+
+Shapiro-Wilk test indicates non-normal distribution among groups. Running Welch's ANOVA and Kruskal-Wallis...
+Group means: [np.float64(0.0517461520007956)]
+Group variances: [np.float64(0.0006397325149194531)]
+Group sizes: [119]
+Numerator: 0.0
+Denominator: 5.375903486718093e-06
+Degrees of freedom: 0.00847457627118644
+Kruskal requires at least two groups.
+Welch's ANOVA statistic: 0.0, p-value: 1.0
+Saving image ./graphs/service/server/no_transf-out/service_server_energy_boxplot_1.0.pdf

@@ -1,0 +1,9 @@
+[INFO] [1733613519.404099027] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733613519.657161043] [fibonacci_action_client]: Goal accepted, waiting for result.
+[INFO] [1733613519.680107577] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1])
+[INFO] [1733613520.682043603] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733613521.683403017] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733613522.685351351] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733613523.687217926] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733613524.658012405] [fibonacci_action_client]: Result not received due to timeout.
+RAPL is set

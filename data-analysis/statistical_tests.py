@@ -238,14 +238,14 @@ def statistical_tests():
 
     #components = {'server', 'client'}
     components = {'client'}
-    algos = {'service'}
+    algos = {'pubsub'}
     intervals = {0.05,0.1,0.25,0.5,1.0}
     num_clients = {1,2,3}
     languages = {'py','cpp'}
     # transformations = {True, False}
     # list_outliers = {True, False}
     transformations = [False]
-    list_outliers = [True]
+    list_outliers = [False]
 
     ### TODO: for other factors
     for algo in algos:

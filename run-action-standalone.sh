@@ -11,7 +11,7 @@ client_name='action_client'
 
 pkill python3
 COUNT=0
-exp_result="./exp_runners/experiments/cpp_py_ros2_action_standalone_low_frequency_cpp"
+exp_result="./exp_runners/experiments/cpp_py_ros2_action_standalone_multi_log"
 mkdir -p $exp_result
 
 python3 exp_runners/standalone/read_runtable.py exp_runners/standalone/action_runtable.csv > action_remain_runs.txt
@@ -57,8 +57,8 @@ if [[ -f "$file" ]]; then
         if [ $i -eq $cli ]; then
             rapl="-r 1"
         fi
-        python3 mon-rapl.py -p ${package_name}_${lang} -a $client_name -i client -f $interval -t $timeout $rapl &> $d_folder/client-$lang-$interval-$cli.log &
-        echo "python3 mon-rapl.py -p ${package_name}_${lang} -a $client_name -i client -f $interval -t $timeout $rapl &> $d_folder/client-$lang-$interval-$cli.log &"
+        python3 mon-rapl.py -p ${package_name}_${lang} -a $client_name -i client -f $interval -t $timeout $rapl &> $d_folder/client-$lang-$interval-$cli-$i.log &
+        echo "python3 mon-rapl.py -p ${package_name}_${lang} -a $client_name -i client -f $interval -t $timeout $rapl &> $d_folder/client-$lang-$interval-$cli-$i.log &"
         CLIENT_PID=$!
     done
 

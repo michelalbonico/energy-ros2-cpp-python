@@ -1,0 +1,34 @@
+[INFO] [1733642618.545939200] [fibonacci_action_server]: Executing goal...
+[INFO] [1733642618.546380443] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733642619.548382766] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733642620.550284026] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733642621.552129100] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733642622.554064877] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733642623.555914109] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733642624.557778583] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733642625.558834813] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733642626.560565137] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/action/server.py:312: RuntimeWarning: failed to send response (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+  self._handle.send_goal_response(request_header, response_msg)
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/action/server.py:431: RuntimeWarning: failed to send response (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314
+  self._handle.send_result_response(request_header, future.result())
+[INFO] [1733642627.764925587] [fibonacci_action_server]: Executing goal...
+[INFO] [1733642627.765466631] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1])
+[INFO] [1733642628.767065064] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2])
+[INFO] [1733642629.768559401] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733642630.770454713] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733642631.772123176] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733642632.774030185] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733642633.776078597] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733642634.777935006] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733642635.780068608] [fibonacci_action_server]: Feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+[INFO] [1733642798.471749985] [fibonacci_action_server]: Shutting down node...
+RAPL is set
+Traceback (most recent call last):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/mon-rapl.py", line 56, in <module>
+    main()
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/mon-rapl.py", line 53, in main
+    execute_python_file()
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/mon-rapl.py", line 40, in execute_python_file
+    energy_microjoules = float(meter.result.pkg[0])
+TypeError: 'NoneType' object is not subscriptable

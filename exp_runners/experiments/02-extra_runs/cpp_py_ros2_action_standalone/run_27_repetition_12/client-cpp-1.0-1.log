@@ -1,0 +1,1666 @@
+[INFO] [1733690768.028800178] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690768.029444000] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690768.129758691] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690768.129819236] [fibonacci_action_client]: 0
+[INFO] [1733690768.129831374] [fibonacci_action_client]: 1
+[INFO] [1733690768.129840471] [fibonacci_action_client]: 1
+[INFO] [1733690769.032053452] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690769.032136635] [fibonacci_action_client]: 0
+[INFO] [1733690769.032149776] [fibonacci_action_client]: 1
+[INFO] [1733690769.032158726] [fibonacci_action_client]: 1
+[INFO] [1733690769.032167067] [fibonacci_action_client]: 2
+[INFO] [1733690770.035547919] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690770.035613723] [fibonacci_action_client]: 0
+[INFO] [1733690770.035626433] [fibonacci_action_client]: 1
+[INFO] [1733690770.035635579] [fibonacci_action_client]: 1
+[INFO] [1733690770.035643817] [fibonacci_action_client]: 2
+[INFO] [1733690770.035652120] [fibonacci_action_client]: 3
+[INFO] [1733690771.038109439] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690771.038169308] [fibonacci_action_client]: 0
+[INFO] [1733690771.038177494] [fibonacci_action_client]: 1
+[INFO] [1733690771.038183639] [fibonacci_action_client]: 1
+[INFO] [1733690771.038189419] [fibonacci_action_client]: 2
+[INFO] [1733690771.038195010] [fibonacci_action_client]: 3
+[INFO] [1733690771.038200560] [fibonacci_action_client]: 5
+[INFO] [1733690772.042124896] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690772.042203394] [fibonacci_action_client]: 0
+[INFO] [1733690772.042226553] [fibonacci_action_client]: 1
+[INFO] [1733690772.042233455] [fibonacci_action_client]: 1
+[INFO] [1733690772.042238931] [fibonacci_action_client]: 2
+[INFO] [1733690772.042244168] [fibonacci_action_client]: 3
+[INFO] [1733690772.042249313] [fibonacci_action_client]: 5
+[INFO] [1733690772.042254536] [fibonacci_action_client]: 8
+[INFO] [1733690773.045474031] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690773.045534555] [fibonacci_action_client]: 0
+[INFO] [1733690773.045542885] [fibonacci_action_client]: 1
+[INFO] [1733690773.045549267] [fibonacci_action_client]: 1
+[INFO] [1733690773.045554848] [fibonacci_action_client]: 2
+[INFO] [1733690773.045560429] [fibonacci_action_client]: 3
+[INFO] [1733690773.045566022] [fibonacci_action_client]: 5
+[INFO] [1733690773.045571457] [fibonacci_action_client]: 8
+[INFO] [1733690773.045577135] [fibonacci_action_client]: 13
+[INFO] [1733690774.047855764] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690774.047901291] [fibonacci_action_client]: 0
+[INFO] [1733690774.047909109] [fibonacci_action_client]: 1
+[INFO] [1733690774.047914779] [fibonacci_action_client]: 1
+[INFO] [1733690774.047919960] [fibonacci_action_client]: 2
+[INFO] [1733690774.047925513] [fibonacci_action_client]: 3
+[INFO] [1733690774.047930631] [fibonacci_action_client]: 5
+[INFO] [1733690774.047936099] [fibonacci_action_client]: 8
+[INFO] [1733690774.047947945] [fibonacci_action_client]: 13
+[INFO] [1733690774.047954160] [fibonacci_action_client]: 21
+[INFO] [1733690775.052106570] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690775.052183951] [fibonacci_action_client]: 0
+[INFO] [1733690775.052193917] [fibonacci_action_client]: 1
+[INFO] [1733690775.052200162] [fibonacci_action_client]: 1
+[INFO] [1733690775.052206444] [fibonacci_action_client]: 2
+[INFO] [1733690775.052211717] [fibonacci_action_client]: 3
+[INFO] [1733690775.052217004] [fibonacci_action_client]: 5
+[INFO] [1733690775.052222210] [fibonacci_action_client]: 8
+[INFO] [1733690775.052227605] [fibonacci_action_client]: 13
+[INFO] [1733690775.052233009] [fibonacci_action_client]: 21
+[INFO] [1733690775.052238491] [fibonacci_action_client]: 34
+[INFO] [1733690776.056617006] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690776.056698371] [fibonacci_action_client]: 0
+[INFO] [1733690776.056706710] [fibonacci_action_client]: 1
+[INFO] [1733690776.056713345] [fibonacci_action_client]: 1
+[INFO] [1733690776.056743148] [fibonacci_action_client]: 2
+[INFO] [1733690776.056750295] [fibonacci_action_client]: 3
+[INFO] [1733690776.056756026] [fibonacci_action_client]: 5
+[INFO] [1733690776.056761788] [fibonacci_action_client]: 8
+[INFO] [1733690776.056767440] [fibonacci_action_client]: 13
+[INFO] [1733690776.056773319] [fibonacci_action_client]: 21
+[INFO] [1733690776.056783123] [fibonacci_action_client]: 34
+[INFO] [1733690776.056789276] [fibonacci_action_client]: 55
+[INFO] [1733690777.160475683] [fibonacci_action_client]: Result received:
+[INFO] [1733690777.160555486] [fibonacci_action_client]: 0
+[INFO] [1733690777.160563615] [fibonacci_action_client]: 1
+[INFO] [1733690777.160570140] [fibonacci_action_client]: 1
+[INFO] [1733690777.160576300] [fibonacci_action_client]: 2
+[INFO] [1733690777.160585827] [fibonacci_action_client]: 3
+[INFO] [1733690777.160593627] [fibonacci_action_client]: 5
+[INFO] [1733690777.160599701] [fibonacci_action_client]: 8
+[INFO] [1733690777.160605444] [fibonacci_action_client]: 13
+[INFO] [1733690777.160611190] [fibonacci_action_client]: 21
+[INFO] [1733690777.160616800] [fibonacci_action_client]: 34
+[INFO] [1733690777.160622718] [fibonacci_action_client]: 55
+[INFO] [1733690777.261052855] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690777.261770263] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690777.261864216] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690777.261886638] [fibonacci_action_client]: 0
+[INFO] [1733690777.261896670] [fibonacci_action_client]: 1
+[INFO] [1733690777.261903720] [fibonacci_action_client]: 1
+[INFO] [1733690778.266044140] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690778.266095152] [fibonacci_action_client]: 0
+[INFO] [1733690778.266102609] [fibonacci_action_client]: 1
+[INFO] [1733690778.266108651] [fibonacci_action_client]: 1
+[INFO] [1733690778.266113821] [fibonacci_action_client]: 2
+[INFO] [1733690779.269267785] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690779.269333033] [fibonacci_action_client]: 0
+[INFO] [1733690779.269341433] [fibonacci_action_client]: 1
+[INFO] [1733690779.269347815] [fibonacci_action_client]: 1
+[INFO] [1733690779.269353695] [fibonacci_action_client]: 2
+[INFO] [1733690779.269359064] [fibonacci_action_client]: 3
+[INFO] [1733690780.273600401] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690780.273687459] [fibonacci_action_client]: 0
+[INFO] [1733690780.273696932] [fibonacci_action_client]: 1
+[INFO] [1733690780.273703177] [fibonacci_action_client]: 1
+[INFO] [1733690780.273708968] [fibonacci_action_client]: 2
+[INFO] [1733690780.273714561] [fibonacci_action_client]: 3
+[INFO] [1733690780.273720057] [fibonacci_action_client]: 5
+[INFO] [1733690781.277499756] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690781.277626080] [fibonacci_action_client]: 0
+[INFO] [1733690781.277634344] [fibonacci_action_client]: 1
+[INFO] [1733690781.277640911] [fibonacci_action_client]: 1
+[INFO] [1733690781.277646480] [fibonacci_action_client]: 2
+[INFO] [1733690781.277651884] [fibonacci_action_client]: 3
+[INFO] [1733690781.277657417] [fibonacci_action_client]: 5
+[INFO] [1733690781.277662844] [fibonacci_action_client]: 8
+[INFO] [1733690782.281578072] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690782.281649035] [fibonacci_action_client]: 0
+[INFO] [1733690782.281657619] [fibonacci_action_client]: 1
+[INFO] [1733690782.281664161] [fibonacci_action_client]: 1
+[INFO] [1733690782.281669707] [fibonacci_action_client]: 2
+[INFO] [1733690782.281675544] [fibonacci_action_client]: 3
+[INFO] [1733690782.281681048] [fibonacci_action_client]: 5
+[INFO] [1733690782.281686482] [fibonacci_action_client]: 8
+[INFO] [1733690782.281691858] [fibonacci_action_client]: 13
+[INFO] [1733690783.284965645] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690783.285029651] [fibonacci_action_client]: 0
+[INFO] [1733690783.285043138] [fibonacci_action_client]: 1
+[INFO] [1733690783.285051990] [fibonacci_action_client]: 1
+[INFO] [1733690783.285060267] [fibonacci_action_client]: 2
+[INFO] [1733690783.285093770] [fibonacci_action_client]: 3
+[INFO] [1733690783.285103104] [fibonacci_action_client]: 5
+[INFO] [1733690783.285111400] [fibonacci_action_client]: 8
+[INFO] [1733690783.285119650] [fibonacci_action_client]: 13
+[INFO] [1733690783.285127953] [fibonacci_action_client]: 21
+[INFO] [1733690784.288357438] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690784.288438756] [fibonacci_action_client]: 0
+[INFO] [1733690784.288448446] [fibonacci_action_client]: 1
+[INFO] [1733690784.288454963] [fibonacci_action_client]: 1
+[INFO] [1733690784.288460920] [fibonacci_action_client]: 2
+[INFO] [1733690784.288466448] [fibonacci_action_client]: 3
+[INFO] [1733690784.288471623] [fibonacci_action_client]: 5
+[INFO] [1733690784.288476739] [fibonacci_action_client]: 8
+[INFO] [1733690784.288481845] [fibonacci_action_client]: 13
+[INFO] [1733690784.288487368] [fibonacci_action_client]: 21
+[INFO] [1733690784.288492745] [fibonacci_action_client]: 34
+[INFO] [1733690785.292367764] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690785.292446235] [fibonacci_action_client]: 0
+[INFO] [1733690785.292456488] [fibonacci_action_client]: 1
+[INFO] [1733690785.292462339] [fibonacci_action_client]: 1
+[INFO] [1733690785.292468337] [fibonacci_action_client]: 2
+[INFO] [1733690785.292473670] [fibonacci_action_client]: 3
+[INFO] [1733690785.292479025] [fibonacci_action_client]: 5
+[INFO] [1733690785.292484128] [fibonacci_action_client]: 8
+[INFO] [1733690785.292489243] [fibonacci_action_client]: 13
+[INFO] [1733690785.292494550] [fibonacci_action_client]: 21
+[INFO] [1733690785.292499913] [fibonacci_action_client]: 34
+[INFO] [1733690785.292505133] [fibonacci_action_client]: 55
+[INFO] [1733690786.396456310] [fibonacci_action_client]: Result received:
+[INFO] [1733690786.396538921] [fibonacci_action_client]: 0
+[INFO] [1733690786.396553915] [fibonacci_action_client]: 1
+[INFO] [1733690786.396565069] [fibonacci_action_client]: 1
+[INFO] [1733690786.396575258] [fibonacci_action_client]: 2
+[INFO] [1733690786.396585310] [fibonacci_action_client]: 3
+[INFO] [1733690786.396595321] [fibonacci_action_client]: 5
+[INFO] [1733690786.396605263] [fibonacci_action_client]: 8
+[INFO] [1733690786.396615290] [fibonacci_action_client]: 13
+[INFO] [1733690786.396625264] [fibonacci_action_client]: 21
+[INFO] [1733690786.396634989] [fibonacci_action_client]: 34
+[INFO] [1733690786.396644920] [fibonacci_action_client]: 55
+[INFO] [1733690786.497005868] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690786.497777092] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690786.497867766] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690786.497896708] [fibonacci_action_client]: 0
+[INFO] [1733690786.497909090] [fibonacci_action_client]: 1
+[INFO] [1733690786.497915878] [fibonacci_action_client]: 1
+[INFO] [1733690787.501949147] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690787.502029296] [fibonacci_action_client]: 0
+[INFO] [1733690787.502038948] [fibonacci_action_client]: 1
+[INFO] [1733690787.502046592] [fibonacci_action_client]: 1
+[INFO] [1733690787.502052248] [fibonacci_action_client]: 2
+[INFO] [1733690788.505432569] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690788.505509231] [fibonacci_action_client]: 0
+[INFO] [1733690788.505519089] [fibonacci_action_client]: 1
+[INFO] [1733690788.505525009] [fibonacci_action_client]: 1
+[INFO] [1733690788.505530493] [fibonacci_action_client]: 2
+[INFO] [1733690788.505535849] [fibonacci_action_client]: 3
+[INFO] [1733690789.509713520] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690789.509788521] [fibonacci_action_client]: 0
+[INFO] [1733690789.509799183] [fibonacci_action_client]: 1
+[INFO] [1733690789.509806156] [fibonacci_action_client]: 1
+[INFO] [1733690789.509811639] [fibonacci_action_client]: 2
+[INFO] [1733690789.509816875] [fibonacci_action_client]: 3
+[INFO] [1733690789.509822219] [fibonacci_action_client]: 5
+[INFO] [1733690790.513145297] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690790.513226891] [fibonacci_action_client]: 0
+[INFO] [1733690790.513257903] [fibonacci_action_client]: 1
+[INFO] [1733690790.513268492] [fibonacci_action_client]: 1
+[INFO] [1733690790.513277655] [fibonacci_action_client]: 2
+[INFO] [1733690790.513286613] [fibonacci_action_client]: 3
+[INFO] [1733690790.513295006] [fibonacci_action_client]: 5
+[INFO] [1733690790.513303675] [fibonacci_action_client]: 8
+[INFO] [1733690791.517577756] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690791.517658475] [fibonacci_action_client]: 0
+[INFO] [1733690791.517668429] [fibonacci_action_client]: 1
+[INFO] [1733690791.517675298] [fibonacci_action_client]: 1
+[INFO] [1733690791.517681360] [fibonacci_action_client]: 2
+[INFO] [1733690791.517686742] [fibonacci_action_client]: 3
+[INFO] [1733690791.517691938] [fibonacci_action_client]: 5
+[INFO] [1733690791.517697215] [fibonacci_action_client]: 8
+[INFO] [1733690791.517702371] [fibonacci_action_client]: 13
+[INFO] [1733690792.521656338] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690792.521706810] [fibonacci_action_client]: 0
+[INFO] [1733690792.521721887] [fibonacci_action_client]: 1
+[INFO] [1733690792.521731885] [fibonacci_action_client]: 1
+[INFO] [1733690792.521741290] [fibonacci_action_client]: 2
+[INFO] [1733690792.521750141] [fibonacci_action_client]: 3
+[INFO] [1733690792.521759315] [fibonacci_action_client]: 5
+[INFO] [1733690792.521768441] [fibonacci_action_client]: 8
+[INFO] [1733690792.521777566] [fibonacci_action_client]: 13
+[INFO] [1733690792.521786792] [fibonacci_action_client]: 21
+[INFO] [1733690793.525873430] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690793.525957323] [fibonacci_action_client]: 0
+[INFO] [1733690793.525966290] [fibonacci_action_client]: 1
+[INFO] [1733690793.525972510] [fibonacci_action_client]: 1
+[INFO] [1733690793.525978058] [fibonacci_action_client]: 2
+[INFO] [1733690793.525983505] [fibonacci_action_client]: 3
+[INFO] [1733690793.525988864] [fibonacci_action_client]: 5
+[INFO] [1733690793.525994186] [fibonacci_action_client]: 8
+[INFO] [1733690793.525999628] [fibonacci_action_client]: 13
+[INFO] [1733690793.526005222] [fibonacci_action_client]: 21
+[INFO] [1733690793.526010821] [fibonacci_action_client]: 34
+[INFO] [1733690794.529831977] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690794.529950238] [fibonacci_action_client]: 0
+[INFO] [1733690794.529959503] [fibonacci_action_client]: 1
+[INFO] [1733690794.529966131] [fibonacci_action_client]: 1
+[INFO] [1733690794.529971591] [fibonacci_action_client]: 2
+[INFO] [1733690794.529977048] [fibonacci_action_client]: 3
+[INFO] [1733690794.529982162] [fibonacci_action_client]: 5
+[INFO] [1733690794.529987227] [fibonacci_action_client]: 8
+[INFO] [1733690794.529992281] [fibonacci_action_client]: 13
+[INFO] [1733690794.529997580] [fibonacci_action_client]: 21
+[INFO] [1733690794.530002841] [fibonacci_action_client]: 34
+[INFO] [1733690794.530008028] [fibonacci_action_client]: 55
+[INFO] [1733690795.633792845] [fibonacci_action_client]: Result received:
+[INFO] [1733690795.633869337] [fibonacci_action_client]: 0
+[INFO] [1733690795.633879974] [fibonacci_action_client]: 1
+[INFO] [1733690795.633886046] [fibonacci_action_client]: 1
+[INFO] [1733690795.633892022] [fibonacci_action_client]: 2
+[INFO] [1733690795.633897468] [fibonacci_action_client]: 3
+[INFO] [1733690795.633902578] [fibonacci_action_client]: 5
+[INFO] [1733690795.633907733] [fibonacci_action_client]: 8
+[INFO] [1733690795.633913031] [fibonacci_action_client]: 13
+[INFO] [1733690795.633918673] [fibonacci_action_client]: 21
+[INFO] [1733690795.633923945] [fibonacci_action_client]: 34
+[INFO] [1733690795.633929159] [fibonacci_action_client]: 55
+[INFO] [1733690795.734345247] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690795.735106733] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690795.735190699] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690795.735215145] [fibonacci_action_client]: 0
+[INFO] [1733690795.735224123] [fibonacci_action_client]: 1
+[INFO] [1733690795.735230216] [fibonacci_action_client]: 1
+[INFO] [1733690796.739387505] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690796.739440494] [fibonacci_action_client]: 0
+[INFO] [1733690796.739452255] [fibonacci_action_client]: 1
+[INFO] [1733690796.739461887] [fibonacci_action_client]: 1
+[INFO] [1733690796.739470405] [fibonacci_action_client]: 2
+[INFO] [1733690797.743786168] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690797.743932031] [fibonacci_action_client]: 0
+[INFO] [1733690797.743945532] [fibonacci_action_client]: 1
+[INFO] [1733690797.743954612] [fibonacci_action_client]: 1
+[INFO] [1733690797.743962973] [fibonacci_action_client]: 2
+[INFO] [1733690797.743971205] [fibonacci_action_client]: 3
+[INFO] [1733690798.747555685] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690798.747621901] [fibonacci_action_client]: 0
+[INFO] [1733690798.747635378] [fibonacci_action_client]: 1
+[INFO] [1733690798.747644460] [fibonacci_action_client]: 1
+[INFO] [1733690798.747652631] [fibonacci_action_client]: 2
+[INFO] [1733690798.747660905] [fibonacci_action_client]: 3
+[INFO] [1733690798.747669023] [fibonacci_action_client]: 5
+[INFO] [1733690799.751833989] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690799.751906024] [fibonacci_action_client]: 0
+[INFO] [1733690799.751917828] [fibonacci_action_client]: 1
+[INFO] [1733690799.751926881] [fibonacci_action_client]: 1
+[INFO] [1733690799.751935266] [fibonacci_action_client]: 2
+[INFO] [1733690799.751943591] [fibonacci_action_client]: 3
+[INFO] [1733690799.751951853] [fibonacci_action_client]: 5
+[INFO] [1733690799.751959859] [fibonacci_action_client]: 8
+[INFO] [1733690800.755905410] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690800.755984245] [fibonacci_action_client]: 0
+[INFO] [1733690800.755994558] [fibonacci_action_client]: 1
+[INFO] [1733690800.756000741] [fibonacci_action_client]: 1
+[INFO] [1733690800.756007675] [fibonacci_action_client]: 2
+[INFO] [1733690800.756013125] [fibonacci_action_client]: 3
+[INFO] [1733690800.756018372] [fibonacci_action_client]: 5
+[INFO] [1733690800.756023511] [fibonacci_action_client]: 8
+[INFO] [1733690800.756028684] [fibonacci_action_client]: 13
+[INFO] [1733690801.760160845] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690801.760240197] [fibonacci_action_client]: 0
+[INFO] [1733690801.760249723] [fibonacci_action_client]: 1
+[INFO] [1733690801.760256715] [fibonacci_action_client]: 1
+[INFO] [1733690801.760262113] [fibonacci_action_client]: 2
+[INFO] [1733690801.760267352] [fibonacci_action_client]: 3
+[INFO] [1733690801.760272585] [fibonacci_action_client]: 5
+[INFO] [1733690801.760277830] [fibonacci_action_client]: 8
+[INFO] [1733690801.760283090] [fibonacci_action_client]: 13
+[INFO] [1733690801.760288797] [fibonacci_action_client]: 21
+[INFO] [1733690802.764913097] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690802.764991063] [fibonacci_action_client]: 0
+[INFO] [1733690802.765001285] [fibonacci_action_client]: 1
+[INFO] [1733690802.765007276] [fibonacci_action_client]: 1
+[INFO] [1733690802.765013156] [fibonacci_action_client]: 2
+[INFO] [1733690802.765018593] [fibonacci_action_client]: 3
+[INFO] [1733690802.765023650] [fibonacci_action_client]: 5
+[INFO] [1733690802.765029175] [fibonacci_action_client]: 8
+[INFO] [1733690802.765034279] [fibonacci_action_client]: 13
+[INFO] [1733690802.765039613] [fibonacci_action_client]: 21
+[INFO] [1733690802.765045010] [fibonacci_action_client]: 34
+[INFO] [1733690803.769213477] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690803.769292143] [fibonacci_action_client]: 0
+[INFO] [1733690803.769302029] [fibonacci_action_client]: 1
+[INFO] [1733690803.769308464] [fibonacci_action_client]: 1
+[INFO] [1733690803.769313865] [fibonacci_action_client]: 2
+[INFO] [1733690803.769319947] [fibonacci_action_client]: 3
+[INFO] [1733690803.769325466] [fibonacci_action_client]: 5
+[INFO] [1733690803.769330701] [fibonacci_action_client]: 8
+[INFO] [1733690803.769335851] [fibonacci_action_client]: 13
+[INFO] [1733690803.769341276] [fibonacci_action_client]: 21
+[INFO] [1733690803.769346597] [fibonacci_action_client]: 34
+[INFO] [1733690803.769352149] [fibonacci_action_client]: 55
+[INFO] [1733690804.873335841] [fibonacci_action_client]: Result received:
+[INFO] [1733690804.873410392] [fibonacci_action_client]: 0
+[INFO] [1733690804.873420650] [fibonacci_action_client]: 1
+[INFO] [1733690804.873427965] [fibonacci_action_client]: 1
+[INFO] [1733690804.873433786] [fibonacci_action_client]: 2
+[INFO] [1733690804.873439118] [fibonacci_action_client]: 3
+[INFO] [1733690804.873444300] [fibonacci_action_client]: 5
+[INFO] [1733690804.873449599] [fibonacci_action_client]: 8
+[INFO] [1733690804.873454858] [fibonacci_action_client]: 13
+[INFO] [1733690804.873460558] [fibonacci_action_client]: 21
+[INFO] [1733690804.873466448] [fibonacci_action_client]: 34
+[INFO] [1733690804.873471777] [fibonacci_action_client]: 55
+[INFO] [1733690804.973856613] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690804.974506021] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690804.974665017] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690804.974706951] [fibonacci_action_client]: 0
+[INFO] [1733690804.974715068] [fibonacci_action_client]: 1
+[INFO] [1733690804.974721046] [fibonacci_action_client]: 1
+[INFO] [1733690805.978060592] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690805.978123414] [fibonacci_action_client]: 0
+[INFO] [1733690805.978133941] [fibonacci_action_client]: 1
+[INFO] [1733690805.978140926] [fibonacci_action_client]: 1
+[INFO] [1733690805.978146515] [fibonacci_action_client]: 2
+[INFO] [1733690806.981581299] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690806.981660309] [fibonacci_action_client]: 0
+[INFO] [1733690806.981669383] [fibonacci_action_client]: 1
+[INFO] [1733690806.981675609] [fibonacci_action_client]: 1
+[INFO] [1733690806.981682448] [fibonacci_action_client]: 2
+[INFO] [1733690806.981688024] [fibonacci_action_client]: 3
+[INFO] [1733690807.985028438] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690807.985101988] [fibonacci_action_client]: 0
+[INFO] [1733690807.985111381] [fibonacci_action_client]: 1
+[INFO] [1733690807.985118149] [fibonacci_action_client]: 1
+[INFO] [1733690807.985124165] [fibonacci_action_client]: 2
+[INFO] [1733690807.985129796] [fibonacci_action_client]: 3
+[INFO] [1733690807.985135317] [fibonacci_action_client]: 5
+[INFO] [1733690808.988230729] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690808.988309501] [fibonacci_action_client]: 0
+[INFO] [1733690808.988320335] [fibonacci_action_client]: 1
+[INFO] [1733690808.988326528] [fibonacci_action_client]: 1
+[INFO] [1733690808.988332510] [fibonacci_action_client]: 2
+[INFO] [1733690808.988337910] [fibonacci_action_client]: 3
+[INFO] [1733690808.988343034] [fibonacci_action_client]: 5
+[INFO] [1733690808.988348181] [fibonacci_action_client]: 8
+[INFO] [1733690809.992251587] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690809.992330391] [fibonacci_action_client]: 0
+[INFO] [1733690809.992339774] [fibonacci_action_client]: 1
+[INFO] [1733690809.992346478] [fibonacci_action_client]: 1
+[INFO] [1733690809.992352033] [fibonacci_action_client]: 2
+[INFO] [1733690809.992357160] [fibonacci_action_client]: 3
+[INFO] [1733690809.992362633] [fibonacci_action_client]: 5
+[INFO] [1733690809.992367834] [fibonacci_action_client]: 8
+[INFO] [1733690809.992373105] [fibonacci_action_client]: 13
+[INFO] [1733690810.996463822] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690810.996515671] [fibonacci_action_client]: 0
+[INFO] [1733690810.996524222] [fibonacci_action_client]: 1
+[INFO] [1733690810.996530702] [fibonacci_action_client]: 1
+[INFO] [1733690810.996536436] [fibonacci_action_client]: 2
+[INFO] [1733690810.996541952] [fibonacci_action_client]: 3
+[INFO] [1733690810.996547332] [fibonacci_action_client]: 5
+[INFO] [1733690810.996553122] [fibonacci_action_client]: 8
+[INFO] [1733690810.996558517] [fibonacci_action_client]: 13
+[INFO] [1733690810.996564377] [fibonacci_action_client]: 21
+[INFO] [1733690812.001276906] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690812.001357252] [fibonacci_action_client]: 0
+[INFO] [1733690812.001392797] [fibonacci_action_client]: 1
+[INFO] [1733690812.001400034] [fibonacci_action_client]: 1
+[INFO] [1733690812.001405632] [fibonacci_action_client]: 2
+[INFO] [1733690812.001410819] [fibonacci_action_client]: 3
+[INFO] [1733690812.001416554] [fibonacci_action_client]: 5
+[INFO] [1733690812.001421743] [fibonacci_action_client]: 8
+[INFO] [1733690812.001426971] [fibonacci_action_client]: 13
+[INFO] [1733690812.001432806] [fibonacci_action_client]: 21
+[INFO] [1733690812.001438129] [fibonacci_action_client]: 34
+[INFO] [1733690813.005142101] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690813.005221691] [fibonacci_action_client]: 0
+[INFO] [1733690813.005231324] [fibonacci_action_client]: 1
+[INFO] [1733690813.005238231] [fibonacci_action_client]: 1
+[INFO] [1733690813.005244070] [fibonacci_action_client]: 2
+[INFO] [1733690813.005249439] [fibonacci_action_client]: 3
+[INFO] [1733690813.005255233] [fibonacci_action_client]: 5
+[INFO] [1733690813.005260467] [fibonacci_action_client]: 8
+[INFO] [1733690813.005265774] [fibonacci_action_client]: 13
+[INFO] [1733690813.005271311] [fibonacci_action_client]: 21
+[INFO] [1733690813.005276789] [fibonacci_action_client]: 34
+[INFO] [1733690813.005282091] [fibonacci_action_client]: 55
+[INFO] [1733690814.109369378] [fibonacci_action_client]: Result received:
+[INFO] [1733690814.109433888] [fibonacci_action_client]: 0
+[INFO] [1733690814.109447410] [fibonacci_action_client]: 1
+[INFO] [1733690814.109457107] [fibonacci_action_client]: 1
+[INFO] [1733690814.109465530] [fibonacci_action_client]: 2
+[INFO] [1733690814.109473884] [fibonacci_action_client]: 3
+[INFO] [1733690814.109482456] [fibonacci_action_client]: 5
+[INFO] [1733690814.109490434] [fibonacci_action_client]: 8
+[INFO] [1733690814.109498878] [fibonacci_action_client]: 13
+[INFO] [1733690814.109507430] [fibonacci_action_client]: 21
+[INFO] [1733690814.109515815] [fibonacci_action_client]: 34
+[INFO] [1733690814.109524232] [fibonacci_action_client]: 55
+[INFO] [1733690814.210103594] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690814.210872611] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690814.210963855] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690814.210987253] [fibonacci_action_client]: 0
+[INFO] [1733690814.210996634] [fibonacci_action_client]: 1
+[INFO] [1733690814.211002753] [fibonacci_action_client]: 1
+[INFO] [1733690815.214840757] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690815.214927321] [fibonacci_action_client]: 0
+[INFO] [1733690815.214960852] [fibonacci_action_client]: 1
+[INFO] [1733690815.214966947] [fibonacci_action_client]: 1
+[INFO] [1733690815.214972634] [fibonacci_action_client]: 2
+[INFO] [1733690816.218622388] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690816.218675776] [fibonacci_action_client]: 0
+[INFO] [1733690816.218688411] [fibonacci_action_client]: 1
+[INFO] [1733690816.218697675] [fibonacci_action_client]: 1
+[INFO] [1733690816.218706096] [fibonacci_action_client]: 2
+[INFO] [1733690816.218714224] [fibonacci_action_client]: 3
+[INFO] [1733690817.223364972] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690817.223429140] [fibonacci_action_client]: 0
+[INFO] [1733690817.223442153] [fibonacci_action_client]: 1
+[INFO] [1733690817.223451961] [fibonacci_action_client]: 1
+[INFO] [1733690817.223461117] [fibonacci_action_client]: 2
+[INFO] [1733690817.223470025] [fibonacci_action_client]: 3
+[INFO] [1733690817.223478951] [fibonacci_action_client]: 5
+[INFO] [1733690818.227460763] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690818.227540911] [fibonacci_action_client]: 0
+[INFO] [1733690818.227549612] [fibonacci_action_client]: 1
+[INFO] [1733690818.227556142] [fibonacci_action_client]: 1
+[INFO] [1733690818.227561649] [fibonacci_action_client]: 2
+[INFO] [1733690818.227567187] [fibonacci_action_client]: 3
+[INFO] [1733690818.227572434] [fibonacci_action_client]: 5
+[INFO] [1733690818.227577649] [fibonacci_action_client]: 8
+[INFO] [1733690819.231428244] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690819.231492445] [fibonacci_action_client]: 0
+[INFO] [1733690819.231504496] [fibonacci_action_client]: 1
+[INFO] [1733690819.231513937] [fibonacci_action_client]: 1
+[INFO] [1733690819.231522657] [fibonacci_action_client]: 2
+[INFO] [1733690819.231531184] [fibonacci_action_client]: 3
+[INFO] [1733690819.231539474] [fibonacci_action_client]: 5
+[INFO] [1733690819.231548109] [fibonacci_action_client]: 8
+[INFO] [1733690819.231556726] [fibonacci_action_client]: 13
+[INFO] [1733690820.235470710] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690820.235572045] [fibonacci_action_client]: 0
+[INFO] [1733690820.235586199] [fibonacci_action_client]: 1
+[INFO] [1733690820.235595485] [fibonacci_action_client]: 1
+[INFO] [1733690820.235603684] [fibonacci_action_client]: 2
+[INFO] [1733690820.235611768] [fibonacci_action_client]: 3
+[INFO] [1733690820.235619884] [fibonacci_action_client]: 5
+[INFO] [1733690820.235627730] [fibonacci_action_client]: 8
+[INFO] [1733690820.235635927] [fibonacci_action_client]: 13
+[INFO] [1733690820.235644408] [fibonacci_action_client]: 21
+[INFO] [1733690821.239308756] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690821.239374878] [fibonacci_action_client]: 0
+[INFO] [1733690821.239387281] [fibonacci_action_client]: 1
+[INFO] [1733690821.239396218] [fibonacci_action_client]: 1
+[INFO] [1733690821.239404403] [fibonacci_action_client]: 2
+[INFO] [1733690821.239412515] [fibonacci_action_client]: 3
+[INFO] [1733690821.239420687] [fibonacci_action_client]: 5
+[INFO] [1733690821.239428593] [fibonacci_action_client]: 8
+[INFO] [1733690821.239436698] [fibonacci_action_client]: 13
+[INFO] [1733690821.239444987] [fibonacci_action_client]: 21
+[INFO] [1733690821.239453201] [fibonacci_action_client]: 34
+[INFO] [1733690822.243391316] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690822.243470017] [fibonacci_action_client]: 0
+[INFO] [1733690822.243478865] [fibonacci_action_client]: 1
+[INFO] [1733690822.243485346] [fibonacci_action_client]: 1
+[INFO] [1733690822.243491091] [fibonacci_action_client]: 2
+[INFO] [1733690822.243496788] [fibonacci_action_client]: 3
+[INFO] [1733690822.243502250] [fibonacci_action_client]: 5
+[INFO] [1733690822.243507840] [fibonacci_action_client]: 8
+[INFO] [1733690822.243513322] [fibonacci_action_client]: 13
+[INFO] [1733690822.243519462] [fibonacci_action_client]: 21
+[INFO] [1733690822.243525089] [fibonacci_action_client]: 34
+[INFO] [1733690822.243530616] [fibonacci_action_client]: 55
+[INFO] [1733690823.348261092] [fibonacci_action_client]: Result received:
+[INFO] [1733690823.348339135] [fibonacci_action_client]: 0
+[INFO] [1733690823.348349713] [fibonacci_action_client]: 1
+[INFO] [1733690823.348356715] [fibonacci_action_client]: 1
+[INFO] [1733690823.348362765] [fibonacci_action_client]: 2
+[INFO] [1733690823.348368214] [fibonacci_action_client]: 3
+[INFO] [1733690823.348373597] [fibonacci_action_client]: 5
+[INFO] [1733690823.348379444] [fibonacci_action_client]: 8
+[INFO] [1733690823.348384771] [fibonacci_action_client]: 13
+[INFO] [1733690823.348390292] [fibonacci_action_client]: 21
+[INFO] [1733690823.348395766] [fibonacci_action_client]: 34
+[INFO] [1733690823.348401466] [fibonacci_action_client]: 55
+[INFO] [1733690823.448961285] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690823.449697840] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690823.449806360] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690823.449828100] [fibonacci_action_client]: 0
+[INFO] [1733690823.449835623] [fibonacci_action_client]: 1
+[INFO] [1733690823.449841231] [fibonacci_action_client]: 1
+[INFO] [1733690824.453768718] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690824.453836133] [fibonacci_action_client]: 0
+[INFO] [1733690824.453848850] [fibonacci_action_client]: 1
+[INFO] [1733690824.453857758] [fibonacci_action_client]: 1
+[INFO] [1733690824.453865922] [fibonacci_action_client]: 2
+[INFO] [1733690825.457879734] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690825.457949613] [fibonacci_action_client]: 0
+[INFO] [1733690825.457984783] [fibonacci_action_client]: 1
+[INFO] [1733690825.457995642] [fibonacci_action_client]: 1
+[INFO] [1733690825.458004500] [fibonacci_action_client]: 2
+[INFO] [1733690825.458015159] [fibonacci_action_client]: 3
+[INFO] [1733690826.461892625] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690826.461973015] [fibonacci_action_client]: 0
+[INFO] [1733690826.461982875] [fibonacci_action_client]: 1
+[INFO] [1733690826.461989628] [fibonacci_action_client]: 1
+[INFO] [1733690826.461995021] [fibonacci_action_client]: 2
+[INFO] [1733690826.462000372] [fibonacci_action_client]: 3
+[INFO] [1733690826.462005616] [fibonacci_action_client]: 5
+[INFO] [1733690827.465144175] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690827.465221334] [fibonacci_action_client]: 0
+[INFO] [1733690827.465230602] [fibonacci_action_client]: 1
+[INFO] [1733690827.465238021] [fibonacci_action_client]: 1
+[INFO] [1733690827.465243707] [fibonacci_action_client]: 2
+[INFO] [1733690827.465248900] [fibonacci_action_client]: 3
+[INFO] [1733690827.465254177] [fibonacci_action_client]: 5
+[INFO] [1733690827.465259456] [fibonacci_action_client]: 8
+[INFO] [1733690828.469533331] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690828.469600008] [fibonacci_action_client]: 0
+[INFO] [1733690828.469612737] [fibonacci_action_client]: 1
+[INFO] [1733690828.469621744] [fibonacci_action_client]: 1
+[INFO] [1733690828.469630017] [fibonacci_action_client]: 2
+[INFO] [1733690828.469638162] [fibonacci_action_client]: 3
+[INFO] [1733690828.469646393] [fibonacci_action_client]: 5
+[INFO] [1733690828.469654209] [fibonacci_action_client]: 8
+[INFO] [1733690828.469662327] [fibonacci_action_client]: 13
+[INFO] [1733690829.472644280] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690829.472694561] [fibonacci_action_client]: 0
+[INFO] [1733690829.472703148] [fibonacci_action_client]: 1
+[INFO] [1733690829.472708958] [fibonacci_action_client]: 1
+[INFO] [1733690829.472714351] [fibonacci_action_client]: 2
+[INFO] [1733690829.472719557] [fibonacci_action_client]: 3
+[INFO] [1733690829.472724918] [fibonacci_action_client]: 5
+[INFO] [1733690829.472730092] [fibonacci_action_client]: 8
+[INFO] [1733690829.472735348] [fibonacci_action_client]: 13
+[INFO] [1733690829.472740863] [fibonacci_action_client]: 21
+[INFO] [1733690830.475902332] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690830.475963708] [fibonacci_action_client]: 0
+[INFO] [1733690830.475973517] [fibonacci_action_client]: 1
+[INFO] [1733690830.475980124] [fibonacci_action_client]: 1
+[INFO] [1733690830.475986045] [fibonacci_action_client]: 2
+[INFO] [1733690830.475991665] [fibonacci_action_client]: 3
+[INFO] [1733690830.475997153] [fibonacci_action_client]: 5
+[INFO] [1733690830.476002552] [fibonacci_action_client]: 8
+[INFO] [1733690830.476008264] [fibonacci_action_client]: 13
+[INFO] [1733690830.476014026] [fibonacci_action_client]: 21
+[INFO] [1733690830.476019492] [fibonacci_action_client]: 34
+[INFO] [1733690831.479377146] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690831.479444202] [fibonacci_action_client]: 0
+[INFO] [1733690831.479457119] [fibonacci_action_client]: 1
+[INFO] [1733690831.479466334] [fibonacci_action_client]: 1
+[INFO] [1733690831.479474552] [fibonacci_action_client]: 2
+[INFO] [1733690831.479482731] [fibonacci_action_client]: 3
+[INFO] [1733690831.479491103] [fibonacci_action_client]: 5
+[INFO] [1733690831.479499227] [fibonacci_action_client]: 8
+[INFO] [1733690831.479507456] [fibonacci_action_client]: 13
+[INFO] [1733690831.479516003] [fibonacci_action_client]: 21
+[INFO] [1733690831.479524351] [fibonacci_action_client]: 34
+[INFO] [1733690831.479532493] [fibonacci_action_client]: 55
+[INFO] [1733690832.582410507] [fibonacci_action_client]: Result received:
+[INFO] [1733690832.582481752] [fibonacci_action_client]: 0
+[INFO] [1733690832.582490730] [fibonacci_action_client]: 1
+[INFO] [1733690832.582496826] [fibonacci_action_client]: 1
+[INFO] [1733690832.582502214] [fibonacci_action_client]: 2
+[INFO] [1733690832.582507693] [fibonacci_action_client]: 3
+[INFO] [1733690832.582513044] [fibonacci_action_client]: 5
+[INFO] [1733690832.582533145] [fibonacci_action_client]: 8
+[INFO] [1733690832.582539544] [fibonacci_action_client]: 13
+[INFO] [1733690832.582545105] [fibonacci_action_client]: 21
+[INFO] [1733690832.582550648] [fibonacci_action_client]: 34
+[INFO] [1733690832.582556146] [fibonacci_action_client]: 55
+[INFO] [1733690832.682654231] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690832.683116347] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690832.683202008] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690832.683218422] [fibonacci_action_client]: 0
+[INFO] [1733690832.683226357] [fibonacci_action_client]: 1
+[INFO] [1733690832.683232456] [fibonacci_action_client]: 1
+[INFO] [1733690833.685957911] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690833.686020760] [fibonacci_action_client]: 0
+[INFO] [1733690833.686030612] [fibonacci_action_client]: 1
+[INFO] [1733690833.686037158] [fibonacci_action_client]: 1
+[INFO] [1733690833.686042782] [fibonacci_action_client]: 2
+[INFO] [1733690834.688363838] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690834.688441987] [fibonacci_action_client]: 0
+[INFO] [1733690834.688450464] [fibonacci_action_client]: 1
+[INFO] [1733690834.688457109] [fibonacci_action_client]: 1
+[INFO] [1733690834.688463068] [fibonacci_action_client]: 2
+[INFO] [1733690834.688468341] [fibonacci_action_client]: 3
+[INFO] [1733690835.691575044] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690835.691631178] [fibonacci_action_client]: 0
+[INFO] [1733690835.691642235] [fibonacci_action_client]: 1
+[INFO] [1733690835.691649098] [fibonacci_action_client]: 1
+[INFO] [1733690835.691654843] [fibonacci_action_client]: 2
+[INFO] [1733690835.691660397] [fibonacci_action_client]: 3
+[INFO] [1733690835.691666007] [fibonacci_action_client]: 5
+[INFO] [1733690836.694430274] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690836.694476201] [fibonacci_action_client]: 0
+[INFO] [1733690836.694490329] [fibonacci_action_client]: 1
+[INFO] [1733690836.694500316] [fibonacci_action_client]: 1
+[INFO] [1733690836.694509958] [fibonacci_action_client]: 2
+[INFO] [1733690836.694520014] [fibonacci_action_client]: 3
+[INFO] [1733690836.694529659] [fibonacci_action_client]: 5
+[INFO] [1733690836.694538782] [fibonacci_action_client]: 8
+[INFO] [1733690837.697023376] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690837.697104080] [fibonacci_action_client]: 0
+[INFO] [1733690837.697113870] [fibonacci_action_client]: 1
+[INFO] [1733690837.697119851] [fibonacci_action_client]: 1
+[INFO] [1733690837.697125458] [fibonacci_action_client]: 2
+[INFO] [1733690837.697130847] [fibonacci_action_client]: 3
+[INFO] [1733690837.697136091] [fibonacci_action_client]: 5
+[INFO] [1733690837.697141139] [fibonacci_action_client]: 8
+[INFO] [1733690837.697146215] [fibonacci_action_client]: 13
+[INFO] [1733690838.701225518] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690838.701303684] [fibonacci_action_client]: 0
+[INFO] [1733690838.701332445] [fibonacci_action_client]: 1
+[INFO] [1733690838.701339548] [fibonacci_action_client]: 1
+[INFO] [1733690838.701347312] [fibonacci_action_client]: 2
+[INFO] [1733690838.701355046] [fibonacci_action_client]: 3
+[INFO] [1733690838.701362139] [fibonacci_action_client]: 5
+[INFO] [1733690838.701369636] [fibonacci_action_client]: 8
+[INFO] [1733690838.701375784] [fibonacci_action_client]: 13
+[INFO] [1733690838.701381406] [fibonacci_action_client]: 21
+[INFO] [1733690839.704841294] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690839.704950364] [fibonacci_action_client]: 0
+[INFO] [1733690839.704962137] [fibonacci_action_client]: 1
+[INFO] [1733690839.704969042] [fibonacci_action_client]: 1
+[INFO] [1733690839.704974669] [fibonacci_action_client]: 2
+[INFO] [1733690839.704980034] [fibonacci_action_client]: 3
+[INFO] [1733690839.704985683] [fibonacci_action_client]: 5
+[INFO] [1733690839.704991081] [fibonacci_action_client]: 8
+[INFO] [1733690839.704996383] [fibonacci_action_client]: 13
+[INFO] [1733690839.705002265] [fibonacci_action_client]: 21
+[INFO] [1733690839.705030927] [fibonacci_action_client]: 34
+[INFO] [1733690840.708997869] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690840.709070903] [fibonacci_action_client]: 0
+[INFO] [1733690840.709079028] [fibonacci_action_client]: 1
+[INFO] [1733690840.709085722] [fibonacci_action_client]: 1
+[INFO] [1733690840.709091642] [fibonacci_action_client]: 2
+[INFO] [1733690840.709097253] [fibonacci_action_client]: 3
+[INFO] [1733690840.709102724] [fibonacci_action_client]: 5
+[INFO] [1733690840.709108223] [fibonacci_action_client]: 8
+[INFO] [1733690840.709113781] [fibonacci_action_client]: 13
+[INFO] [1733690840.709119392] [fibonacci_action_client]: 21
+[INFO] [1733690840.709124965] [fibonacci_action_client]: 34
+[INFO] [1733690840.709130370] [fibonacci_action_client]: 55
+[INFO] [1733690841.813901365] [fibonacci_action_client]: Result received:
+[INFO] [1733690841.813983210] [fibonacci_action_client]: 0
+[INFO] [1733690841.813998365] [fibonacci_action_client]: 1
+[INFO] [1733690841.814009469] [fibonacci_action_client]: 1
+[INFO] [1733690841.814019408] [fibonacci_action_client]: 2
+[INFO] [1733690841.814029389] [fibonacci_action_client]: 3
+[INFO] [1733690841.814039125] [fibonacci_action_client]: 5
+[INFO] [1733690841.814048231] [fibonacci_action_client]: 8
+[INFO] [1733690841.814058291] [fibonacci_action_client]: 13
+[INFO] [1733690841.814068184] [fibonacci_action_client]: 21
+[INFO] [1733690841.814077888] [fibonacci_action_client]: 34
+[INFO] [1733690841.814088094] [fibonacci_action_client]: 55
+[INFO] [1733690841.914653252] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690841.915322236] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690841.915458768] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690841.915487120] [fibonacci_action_client]: 0
+[INFO] [1733690841.915498412] [fibonacci_action_client]: 1
+[INFO] [1733690841.915506058] [fibonacci_action_client]: 1
+[INFO] [1733690842.918853864] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690842.918930925] [fibonacci_action_client]: 0
+[INFO] [1733690842.918939658] [fibonacci_action_client]: 1
+[INFO] [1733690842.918945592] [fibonacci_action_client]: 1
+[INFO] [1733690842.918951705] [fibonacci_action_client]: 2
+[INFO] [1733690843.923197921] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690843.923280483] [fibonacci_action_client]: 0
+[INFO] [1733690843.923289103] [fibonacci_action_client]: 1
+[INFO] [1733690843.923295826] [fibonacci_action_client]: 1
+[INFO] [1733690843.923301428] [fibonacci_action_client]: 2
+[INFO] [1733690843.923306922] [fibonacci_action_client]: 3
+[INFO] [1733690844.927549876] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690844.927628071] [fibonacci_action_client]: 0
+[INFO] [1733690844.927637578] [fibonacci_action_client]: 1
+[INFO] [1733690844.927644028] [fibonacci_action_client]: 1
+[INFO] [1733690844.927650504] [fibonacci_action_client]: 2
+[INFO] [1733690844.927656373] [fibonacci_action_client]: 3
+[INFO] [1733690844.927661584] [fibonacci_action_client]: 5
+[INFO] [1733690845.930645117] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690845.930742732] [fibonacci_action_client]: 0
+[INFO] [1733690845.930753082] [fibonacci_action_client]: 1
+[INFO] [1733690845.930759541] [fibonacci_action_client]: 1
+[INFO] [1733690845.930765856] [fibonacci_action_client]: 2
+[INFO] [1733690845.930771017] [fibonacci_action_client]: 3
+[INFO] [1733690845.930776307] [fibonacci_action_client]: 5
+[INFO] [1733690845.930781499] [fibonacci_action_client]: 8
+[INFO] [1733690846.933830935] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690846.933905202] [fibonacci_action_client]: 0
+[INFO] [1733690846.933913805] [fibonacci_action_client]: 1
+[INFO] [1733690846.933920482] [fibonacci_action_client]: 1
+[INFO] [1733690846.933926110] [fibonacci_action_client]: 2
+[INFO] [1733690846.933931865] [fibonacci_action_client]: 3
+[INFO] [1733690846.933937363] [fibonacci_action_client]: 5
+[INFO] [1733690846.933942796] [fibonacci_action_client]: 8
+[INFO] [1733690846.933948183] [fibonacci_action_client]: 13
+[INFO] [1733690847.937353872] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690847.937429450] [fibonacci_action_client]: 0
+[INFO] [1733690847.937437712] [fibonacci_action_client]: 1
+[INFO] [1733690847.937443526] [fibonacci_action_client]: 1
+[INFO] [1733690847.937448843] [fibonacci_action_client]: 2
+[INFO] [1733690847.937453979] [fibonacci_action_client]: 3
+[INFO] [1733690847.937459122] [fibonacci_action_client]: 5
+[INFO] [1733690847.937464435] [fibonacci_action_client]: 8
+[INFO] [1733690847.937469681] [fibonacci_action_client]: 13
+[INFO] [1733690847.937475204] [fibonacci_action_client]: 21
+[INFO] [1733690848.941272553] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690848.941351532] [fibonacci_action_client]: 0
+[INFO] [1733690848.941360864] [fibonacci_action_client]: 1
+[INFO] [1733690848.941367647] [fibonacci_action_client]: 1
+[INFO] [1733690848.941373584] [fibonacci_action_client]: 2
+[INFO] [1733690848.941379371] [fibonacci_action_client]: 3
+[INFO] [1733690848.941384586] [fibonacci_action_client]: 5
+[INFO] [1733690848.941389812] [fibonacci_action_client]: 8
+[INFO] [1733690848.941395019] [fibonacci_action_client]: 13
+[INFO] [1733690848.941400439] [fibonacci_action_client]: 21
+[INFO] [1733690848.941405829] [fibonacci_action_client]: 34
+[INFO] [1733690849.945290251] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690849.945380682] [fibonacci_action_client]: 0
+[INFO] [1733690849.945395526] [fibonacci_action_client]: 1
+[INFO] [1733690849.945404599] [fibonacci_action_client]: 1
+[INFO] [1733690849.945411504] [fibonacci_action_client]: 2
+[INFO] [1733690849.945418165] [fibonacci_action_client]: 3
+[INFO] [1733690849.945423905] [fibonacci_action_client]: 5
+[INFO] [1733690849.945429362] [fibonacci_action_client]: 8
+[INFO] [1733690849.945434863] [fibonacci_action_client]: 13
+[INFO] [1733690849.945440622] [fibonacci_action_client]: 21
+[INFO] [1733690849.945459849] [fibonacci_action_client]: 34
+[INFO] [1733690849.945466456] [fibonacci_action_client]: 55
+[INFO] [1733690851.049472615] [fibonacci_action_client]: Result received:
+[INFO] [1733690851.049558087] [fibonacci_action_client]: 0
+[INFO] [1733690851.049566857] [fibonacci_action_client]: 1
+[INFO] [1733690851.049573969] [fibonacci_action_client]: 1
+[INFO] [1733690851.049580044] [fibonacci_action_client]: 2
+[INFO] [1733690851.049585811] [fibonacci_action_client]: 3
+[INFO] [1733690851.049591639] [fibonacci_action_client]: 5
+[INFO] [1733690851.049597534] [fibonacci_action_client]: 8
+[INFO] [1733690851.049603233] [fibonacci_action_client]: 13
+[INFO] [1733690851.049609170] [fibonacci_action_client]: 21
+[INFO] [1733690851.049615050] [fibonacci_action_client]: 34
+[INFO] [1733690851.049620866] [fibonacci_action_client]: 55
+[INFO] [1733690851.150013120] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690851.150656609] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690851.150754895] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690851.150789364] [fibonacci_action_client]: 0
+[INFO] [1733690851.150797724] [fibonacci_action_client]: 1
+[INFO] [1733690851.150803448] [fibonacci_action_client]: 1
+[INFO] [1733690852.154578951] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690852.154657448] [fibonacci_action_client]: 0
+[INFO] [1733690852.154666332] [fibonacci_action_client]: 1
+[INFO] [1733690852.154672557] [fibonacci_action_client]: 1
+[INFO] [1733690852.154679047] [fibonacci_action_client]: 2
+[INFO] [1733690853.159146481] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690853.159224217] [fibonacci_action_client]: 0
+[INFO] [1733690853.159233391] [fibonacci_action_client]: 1
+[INFO] [1733690853.159239792] [fibonacci_action_client]: 1
+[INFO] [1733690853.159246473] [fibonacci_action_client]: 2
+[INFO] [1733690853.159251790] [fibonacci_action_client]: 3
+[INFO] [1733690854.163118385] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690854.163196676] [fibonacci_action_client]: 0
+[INFO] [1733690854.163205554] [fibonacci_action_client]: 1
+[INFO] [1733690854.163211999] [fibonacci_action_client]: 1
+[INFO] [1733690854.163239568] [fibonacci_action_client]: 2
+[INFO] [1733690854.163246274] [fibonacci_action_client]: 3
+[INFO] [1733690854.163251704] [fibonacci_action_client]: 5
+[INFO] [1733690855.167250217] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690855.167313351] [fibonacci_action_client]: 0
+[INFO] [1733690855.167321534] [fibonacci_action_client]: 1
+[INFO] [1733690855.167327660] [fibonacci_action_client]: 1
+[INFO] [1733690855.167333102] [fibonacci_action_client]: 2
+[INFO] [1733690855.167338540] [fibonacci_action_client]: 3
+[INFO] [1733690855.167344255] [fibonacci_action_client]: 5
+[INFO] [1733690855.167350304] [fibonacci_action_client]: 8
+[INFO] [1733690856.171499410] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690856.171575491] [fibonacci_action_client]: 0
+[INFO] [1733690856.171585143] [fibonacci_action_client]: 1
+[INFO] [1733690856.171590940] [fibonacci_action_client]: 1
+[INFO] [1733690856.171596842] [fibonacci_action_client]: 2
+[INFO] [1733690856.171602496] [fibonacci_action_client]: 3
+[INFO] [1733690856.171607548] [fibonacci_action_client]: 5
+[INFO] [1733690856.171612672] [fibonacci_action_client]: 8
+[INFO] [1733690856.171617752] [fibonacci_action_client]: 13
+[INFO] [1733690857.175207876] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690857.175258973] [fibonacci_action_client]: 0
+[INFO] [1733690857.175266393] [fibonacci_action_client]: 1
+[INFO] [1733690857.175272317] [fibonacci_action_client]: 1
+[INFO] [1733690857.175277870] [fibonacci_action_client]: 2
+[INFO] [1733690857.175283257] [fibonacci_action_client]: 3
+[INFO] [1733690857.175288570] [fibonacci_action_client]: 5
+[INFO] [1733690857.175293733] [fibonacci_action_client]: 8
+[INFO] [1733690857.175299037] [fibonacci_action_client]: 13
+[INFO] [1733690857.175304432] [fibonacci_action_client]: 21
+[INFO] [1733690858.178969128] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690858.179012630] [fibonacci_action_client]: 0
+[INFO] [1733690858.179021387] [fibonacci_action_client]: 1
+[INFO] [1733690858.179027350] [fibonacci_action_client]: 1
+[INFO] [1733690858.179033100] [fibonacci_action_client]: 2
+[INFO] [1733690858.179038454] [fibonacci_action_client]: 3
+[INFO] [1733690858.179043858] [fibonacci_action_client]: 5
+[INFO] [1733690858.179049280] [fibonacci_action_client]: 8
+[INFO] [1733690858.179054743] [fibonacci_action_client]: 13
+[INFO] [1733690858.179060275] [fibonacci_action_client]: 21
+[INFO] [1733690858.179065800] [fibonacci_action_client]: 34
+[INFO] [1733690859.182672228] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690859.182757314] [fibonacci_action_client]: 0
+[INFO] [1733690859.182767335] [fibonacci_action_client]: 1
+[INFO] [1733690859.182774510] [fibonacci_action_client]: 1
+[INFO] [1733690859.182780669] [fibonacci_action_client]: 2
+[INFO] [1733690859.182785995] [fibonacci_action_client]: 3
+[INFO] [1733690859.182791059] [fibonacci_action_client]: 5
+[INFO] [1733690859.182796049] [fibonacci_action_client]: 8
+[INFO] [1733690859.182801308] [fibonacci_action_client]: 13
+[INFO] [1733690859.182806671] [fibonacci_action_client]: 21
+[INFO] [1733690859.182811841] [fibonacci_action_client]: 34
+[INFO] [1733690859.182817077] [fibonacci_action_client]: 55
+[INFO] [1733690860.286565874] [fibonacci_action_client]: Result received:
+[INFO] [1733690860.286649137] [fibonacci_action_client]: 0
+[INFO] [1733690860.286659681] [fibonacci_action_client]: 1
+[INFO] [1733690860.286665950] [fibonacci_action_client]: 1
+[INFO] [1733690860.286672328] [fibonacci_action_client]: 2
+[INFO] [1733690860.286677772] [fibonacci_action_client]: 3
+[INFO] [1733690860.286683430] [fibonacci_action_client]: 5
+[INFO] [1733690860.286688864] [fibonacci_action_client]: 8
+[INFO] [1733690860.286755083] [fibonacci_action_client]: 13
+[INFO] [1733690860.286760591] [fibonacci_action_client]: 21
+[INFO] [1733690860.286766026] [fibonacci_action_client]: 34
+[INFO] [1733690860.286771217] [fibonacci_action_client]: 55
+[INFO] [1733690860.387139074] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690860.387890343] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690860.388034831] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690860.388056077] [fibonacci_action_client]: 0
+[INFO] [1733690860.388063839] [fibonacci_action_client]: 1
+[INFO] [1733690860.388070444] [fibonacci_action_client]: 1
+[INFO] [1733690861.391512867] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690861.391567319] [fibonacci_action_client]: 0
+[INFO] [1733690861.391575399] [fibonacci_action_client]: 1
+[INFO] [1733690861.391581880] [fibonacci_action_client]: 1
+[INFO] [1733690861.391587591] [fibonacci_action_client]: 2
+[INFO] [1733690862.395943655] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690862.396021240] [fibonacci_action_client]: 0
+[INFO] [1733690862.396030607] [fibonacci_action_client]: 1
+[INFO] [1733690862.396036767] [fibonacci_action_client]: 1
+[INFO] [1733690862.396042411] [fibonacci_action_client]: 2
+[INFO] [1733690862.396047691] [fibonacci_action_client]: 3
+[INFO] [1733690863.400174488] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690863.400254570] [fibonacci_action_client]: 0
+[INFO] [1733690863.400263657] [fibonacci_action_client]: 1
+[INFO] [1733690863.400271104] [fibonacci_action_client]: 1
+[INFO] [1733690863.400276992] [fibonacci_action_client]: 2
+[INFO] [1733690863.400282275] [fibonacci_action_client]: 3
+[INFO] [1733690863.400287495] [fibonacci_action_client]: 5
+[INFO] [1733690864.404490345] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690864.404566228] [fibonacci_action_client]: 0
+[INFO] [1733690864.404575539] [fibonacci_action_client]: 1
+[INFO] [1733690864.404581715] [fibonacci_action_client]: 1
+[INFO] [1733690864.404587501] [fibonacci_action_client]: 2
+[INFO] [1733690864.404593156] [fibonacci_action_client]: 3
+[INFO] [1733690864.404598792] [fibonacci_action_client]: 5
+[INFO] [1733690864.404604316] [fibonacci_action_client]: 8
+[INFO] [1733690865.408800924] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690865.408879210] [fibonacci_action_client]: 0
+[INFO] [1733690865.408889032] [fibonacci_action_client]: 1
+[INFO] [1733690865.408896170] [fibonacci_action_client]: 1
+[INFO] [1733690865.408901449] [fibonacci_action_client]: 2
+[INFO] [1733690865.408906672] [fibonacci_action_client]: 3
+[INFO] [1733690865.408911878] [fibonacci_action_client]: 5
+[INFO] [1733690865.408917069] [fibonacci_action_client]: 8
+[INFO] [1733690865.408922156] [fibonacci_action_client]: 13
+[INFO] [1733690866.412980592] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690866.413056779] [fibonacci_action_client]: 0
+[INFO] [1733690866.413065226] [fibonacci_action_client]: 1
+[INFO] [1733690866.413071894] [fibonacci_action_client]: 1
+[INFO] [1733690866.413077710] [fibonacci_action_client]: 2
+[INFO] [1733690866.413083240] [fibonacci_action_client]: 3
+[INFO] [1733690866.413088693] [fibonacci_action_client]: 5
+[INFO] [1733690866.413094268] [fibonacci_action_client]: 8
+[INFO] [1733690866.413099796] [fibonacci_action_client]: 13
+[INFO] [1733690866.413105549] [fibonacci_action_client]: 21
+[INFO] [1733690867.417445071] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690867.417522580] [fibonacci_action_client]: 0
+[INFO] [1733690867.417531889] [fibonacci_action_client]: 1
+[INFO] [1733690867.417538152] [fibonacci_action_client]: 1
+[INFO] [1733690867.417544894] [fibonacci_action_client]: 2
+[INFO] [1733690867.417550185] [fibonacci_action_client]: 3
+[INFO] [1733690867.417555559] [fibonacci_action_client]: 5
+[INFO] [1733690867.417560752] [fibonacci_action_client]: 8
+[INFO] [1733690867.417565976] [fibonacci_action_client]: 13
+[INFO] [1733690867.417571448] [fibonacci_action_client]: 21
+[INFO] [1733690867.417576827] [fibonacci_action_client]: 34
+[INFO] [1733690868.420831032] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690868.420910245] [fibonacci_action_client]: 0
+[INFO] [1733690868.420919641] [fibonacci_action_client]: 1
+[INFO] [1733690868.420926085] [fibonacci_action_client]: 1
+[INFO] [1733690868.420933122] [fibonacci_action_client]: 2
+[INFO] [1733690868.420938816] [fibonacci_action_client]: 3
+[INFO] [1733690868.421073765] [fibonacci_action_client]: 5
+[INFO] [1733690868.421086314] [fibonacci_action_client]: 8
+[INFO] [1733690868.421091949] [fibonacci_action_client]: 13
+[INFO] [1733690868.421097268] [fibonacci_action_client]: 21
+[INFO] [1733690868.421102761] [fibonacci_action_client]: 34
+[INFO] [1733690868.421108017] [fibonacci_action_client]: 55
+[INFO] [1733690869.525561028] [fibonacci_action_client]: Result received:
+[INFO] [1733690869.525664811] [fibonacci_action_client]: 0
+[INFO] [1733690869.525674615] [fibonacci_action_client]: 1
+[INFO] [1733690869.525680770] [fibonacci_action_client]: 1
+[INFO] [1733690869.525687207] [fibonacci_action_client]: 2
+[INFO] [1733690869.525692546] [fibonacci_action_client]: 3
+[INFO] [1733690869.525697843] [fibonacci_action_client]: 5
+[INFO] [1733690869.525703083] [fibonacci_action_client]: 8
+[INFO] [1733690869.525708232] [fibonacci_action_client]: 13
+[INFO] [1733690869.525713693] [fibonacci_action_client]: 21
+[INFO] [1733690869.525719166] [fibonacci_action_client]: 34
+[INFO] [1733690869.525724582] [fibonacci_action_client]: 55
+[INFO] [1733690869.625878778] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690869.626502177] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690869.626550229] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690869.626563100] [fibonacci_action_client]: 0
+[INFO] [1733690869.626570746] [fibonacci_action_client]: 1
+[INFO] [1733690869.626576799] [fibonacci_action_client]: 1
+[INFO] [1733690870.630249787] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690870.630343583] [fibonacci_action_client]: 0
+[INFO] [1733690870.630356670] [fibonacci_action_client]: 1
+[INFO] [1733690870.630363884] [fibonacci_action_client]: 1
+[INFO] [1733690870.630371115] [fibonacci_action_client]: 2
+[INFO] [1733690871.633560105] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690871.633691320] [fibonacci_action_client]: 0
+[INFO] [1733690871.633719696] [fibonacci_action_client]: 1
+[INFO] [1733690871.633730193] [fibonacci_action_client]: 1
+[INFO] [1733690871.633736664] [fibonacci_action_client]: 2
+[INFO] [1733690871.633744093] [fibonacci_action_client]: 3
+[INFO] [1733690872.637528956] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690872.637607210] [fibonacci_action_client]: 0
+[INFO] [1733690872.637616448] [fibonacci_action_client]: 1
+[INFO] [1733690872.637622348] [fibonacci_action_client]: 1
+[INFO] [1733690872.637628226] [fibonacci_action_client]: 2
+[INFO] [1733690872.637633622] [fibonacci_action_client]: 3
+[INFO] [1733690872.637641108] [fibonacci_action_client]: 5
+[INFO] [1733690873.641716850] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690873.641797569] [fibonacci_action_client]: 0
+[INFO] [1733690873.641807258] [fibonacci_action_client]: 1
+[INFO] [1733690873.641814220] [fibonacci_action_client]: 1
+[INFO] [1733690873.641820159] [fibonacci_action_client]: 2
+[INFO] [1733690873.641825612] [fibonacci_action_client]: 3
+[INFO] [1733690873.641831175] [fibonacci_action_client]: 5
+[INFO] [1733690873.641836445] [fibonacci_action_client]: 8
+[INFO] [1733690874.645979800] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690874.646058595] [fibonacci_action_client]: 0
+[INFO] [1733690874.646067486] [fibonacci_action_client]: 1
+[INFO] [1733690874.646073573] [fibonacci_action_client]: 1
+[INFO] [1733690874.646079905] [fibonacci_action_client]: 2
+[INFO] [1733690874.646085358] [fibonacci_action_client]: 3
+[INFO] [1733690874.646090733] [fibonacci_action_client]: 5
+[INFO] [1733690874.646096046] [fibonacci_action_client]: 8
+[INFO] [1733690874.646101150] [fibonacci_action_client]: 13
+[INFO] [1733690875.650581154] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690875.650693755] [fibonacci_action_client]: 0
+[INFO] [1733690875.650703516] [fibonacci_action_client]: 1
+[INFO] [1733690875.650709487] [fibonacci_action_client]: 1
+[INFO] [1733690875.650715496] [fibonacci_action_client]: 2
+[INFO] [1733690875.650721018] [fibonacci_action_client]: 3
+[INFO] [1733690875.650726052] [fibonacci_action_client]: 5
+[INFO] [1733690875.650753825] [fibonacci_action_client]: 8
+[INFO] [1733690875.650760126] [fibonacci_action_client]: 13
+[INFO] [1733690875.650765611] [fibonacci_action_client]: 21
+[INFO] [1733690876.654662353] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690876.654725576] [fibonacci_action_client]: 0
+[INFO] [1733690876.654738807] [fibonacci_action_client]: 1
+[INFO] [1733690876.654747709] [fibonacci_action_client]: 1
+[INFO] [1733690876.654755885] [fibonacci_action_client]: 2
+[INFO] [1733690876.654764013] [fibonacci_action_client]: 3
+[INFO] [1733690876.654772263] [fibonacci_action_client]: 5
+[INFO] [1733690876.654780060] [fibonacci_action_client]: 8
+[INFO] [1733690876.654788489] [fibonacci_action_client]: 13
+[INFO] [1733690876.654797084] [fibonacci_action_client]: 21
+[INFO] [1733690876.654805465] [fibonacci_action_client]: 34
+[INFO] [1733690877.657834050] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690877.657925152] [fibonacci_action_client]: 0
+[INFO] [1733690877.657937819] [fibonacci_action_client]: 1
+[INFO] [1733690877.657947137] [fibonacci_action_client]: 1
+[INFO] [1733690877.657955730] [fibonacci_action_client]: 2
+[INFO] [1733690877.657964333] [fibonacci_action_client]: 3
+[INFO] [1733690877.657972807] [fibonacci_action_client]: 5
+[INFO] [1733690877.657981294] [fibonacci_action_client]: 8
+[INFO] [1733690877.657989885] [fibonacci_action_client]: 13
+[INFO] [1733690877.657998606] [fibonacci_action_client]: 21
+[INFO] [1733690877.658007274] [fibonacci_action_client]: 34
+[INFO] [1733690877.658015782] [fibonacci_action_client]: 55
+[INFO] [1733690878.763446028] [fibonacci_action_client]: Result received:
+[INFO] [1733690878.763509811] [fibonacci_action_client]: 0
+[INFO] [1733690878.763522274] [fibonacci_action_client]: 1
+[INFO] [1733690878.763531837] [fibonacci_action_client]: 1
+[INFO] [1733690878.763540377] [fibonacci_action_client]: 2
+[INFO] [1733690878.763549002] [fibonacci_action_client]: 3
+[INFO] [1733690878.763557368] [fibonacci_action_client]: 5
+[INFO] [1733690878.763565715] [fibonacci_action_client]: 8
+[INFO] [1733690878.763574188] [fibonacci_action_client]: 13
+[INFO] [1733690878.763583062] [fibonacci_action_client]: 21
+[INFO] [1733690878.763591546] [fibonacci_action_client]: 34
+[INFO] [1733690878.763599964] [fibonacci_action_client]: 55
+[INFO] [1733690878.864165527] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690878.864895043] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690878.865033326] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690878.865060300] [fibonacci_action_client]: 0
+[INFO] [1733690878.865072212] [fibonacci_action_client]: 1
+[INFO] [1733690878.865096985] [fibonacci_action_client]: 1
+[INFO] [1733690879.869293174] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690879.869371329] [fibonacci_action_client]: 0
+[INFO] [1733690879.869380437] [fibonacci_action_client]: 1
+[INFO] [1733690879.869386452] [fibonacci_action_client]: 1
+[INFO] [1733690879.869392878] [fibonacci_action_client]: 2
+[INFO] [1733690880.873443010] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690880.873503613] [fibonacci_action_client]: 0
+[INFO] [1733690880.873516340] [fibonacci_action_client]: 1
+[INFO] [1733690880.873525712] [fibonacci_action_client]: 1
+[INFO] [1733690880.873534306] [fibonacci_action_client]: 2
+[INFO] [1733690880.873542724] [fibonacci_action_client]: 3
+[INFO] [1733690881.877976382] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690881.878054189] [fibonacci_action_client]: 0
+[INFO] [1733690881.878064402] [fibonacci_action_client]: 1
+[INFO] [1733690881.878070800] [fibonacci_action_client]: 1
+[INFO] [1733690881.878076858] [fibonacci_action_client]: 2
+[INFO] [1733690881.878082797] [fibonacci_action_client]: 3
+[INFO] [1733690881.878087962] [fibonacci_action_client]: 5
+[INFO] [1733690882.882080874] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690882.882154640] [fibonacci_action_client]: 0
+[INFO] [1733690882.882170097] [fibonacci_action_client]: 1
+[INFO] [1733690882.882183089] [fibonacci_action_client]: 1
+[INFO] [1733690882.882233325] [fibonacci_action_client]: 2
+[INFO] [1733690882.882242755] [fibonacci_action_client]: 3
+[INFO] [1733690882.882251136] [fibonacci_action_client]: 5
+[INFO] [1733690882.882259325] [fibonacci_action_client]: 8
+[INFO] [1733690883.884835079] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690883.884900682] [fibonacci_action_client]: 0
+[INFO] [1733690883.884914606] [fibonacci_action_client]: 1
+[INFO] [1733690883.884924394] [fibonacci_action_client]: 1
+[INFO] [1733690883.884933392] [fibonacci_action_client]: 2
+[INFO] [1733690883.884942192] [fibonacci_action_client]: 3
+[INFO] [1733690883.884950769] [fibonacci_action_client]: 5
+[INFO] [1733690883.884959623] [fibonacci_action_client]: 8
+[INFO] [1733690883.884968558] [fibonacci_action_client]: 13
+[INFO] [1733690884.888453497] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690884.888557457] [fibonacci_action_client]: 0
+[INFO] [1733690884.888571057] [fibonacci_action_client]: 1
+[INFO] [1733690884.888580010] [fibonacci_action_client]: 1
+[INFO] [1733690884.888588289] [fibonacci_action_client]: 2
+[INFO] [1733690884.888596459] [fibonacci_action_client]: 3
+[INFO] [1733690884.888604635] [fibonacci_action_client]: 5
+[INFO] [1733690884.888612676] [fibonacci_action_client]: 8
+[INFO] [1733690884.888620834] [fibonacci_action_client]: 13
+[INFO] [1733690884.888629376] [fibonacci_action_client]: 21
+[INFO] [1733690885.892173274] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690885.892236383] [fibonacci_action_client]: 0
+[INFO] [1733690885.892248605] [fibonacci_action_client]: 1
+[INFO] [1733690885.892257544] [fibonacci_action_client]: 1
+[INFO] [1733690885.892265946] [fibonacci_action_client]: 2
+[INFO] [1733690885.892274104] [fibonacci_action_client]: 3
+[INFO] [1733690885.892282171] [fibonacci_action_client]: 5
+[INFO] [1733690885.892290371] [fibonacci_action_client]: 8
+[INFO] [1733690885.892298545] [fibonacci_action_client]: 13
+[INFO] [1733690885.892307470] [fibonacci_action_client]: 21
+[INFO] [1733690885.892315769] [fibonacci_action_client]: 34
+[INFO] [1733690886.896010887] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690886.896089856] [fibonacci_action_client]: 0
+[INFO] [1733690886.896100053] [fibonacci_action_client]: 1
+[INFO] [1733690886.896106255] [fibonacci_action_client]: 1
+[INFO] [1733690886.896113459] [fibonacci_action_client]: 2
+[INFO] [1733690886.896118708] [fibonacci_action_client]: 3
+[INFO] [1733690886.896124008] [fibonacci_action_client]: 5
+[INFO] [1733690886.896129198] [fibonacci_action_client]: 8
+[INFO] [1733690886.896134337] [fibonacci_action_client]: 13
+[INFO] [1733690886.896141162] [fibonacci_action_client]: 21
+[INFO] [1733690886.896150086] [fibonacci_action_client]: 34
+[INFO] [1733690886.896158183] [fibonacci_action_client]: 55
+[INFO] [1733690888.000500458] [fibonacci_action_client]: Result received:
+[INFO] [1733690888.000613992] [fibonacci_action_client]: 0
+[INFO] [1733690888.000622873] [fibonacci_action_client]: 1
+[INFO] [1733690888.000630086] [fibonacci_action_client]: 1
+[INFO] [1733690888.000636199] [fibonacci_action_client]: 2
+[INFO] [1733690888.000641848] [fibonacci_action_client]: 3
+[INFO] [1733690888.000647408] [fibonacci_action_client]: 5
+[INFO] [1733690888.000653282] [fibonacci_action_client]: 8
+[INFO] [1733690888.000658755] [fibonacci_action_client]: 13
+[INFO] [1733690888.000664416] [fibonacci_action_client]: 21
+[INFO] [1733690888.000670077] [fibonacci_action_client]: 34
+[INFO] [1733690888.000675571] [fibonacci_action_client]: 55
+[INFO] [1733690888.101221855] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690888.101922666] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690888.102010220] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690888.102032448] [fibonacci_action_client]: 0
+[INFO] [1733690888.102054261] [fibonacci_action_client]: 1
+[INFO] [1733690888.102059807] [fibonacci_action_client]: 1
+[INFO] [1733690889.106011922] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690889.106117748] [fibonacci_action_client]: 0
+[INFO] [1733690889.106150652] [fibonacci_action_client]: 1
+[INFO] [1733690889.106157453] [fibonacci_action_client]: 1
+[INFO] [1733690889.106163153] [fibonacci_action_client]: 2
+[INFO] [1733690890.109893633] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690890.110007132] [fibonacci_action_client]: 0
+[INFO] [1733690890.110016307] [fibonacci_action_client]: 1
+[INFO] [1733690890.110022699] [fibonacci_action_client]: 1
+[INFO] [1733690890.110029185] [fibonacci_action_client]: 2
+[INFO] [1733690890.110034576] [fibonacci_action_client]: 3
+[INFO] [1733690891.113560895] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690891.113639280] [fibonacci_action_client]: 0
+[INFO] [1733690891.113648465] [fibonacci_action_client]: 1
+[INFO] [1733690891.113655985] [fibonacci_action_client]: 1
+[INFO] [1733690891.113661720] [fibonacci_action_client]: 2
+[INFO] [1733690891.113666906] [fibonacci_action_client]: 3
+[INFO] [1733690891.113672032] [fibonacci_action_client]: 5
+[INFO] [1733690892.117052556] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690892.117112798] [fibonacci_action_client]: 0
+[INFO] [1733690892.117121356] [fibonacci_action_client]: 1
+[INFO] [1733690892.117127821] [fibonacci_action_client]: 1
+[INFO] [1733690892.117133336] [fibonacci_action_client]: 2
+[INFO] [1733690892.117139032] [fibonacci_action_client]: 3
+[INFO] [1733690892.117144700] [fibonacci_action_client]: 5
+[INFO] [1733690892.117150141] [fibonacci_action_client]: 8
+[INFO] [1733690893.120661086] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690893.120728845] [fibonacci_action_client]: 0
+[INFO] [1733690893.120737440] [fibonacci_action_client]: 1
+[INFO] [1733690893.120743553] [fibonacci_action_client]: 1
+[INFO] [1733690893.120749123] [fibonacci_action_client]: 2
+[INFO] [1733690893.120754490] [fibonacci_action_client]: 3
+[INFO] [1733690893.120760241] [fibonacci_action_client]: 5
+[INFO] [1733690893.120765574] [fibonacci_action_client]: 8
+[INFO] [1733690893.120771114] [fibonacci_action_client]: 13
+[INFO] [1733690894.123942556] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690894.124010779] [fibonacci_action_client]: 0
+[INFO] [1733690894.124019714] [fibonacci_action_client]: 1
+[INFO] [1733690894.124025775] [fibonacci_action_client]: 1
+[INFO] [1733690894.124031010] [fibonacci_action_client]: 2
+[INFO] [1733690894.124036337] [fibonacci_action_client]: 3
+[INFO] [1733690894.124041671] [fibonacci_action_client]: 5
+[INFO] [1733690894.124047436] [fibonacci_action_client]: 8
+[INFO] [1733690894.124052690] [fibonacci_action_client]: 13
+[INFO] [1733690894.124058290] [fibonacci_action_client]: 21
+[INFO] [1733690895.126846270] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690895.126927465] [fibonacci_action_client]: 0
+[INFO] [1733690895.126937109] [fibonacci_action_client]: 1
+[INFO] [1733690895.126943352] [fibonacci_action_client]: 1
+[INFO] [1733690895.126949471] [fibonacci_action_client]: 2
+[INFO] [1733690895.126954832] [fibonacci_action_client]: 3
+[INFO] [1733690895.126960124] [fibonacci_action_client]: 5
+[INFO] [1733690895.126965570] [fibonacci_action_client]: 8
+[INFO] [1733690895.126970819] [fibonacci_action_client]: 13
+[INFO] [1733690895.126976340] [fibonacci_action_client]: 21
+[INFO] [1733690895.126981556] [fibonacci_action_client]: 34
+[INFO] [1733690896.130326266] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690896.130429522] [fibonacci_action_client]: 0
+[INFO] [1733690896.130440247] [fibonacci_action_client]: 1
+[INFO] [1733690896.130446671] [fibonacci_action_client]: 1
+[INFO] [1733690896.130453467] [fibonacci_action_client]: 2
+[INFO] [1733690896.130458805] [fibonacci_action_client]: 3
+[INFO] [1733690896.130464138] [fibonacci_action_client]: 5
+[INFO] [1733690896.130469376] [fibonacci_action_client]: 8
+[INFO] [1733690896.130474630] [fibonacci_action_client]: 13
+[INFO] [1733690896.130480105] [fibonacci_action_client]: 21
+[INFO] [1733690896.130485445] [fibonacci_action_client]: 34
+[INFO] [1733690896.130490687] [fibonacci_action_client]: 55
+[INFO] [1733690897.233340983] [fibonacci_action_client]: Result received:
+[INFO] [1733690897.233438523] [fibonacci_action_client]: 0
+[INFO] [1733690897.233449497] [fibonacci_action_client]: 1
+[INFO] [1733690897.233455905] [fibonacci_action_client]: 1
+[INFO] [1733690897.233461381] [fibonacci_action_client]: 2
+[INFO] [1733690897.233466726] [fibonacci_action_client]: 3
+[INFO] [1733690897.233471963] [fibonacci_action_client]: 5
+[INFO] [1733690897.233477154] [fibonacci_action_client]: 8
+[INFO] [1733690897.233482505] [fibonacci_action_client]: 13
+[INFO] [1733690897.233488035] [fibonacci_action_client]: 21
+[INFO] [1733690897.233493375] [fibonacci_action_client]: 34
+[INFO] [1733690897.233498852] [fibonacci_action_client]: 55
+[INFO] [1733690897.333641349] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690897.334220596] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690897.334281724] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690897.334310685] [fibonacci_action_client]: 0
+[INFO] [1733690897.334317945] [fibonacci_action_client]: 1
+[INFO] [1733690897.334323593] [fibonacci_action_client]: 1
+[INFO] [1733690898.336755138] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690898.336792363] [fibonacci_action_client]: 0
+[INFO] [1733690898.336804331] [fibonacci_action_client]: 1
+[INFO] [1733690898.336813797] [fibonacci_action_client]: 1
+[INFO] [1733690898.336822433] [fibonacci_action_client]: 2
+[INFO] [1733690899.339981912] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690899.340109920] [fibonacci_action_client]: 0
+[INFO] [1733690899.340121306] [fibonacci_action_client]: 1
+[INFO] [1733690899.340128983] [fibonacci_action_client]: 1
+[INFO] [1733690899.340134974] [fibonacci_action_client]: 2
+[INFO] [1733690899.340140694] [fibonacci_action_client]: 3
+[INFO] [1733690900.344241767] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690900.344340560] [fibonacci_action_client]: 0
+[INFO] [1733690900.344349988] [fibonacci_action_client]: 1
+[INFO] [1733690900.344356810] [fibonacci_action_client]: 1
+[INFO] [1733690900.344362623] [fibonacci_action_client]: 2
+[INFO] [1733690900.344367946] [fibonacci_action_client]: 3
+[INFO] [1733690900.344373156] [fibonacci_action_client]: 5
+[INFO] [1733690901.348320670] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690901.348398161] [fibonacci_action_client]: 0
+[INFO] [1733690901.348408115] [fibonacci_action_client]: 1
+[INFO] [1733690901.348414271] [fibonacci_action_client]: 1
+[INFO] [1733690901.348420833] [fibonacci_action_client]: 2
+[INFO] [1733690901.348426412] [fibonacci_action_client]: 3
+[INFO] [1733690901.348431681] [fibonacci_action_client]: 5
+[INFO] [1733690901.348436901] [fibonacci_action_client]: 8
+[INFO] [1733690902.352314966] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690902.352389374] [fibonacci_action_client]: 0
+[INFO] [1733690902.352401903] [fibonacci_action_client]: 1
+[INFO] [1733690902.352411262] [fibonacci_action_client]: 1
+[INFO] [1733690902.352419826] [fibonacci_action_client]: 2
+[INFO] [1733690902.352428542] [fibonacci_action_client]: 3
+[INFO] [1733690902.352436969] [fibonacci_action_client]: 5
+[INFO] [1733690902.352444960] [fibonacci_action_client]: 8
+[INFO] [1733690902.352453238] [fibonacci_action_client]: 13
+[INFO] [1733690903.356198617] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690903.356266175] [fibonacci_action_client]: 0
+[INFO] [1733690903.356278811] [fibonacci_action_client]: 1
+[INFO] [1733690903.356287738] [fibonacci_action_client]: 1
+[INFO] [1733690903.356295943] [fibonacci_action_client]: 2
+[INFO] [1733690903.356303986] [fibonacci_action_client]: 3
+[INFO] [1733690903.356312067] [fibonacci_action_client]: 5
+[INFO] [1733690903.356319898] [fibonacci_action_client]: 8
+[INFO] [1733690903.356328265] [fibonacci_action_client]: 13
+[INFO] [1733690903.356336656] [fibonacci_action_client]: 21
+[INFO] [1733690904.360240750] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690904.360317140] [fibonacci_action_client]: 0
+[INFO] [1733690904.360327152] [fibonacci_action_client]: 1
+[INFO] [1733690904.360333055] [fibonacci_action_client]: 1
+[INFO] [1733690904.360361117] [fibonacci_action_client]: 2
+[INFO] [1733690904.360367331] [fibonacci_action_client]: 3
+[INFO] [1733690904.360373172] [fibonacci_action_client]: 5
+[INFO] [1733690904.360378360] [fibonacci_action_client]: 8
+[INFO] [1733690904.360383748] [fibonacci_action_client]: 13
+[INFO] [1733690904.360389144] [fibonacci_action_client]: 21
+[INFO] [1733690904.360394398] [fibonacci_action_client]: 34
+[INFO] [1733690905.364532750] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690905.364637024] [fibonacci_action_client]: 0
+[INFO] [1733690905.364651838] [fibonacci_action_client]: 1
+[INFO] [1733690905.364662274] [fibonacci_action_client]: 1
+[INFO] [1733690905.364671784] [fibonacci_action_client]: 2
+[INFO] [1733690905.364681684] [fibonacci_action_client]: 3
+[INFO] [1733690905.364691214] [fibonacci_action_client]: 5
+[INFO] [1733690905.364701197] [fibonacci_action_client]: 8
+[INFO] [1733690905.364710600] [fibonacci_action_client]: 13
+[INFO] [1733690905.364721085] [fibonacci_action_client]: 21
+[INFO] [1733690905.364744014] [fibonacci_action_client]: 34
+[INFO] [1733690905.364752820] [fibonacci_action_client]: 55
+[INFO] [1733690906.468630470] [fibonacci_action_client]: Result received:
+[INFO] [1733690906.468707620] [fibonacci_action_client]: 0
+[INFO] [1733690906.468717821] [fibonacci_action_client]: 1
+[INFO] [1733690906.468724059] [fibonacci_action_client]: 1
+[INFO] [1733690906.468730613] [fibonacci_action_client]: 2
+[INFO] [1733690906.468735933] [fibonacci_action_client]: 3
+[INFO] [1733690906.468741359] [fibonacci_action_client]: 5
+[INFO] [1733690906.468746711] [fibonacci_action_client]: 8
+[INFO] [1733690906.468752116] [fibonacci_action_client]: 13
+[INFO] [1733690906.468757710] [fibonacci_action_client]: 21
+[INFO] [1733690906.468763185] [fibonacci_action_client]: 34
+[INFO] [1733690906.468768498] [fibonacci_action_client]: 55
+[INFO] [1733690906.569122631] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690906.569854890] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690906.569957193] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690906.569984474] [fibonacci_action_client]: 0
+[INFO] [1733690906.569992868] [fibonacci_action_client]: 1
+[INFO] [1733690906.569999269] [fibonacci_action_client]: 1
+[INFO] [1733690907.573368304] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690907.573446792] [fibonacci_action_client]: 0
+[INFO] [1733690907.573456711] [fibonacci_action_client]: 1
+[INFO] [1733690907.573462342] [fibonacci_action_client]: 1
+[INFO] [1733690907.573468270] [fibonacci_action_client]: 2
+[INFO] [1733690908.576423744] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690908.576482452] [fibonacci_action_client]: 0
+[INFO] [1733690908.576490881] [fibonacci_action_client]: 1
+[INFO] [1733690908.576497217] [fibonacci_action_client]: 1
+[INFO] [1733690908.576502684] [fibonacci_action_client]: 2
+[INFO] [1733690908.576508020] [fibonacci_action_client]: 3
+[INFO] [1733690909.580743431] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690909.580819421] [fibonacci_action_client]: 0
+[INFO] [1733690909.580829498] [fibonacci_action_client]: 1
+[INFO] [1733690909.580835661] [fibonacci_action_client]: 1
+[INFO] [1733690909.580841637] [fibonacci_action_client]: 2
+[INFO] [1733690909.580847362] [fibonacci_action_client]: 3
+[INFO] [1733690909.580852499] [fibonacci_action_client]: 5
+[INFO] [1733690910.584197026] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690910.584275028] [fibonacci_action_client]: 0
+[INFO] [1733690910.584284673] [fibonacci_action_client]: 1
+[INFO] [1733690910.584291144] [fibonacci_action_client]: 1
+[INFO] [1733690910.584296705] [fibonacci_action_client]: 2
+[INFO] [1733690910.584302312] [fibonacci_action_client]: 3
+[INFO] [1733690910.584307690] [fibonacci_action_client]: 5
+[INFO] [1733690910.584312774] [fibonacci_action_client]: 8
+[INFO] [1733690911.587679211] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690911.587756385] [fibonacci_action_client]: 0
+[INFO] [1733690911.587765722] [fibonacci_action_client]: 1
+[INFO] [1733690911.587836254] [fibonacci_action_client]: 1
+[INFO] [1733690911.587844251] [fibonacci_action_client]: 2
+[INFO] [1733690911.587863570] [fibonacci_action_client]: 3
+[INFO] [1733690911.587868942] [fibonacci_action_client]: 5
+[INFO] [1733690911.587874087] [fibonacci_action_client]: 8
+[INFO] [1733690911.587879277] [fibonacci_action_client]: 13
+[INFO] [1733690912.591312341] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690912.591401745] [fibonacci_action_client]: 0
+[INFO] [1733690912.591415351] [fibonacci_action_client]: 1
+[INFO] [1733690912.591422907] [fibonacci_action_client]: 1
+[INFO] [1733690912.591429192] [fibonacci_action_client]: 2
+[INFO] [1733690912.591435134] [fibonacci_action_client]: 3
+[INFO] [1733690912.591441889] [fibonacci_action_client]: 5
+[INFO] [1733690912.591448244] [fibonacci_action_client]: 8
+[INFO] [1733690912.591454744] [fibonacci_action_client]: 13
+[INFO] [1733690912.591461497] [fibonacci_action_client]: 21
+[INFO] [1733690913.594830052] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690913.594900390] [fibonacci_action_client]: 0
+[INFO] [1733690913.594908387] [fibonacci_action_client]: 1
+[INFO] [1733690913.594914332] [fibonacci_action_client]: 1
+[INFO] [1733690913.594919837] [fibonacci_action_client]: 2
+[INFO] [1733690913.594925364] [fibonacci_action_client]: 3
+[INFO] [1733690913.594930972] [fibonacci_action_client]: 5
+[INFO] [1733690913.594936421] [fibonacci_action_client]: 8
+[INFO] [1733690913.594941835] [fibonacci_action_client]: 13
+[INFO] [1733690913.594947660] [fibonacci_action_client]: 21
+[INFO] [1733690913.594953269] [fibonacci_action_client]: 34
+[INFO] [1733690914.598980833] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690914.599060250] [fibonacci_action_client]: 0
+[INFO] [1733690914.599069509] [fibonacci_action_client]: 1
+[INFO] [1733690914.599075541] [fibonacci_action_client]: 1
+[INFO] [1733690914.599081756] [fibonacci_action_client]: 2
+[INFO] [1733690914.599087103] [fibonacci_action_client]: 3
+[INFO] [1733690914.599092189] [fibonacci_action_client]: 5
+[INFO] [1733690914.599097662] [fibonacci_action_client]: 8
+[INFO] [1733690914.599102963] [fibonacci_action_client]: 13
+[INFO] [1733690914.599108480] [fibonacci_action_client]: 21
+[INFO] [1733690914.599113780] [fibonacci_action_client]: 34
+[INFO] [1733690914.599119015] [fibonacci_action_client]: 55
+[INFO] [1733690915.703622570] [fibonacci_action_client]: Result received:
+[INFO] [1733690915.703709506] [fibonacci_action_client]: 0
+[INFO] [1733690915.703722519] [fibonacci_action_client]: 1
+[INFO] [1733690915.703732250] [fibonacci_action_client]: 1
+[INFO] [1733690915.703741145] [fibonacci_action_client]: 2
+[INFO] [1733690915.703749921] [fibonacci_action_client]: 3
+[INFO] [1733690915.703759022] [fibonacci_action_client]: 5
+[INFO] [1733690915.703798283] [fibonacci_action_client]: 8
+[INFO] [1733690915.703811777] [fibonacci_action_client]: 13
+[INFO] [1733690915.703821356] [fibonacci_action_client]: 21
+[INFO] [1733690915.703831112] [fibonacci_action_client]: 34
+[INFO] [1733690915.703841151] [fibonacci_action_client]: 55
+[INFO] [1733690915.804077275] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690915.804773991] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690915.804862761] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690915.804883179] [fibonacci_action_client]: 0
+[INFO] [1733690915.804893509] [fibonacci_action_client]: 1
+[INFO] [1733690915.804900443] [fibonacci_action_client]: 1
+[INFO] [1733690916.808817204] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690916.808859749] [fibonacci_action_client]: 0
+[INFO] [1733690916.808867413] [fibonacci_action_client]: 1
+[INFO] [1733690916.808873324] [fibonacci_action_client]: 1
+[INFO] [1733690916.808878694] [fibonacci_action_client]: 2
+[INFO] [1733690917.812899194] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690917.812977066] [fibonacci_action_client]: 0
+[INFO] [1733690917.812986335] [fibonacci_action_client]: 1
+[INFO] [1733690917.812993276] [fibonacci_action_client]: 1
+[INFO] [1733690917.813020536] [fibonacci_action_client]: 2
+[INFO] [1733690917.813027249] [fibonacci_action_client]: 3
+[INFO] [1733690918.816910006] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690918.816987935] [fibonacci_action_client]: 0
+[INFO] [1733690918.816997595] [fibonacci_action_client]: 1
+[INFO] [1733690918.817003490] [fibonacci_action_client]: 1
+[INFO] [1733690918.817009249] [fibonacci_action_client]: 2
+[INFO] [1733690918.817014718] [fibonacci_action_client]: 3
+[INFO] [1733690918.817019946] [fibonacci_action_client]: 5
+[INFO] [1733690919.820826723] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690919.820872784] [fibonacci_action_client]: 0
+[INFO] [1733690919.820880133] [fibonacci_action_client]: 1
+[INFO] [1733690919.820886260] [fibonacci_action_client]: 1
+[INFO] [1733690919.820891701] [fibonacci_action_client]: 2
+[INFO] [1733690919.820896736] [fibonacci_action_client]: 3
+[INFO] [1733690919.820901971] [fibonacci_action_client]: 5
+[INFO] [1733690919.820907456] [fibonacci_action_client]: 8
+[INFO] [1733690920.824813558] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690920.824892450] [fibonacci_action_client]: 0
+[INFO] [1733690920.824901684] [fibonacci_action_client]: 1
+[INFO] [1733690920.824907636] [fibonacci_action_client]: 1
+[INFO] [1733690920.824913804] [fibonacci_action_client]: 2
+[INFO] [1733690920.824919523] [fibonacci_action_client]: 3
+[INFO] [1733690920.824925290] [fibonacci_action_client]: 5
+[INFO] [1733690920.824930399] [fibonacci_action_client]: 8
+[INFO] [1733690920.824935502] [fibonacci_action_client]: 13
+[INFO] [1733690921.829005717] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690921.829070654] [fibonacci_action_client]: 0
+[INFO] [1733690921.829083696] [fibonacci_action_client]: 1
+[INFO] [1733690921.829093122] [fibonacci_action_client]: 1
+[INFO] [1733690921.829101296] [fibonacci_action_client]: 2
+[INFO] [1733690921.829109422] [fibonacci_action_client]: 3
+[INFO] [1733690921.829123083] [fibonacci_action_client]: 5
+[INFO] [1733690921.829135558] [fibonacci_action_client]: 8
+[INFO] [1733690921.829148505] [fibonacci_action_client]: 13
+[INFO] [1733690921.829156865] [fibonacci_action_client]: 21
+[INFO] [1733690922.832163679] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690922.832235111] [fibonacci_action_client]: 0
+[INFO] [1733690922.832248217] [fibonacci_action_client]: 1
+[INFO] [1733690922.832257679] [fibonacci_action_client]: 1
+[INFO] [1733690922.832267015] [fibonacci_action_client]: 2
+[INFO] [1733690922.832275931] [fibonacci_action_client]: 3
+[INFO] [1733690922.832286336] [fibonacci_action_client]: 5
+[INFO] [1733690922.832299037] [fibonacci_action_client]: 8
+[INFO] [1733690922.832307324] [fibonacci_action_client]: 13
+[INFO] [1733690922.832315587] [fibonacci_action_client]: 21
+[INFO] [1733690922.832323701] [fibonacci_action_client]: 34
+[INFO] [1733690923.836223116] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690923.836300767] [fibonacci_action_client]: 0
+[INFO] [1733690923.836310823] [fibonacci_action_client]: 1
+[INFO] [1733690923.836317261] [fibonacci_action_client]: 1
+[INFO] [1733690923.836323162] [fibonacci_action_client]: 2
+[INFO] [1733690923.836328662] [fibonacci_action_client]: 3
+[INFO] [1733690923.836333934] [fibonacci_action_client]: 5
+[INFO] [1733690923.836339145] [fibonacci_action_client]: 8
+[INFO] [1733690923.836344292] [fibonacci_action_client]: 13
+[INFO] [1733690923.836349702] [fibonacci_action_client]: 21
+[INFO] [1733690923.836355272] [fibonacci_action_client]: 34
+[INFO] [1733690923.836360800] [fibonacci_action_client]: 55
+[INFO] [1733690924.940107889] [fibonacci_action_client]: Result received:
+[INFO] [1733690924.940185952] [fibonacci_action_client]: 0
+[INFO] [1733690924.940196540] [fibonacci_action_client]: 1
+[INFO] [1733690924.940203628] [fibonacci_action_client]: 1
+[INFO] [1733690924.940209601] [fibonacci_action_client]: 2
+[INFO] [1733690924.940215057] [fibonacci_action_client]: 3
+[INFO] [1733690924.940220404] [fibonacci_action_client]: 5
+[INFO] [1733690924.940225773] [fibonacci_action_client]: 8
+[INFO] [1733690924.940250581] [fibonacci_action_client]: 13
+[INFO] [1733690924.940256700] [fibonacci_action_client]: 21
+[INFO] [1733690924.940262164] [fibonacci_action_client]: 34
+[INFO] [1733690924.940267878] [fibonacci_action_client]: 55
+[INFO] [1733690925.040532682] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690925.041244940] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690925.041335550] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690925.041370526] [fibonacci_action_client]: 0
+[INFO] [1733690925.041378662] [fibonacci_action_client]: 1
+[INFO] [1733690925.041384220] [fibonacci_action_client]: 1
+[INFO] [1733690926.045469673] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690926.045596065] [fibonacci_action_client]: 0
+[INFO] [1733690926.045610620] [fibonacci_action_client]: 1
+[INFO] [1733690926.045618534] [fibonacci_action_client]: 1
+[INFO] [1733690926.045625470] [fibonacci_action_client]: 2
+[INFO] [1733690927.049672782] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690927.049751785] [fibonacci_action_client]: 0
+[INFO] [1733690927.049761235] [fibonacci_action_client]: 1
+[INFO] [1733690927.049767293] [fibonacci_action_client]: 1
+[INFO] [1733690927.049773573] [fibonacci_action_client]: 2
+[INFO] [1733690927.049778785] [fibonacci_action_client]: 3
+[INFO] [1733690928.054398485] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690928.054469775] [fibonacci_action_client]: 0
+[INFO] [1733690928.054478088] [fibonacci_action_client]: 1
+[INFO] [1733690928.054484556] [fibonacci_action_client]: 1
+[INFO] [1733690928.054490479] [fibonacci_action_client]: 2
+[INFO] [1733690928.054495920] [fibonacci_action_client]: 3
+[INFO] [1733690928.054501357] [fibonacci_action_client]: 5
+[INFO] [1733690929.058728870] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690929.058805451] [fibonacci_action_client]: 0
+[INFO] [1733690929.058814986] [fibonacci_action_client]: 1
+[INFO] [1733690929.058821001] [fibonacci_action_client]: 1
+[INFO] [1733690929.058826483] [fibonacci_action_client]: 2
+[INFO] [1733690929.058831860] [fibonacci_action_client]: 3
+[INFO] [1733690929.058837050] [fibonacci_action_client]: 5
+[INFO] [1733690929.058842266] [fibonacci_action_client]: 8
+[INFO] [1733690930.062758774] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690930.062837779] [fibonacci_action_client]: 0
+[INFO] [1733690930.062847706] [fibonacci_action_client]: 1
+[INFO] [1733690930.062853816] [fibonacci_action_client]: 1
+[INFO] [1733690930.062860273] [fibonacci_action_client]: 2
+[INFO] [1733690930.062865539] [fibonacci_action_client]: 3
+[INFO] [1733690930.062870862] [fibonacci_action_client]: 5
+[INFO] [1733690930.062876075] [fibonacci_action_client]: 8
+[INFO] [1733690930.062881322] [fibonacci_action_client]: 13
+[INFO] [1733690931.067505660] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690931.067583971] [fibonacci_action_client]: 0
+[INFO] [1733690931.067592598] [fibonacci_action_client]: 1
+[INFO] [1733690931.067598434] [fibonacci_action_client]: 1
+[INFO] [1733690931.067604900] [fibonacci_action_client]: 2
+[INFO] [1733690931.067610174] [fibonacci_action_client]: 3
+[INFO] [1733690931.067615369] [fibonacci_action_client]: 5
+[INFO] [1733690931.067620480] [fibonacci_action_client]: 8
+[INFO] [1733690931.067625679] [fibonacci_action_client]: 13
+[INFO] [1733690931.067631181] [fibonacci_action_client]: 21
+[INFO] [1733690932.071645740] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690932.071724808] [fibonacci_action_client]: 0
+[INFO] [1733690932.071733710] [fibonacci_action_client]: 1
+[INFO] [1733690932.071739650] [fibonacci_action_client]: 1
+[INFO] [1733690932.071745628] [fibonacci_action_client]: 2
+[INFO] [1733690932.071751070] [fibonacci_action_client]: 3
+[INFO] [1733690932.071756258] [fibonacci_action_client]: 5
+[INFO] [1733690932.071761461] [fibonacci_action_client]: 8
+[INFO] [1733690932.071766689] [fibonacci_action_client]: 13
+[INFO] [1733690932.071815157] [fibonacci_action_client]: 21
+[INFO] [1733690932.071823379] [fibonacci_action_client]: 34
+[INFO] [1733690933.076265628] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690933.076345198] [fibonacci_action_client]: 0
+[INFO] [1733690933.076355014] [fibonacci_action_client]: 1
+[INFO] [1733690933.076361098] [fibonacci_action_client]: 1
+[INFO] [1733690933.076367109] [fibonacci_action_client]: 2
+[INFO] [1733690933.076372340] [fibonacci_action_client]: 3
+[INFO] [1733690933.076377600] [fibonacci_action_client]: 5
+[INFO] [1733690933.076382916] [fibonacci_action_client]: 8
+[INFO] [1733690933.076388196] [fibonacci_action_client]: 13
+[INFO] [1733690933.076393581] [fibonacci_action_client]: 21
+[INFO] [1733690933.076399009] [fibonacci_action_client]: 34
+[INFO] [1733690933.076404121] [fibonacci_action_client]: 55
+[INFO] [1733690934.180513272] [fibonacci_action_client]: Result received:
+[INFO] [1733690934.180593088] [fibonacci_action_client]: 0
+[INFO] [1733690934.180603212] [fibonacci_action_client]: 1
+[INFO] [1733690934.180610194] [fibonacci_action_client]: 1
+[INFO] [1733690934.180628262] [fibonacci_action_client]: 2
+[INFO] [1733690934.180635793] [fibonacci_action_client]: 3
+[INFO] [1733690934.180643774] [fibonacci_action_client]: 5
+[INFO] [1733690934.180653124] [fibonacci_action_client]: 8
+[INFO] [1733690934.180658542] [fibonacci_action_client]: 13
+[INFO] [1733690934.180664014] [fibonacci_action_client]: 21
+[INFO] [1733690934.180669388] [fibonacci_action_client]: 34
+[INFO] [1733690934.180674731] [fibonacci_action_client]: 55
+[INFO] [1733690934.281025572] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690934.281706690] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690934.281808131] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690934.281831749] [fibonacci_action_client]: 0
+[INFO] [1733690934.281842109] [fibonacci_action_client]: 1
+[INFO] [1733690934.281848306] [fibonacci_action_client]: 1
+[INFO] [1733690935.284734808] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690935.284814266] [fibonacci_action_client]: 0
+[INFO] [1733690935.284823446] [fibonacci_action_client]: 1
+[INFO] [1733690935.284830141] [fibonacci_action_client]: 1
+[INFO] [1733690935.284836301] [fibonacci_action_client]: 2
+[INFO] [1733690936.288111426] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690936.288189478] [fibonacci_action_client]: 0
+[INFO] [1733690936.288199008] [fibonacci_action_client]: 1
+[INFO] [1733690936.288205280] [fibonacci_action_client]: 1
+[INFO] [1733690936.288211189] [fibonacci_action_client]: 2
+[INFO] [1733690936.288220180] [fibonacci_action_client]: 3
+[INFO] [1733690937.291620388] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690937.291696532] [fibonacci_action_client]: 0
+[INFO] [1733690937.291740806] [fibonacci_action_client]: 1
+[INFO] [1733690937.291746710] [fibonacci_action_client]: 1
+[INFO] [1733690937.291752175] [fibonacci_action_client]: 2
+[INFO] [1733690937.291758196] [fibonacci_action_client]: 3
+[INFO] [1733690937.291764042] [fibonacci_action_client]: 5
+[INFO] [1733690938.295397979] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690938.295475249] [fibonacci_action_client]: 0
+[INFO] [1733690938.295484697] [fibonacci_action_client]: 1
+[INFO] [1733690938.295491325] [fibonacci_action_client]: 1
+[INFO] [1733690938.295497400] [fibonacci_action_client]: 2
+[INFO] [1733690938.295502643] [fibonacci_action_client]: 3
+[INFO] [1733690938.295507940] [fibonacci_action_client]: 5
+[INFO] [1733690938.295513155] [fibonacci_action_client]: 8
+[INFO] [1733690939.299825957] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690939.299929475] [fibonacci_action_client]: 0
+[INFO] [1733690939.299939143] [fibonacci_action_client]: 1
+[INFO] [1733690939.299945497] [fibonacci_action_client]: 1
+[INFO] [1733690939.299951191] [fibonacci_action_client]: 2
+[INFO] [1733690939.299956618] [fibonacci_action_client]: 3
+[INFO] [1733690939.299962380] [fibonacci_action_client]: 5
+[INFO] [1733690939.299967973] [fibonacci_action_client]: 8
+[INFO] [1733690939.299973586] [fibonacci_action_client]: 13
+[INFO] [1733690940.303699951] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690940.303868756] [fibonacci_action_client]: 0
+[INFO] [1733690940.303879840] [fibonacci_action_client]: 1
+[INFO] [1733690940.303900070] [fibonacci_action_client]: 1
+[INFO] [1733690940.303905505] [fibonacci_action_client]: 2
+[INFO] [1733690940.303910710] [fibonacci_action_client]: 3
+[INFO] [1733690940.303916037] [fibonacci_action_client]: 5
+[INFO] [1733690940.303921554] [fibonacci_action_client]: 8
+[INFO] [1733690940.303926646] [fibonacci_action_client]: 13
+[INFO] [1733690940.303932215] [fibonacci_action_client]: 21
+[INFO] [1733690941.307750856] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690941.307867050] [fibonacci_action_client]: 0
+[INFO] [1733690941.308617810] [fibonacci_action_client]: 1
+[INFO] [1733690941.308631794] [fibonacci_action_client]: 1
+[INFO] [1733690941.308637820] [fibonacci_action_client]: 2
+[INFO] [1733690941.308643376] [fibonacci_action_client]: 3
+[INFO] [1733690941.308648808] [fibonacci_action_client]: 5
+[INFO] [1733690941.308653808] [fibonacci_action_client]: 8
+[INFO] [1733690941.308658857] [fibonacci_action_client]: 13
+[INFO] [1733690941.308664166] [fibonacci_action_client]: 21
+[INFO] [1733690941.308669417] [fibonacci_action_client]: 34
+[INFO] [1733690942.313073735] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690942.313139487] [fibonacci_action_client]: 0
+[INFO] [1733690942.313152498] [fibonacci_action_client]: 1
+[INFO] [1733690942.313162014] [fibonacci_action_client]: 1
+[INFO] [1733690942.313170365] [fibonacci_action_client]: 2
+[INFO] [1733690942.313178608] [fibonacci_action_client]: 3
+[INFO] [1733690942.313186865] [fibonacci_action_client]: 5
+[INFO] [1733690942.313194913] [fibonacci_action_client]: 8
+[INFO] [1733690942.313203253] [fibonacci_action_client]: 13
+[INFO] [1733690942.313211624] [fibonacci_action_client]: 21
+[INFO] [1733690942.313219924] [fibonacci_action_client]: 34
+[INFO] [1733690942.313228060] [fibonacci_action_client]: 55
+[INFO] [1733690943.418118097] [fibonacci_action_client]: Result received:
+[INFO] [1733690943.418181588] [fibonacci_action_client]: 0
+[INFO] [1733690943.418194718] [fibonacci_action_client]: 1
+[INFO] [1733690943.418204106] [fibonacci_action_client]: 1
+[INFO] [1733690943.418212542] [fibonacci_action_client]: 2
+[INFO] [1733690943.418220804] [fibonacci_action_client]: 3
+[INFO] [1733690943.418229083] [fibonacci_action_client]: 5
+[INFO] [1733690943.418236999] [fibonacci_action_client]: 8
+[INFO] [1733690943.418245415] [fibonacci_action_client]: 13
+[INFO] [1733690943.418253826] [fibonacci_action_client]: 21
+[INFO] [1733690943.418262058] [fibonacci_action_client]: 34
+[INFO] [1733690943.418270642] [fibonacci_action_client]: 55
+[INFO] [1733690943.518773101] [fibonacci_action_client]: Sending goal with order 10
+[INFO] [1733690943.519515013] [fibonacci_action_client]: Goal accepted, waiting for result...
+[INFO] [1733690943.519629755] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690943.519653471] [fibonacci_action_client]: 0
+[INFO] [1733690943.519664497] [fibonacci_action_client]: 1
+[INFO] [1733690943.519673281] [fibonacci_action_client]: 1
+[INFO] [1733690944.523614251] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690944.523719100] [fibonacci_action_client]: 0
+[INFO] [1733690944.523727730] [fibonacci_action_client]: 1
+[INFO] [1733690944.523733938] [fibonacci_action_client]: 1
+[INFO] [1733690944.523739884] [fibonacci_action_client]: 2
+[INFO] [1733690945.527428853] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690945.527537290] [fibonacci_action_client]: 0
+[INFO] [1733690945.527546332] [fibonacci_action_client]: 1
+[INFO] [1733690945.527552895] [fibonacci_action_client]: 1
+[INFO] [1733690945.527559067] [fibonacci_action_client]: 2
+[INFO] [1733690945.527564413] [fibonacci_action_client]: 3
+[INFO] [1733690946.531188350] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690946.531268317] [fibonacci_action_client]: 0
+[INFO] [1733690946.531278096] [fibonacci_action_client]: 1
+[INFO] [1733690946.531284353] [fibonacci_action_client]: 1
+[INFO] [1733690946.531290181] [fibonacci_action_client]: 2
+[INFO] [1733690946.531320019] [fibonacci_action_client]: 3
+[INFO] [1733690946.531326291] [fibonacci_action_client]: 5
+[INFO] [1733690947.535068679] [fibonacci_action_client]: Feedback received:
+[INFO] [1733690947.535147577] [fibonacci_action_client]: 0
+[INFO] [1733690947.535156916] [fibonacci_action_client]: 1
+[INFO] [1733690947.535163513] [fibonacci_action_client]: 1
+[INFO] [1733690947.535169526] [fibonacci_action_client]: 2
+[INFO] [1733690947.535174944] [fibonacci_action_client]: 3
+[INFO] [1733690947.535180172] [fibonacci_action_client]: 5
+[INFO] [1733690947.535185693] [fibonacci_action_client]: 8

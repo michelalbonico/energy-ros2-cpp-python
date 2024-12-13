@@ -24,7 +24,7 @@ import subprocess
 class RunnerConfig:
     ROOT_DIR = Path(dirname(realpath(__file__)))
 
-    name:                       str             = "cpp_py_ros2_pub_sub"
+    name:                       str             = "cpp_py_ros2_pub_sub_er"
     results_output_path:        Path             = ROOT_DIR / 'experiments'
     operation_type:             OperationType   = OperationType.AUTO
     time_between_runs_in_ms:    int             = 1000

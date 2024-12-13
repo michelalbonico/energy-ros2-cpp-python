@@ -235,8 +235,9 @@ def gen_boxplot_graph(df, filter):
 #algos = {'pubsub','service','action'}
 #components = {'server', 'client'}
 components = {'server'}
-algos = {'pubsub'}
-intervals = {0.05,0.1,0.25,0.5,1.0}
+algos = {'action'}
+#intervals = {0.05,0.1,0.25,0.5,1.0}
+intervals = {0.25}
 num_clients = {1,2,3}
 languages = {'py','cpp'}
 # transformations = {True, False}
@@ -252,17 +253,17 @@ for algo in algos:
 
     match algo:
         case 'pubsub':
-            algo_folder='cpp_py_ros2_pub_sub_standalone'
-            dest_folder='pubsub_standalone'
-            num_rows=155
+            algo_folder='cpp_py_ros2_pub_sub'
+            dest_folder='pubsub'
+            num_rows=480
         case 'service':
             algo_folder='cpp_py_ros2_service'
             dest_folder='service'
             num_rows=600
         case 'action':
-            algo_folder='cpp_py_ros2_action-bkp'
-            dest_folder='action'
-            num_rows=222
+            algo_folder='cpp_py_ros2_action'
+            dest_folder='action_standalone'
+            num_rows=600
 
     # Paths
     prefix = f"../exp_runners/experiments/{algo_folder}"

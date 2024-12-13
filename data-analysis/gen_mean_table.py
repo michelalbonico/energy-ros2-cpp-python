@@ -49,7 +49,7 @@ def dict_to_dataframe(dict, component):
 #algos = {'pubsub','service','action'}
 #components = {'server', 'client'}
 algos = {'action'}
-components = {'server'}
+components = {'client'}
 intervals = {0.05,0.10,0.25,0.50,1.0}
 intervals_list = list(sorted(intervals))
 num_clients = {1,2,3}

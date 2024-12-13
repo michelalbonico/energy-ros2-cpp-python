@@ -48,8 +48,8 @@ def dict_to_dataframe(dict, component):
 # Factors
 #algos = {'pubsub','service','action'}
 #components = {'server', 'client'}
-algos = {'pubsub'}
-components = {'server'}
+algos = {'action'}
+components = {'client'}
 intervals = {0.05,0.10,0.25,0.50,1.0}
 intervals_list = list(sorted(intervals))
 num_clients = {1,2,3}
@@ -72,9 +72,9 @@ for algo in algos:
             dest_folder='service'
             num_rows=600
         case 'action':
-            algo_folder='cpp_py_ros2_action'
+            algo_folder='cpp_py_ros2_action_standalone'
             dest_folder='action'
-            num_rows=218
+            num_rows=205
 
     # Paths
     prefix = f"../exp_runners/experiments/{algo_folder}"

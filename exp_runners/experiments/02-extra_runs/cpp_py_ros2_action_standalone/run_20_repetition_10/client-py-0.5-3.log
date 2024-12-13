@@ -1,0 +1,24 @@
+[INFO] [1733677427.117961252] [fibonacci_action_client]: Sending goal with order 10
+Traceback (most recent call last):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/action_tutorials_py/action_client", line 33, in <module>
+    sys.exit(load_entry_point('action-tutorials-py==0.0.0', 'console_scripts', 'action_client')())
+  File [INFO] [1733677432.556272721] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3])
+[INFO] [1733677433.057110246] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5])
+[INFO] [1733677433.558580817] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8])
+[INFO] [1733677434.060177323] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13])
+[INFO] [1733677434.561185410] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21])
+[INFO] [1733677435.062457221] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+[INFO] [1733677435.563566890] [fibonacci_action_client]: Received feedback: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+[INFO] [1733677436.167716569] [fibonacci_action_client]: Result: array('i', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+[INFO] [1733677436.668583488] [fibonacci_action_client]: Sending goal with order 10
+Traceback (most recent call last):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/action_tutorials_py/action_client", line 33, in <module>
+    sys.exit(load_entry_point('action-tutorials-py==0.0.0', 'console_scripts', 'action_client')())
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/python3.10/site-packages/action_tutorials_py/fibonacci_action_client.py", line 110, in main
+    if not action_client.send_goal_and_wait(10):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/python3.10/site-packages/action_tutorials_py/fibonacci_action_client.py", line 44, in send_goal_and_wait
+    if not self._goal_handle.accepted:
+AttributeError: 'NoneType' object has no attribute 'accepted'
+[ros2run]: Process exited with failure 1
+RAPL is set
+set

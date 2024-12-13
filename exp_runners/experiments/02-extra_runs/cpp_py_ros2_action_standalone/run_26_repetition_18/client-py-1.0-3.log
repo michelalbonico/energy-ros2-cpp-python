@@ -1,0 +1,11 @@
+[INFO] [1733727924.478478542] [fibonacci_action_client]: Sending goal with order 10
+Traceback (most recent call last):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/action_tutorials_py/action_client", line 33, in <module>
+    sys.exit(load_entry_point('action-tutorials-py==0.0.0', 'console_scripts', 'action_client')())
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/python3.10/site-packages/action_tutorials_py/fibonacci_action_client.py", line 110, in main
+    if not action_client.send_goal_and_wait(10):
+  File "/home/michel/Documents/GitHub/energy-ros2-cpp-python/install/action_tutorials_py/lib/python3.10/site-packages/action_tutorials_py/fibonacci_action_client.py", line 44, in send_goal_and_wait
+    if not self._goal_handle.accepted:
+AttributeError: 'NoneType' object has no attribute 'accepted'
+[ros2run]: Process exited with failure 1
+RAPL is not set
